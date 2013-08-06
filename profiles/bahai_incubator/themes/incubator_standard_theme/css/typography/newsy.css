@@ -1,0 +1,52 @@
+/* Page elements */
+.typ-newsy {
+  font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+.typ-newsy p, 
+.typ-newsy ul, 
+.typ-newsy ol {
+  line-height:1.2em;
+}
+
+.typ-newsy h1, 
+.typ-newsy h2, 
+.typ-newsy h3, 
+.typ-newsy h4,
+.typ-newsy h5, 
+.typ-newsy h6 {
+  font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+/* Branding */
+.typ-newsy hgroup.site-name-slogan {}
+.typ-newsy .site-name {
+  font-family:"Playfair Display SC", Georgia, "Times New Roman", Times, serif;
+  font-weight:normal;
+  font-variant: small-caps;
+}
+.typ-newsy .site-slogan {
+  font-weight:normal;
+  font-style:normal;
+  margin-top:3px;
+  font-size:140%;
+}
+
+/* Blocks */
+.typ-newsy h2.block-title {
+  font-family:Georgia, "Times New Roman", Times, serif;
+  font-size:120%;
+}
+
+.typ-newsy aside .block,
+aside .block.typ-newsy {font-family:"Arial Narrow", Arial, sans-serif;}
+
+/* Menu */
+.typ-newsy #zone-menu {
+  font-weight:normal;
+  font-family:Arial, sans-serif;
+  font-size:100%;
+}
+.typ-newsy #zone-menu ul.secondary-menu {
+  font-size:80%;
+}

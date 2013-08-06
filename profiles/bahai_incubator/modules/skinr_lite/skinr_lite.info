@@ -1,0 +1,12 @@
+; $Id$
+name = "Skinr Lite"
+description = "Implements skinr-style skins as theme options only"
+package = Skinr
+core = 7.x
+
+; Information added by drupal.org packaging script on 2013-04-19
+version = "7.x-1.0-alpha3"
+core = "7.x"
+project = "skinr_lite"
+datestamp = "1366333292"
+

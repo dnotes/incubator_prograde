@@ -1,0 +1,24 @@
+; $Id$
+name = Photo Galleries
+description = "Post collections of photos that appear in their own galleries."
+package = *Incubator
+core = 7.x
+
+incubator_nodetype = gallery
+incubator_icon = icon.jpg
+
+dependencies[] = incubator
+dependencies[] = colorbox
+dependencies[] = plup
+dependencies[] = token
+dependencies[] = imagecache_actions
+dependencies[] = imagecache_canvasactions
+
+files[] = incubator_gallery.module
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-1.0-beta17"
+core = "7.x"
+project = "bahai_incubator"
+datestamp = "1371685855"
+

@@ -1,0 +1,19 @@
+; $Id$
+name = Facilities
+description = "Maintain information about local centers or other public facilities."
+package = *Incubator
+core = 7.x
+
+incubator_nodetype = facility
+incubator_icon = icon.jpg
+; photo by Juha_Uitto on Flickr : http://www.flickr.com/photos/12810816@N08/6898472039
+
+dependencies[] = incubator
+dependencies[] = incubator_location
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-1.0-beta17"
+core = "7.x"
+project = "bahai_incubator"
+datestamp = "1371685855"
+

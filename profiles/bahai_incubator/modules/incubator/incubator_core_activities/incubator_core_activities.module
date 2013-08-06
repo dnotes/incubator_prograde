@@ -1,0 +1,45 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ *
+ */
+
+function incubator_core_activities_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
+/**
+ * Helper function to determine the tids of core activities.  This is used in
+ * view declarations, where it is necessary to filter by term IDs, for example
+ * in the case of mapping views.
+ *
+ * @param string $term
+ *   A two- or three-letter abbreviation for one of the core activities:
+ *   "dg", "cc", "jyg", or "sc".
+ *
+ * @return mixed
+ *   The tid for the requested $term abbreviation, or the array of tids keyed by
+ *   abbreviation if no $term was provided.
+ */
+function incubator_core_activities_terms($term = NULL) {
+  $voc = taxonomy_vocabulary_machine_name_load('activity_type');
+  $allterms = db_query_range("SELECT tid FROM {taxonomy_term_data} WHERE vid = :vid ORDER BY tid ASC", 0, 4, array(':vid' => $voc->vid))->fetchAllAssoc('tid');
+  $allterms = array_keys($allterms);
+  $terms = array(
+    'dg' => $allterms[0],
+    'cc' => $allterms[1],
+    'jyg' => $allterms[2],
+    'sc' => $allterms[3],
+  );
+  if (!empty($term) && !empty($terms[$term])) {
+    return $terms[$term];
+  }
+  if (empty($term)) {
+    return $terms;
+  }
+  return FALSE;
+}

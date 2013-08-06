@@ -1,0 +1,110 @@
+/* Page elements */
+
+/* font-size for all text starts at 100%; */
+.typ-paytone {
+  font-family:"Droid Sans", serif;
+}
+
+.typ-paytone p,
+.typ-paytone ul,
+.typ-paytone ol {
+  line-height:1.3em;
+}
+
+.typ-paytone h1, .typ-paytone #block-system-main h1,
+.typ-paytone h2, .typ-paytone #block-system-main h2,
+.typ-paytone h3, .typ-paytone #block-system-main h3,
+.typ-paytone h4, .typ-paytone #block-system-main h4,
+.typ-paytone h5, .typ-paytone #block-system-main h5,
+.typ-paytone h6, .typ-paytone #block-system-main h6 {
+  font-family: "Paytone One",serif;
+  font-weight: normal;
+  margin-bottom: 0.6em;
+  margin-top: 0.9em;
+}
+
+.typ-paytone h1, .typ-paytone h2.site-name {font-size:132%;}
+.typ-paytone h2 {font-size:124%;}
+.typ-paytone h3 {font-size:116%;}
+.typ-paytone h4 {font-size:108%;}
+.typ-paytone h5 {font-size:104%;}
+.typ-paytone h6 {font-size:100%;}
+
+/* Lists */
+.typ-paytone ul {list-style:disc outside; margin-left:1.2em;}
+.typ-paytone ol {list-style:decimal outside; margin-left:1.5em;}
+
+/* Branding */
+  
+  /* use this line for font size of the header group */
+  .typ-paytone hgroup.site-name-slogan {}
+
+  .typ-paytone .site-name {
+    font-family:"Paytone One", serif;
+    font-weight:normal;
+  }
+  .typ-paytone .site-slogan {
+    font-family:"Droid Sans", sans-serif;
+    font-weight:normal;
+    font-style:italic;
+    font-size:145%;
+  }
+
+/* Blocks */
+.typ-paytone .block h2.block-title {
+  font-family:"Paytone One", serif;
+  font-size:120%;
+}
+.typ-paytone .block h2,
+.typ-paytone .block h3,
+.typ-paytone .block h4,
+.typ-paytone .block h5,
+.typ-paytone .block h6 {
+  font-family:"Droid Sans", sans-serif;
+  font-weight:bold;
+}
+
+.typ-paytone aside .block,
+aside .block.typ-paytone,
+.typ-paytone #zone-footer .block,
+#zone-footer .block.typ-paytone {
+  
+}
+
+/* Teasers */
+.typ-paytone .node-teaser {
+  font-family:"Droid Sans", sans-serif;
+  font-size:100%;
+}
+.typ-paytone .node-teaser h2.node-title {
+  font-size:100%;
+}
+
+.typ-paytone .node-teaser h1, 
+.typ-paytone .node-teaser h2, 
+.typ-paytone .node-teaser h3, 
+.typ-paytone .node-teaser h4,
+.typ-paytone .node-teaser h5, 
+.typ-paytone .node-teaser h6 {
+  font-size:90%;
+}
+
+/* Menu */
+.typ-paytone #zone-menu {
+  font-weight:normal;
+}
+.typ-paytone #zone-menu ul.secondary-menu {
+  font-size:80%;
+}
+
+/* Calendar events */
+.typ-paytone a.fc-event {
+  font-family:"Droid Sans", sans-serif;
+}
+.typ-paytone .ui-widget-header {
+  font-family:"Droid Sans", sans-serif;
+  padding:.3em;
+}
+.typ-paytone .fc-button-content {
+  font-family:"Droid Sans", sans-serif;
+}

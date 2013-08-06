@@ -1,0 +1,301 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ *
+ */
+
+function incubator_content_review_views_api() {
+  return array('api' => 2);
+}
+
+function incubator_content_review_workbench_content_alter(&$output) {
+  unset($output['workbench_recent_content']);
+  
+  $type = user_access('moderate content from needs_review to published') ? 'editor' : 'author';
+  
+  $output['workbench_review'] = array(
+    '#view' => "incubator_workbench_$type",
+    '#view_display' => 'needs_review_block',
+    '#attributes' => array('class' => array('clearfix'), 'style' => array('clear: both;')),
+    '#theme' => 'workbench_element',
+    '#weight' => $type == 'editor' ? 1 : 2,
+  );
+  $output['workbench_drafts'] = array(
+    '#view' => "incubator_workbench_$type",
+    '#view_display' => 'recent_drafts_block',
+    '#attributes' => array('class' => array('clearfix'), 'style' => array('clear: both;')),
+    '#theme' => 'workbench_element',
+    '#weight' => $type == 'editor' ? 2 : 1,
+  );
+  // This right column is given a width of 65% by workbench.myworkbench.css.
+  $output['workbench_edited'] = array(
+    '#view' => "incubator_workbench_author",
+    '#view_display' => 'content_by_me_block',
+    '#attributes' => array('class' => array('right', 'clearfix')),
+    '#theme' => 'workbench_element',
+  );
+}
+
+function incubator_content_review_form_node_form_alter(&$form, &$form_state) {
+  if (!empty($form['#node']->type) && workbench_moderation_node_type_moderated($form['#node']->type)) {
+    $fieldset = $form['options']['#access'] ? 'options' : 'revision_information';
+    unset ($form[$fieldset]['#group']);
+    $form[$fieldset]['#collapsed'] = FALSE;
+    $form[$fieldset]['#collapsible'] = FALSE;
+    $form[$fieldset]['log']['#rows'] = 2;
+    $form[$fieldset]['log']['#weight'] = 2;
+    foreach (array('workbench_moderation_state_new', 'log') as $field) {
+      if (!empty($form[$fieldset][$field])) {
+        $form[$fieldset][$field]['#attributes']['title'] = $form[$fieldset][$field]['#description'];
+        unset($form[$fieldset][$field]['#description']);
+        $form[$fieldset][$field]['#title'] = $field == 'log' ? t('Editing notes') : t('Editing state');
+      }
+    }
+  }
+}
+
+function incubator_content_review_block_info() {
+  $blocks['incubator_content_review'] = array(
+    'info' => t('Content review status'),
+    'cache' => DRUPAL_CACHE_PER_USER,
+    'properties' => array(
+      'administrative' => TRUE
+    ),
+    'weight' => -20,
+    'status' => 1,
+    'region' => 'sidebar_second',
+  );
+  return $blocks;
+}
+
+function incubator_content_review_block_view($delta = '') {
+  if (TRUE) {
+    global $user;
+    $editor = user_access('moderate content from needs_review to published');
+    $query = db_select('node', 'n');
+    $query->leftJoin('workbench_moderation_node_history', 'nh', 'nh.nid = n.nid');
+    $query->leftJoin('workbench_moderation_states', 's', 's.name = nh.state');
+    $query->addField('s', 'label');
+    $query->addExpression('count(n.nid)', 'count');
+    $query->condition('nh.state', array('draft', 'needs_review'), 'IN');
+    $query->condition('nh.current', 1, '=');
+    $query->addTag('node_access');
+    $query->groupBy('nh.state');
+    if (!$editor) {
+      $query->condition('n.uid', $user->uid);
+    }
+    $result = $query->execute()->fetchAllKeyed();
+    if ($editor) {
+      $result = array_reverse($result);
+    }
+    if (!empty($result)) {
+      foreach ($result as $state => $count) {
+        $items[] = format_plural($count, '1 in %state', '@count in %state', array('%state' => $state));
+      }
+      return array(
+        'subject' => NULL,
+        'content' => array(
+          'title' => array(
+            '#markup' => $editor ? t('Editing tasks:') : t('My content:'),
+          ),
+          'list' => array(
+            '#theme' => 'item_list',
+            '#items' => $items,
+          ),
+          'workbench' => array(
+            '#theme' => 'link',
+            '#path' => 'admin/workbench',
+            '#text' => t('go to workbench'),
+            '#options' => array(
+              'attributes' => array(
+                'class' => 'more-link',
+              ),
+              'html' => FALSE,
+            )
+          ),
+        ),
+      );
+    }
+  }
+}
+
+function incubator_content_review_workbench_moderation_transition($node, $from_state, $to_state) {
+    
+    /* $node->uid is the node author.
+     * $node->revision_uid is the editor of the existing revision.
+     * $node->workbench_moderation['my_revision']->uid is the editor of the revision being saved.
+     *
+     * We need the following parameters:
+     * ['node'] => the node being emailed,
+     * ['from_state'] => the moderation state from which the content was moved
+     * ['to_state'] => the moderation state to which the content was moved
+     */
+
+    $edit_uid = $node->workbench_moderation['my_revision']->uid;
+    $language_list = language_list();
+    $state_array = array($from_state, $to_state);
+    $states = db_query("SELECT name, label FROM {workbench_moderation_states} WHERE name IN (:name)", array(':name' => $state_array))->fetchAllKeyed();
+    $params = array(
+      'node' => $node,
+      'from_state_name' => $from_state,
+      'from_state' => $states[$from_state],
+      'to_state_name' => $to_state,
+      'to_state' => $states[$to_state],
+    );
+
+    $exceptions = array($edit_uid, $node->uid);
+    // Notify editors about nodes marked for review
+
+  // We only notify editors on some state changes, not all
+  if (
+    $to_state == 'needs_review' ||
+    $from_state == 'needs_review' ||
+    $to_state == 'published'
+  ) {
+    
+    // Only notify editors if they are not in the list of exceptions
+    if ($mailinglist = _incubator_content_review_get_editors($exceptions)) {
+      $key = "editor_$to_state";
+      foreach ($mailinglist as $langcode => $to) {
+        $language = !empty($language_list[$langcode]) ? $language_list[$langcode] : language_default();
+        drupal_mail('incubator_content_review', $key, $to, $language, $params);
+      }
+    }
+  }
+  
+  
+
+  // Only notify the author if he or she is not the one making the revision
+  // TODO: decide how to let people choose to receive mail
+  if ($node->uid != $edit_uid && ($node->uid != 1 || variable_get('incubator_content_review_include_user_1', FALSE))) {
+    $key = "author_$to_state";
+    if ($account = db_query('SELECT mail, language FROM {users} WHERE uid = ?', array($node->uid))->fetchObject()) {
+      $language = (!empty($account->language) && !empty($language_list[$account->language])) ? $language_list[$account->language] : language_default();
+      drupal_mail('incubator_content_review', $key, $account->mail, $language, $params);
+    }
+  
+  }
+}
+
+/**
+ * Implements hook_mail().
+ * @param string $key
+ * @param array $message
+ * @param array $params
+ */
+function incubator_content_review_mail($key, &$message, $params) {
+  if (!in_array($key, array(
+    'editor_needs_review', 
+    'editor_draft', 
+    'editor_published', 
+    'author_needs_review', 
+    'author_draft', 
+    'author_published'
+  ))) {
+    $message['send'] = FALSE;
+    return FALSE;
+  }
+  
+  $langcode = (!empty($message['language']) && is_object($message['language'])) ? $message['language']->language : language_default('language');
+  $editor = user_load($params['node']->workbench_moderation['my_revision']->uid);
+  $author = $params['node']->uid == $editor->uid ? $editor : user_load($params['node']->uid);
+  global $base_url;
+  $replacements = array(
+    '!title' => str_replace(array("\r", "\n"), '', $params['node']->title),
+    '!author' => $author->realname,
+    '!editor' => $editor->realname,
+    '!url' => $base_url . '/' . (!empty($params['node']->path['alias']) ? $params['node']->path['alias'] : $params['node']->path['source']),
+    '!draft_url' => $base_url . '/user/login?destination=node/' . $params['node']->nid,
+    '!workbench_url' => $base_url . '/user/login?destination=admin/workbench',
+    '!from_state' => $params['from_state'],
+    '!to_state' => $params['to_state'],
+    '!log' => $params['node']->log,
+  );
+  
+  if (!empty($params['node']->workbench_moderation['published']) &&
+    is_object($params['node']->workbench_moderation['published']) &&
+    ($params['node']->workbench_moderation['published']->vid !=
+      $params['node']->workbench_moderation['my_revision']->vid)) {
+    $replacements['!draft_url'] .= '/draft';
+  }
+  
+  if ($key == 'editor_needs_review' || $key == 'editor_draft') {
+    $line = t('!editor has moved "!title" by !author to !to_state status.  You can view it at !draft_url.', $replacements, array('langcode' => $langcode));
+  }
+  elseif ($key == 'author_draft' && $params['from_state_name'] == 'needs_review') {
+    $line = t('Your content "!title" has been moved back to !to_state status.  You can view it at !draft_url.', $replacements, array('langcode' => $langcode));
+  }
+  elseif ($key == 'author_draft') {
+    $line = t('A new draft has been created for your content "!title".  You can view it at !draft_url.', $replacements, array('langcode' => $langcode));
+  }
+  elseif ($key == 'author_needs_review') {
+    $line = t('Your content "!title" has been moved to !to_state status.  You can view it at !draft_url.', $replacements, array('langcode' => $langcode));
+  }
+  elseif ($key == 'editor_published') {
+    $line = t('!editor has published "!title" by !author.  You can see the published version at !url.', $replacements, array('langcode' => $langcode));
+  }
+  elseif ($key == 'author_published') {
+    $line = t('Your content "!title" has been published.  You can see the published version at !url.', $replacements, array('langcode' => $langcode));
+  }
+  
+  $message['id'] = "incubator_content_review_{$params['node']->nid}-{$params['node']->vid}_" . time();
+  $message['subject'] = t('Re: !title', $replacements, array('langcode' => $langcode));
+  $message['body'][] = $line;
+  $message['body'][] = t('!from_state -> !to_state', $replacements, array('langcode' => $langcode));
+  $message['body'][] = '';
+  $message['body'][] = t('Last comment: !log', $replacements, array('langcode' => $langcode));
+  $message['body'][] = '';
+  $message['body'][] = t('Visit your workbench at !workbench_url', $replacements, array('langcode' => $langcode));
+  
+}
+
+function _incubator_content_review_get_editors($exclude = array()) {
+  
+  // Get the role id for editors
+  if (!$editor_rid = db_query('SELECT rid FROM {role} WHERE name = ?', array('editor'))->fetchField()) {
+    // Content review emails cannot be sent if there is no role named 'editor'
+    return FALSE;
+  }
+  
+  // Get the emails for all the editors
+  $query = db_select('users', 'u');
+  $query->fields('u', array('mail', 'language'));
+  $query->leftJoin('users_roles', 'ur', 'ur.uid = u.uid');
+  $query->condition('ur.rid', $editor_rid);
+  if (!empty($exclude)) {
+    if (is_numeric($exclude)) {
+      $query->condition('u.uid', $exclude, '!=');
+    }
+    elseif (is_array($exclude)) {
+      $query->condition('u.uid', $exclude, 'NOT IN');
+    }
+  }
+  $editors = $query->execute()->fetchAllKeyed();
+  if (!empty($editors)) {
+    $mailinglist = $return = array();
+    foreach ($editors as $mail => $langcode) {
+      if (!empty($langcode)) {
+        $mailinglist[$langcode][] = $mail;
+      }
+      else {
+        $mailinglist['und'][] = $mail;
+      }
+    }
+    foreach ($mailinglist as $langcode => $list) {
+      $return[$langcode] = implode(', ', $list);
+    }
+    return $return;
+  }
+  
+  return FALSE;
+  
+}
+
+function incubator_content_review_workbench_moderation_access_alter(&$access, $op, $node) {
+  if ($op == 'view revisions') {
+    global $user;
+    $access |= $node->uid == $user->uid;
+  }
+}

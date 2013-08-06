@@ -1,0 +1,217 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ *
+ */
+
+function incubator_localities_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
+function incubator_localities_ctools_plugin_api($module, $api) {
+  if ($module == "openlayers") {
+    switch ($api) {
+      case 'openlayers_maps':
+        return array('version' => 1);
+
+      case 'openlayers_layers':
+        return array('version' => 1);
+
+      case 'openlayers_styles':
+        return array('version' => 1);
+
+    }
+  }
+}
+
+function incubator_localities_openlayers_map_preprocess_alter(&$map) {
+  if (!empty($map['map_name']) && $map['map_name'] == 'incubator_main') {
+    $word = 'localities';
+    $layer = "map_{$word}_openlayers_1";
+    $map['behaviors']['openlayers_behavior_popup']['layers'][$layer] = $layer;
+    $map['layers'][$layer] = $layer;
+    $map['layer_weight'][$layer] = 0;
+    $map['layer_styles'][$layer] = $word;
+    $map['layer_styles_select'][$layer] = $word;
+    $map['layer_activated'][$layer] = $layer;
+    $map['layer_switcher'][$layer] = $layer;
+  }
+}
+
+// set up a choice for locality, community, neighborhood, custom
+// define variables for translation
+function incubator_localities_variable_info($options) {
+  $variables['incubator_localities_word'] = array(
+    'title' => t('Local subdivisions word'),
+    'description' => t('Word used for local subdivisions, such as "community" or "neighborhood"'),
+    'type' => 'string',
+    'access' => 'administer site configuration',
+    'token' => TRUE,
+  );
+  return $variables;
+}
+
+// create or update terms with nodes
+function incubator_localities_node_presave($node) {
+  if (isset($node->form_id) && $node->type == 'loc') {
+    // if the localities taxonomy is a number, then edit the term
+    $voc = taxonomy_vocabulary_machine_name_load('localities');
+    if (isset($node->field_localities['und'][0]['tid']) && $tid = $node->field_localities['und'][0]['tid']) { // intentional assignment of $tid
+      $term = taxonomy_term_load($tid);
+      if ($term && $term->vid == $voc->vid) {
+        $term->name = $node->title;
+        taxonomy_term_save($term);
+      }
+    }
+    // if it is a new term, then create one
+    else {
+      $term = (object) array(
+        'name' => $node->title,
+        'vid' => $voc->vid,
+      );
+      taxonomy_term_save($term);
+      $node->field_localities['und'][0]['tid'] = $term->tid;
+    }
+  }
+}
+
+// delete the taxonomy term when the loc node is deleted
+function incubator_localities_node_delete($node) {
+  if ($node->type == 'loc' && $tid = $node->field_localities['und'][0]['tid']) { // intentional assignment of $tid
+    taxonomy_term_delete($tid);
+  }
+}
+
+// alter the node form for loc nodes
+function incubator_localities_form_loc_node_form_alter(&$form, &$form_state) {
+  $form['field_localities']['und']['#type'] = 'radios';
+  $form['field_localities']['und']['#description'] = '';
+  // for existing nodes, the localities taxonomy field should be disabled
+  if (!empty($form['#node']->nid)) {
+    $form['field_localities']['und']['#disabled'] = TRUE;
+  }
+  else {
+  // for new nodes, make the localities taxonomy field into option buttons:
+    // existing terms should be hidden unless there is no node associated yet
+    foreach ($form['field_localities']['und']['#options'] as $k => $v) {
+      if (incubator_localities_get_nid($k)) {
+        unset($form['field_localities']['und']['#options'][$k]);
+      }
+    }
+    // the selected option should be to create a new term
+    $form['field_localities']['und']['#options'][0] = t('<em>new locality</em>');
+    $form['field_localities']['und']['#default_value'] = 0;
+  }
+
+}
+
+// alter the taxonomy links to point to the nodes instead
+function incubator_localities_url_outbound_alter(&$path, &$options, &$original_path) {
+  if (!$options['external'] && preg_match('!^taxonomy/term/(\d+)!', $original_path, $matches)) {
+    if ($nid = incubator_localities_get_nid($matches[1])) { // intentional assignment of $nid
+      $original_path = $path = 'node/' . $nid;
+    }
+  }
+}
+
+// alter the taxonomy term form so that the name field is disabled, with an edit link to the node
+function incubator_localities_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
+  if ($form['#vocabulary']->machine_name == 'localities') {
+    if ($tid = $form['tid']['#value']) { // intentional assignment of $tid
+      $nid = incubator_localities_get_nid($tid);
+      drupal_goto("node/$nid/edit");
+    }
+    else {
+      drupal_goto('node/add/loc');
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for taxonomy_overview_terms().
+ */
+function incubator_localities_form_taxonomy_overview_terms_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['#vocabulary']) && $form['#vocabulary']->machine_name == 'localities') {
+    $form['#submit'][] = 'incubator_localities_taxonomy_overview_terms_submit';
+    drupal_set_message(t('You may sort localities hierarchically, and if you do, 
+they will be sorted exactly the same in lists on your site.  This may be useful 
+if you have neighborhoods within a city, for example.  Otherwise, locality 
+lists will always be sorted alphabetically.'), 'warning', FALSE);
+  }
+}
+
+/**
+ * Added submit handler for taxonomy_overview_terms() form determines if the 
+ * localities taxonomy has been sorted hierarchically, and sets a variable flag
+ * to that effect so that views of localities will be sorted accordingly.
+ */
+function incubator_localities_taxonomy_overview_terms_submit(&$form, &$form_state) {
+  if (db_query('select th.parent FROM {taxonomy_term_data} td 
+                INNER JOIN {taxonomy_vocabulary} v ON v.vid = td.vid 
+                LEFT JOIN {taxonomy_term_hierarchy} th ON th.tid = td.tid 
+                WHERE v.machine_name = ? AND th.parent', array('localities'))
+      ->fetchField()) {
+    variable_set('incubator_localities_custom_sorted', TRUE);
+  }
+  else {
+    variable_set('incubator_localities_custom_sorted', FALSE);
+  }
+}
+
+// helper to get node id from taxonomy term
+function incubator_localities_get_nid($tid) {
+  return db_query('SELECT ti.nid FROM {taxonomy_index} ti INNER JOIN {node} n ON n.nid = ti.nid WHERE ti.tid = ? AND n.type = ?', array($tid, 'loc'))->fetchfield();
+}
+
+// helper function to get the localities word
+function _incubator_localities_get_word() {
+  $t = get_t();
+  $word = variable_get('incubator_localities_word', 'Locality');
+  $word = $word == 'Locality' ? $t('Locality', array(), array('#context' => 'Node type name')) : check_plain($word);
+  return $word;
+}
+
+
+
+
+
+
+
+
+
+
+function incubator_localities_openlayers_styles() {
+  $t = get_t();
+  $items = array();
+  $openlayers_styles = new stdClass;
+  $openlayers_styles->disabled = FALSE; /* Edit this to true to make a default openlayers_styles disabled initially */
+  $openlayers_styles->api_version = 1;
+  $openlayers_styles->name = 'localities';
+  $openlayers_styles->title = $t('Localities');
+  $openlayers_styles->description = $t('Localities');
+  $openlayers_styles->data = array(
+    'externalGraphic' => drupal_get_path('module', 'incubator_mapping') . '/gmap-markers/blank.png',
+    'pointRadius' => 16,
+    'fillColor' => '#FFCC66',
+    'strokeColor' => '#FF9933',
+    'strokeWidth' => 4,
+    'fillOpacity' => 0.5,
+    'strokeOpacity' => 1,
+    'strokeLinecap' => 'round',
+    'strokeDashstyle' => 'solid',
+    'graphicWidth' => 20,
+    'graphicHeight' => 34,
+    'graphicOpacity' => 1,
+    'graphicXOffset' => -10,
+    'graphicYOffset' => -34,
+    'labelAlign' => 'cm',
+    'labelXOffset' => '0',
+    'labelYOffset' => '0',
+  );
+  $items["localities"] = $openlayers_styles;
+  return $items;
+}

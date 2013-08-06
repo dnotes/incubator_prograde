@@ -1,0 +1,22 @@
+; $Id$
+name = Local Content
+description = "Organize content related to specific local areas, such as communities in a region or neighborhoods in a city."
+package = *Incubator
+core = 7.x
+
+incubator_weight = -5
+incubator_nodetype = loc
+incubator_icon = icon.jpg
+
+dependencies[] = incubator
+dependencies[] = incubator_location
+dependencies[] = taxonomy
+
+stylesheets[all][] = css/incubator_localities.css
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-1.0-beta17"
+core = "7.x"
+project = "bahai_incubator"
+datestamp = "1371685855"
+

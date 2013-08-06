@@ -1,0 +1,127 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ *
+ */
+
+function incubator_video_enable() {
+  module_load_install('incubator');
+  $t = get_t();
+  $video = array(
+    'type' => 'video',
+    'name' => $t('Video'),
+    'description' => $t('An embedded video from sites like youtube and vimeo.'),
+  );
+  $pathauto_prefix = $t('video/', array(), array('#context' => 'Web search friendly URL - no special characters'));
+  if (_incubator_create_nodetype($video, $pathauto_prefix, 2, TRUE, array('status', 'promote', 'revision', 'moderation'))) {
+    _incubator_attach_field('field_media', 'video');
+    _incubator_attach_field('field_activity_type', 'video');
+    _incubator_attach_field('field_localities', 'video');
+    _incubator_attach_field('field_tags', 'video');
+    $videographer = _incubator_create_role('videographer', 'video');
+  }
+}
+
+function incubator_video_disable() {
+  module_load_install('incubator');
+  _incubator_delete_nodetype('video');
+  $role = user_role_load_by_name('videographer');
+  user_role_change_permissions($role->rid, array());
+}
+
+function incubator_video_uninstall() {
+  user_role_delete('videographer');
+  field_delete_field('field_media');
+}
+
+function _incubator_fields_field_media($op = 'field') {
+  $t = get_t();
+  if ($op == 'field') {
+    $field = array(
+      'translatable' => '0',
+      'settings' => array(
+        'display_field' => 0,
+        'display_default' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+      ),
+      'field_name' => 'field_media',
+      'type' => 'file',
+      'locked' => '0',
+      'cardinality' => '1',
+    );
+    return $field;
+  }
+  elseif ($op == 'instance') {
+    $instance = array(
+      'label' => 'Media',
+      'widget' => array(
+        'weight' => '32',
+        'type' => 'media_generic',
+        'module' => 'media',
+        'active' => 1,
+        'settings' => array(
+          'allowed_types' => array(
+            'video' => 'video',
+            'audio' => 0,
+            'image' => 0,
+            'default' => 0,
+          ),
+          'allowed_schemes' => array(
+            'vimeo' => 'vimeo',
+            'youtube' => 'youtube',
+            'module' => 0,
+            'public' => 0,
+            'private' => 0,
+          ),
+          'progress_indicator' => 'throbber',
+        ),
+      ),
+      'settings' => array(
+        'file_directory' => 'video',
+        'file_extensions' => 'txt',
+        'max_filesize' => '',
+        'description_field' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'type' => 'file_rendered',
+          'weight' => '0',
+          'settings' => array(
+            'file_view_mode' => 'media_large',
+          ),
+          'module' => 'file_entity',
+        ),
+        'teaser' => array(
+          'label' => 'hidden',
+          'type' => 'file_rendered',
+          'weight' => '0',
+          'settings' => array(
+            'file_view_mode' => 'media_small',
+          ),
+          'module' => 'file_entity',
+        ),
+        'search_result' => array(
+          'label' => 'hidden',
+          'type' => 'file_rendered',
+          'weight' => '0',
+          'settings' => array(
+            'file_view_mode' => 'media_small',
+          ),
+          'module' => 'file_entity',
+        ),
+      ),
+      'required' => 1,
+      'description' => 'The main media for this content.',
+      'field_name' => 'field_media',
+    );
+    return $instance;
+  }
+}

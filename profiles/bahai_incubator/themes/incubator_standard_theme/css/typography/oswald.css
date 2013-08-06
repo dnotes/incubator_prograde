@@ -1,0 +1,125 @@
+/* Page elements */
+
+/* font-size for all text starts at 100%; */
+.typ-oswald {
+  font-family:"Muli", sans-serif;
+  font-weight:300;
+}
+
+.typ-oswald p, 
+.typ-oswald ul, 
+.typ-oswald ol {
+  line-height:1.3em;
+}
+
+.typ-oswald h1, 
+.typ-oswald h2, 
+.typ-oswald h3, 
+.typ-oswald h4,
+.typ-oswald h5, 
+.typ-oswald h6 {
+  font-family:"Oswald", sans-serif;
+  font-weight:bold;
+  margin-top:.8em;
+  margin-bottom:.5em;
+}
+
+.typ-oswald h1, .typ-oswald h2.site-name {font-size:132%;}
+.typ-oswald h2 {font-size:124%;}
+.typ-oswald h3 {font-size:116%;}
+.typ-oswald h4 {font-size:108%;}
+.typ-oswald h5 {font-size:104%;}
+.typ-oswald h6 {font-size:100%;}
+
+.typ-oswald h1#page-title {
+  font-family:"Muli", sans-serif;
+  font-size:160%;
+  font-weight:normal;
+  font-style:italic;
+}
+
+/* Lists */
+.typ-oswald ul {list-style:disc outside; margin-left:1.12em;}
+.typ-oswald ol {list-style:decimal outside; margin-left:1.5em;}
+
+/* Blockquote */
+.typ-oswald blockquote:before {font-family:"Oswald", Georgia, serif;}
+
+/* Branding */
+  
+  /* use this line for font size of the header group */
+  .typ-oswald hgroup.site-name-slogan {}
+
+  .typ-oswald .site-name {
+    font-weight:normal;
+  }
+  .typ-oswald .site-slogan {
+    font-family:"Muli", sans-serif;
+    font-weight:300;
+    font-style:italic;
+    font-size:140%;
+    margin-top:.3em;
+  }
+  
+/* Blocks */
+.typ-oswald h2.block-title {
+  font-family:"Muli", sans-serif;
+  font-size:120%;
+}
+.typ-oswald aside .block,
+aside .block.typ-oswald,
+.typ-oswald #zone-footer .block,
+#zone-footer .block.typ-oswald {
+  
+}
+
+.typ-oswald aside h1, 
+.typ-oswald aside h2, 
+.typ-oswald aside h3, 
+.typ-oswald aside h4,
+.typ-oswald aside h5, 
+.typ-oswald aside h6 {
+  font-weight:normal;
+}
+
+.typ-oswald #region-content h2.block-title {
+  font-weight:normal;
+  font-style:italic;
+}
+
+/* Teasers */
+.typ-oswald .node-teaser {
+  font-size:90%;
+}
+.typ-oswald .node-teaser h2.node-title {
+  font-size:100%;
+}
+
+/* Menu */
+.typ-oswald #zone-menu {
+  font-weight:normal;
+}
+.typ-oswald #zone-menu ul.secondary-menu {
+  font-size:80%;
+}
+
+/* Calendar events */
+.typ-oswald a.fc-event {
+  font-family:"Oswald", sans-serif;
+  font-size:100%;
+}
+.typ-oswald .ui-widget-header {
+  font-family:"Oswald", sans-serif;
+  padding: .3em 0;
+  font-weight:normal;
+}
+.typ-oswald .fc-button-content {
+  font-family:"Muli", sans-serif;
+}
+
+/* Page Boundaries */
+.typ-oswald #section-footer,
+.typ-oswald #zone-user-wrapper {
+  font-family:"Oswald", sans-serif;
+  font-size:90%;
+}

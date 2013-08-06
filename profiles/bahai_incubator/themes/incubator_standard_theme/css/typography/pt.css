@@ -1,0 +1,114 @@
+/* Page elements */
+
+/* font-size for all text starts at 100%; */
+.typ-pt {
+  font-family:"PT Sans", sans-serif;
+}
+
+.typ-pt p, 
+.typ-pt ul, 
+.typ-pt ol {
+  line-height:1.3em;
+}
+
+.typ-pt h1, 
+.typ-pt h2, 
+.typ-pt h3, 
+.typ-pt h4,
+.typ-pt h5, 
+.typ-pt h6 {
+  font-family:"PT Serif Caption", serif;
+  font-weight:bold;
+  margin-top:.9em;
+  margin-bottom:.6em;
+}
+
+.typ-pt h1, .typ-pt h2.site-name {font-size:132%;}
+.typ-pt h2 {font-size:124%;}
+.typ-pt h3 {font-size:116%;}
+.typ-pt h4 {font-size:108%;}
+.typ-pt h5 {font-size:104%;}
+.typ-pt h6 {font-size:100%;}
+
+h1#page-title {
+  font-variant:small-caps;
+  font-weight:normal;
+  font-size:150%;
+}
+
+/* Lists */
+.typ-pt ul {list-style:disc outside; margin-left:1.2em;}
+.typ-pt ol {list-style:decimal outside; margin-left:1.5em;}
+
+/* Blockquote */
+.typ-pt blockquote:before {font-family:"PT Sans", Georgia, serif;}
+
+/* Branding */
+  
+  /* use this line for font size of the header group */
+  .typ-pt hgroup.site-name-slogan {}
+
+  .typ-pt .site-name {
+    font-weight:normal;
+  }
+  .typ-pt .site-slogan {
+    font-family:"PT Sans", sans-serif;
+    font-weight:normal;
+    font-style:italic;
+    font-size:140%;
+    font-variant:small-caps;
+  }
+
+/* Blocks */
+.typ-pt h2.block-title {
+  font-family:"PT Serif Caption", sans-serif;
+  font-size:110%;
+}
+.typ-pt #region-content h2.block-title {
+  font-weight:normal;
+  font-variant:small-caps;
+}
+
+.typ-pt aside h1, 
+.typ-pt aside h2, 
+.typ-pt aside h3, 
+.typ-pt aside h4,
+.typ-pt aside h5, 
+.typ-pt aside h6 {
+  font-size:100%;
+}
+
+.typ-pt aside .block,
+aside .block.typ-pt,
+.typ-pt #zone-footer .block,
+#zone-footer .block.typ-pt {
+  
+}
+
+/* Teasers */
+.typ-pt .node-teaser {
+  font-size:90%;
+}
+.typ-pt .node-teaser h2.node-title {
+  font-size:100%;
+}
+
+/* Menu */
+.typ-pt #zone-menu {
+  font-weight:normal;
+}
+.typ-pt #zone-menu ul.secondary-menu {
+  font-size:80%;
+}
+
+/* Calendar events */
+.typ-pt a.fc-event {
+  font-family:"PT Sans", sans-serif;
+}
+.typ-pt .ui-widget-header {
+  font-family:"PT Sans", sans-serif;
+  padding: .3em 0;
+}
+.typ-pt .fc-button-content {
+  font-family:"PT Sans", sans-serif;
+}

@@ -1,0 +1,97 @@
+/* Page elements */
+
+/* font-size for all text starts at 100%; */
+.typ-modern {
+  font-family:Gafata, Arial, sans-serif;
+}
+
+.typ-modern p, 
+.typ-modern ul, 
+.typ-modern ol {
+  line-height:1.3em;
+}
+
+.typ-modern h1, 
+.typ-modern h2, 
+.typ-modern h3, 
+.typ-modern h4,
+.typ-modern h5, 
+.typ-modern h6 {
+  font-family:"Julius Sans One", Arial, sans-serif;
+  font-variant:small-caps;
+  font-weight:bold;
+}
+.typ-modern #page-title {font-weight:bold;}
+
+/* Lists */
+.typ-modern ul {list-style:disc outside; margin-left:1.5em;}
+.typ-modern ol {list-style:decimal outside; margin-left:1.5em;}
+
+/* Blockquote */
+.typ-modern blockquote:before {content:'“';font-size:280%;margin-right:0.2em;float:left;font-family:Georgia, serif;}
+
+/* Branding */
+  
+  /* use this line for font size of the header group */
+  .typ-modern hgroup.site-name-slogan {}
+
+  .typ-modern .site-name {
+    font-family:"Julius Sans One", Arial, sans-serif;
+    font-weight:normal;
+    font-variant:small-caps;
+  }
+  .typ-modern .site-slogan {
+    font-family:Economica, "Arial Narrow", Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+  }
+
+/* Blocks */
+.typ-modern h2.block-title {
+  font-family:Economica, "Arial Narrow", Arial, sans-serif;
+  font-size:120%;
+  font-variant:small-caps;
+  font-weight:normal;
+}
+.typ-modern aside .block,
+aside .block.typ-modern {
+  font-family:Gafata, Arial, sans-serif;
+  font-size:90%;
+}
+.typ-modern aside .block h2.block-title,
+aside .block.typ-modern h2.block-title {
+  font-size:130%;
+}
+
+/* Teasers */
+.typ-modern .node-teaser {
+  font-size:90%;
+}
+.typ-modern .node-teaser h2.node-title {
+  font-size:100%;
+}
+
+.typ-modern .node-teaser h1, 
+.typ-modern .node-teaser h2, 
+.typ-modern .node-teaser h3, 
+.typ-modern .node-teaser h4,
+.typ-modern .node-teaser h5, 
+.typ-modern .node-teaser h6 {
+  font-size:90%;
+}
+
+/* Menu */
+.typ-modern #zone-menu {
+  font-family:Arial, sans-serif;
+  font-variant:small-caps;
+  font-weight:normal;
+  font-size:109%;
+}
+.typ-modern #zone-menu ul.secondary-menu {
+  font-size:80%;
+}
+
+/* Events */
+.typ-modern a.fc-event {
+  font-family:Gafata, Arial, sans-serif;
+}

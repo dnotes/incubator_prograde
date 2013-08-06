@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ *
+ */
+
+// Save the field "real name" on account creation through social services
+function incubator_social_hybridauth_userinfo_alter(&$account, $data) {
+  $account['field_realname']['und'][0]['value'] = $data['displayName'];
+}
+
+function incubator_social_preferred_providers() {
+  return array('Facebook', 'Google', 'Twitter', 'Live', 'Yahoo', 'LinkedIn', 'OpenID');
+}

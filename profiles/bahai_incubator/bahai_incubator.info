@@ -1,0 +1,73 @@
+name = Local Bahá'í Community Website Incubator
+description = A startup platform for local Bahá'í communities
+core = 7.x
+
+; Modules from standard.info
+dependencies[] = block
+dependencies[] = color
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+; Other useful modules
+dependencies[] = token
+dependencies[] = transliteration
+dependencies[] = pathauto
+dependencies[] = redirect
+dependencies[] = diff
+dependencies[] = views_ui
+dependencies[] = admin_menu_toolbar
+dependencies[] = file_entity
+dependencies[] = media
+dependencies[] = media_internet
+dependencies[] = colorbox
+dependencies[] = nodeformcols
+dependencies[] = libraries
+dependencies[] = realname
+dependencies[] = wysiwyg
+dependencies[] = media_youtube
+dependencies[] = media_vimeo
+dependencies[] = admin_alert
+dependencies[] = location_chooser
+dependencies[] = skinr_lite
+
+; Date
+dependencies[] = date
+
+; Translation
+dependencies[] = locale
+
+; Incubator
+dependencies[] = incubator
+dependencies[] = incubator_core_activities
+dependencies[] = incubator_news
+;dependencies[] = incubator_announcements
+;dependencies[] = incubator_blog
+;dependencies[] = incubator_events
+;dependencies[] = incubator_localities
+;dependencies[] = incubator_gallery
+;dependencies[] = incubator_facilities
+;dependencies[] = incubator_mapping
+;dependencies[] = incubator_video
+dependencies[] = noggin_incubator
+
+; Files included with profile
+files[] = bahai_incubator.profile
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-1.0-beta17"
+core = "7.x"
+project = "bahai_incubator"
+datestamp = "1371685855"
+

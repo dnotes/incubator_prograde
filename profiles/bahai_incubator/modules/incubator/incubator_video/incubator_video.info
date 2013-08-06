@@ -1,0 +1,23 @@
+; $Id$
+name = Video
+description = "Embed video from external providers including YouTube and Vimeo."
+package = *Incubator
+core = 7.x
+
+incubator_weight = -5
+incubator_nodetype = video
+incubator_icon = film.gif
+
+dependencies[] = incubator
+dependencies[] = media
+dependencies[] = media_youtube
+dependencies[] = media_vimeo
+
+files[] = incubator_video.module
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-1.0-beta17"
+core = "7.x"
+project = "bahai_incubator"
+datestamp = "1371685855"
+

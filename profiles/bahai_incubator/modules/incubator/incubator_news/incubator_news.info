@@ -1,0 +1,19 @@
+; $Id$
+name = News Reporting
+description = "Post and maintain official news about your community."
+package = *Incubator
+core = 7.x
+
+incubator_weight = -10
+incubator_nodetype = news
+incubator_icon = icon.jpg
+; photo by Pensiero http://commons.wikimedia.org/wiki/File:International_newspaper,_Rome_May_2005.jpg
+
+dependencies[] = incubator
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-1.0-beta17"
+core = "7.x"
+project = "bahai_incubator"
+datestamp = "1371685855"
+

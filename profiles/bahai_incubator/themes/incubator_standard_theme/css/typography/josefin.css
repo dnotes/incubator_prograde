@@ -1,0 +1,116 @@
+/* Page elements */
+
+/* font-size for all text starts at 100%; */
+.typ-josefin {
+  font-family:"Maven Pro", sans-serif;
+}
+
+.typ-josefin p, 
+.typ-josefin ul, 
+.typ-josefin ol {
+  line-height:1.3em;
+}
+
+.typ-josefin h1, 
+.typ-josefin h2, 
+.typ-josefin h3, 
+.typ-josefin h4,
+.typ-josefin h5, 
+.typ-josefin h6 {
+  font-family:"Josefin Slab", serif;
+  font-weight:bold;
+  margin-top:.9em;
+  margin-bottom:.3em;
+}
+
+.typ-josefin h1, .typ-josefin h2.site-name {font-size:132%;}
+.typ-josefin h2 {font-size:124%;}
+.typ-josefin h3 {font-size:116%;}
+.typ-josefin h4 {font-size:108%;}
+.typ-josefin h5 {font-size:104%;}
+.typ-josefin h6 {font-size:100%;}
+
+.typ-josefin h1#page-title {
+  font-size: 150%;
+  font-variant: small-caps;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  padding-top:.2em;
+}
+
+/* Lists */
+.typ-josefin ul {list-style:disc outside; margin-left:1.2em;}
+.typ-josefin ol {list-style:decimal outside; margin-left:1.5em;}
+
+/* Branding */
+  
+  /* use this line for font size of the header group */
+  .typ-josefin hgroup.site-name-slogan {}
+
+  .typ-josefin .site-name {
+    font-weight:bold;
+  }
+  .typ-josefin .site-slogan {
+    font-family:"Maven Pro", sans-serif;
+    font-weight:normal;
+    font-style:italic;
+    font-size:140%;
+  }
+
+/* Blocks */
+.typ-josefin h2.block-title {
+  font-family:"Josefin Slab", sans-serif;
+  font-size:120%;
+  font-variant:small-caps;
+  padding-top:.7em;
+  font-weight:normal;
+  letter-spacing:.1em;
+}
+.typ-josefin aside .block,
+aside .block.typ-josefin,
+.typ-josefin #zone-footer .block,
+#zone-footer .block.typ-josefin {
+  
+}
+
+/* Teasers */
+.typ-josefin .node-teaser {
+  font-size:90%;
+}
+.typ-josefin .node-teaser h2.node-title {
+  font-size:120%;
+}
+
+.typ-josefin .node-teaser h1, 
+.typ-josefin .node-teaser h2, 
+.typ-josefin .node-teaser h3, 
+.typ-josefin .node-teaser h4,
+.typ-josefin .node-teaser h5, 
+.typ-josefin .node-teaser h6 {
+  font-size:90%;
+}
+
+/* Menu */
+.typ-josefin #zone-menu {
+  font-weight:normal;
+  font-size:100%;
+}
+.typ-josefin #zone-menu ul.main-menu {
+  margin-bottom:-4px;
+}
+.typ-josefin #zone-menu ul.secondary-menu {
+  font-size:90%;
+}
+
+/* Calendar events */
+.typ-josefin a.fc-event {
+  font-family:"Maven Pro", sans-serif;
+}
+.typ-josefin .ui-widget-header {
+  font-family:"Josefin Slab", serif;
+  padding:.4em .3em .3em;
+}
+.typ-josefin .fc-button-content {
+  font-family:"Josefin Slab", serif;
+  padding-top:.1em;
+}

@@ -1,0 +1,259 @@
+// $Id$
+
+Baha'i Incubator 7.x-1.x xxxx-xx-xx
+===================================
+fixed wonky calendar title mobile displays
+added 7 color schemes
+fixed export color scheme to work with spacing
+fixed placement errors in theme's preview pane
+fixed main menu items to have line height 1.1em
+added wireframing color scheme to theme
+added 9 typography selections
+fixed gallery thumbnail links should point to images
+added menu rebuild on install of incubator_social
+updated module versions
+added hybridauth library since it is not yet on the whitelist
+added settings page for incubator_social
+added first draft of incubator_social module
+added very basic css for tables
+added modules rules, entity, and hybridauth for social logins
+fixed warning about blocks assigned to non-existent region on install
+fixed errors when field_localities is not set on a loc node
+fixed maintenance mode warning on incubator_events install
+added option to show year on post submitted date
+fixed theme css for full-width menu bar and header
+fixed errors caused by private content module on modules page
+temporary fix for user 1 receiving editing mail for node 1
+by dnotes: added private content #1459236
+by dnotes: #1975664 fixed header image shown in preview even when set to none
+by dnotes: fixed editing workflow settings form cannot save settings
+by dnotes: fixed module uninstall pages breakage
+by dnotes: fixed erroneous menu items created on install of events module
+by dnotes: added private module to makefile
+
+
+Baha'i Incubator 7.x-1.0-beta16 2013-04-19
+==========================================
+by dnotes: fixed #1459228 and rewrote theme to accommodate theme settings
+by dnotes: updated module versions
+by dnotes: added proj4js module dependency
+by dnotes: fixed incubator_mapping to work with updated openlayers module
+by dnotes: fixed #1957146 improper display of unpublished localities
+by dnotes: added alpha sort localities unless they have been manually sorted
+by dnotes: fixed #1957166 show all localities on map
+by dnotes: updated openlayers map version
+by dnotes: setting uid for node 1 to avoid warnings
+by dnotes: #1898412 refactored all views with 3.0 api and separated mod logic
+by dnotes: fixed weird shrinking map icons on select
+by dnotes: fixed blue text in openlayers popups
+by dnotes: #1461816 refactored activities view and terms
+
+
+Baha'i Incubator 7.x-1.0-beta15 2013-03-18
+==========================================
+by dnotes: fixed css issue with main image on node forms
+by dnotes: added editing workflow and workbench integration
+by dnotes: added basic css for blockquotes and lists
+by dnotes: fixed image display on taxonomy term pages
+by dnotes: added option to transliterate page titles
+by dnotes: updated core to 7.21
+
+
+Baha'i Incubator 7.x-1.0-beta14 2013-03-04
+==========================================
+by dnotes: fixed positioning of messages block in default theme
+by dnotes: added Baha'i calendar
+by dnotes: fixed #1933430 home link has wrong colors
+by dnotes: fixed colorbox path and settings
+by dnotes: fixed #1832900 set defaults for promoted nodetypes
+by dnotes: #1819818 fixed circular redirects with redirect module patch
+by dnotes: fixed #1395710 allow headings in filtered html
+by dnotes: fixed #1919286 display announcements block when module enabled
+by dnotes: fixed #1899884 use 12-hour clock for dates
+by dnotes: fixed #1919266 hide submitted by for events
+by dnotes: fixed #1919290 arrow positioning on slideshow views
+updated module versions for five modules and colorbox plugin
+by dnotes: fixed css for new colorbox plugin
+by dnotes: fixed #1919276 don't require a location on all nodes
+by dnotes: fixed #1919276 location chooser enabled by default with incubator
+
+
+Baha'i Incubator 7.x-1.0-beta13 2013-01-23
+==========================================
+by dnotes: fixed #1882362 location rss feeds
+updated module and core versions
+
+
+Baha'i Incubator 7.x-1.0-beta12 2012-12-21
+==========================================
+by dnotes: updated module and core versions, removed galleryformatter
+
+
+Baha'i Incubator 7.x-1.0-beta11 2012-11-28
+==========================================
+by dnotes: fixed errors in header image uploads
+by dnotes: fixed user menu width on bartik theme
+by dnotes: fixed secondary menu sizes
+by dnotes: #1826370 change color for active-trail menu items
+by dnotes: changed homepage view to include only promoted items
+by dnotes: fixed error on gallery teaser display
+by dnotes: refactored theme and block enabling in install profile
+by dnotes: toward #1833892 clean up administration menu
+by dnotes: fixed gmap popup #1670092, openlayers cache #1447428, & tooltips
+by dnotes: fixed stying of map layer switcher
+by dnotes: fixed #1446118 event map views not displaying all repeating events
+by dnotes: toward #1833892, cleanup admin menu, added features admin form
+by dnotes: cleaned up incubator folder
+by dnotes: fixed feature admin page for #1833892
+by dnotes: disabled core blog module to avoid conflict with incubator blog
+by dnotes: fixed errors when installing facilites module for second time
+by dnotes: added admin for configuring front page; prereq for #1832900
+by dnotes: added admin options for promoting node types; toward #1832900
+by dnotes: added front page slideshow views
+by dnotes: added link to media images on large slideshow
+by dnotes: added responsive embedded videos
+by dnotes: fixed recent stories view
+by dnotes: added core activities slideshow
+by dnotes: reorganized admin menus and permissions; fixed problems of last try
+by dnotes: fixed menu items falling to second line on smaller screen widths
+by dnotes: added colorbox slideshow for galleries and removed galleryformatter
+by dnotes: updated all modules and drupal core
+by dnotes: fixed default install enabling too many modules
+by dnotes: fixed contextual links on view pages
+by dnotes: added default_dark theme for openlayers map
+by dnotes: updated openlayers map
+
+
+Baha'i Incubator 7.x-1.0-beta10 2012-10-19
+==========================================
+by dnotes: added incubator_standard theme
+by dnotes: hid login link on login and password reset pages
+by dnotes: added noggin module for header uploads
+by dnotes: added customization module for noggin
+by dnotes: updated core and modules
+by dnotes: fixed event info field rename to time and place
+by dnotes: fixed search block coding error - wrong delta
+by dnotes: fixed 24hr date field entry
+
+
+Baha'i Incubator 7.x-1.0-beta9 2012-09-07
+=========================================
+by dnotes: added ability to change image sizes
+by dnotes: #1741528 added video functionality
+by dnotes: added field export to array text
+by dnotes, djones1844: added basic tests for incubator functionality
+by dnotes: #1619668 notify site admins of new features with each release
+by dnotes: #1447286 notify site admins on account creation
+
+
+Baha'i Incubator 7.x-1.0-beta8 2012-08-28
+=========================================
+by dnotes: updated module versions
+by dnotes: #1708546 synchronized drush make files
+
+
+Baha'i Incubator 7.x-1.0-beta7 2012-08-01
+=========================================
+by dnotes: updated modules for 7.x-1.0-beta7 release
+by dnotes: added river of news for home page
+by dnotes: #1691648 added site-wide displays for gallery teasers
+by dnotes: security update for location module
+by dnotes: fixed node form for galleries
+by dnotes: #1703312 added image styles for gallery images
+by dnotes: #1703316 added title field for gallery images
+by dnotes: #1703318 added max file size for gallery images
+by dnotes: fixed permissions on gallery image uploads
+
+
+Baha'i Incubator 7.x-1.0-beta6 2012-07-27
+=========================================
+by dnotes: Updated module versions owing to security release
+
+
+Baha'i Incubator 7.x-1.0-beta5 2012-07-18
+=========================================
+by dnotes: fixed menu item lag for calendar and event list
+by dnotes: Fixed events admin page to use existing link titles when available
+by dnotes: #1672770 Fixed grouping on activities fields
+by djones1844: added image gallery functionality
+by dnotes: reorganized make files
+by dnotes: #1434466 fixed unwarranted taxonomy terms appearing
+by dnotes: #1171160 added basic website activity report
+by dnotes: #1459230 added calendar view of incubator events
+by dnotes: fixed delayed admin menu display - see #442560
+
+
+Baha'i Incubator 7.x-1.0-beta4 2012-02-29
+=========================================
+by dnotes: updated drupal-org.make file for beta4 release
+by dnotes: reorganized menus to new system
+by dnotes: #1452390 added option for news page title
+by dnotes: #1452572 removed location header and fixed image float clearance
+by dnotes: added permissions for editor and administrator
+by dnotes: #1394590 fixed locality terms being deleted
+by dnotes: #1450994 Added default home page
+by dnotes: fixed permissions on install
+by dnotes: #1441464 removed localities field to incubator_localities
+by dnotes: #1446142 removed dependencies on mapping modules
+by dnotes: added mollom and google_analytics to makefile
+by dnotes: #1441446 removed core activity functions to separate module.
+
+
+Baha'i Incubator 7.x-1.0-beta3 2012-02-16
+===================================
+by dnotes: added remove format button to wysiwyg setup
+by dnotes: #1441764 Wrong icons on map
+by dnotes: #1400736 Discourage editing taxonomy terms
+by dnotes: #1400732 Fix event node edit form and add nodeformcols auto-reset
+by dnotes: #1395702 Remove location header on node views
+by dnotes: #1394578 Administrator role does not have appropriate privileges
+by dnotes: #1395710 Allowed tags for Filtered HTML text format
+
+
+Baha'i Incubator 7.x-1.0-beta2 2011-12-27
+=========================================
+by dnotes: commit changelog for 7.x-1.0-beta2
+by dnotes: added robotstxt module
+by dnotes: fixed errors on mapping settings and moved to admin/config/incubator
+by dnotes: updated drupal-org.make file to d7.10, views 3.0, date-RC1, etc.
+by dnotes: added translation section in INSTALL.txt
+by dnotes: added login menu link
+by dnotes: fixed rss feeds (patched location georss feeds)
+by dnotes: changed field_event_date type to datestamp
+by dnotes: updated upcoming events path to events/upcoming
+by dnotes: updated block locations
+by dnotes: updated modules for .make file
+by dnotes: added js to unlink taxonomy term link for active page
+by dnotes: added localities links for news, blogs, events, communities views
+by dnotes: added activities views
+by dnotes: updated events and facilities views to group by day
+by dnotes: updated README.txt
+by dnotes: fixed block placement for main content
+by dnotes: updated location module to latest dev
+by dnotes: added date to drush make files
+by dnotes: added facility events view
+by dnotes: added incubator_icon image style
+by dnotes: fixed age for junior youth groups
+by dnotes: added transliteration of pathauto paths
+by dnotes: added views blocks for core activities
+by dnotes: fixed page visibility for upcoming events block
+by dnotes: fixed feed for event block
+by dnotes: fixed block placement system
+by dnotes: fixed redundant location display on locality nodes
+by dnotes: added views for localities
+by dnotes: added time display for upcoming events page view
+by dnotes: fixed date formats for event views
+by dnotes: fixed rss, urls and blocks on existing views
+by dnotes: fixed main image float on forms
+by dnotes: added admin settings with image float form.
+by dnotes: added media and wysiwyg support
+by dnotes: fixed default views for facilities and localities
+by dnotes: added css for wysiwyg editor
+by dnotes: updated todos
+by dnotes: added media-stripped summary field formatters
+
+
+Baha'i Incubator 7.x-1.0-beta1 2011-11-14
+=========================================
+by dnotes: converting to Drupal 7 and abandoning 6.x
+

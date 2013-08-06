@@ -1,0 +1,25 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ *
+ */
+
+function incubator_mapping_enable() {
+  variable_set('openlayers_source', drupal_get_path('module', 'incubator_mapping') . '/openlayers/OpenLayers.js');
+}
+
+/**
+ * Enable the new incubator_location module
+ */
+function incubator_mapping_update_7101() {
+  module_enable(array('incubator_location'));
+}
+
+/**
+ * Use the cached version of openlayers for maps
+ */
+function incubator_mapping_update_7102() {
+  variable_set('openlayers_source', drupal_get_path('module', 'incubator_mapping') . '/openlayers/OpenLayers.js');
+}

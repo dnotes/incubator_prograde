@@ -1,0 +1,63 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ *
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * The core functionality provided by Incubator News on install includes:
+ * <ul>
+ * <li>a Blog entry content type</li>
+ * <li>a role for Blogger</li>
+ * </ul>
+ */
+function incubator_blog_enable() {
+  $t = get_t();
+
+  $type = array(
+    'type' => 'blog',
+    'name' => $t('Blog entry'),
+    'description' => $t("Use a <em>Blog entry</em> for personal reflections on your life as a Bahá'í.")
+  );
+  // create Event content type
+  $pathauto_prefix = $t('blogs/!usertoken/', array('!usertoken' => '[node:author:name]'), array('#context' => 'Web search friendly URL - no special characters'));
+  if (_incubator_create_nodetype($type, $pathauto_prefix, 2, TRUE)) {
+    // attach field_main_image
+    _incubator_attach_field('field_main_image', 'blog');
+    // attach field_tags
+    _incubator_attach_field('field_tags', 'blog');
+    // attach field_activity_type
+    _incubator_attach_field('field_activity_type', 'blog');
+    // attach field_localities
+    _incubator_attach_field('field_localities', 'blog');
+    // set location
+    _incubator_set_location('blog', array('multiple' => array('min' => 0, 'max' => 1, 'add' => 1)));
+    variable_set('location_chooser_targets', array_merge(variable_get('location_chooser_targets', array()), array('blog')));
+    _incubator_nodeformcols('blog');
+    variable_set("pathauto_node_{$type['type']}_pattern", variable_get("pathauto_node_{$type['type']}_pattern", '') . '-10[node:nid]');
+  }
+  _incubator_create_role('blogger', 'blog');
+
+}
+
+function incubator_blog_disable() {
+  include_once drupal_get_path('module', 'incubator') . '/incubator.install';
+  _incubator_delete_nodetype('blog');
+  $role = user_role_load_by_name('reporter');
+  user_role_change_permissions($role->rid, array());
+}
+
+function incubator_blog_uninstall() {
+  user_role_delete('blogger');
+}
+
+/**
+ * Remove requirement for a location on blog nodes
+ */
+function incubator_blog_update_7101() {
+  _incubator_set_location('blog', array('multiple' => array('min' => 0, 'max' => 1, 'add' => 1)));
+}

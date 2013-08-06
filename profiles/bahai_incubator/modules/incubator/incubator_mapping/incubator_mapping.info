@@ -1,0 +1,18 @@
+; $Id$
+name = Mapping
+description = "Display your events, facilities, and localities on a map."
+package = *Incubator
+core = 7.x
+
+incubator_icon = icon.jpg
+
+dependencies[] = incubator_location
+
+stylesheets[all][] = css/incubator_map.css
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-1.0-beta17"
+core = "7.x"
+project = "bahai_incubator"
+datestamp = "1371685855"
+

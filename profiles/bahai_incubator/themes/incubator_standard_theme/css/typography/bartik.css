@@ -1,0 +1,104 @@
+/* Page elements */
+
+/* font-size for all text starts at 100%; */
+.typ-bartik {
+  font-family:Georgia,"Times New Roman",Times,serif;
+  line-height:1.5em;
+}
+.typ-bartik #section-header,
+.typ-bartik #section-footer {
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:85%;
+}
+
+.typ-bartik ul, 
+.typ-bartik ol {
+  line-height:1.2em;
+}
+
+.typ-bartik h1, 
+.typ-bartik h2, 
+.typ-bartik h3, 
+.typ-bartik h4,
+.typ-bartik h5, 
+.typ-bartik h6 {
+  font-family:Georgia, "Times New Roman", serif;
+  font-weight:normal;
+  margin-top:.8em;
+  margin-bottom:.8em;
+}
+
+.typ-bartik h1, .typ-bartik h2.site-name {font-size:132%;}
+.typ-bartik h2 {font-size:124%;}
+.typ-bartik h3 {font-size:116%;}
+.typ-bartik h4 {font-size:108%;}
+.typ-bartik h5 {font-size:104%;}
+.typ-bartik h6 {font-size:100%;}
+
+/* Lists */
+.typ-bartik ul {list-style:disc outside; margin-left:1.5em;}
+.typ-bartik ol {list-style:decimal outside; margin-left:1.5em;}
+
+/* Blockquote */
+.typ-bartik blockquote:before {content:'“';font-size:280%;margin-right:0.2em;float:left;font-family:Georgia, serif;}
+
+/* Branding */
+  
+  /* use this line for font size of the header group */
+  .typ-bartik hgroup.site-name-slogan {
+    line-height:1em;
+    font-size:90%;
+  }
+
+  .typ-bartik .site-name-slogan .site-name {
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight:normal;
+    font-size:100%;
+    margin-top:0;
+  }
+  .typ-bartik .site-name-slogan h6.site-slogan {
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight:normal;
+    font-style:italic;
+    font-size:100%;
+    margin-top:.2em;
+  }
+
+/* Blocks */
+  .typ-bartik h2.block-title {
+    font-family:Georgia,"Times New Roman",Times,serif;
+  }
+  .typ-bartik aside .block h2.block-title,
+  aside .block.typ-bartik h2.block-title,
+  .typ-bartik #zone-triptych .block h2.block-title,
+  #zone-triptych .block.typ-bartik h2.block-title,
+  #preview.typ-bartik #preview-triptych .block h2.block-title {
+    text-align:left;
+    padding:9px 2px 5px;
+    border-bottom:1px solid;
+  }
+  .typ-bartik aside .block,
+  aside .block.typ-bartik,
+  .typ-bartik #zone-triptych .block,
+  .typ-bartik #zone-triptych .block.typ-bartik {
+    font-size:85%;
+  }
+
+/* Menu */
+.typ-bartik #zone-menu {
+  font-weight:normal;
+}
+.typ-bartik #zone-menu ul.secondary-menu {
+  font-size:80%;
+}
+.typ-bartik #zone-menu ul.main-menu li a span {line-height:1.3em; max-height:2.6em;}
+.typ-bartik.menustyle-small #zone-menu ul.main-menu li a span {max-height:1.3em}
+.typ-bartik.menustyle-small #zone-menu ul.main-menu li a {max-width:20em;}
+.typ-bartik.menustyle-tiny #zone-menu ul.main-menu li a span {line-height:1.2em; max-height:1.2em;}
+.typ-bartik.menustyle-tiny #zone-menu ul.main-menu li a {height:1.2em; max-width:20em;}
+.typ-bartik.menustyle-tiny #zone-menu ul.main-menu li {height:1.4em;}
+
+/* Calendar events */
+.typ-bartik a.fc-event {
+  line-height:1.1em;
+}

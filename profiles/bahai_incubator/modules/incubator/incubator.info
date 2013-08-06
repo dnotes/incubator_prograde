@@ -1,0 +1,20 @@
+; $Id$
+name = *Core Incubator Functionality
+description = "Core functionality for a local Bahá'í community incubator website."
+package = *Incubator
+core = 7.x
+dependencies[] = taxonomy
+dependencies[] = image
+dependencies[] = file_entity
+
+stylesheets[all][] = files/incubator.css
+scripts[] = files/incubator.js
+
+files[] = tests/incubator.test
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-1.0-beta17"
+core = "7.x"
+project = "bahai_incubator"
+datestamp = "1371685855"
+

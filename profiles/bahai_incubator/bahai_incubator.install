@@ -1,0 +1,1020 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ */
+function bahai_incubator_install() {
+  // Enable themes and set default and administrative themes
+  theme_enable(array('seven', 'incubator_standard_theme'));
+  variable_set('theme_default', 'incubator_standard_theme');
+  variable_set('admin_theme', 'seven');
+  theme_disable(array('bartik'));
+  
+  // Add text formats.
+  $filtered_html_format = array(
+    'format' => 'filtered_html',
+    'name' => 'Filtered HTML',
+    'weight' => 0,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // HTML filter.
+      'filter_html' => array(
+        'weight' => 1,
+        'status' => 1,
+        'settings' => array(
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <br> <p> <hr> <h2> <h3> <h4> <h5> <h6>',
+          'filter_html_help' => 1,
+          'filter_html_nofollow' => 0,
+        ),
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 2,
+        'status' => 1,
+      ),
+      // Media filter
+      'media_filter' => array(
+        'weight' => 9,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  $filtered_html_format = (object) $filtered_html_format;
+  filter_format_save($filtered_html_format);
+
+  $full_html_format = array(
+    'format' => 'full_html',
+    'name' => 'Full HTML',
+    'weight' => 1,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      // Media filter
+      'media_filter' => array(
+        'weight' => 9,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  $full_html_format = (object) $full_html_format;
+  filter_format_save($full_html_format);
+
+  // WYSIWYG formats
+  if (module_exists('wysiwyg')) {
+    // WYSIWYG formats
+    $query = db_insert('wysiwyg')->fields(array('format', 'editor', 'settings'));
+    foreach (_bahai_incubator_wysiwyg_settings() as $format => $settings) {
+      $query->values(array('format' => $format, 'editor' => 'ckeditor', 'settings' => serialize($settings)));
+    }
+    $query->execute();
+  }
+
+  // Enable user picture support and set the default to a square thumbnail option.
+  variable_set('user_pictures', '1');
+  variable_set('user_picture_dimensions', '1024x1024');
+  variable_set('user_picture_file_size', '800');
+  variable_set('user_picture_style', 'thumbnail');
+
+  // Allow visitor account creation with administrative approval.
+  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
+
+  // Enable default permissions for system roles.
+  $filtered_html_permission = filter_permission_name($filtered_html_format);
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array(
+    'access content',
+    $filtered_html_permission,
+    'access user profiles',
+    'search content',
+    'use advanced search',
+  ));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array(
+    'access content',
+    $filtered_html_permission,
+    'access user profiles',
+    'change own username', 
+    'cancel account',
+    'search content',
+    'use advanced search',
+    'access overlay',
+    'access contextual links',
+    'add media from remote sources',
+    'view the administration theme',
+  ));
+
+  // Create a default role for site administrators, with all available permissions assigned.
+  $admin_role = new stdClass();
+  $admin_role->name = 'superadmin';
+  $admin_role->weight = 2;
+  user_role_save($admin_role);
+  user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
+  // Set this as the administrator role.
+  variable_set('user_admin_role', $admin_role->rid);
+
+  // Assign user 1 the "superadmin" role.
+  db_insert('users_roles')
+    ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
+    ->execute();
+
+  // create Administrator role
+  // create Editor role
+  foreach (array('administrator', 'editor') as $role) {
+    $$role = new stdClass();
+    $$role->name = $role;
+    $$role->weight = 2;
+    user_role_save($$role);
+  }
+  user_role_grant_permissions($editor->rid, array(
+    'administer nodes',
+    'bypass node access',
+    'access content overview',
+    'administer taxonomy',
+    'administer menu',
+    'edit media',
+    'use text format full_html',
+//    'edit file', # should be added when switching to file_entity 2.x
+    'administer blocks',
+  ));
+  if (module_exists('incubator_gallery')) {
+    user_role_grant_permissions($editor->rid, array('allow plupload'));
+  }
+  user_role_grant_permissions($administrator->rid, array(
+    'view admin alerts',
+    'access administration menu',
+    'flush caches',
+    'display drupal links',
+    'administer blocks',
+//    'administer files', # should be added when switching to file_entity 2.x
+//    'edit file', # should be added when switching to file_entity 2.x
+    'use text format full_html',
+    'administer menu',
+    'administer content types',
+    'administer realname',
+    'administer redirects',
+    'administer search',
+    'administer themes',
+    'access administration pages',
+    'access site in maintenance mode',
+    'access site reports',
+    'block IP addresses',
+    'administer taxonomy',
+    'administer permissions',
+    'administer users',
+    'access all views',
+    'administer incubator',
+  ));
+
+  variable_set('admin_alert_roles', array($admin_role->rid, $administrator->rid));
+  variable_set('admin_alert_alter_email', TRUE);
+  variable_set('admin_alert_replace_site_email', TRUE);
+  variable_set('admin_alert_exclude_user_1', TRUE);
+
+  // Create a footer menu
+  $menu = array(
+    'menu_name' => 'footer',
+    'title' => st('Footer menu'),
+    'description' => st('The <em>footer menu</em> generally contains legal and administrative links.'),
+  );
+  menu_save($menu);
+  
+  // Create a Home link in the footer menu.
+  $item = array(
+    'link_title' => st('Home'),
+    'link_path' => '<front>',
+    'menu_name' => 'footer',
+  );
+  menu_link_save($item);
+
+  // Create a Log in link in the user menu.
+  $item = array(
+    'link_title' => st('Log in'),
+    'link_path' => 'user/login',
+    'menu_name' => 'user-menu',
+  );
+  menu_link_save($item);
+
+  // Move "Add content" link to user-menu
+  db_update('menu_links')->condition('link_path', 'node/add')->fields(array('menu_name' => 'user-menu', 'plid' => '0', 'weight' => '-20'))->execute();
+
+  variable_set('menu_secondary_links_source', 'main-menu');
+
+  // Update the menu router information.
+  menu_rebuild();
+
+  variable_set('location_geocode_us', 'google');
+  variable_set('location_geocode_google_minimum_accuracy', '3');
+  variable_set('location_general_geocoders_in_use', array('google' => 'google'));
+
+  // Fix delayed display of admin menu - see http://drupal.org/node/442560
+  variable_set('admin_menu_cache_client', 0);
+
+  // Enable pathauto transliteration
+  variable_set('pathauto_transliterate', 1);
+
+  // TODO: Set default country from install profile
+  if (!variable_get('site_default_country', '')) {
+    variable_set('site_default_country', 'US');
+  }
+
+  // TODO: Set first day of week from install profile
+  if (!variable_get('date_first_day', 0)) {
+    variable_set('date_first_day', 0);
+  }
+
+  // TODO: Set default timezone from install profile
+
+  // Set user timezone choice to FALSE
+  variable_set('configurable_timezones', FALSE);
+
+  // Edit nodes using the administrative theme
+  variable_set('node_admin_theme', '1');
+
+  // Create home page content
+  $node = new stdClass;
+  $node->type = 'page';
+  node_object_prepare($node);
+  $node->title = st('Welcome');
+  $node->language = LANGUAGE_NONE;
+  $node->body[$node->language][0]['value'] = st('This site is under construction, and no home page content has yet been created.');
+  $node->body[$node->language][0]['format'] = 'filtered_html';
+  $node->path = array('alias' => 'home');
+  $node->uid = 1;
+  node_save($node);
+  $path = drupal_lookup_path('source', 'home');
+  variable_set('site_frontpage', $path);
+  
+  // Create a Home link in the main menu.
+  $item = array(
+    'link_title' => st('Home'),
+    'link_path' => '<front>',
+    'menu_name' => 'main-menu',
+  );
+  menu_link_save($item);
+
+  // Enable some standard blocks.
+  db_delete('block')->execute();
+  foreach (module_implements('incubator_default_blocks') as $module) {
+    _incubator_enable_blocks(call_user_func("{$module}_incubator_default_blocks"));
+  }
+  
+  variable_set('date_format_long', 'l, F j, Y - g:ia');
+  variable_set('date_format_medium', 'D, m/d/Y - g:ia');
+  variable_set('date_format_short', 'm/d/Y - g:ia');
+  
+  variable_set('update_check_frequency', '7');
+  variable_set('update_notification_threshold', 'security');
+  
+  variable_set('colorbox_path', 'profiles/bahai_incubator/libraries');
+  variable_set('colorbox_style', 'profiles/bahai_incubator/modules/incubator/files/colorbox1');
+  
+}
+
+function _bahai_incubator_wysiwyg_settings() {
+  return array(
+    'filtered_html' => array(
+      'default' => 1,
+      'user_choose' => 1,
+      'show_toggle' => 1,
+      'theme' => 'advanced',
+      'language' => 'en',
+      'buttons' => array(
+        'default' => array(
+          'Bold' => 1,
+          'Italic' => 1,
+          'Underline' => 1,
+          'Strike' => 1,
+          'BulletedList' => 1,
+          'NumberedList' => 1,
+          'Link' => 1,
+          'Unlink' => 1,
+          'Blockquote' => 1,
+          'HorizontalRule' => 1,
+          'ShowBlocks' => 1,
+          'RemoveFormat' => 1,
+          'Format' => 1,
+          'Find' => 1,
+          'Replace' => 1,
+          'Maximize' => 1,
+        ),
+        'drupal' => array(
+          'media' => 1,
+        ),
+      ),
+      'toolbar_loc' => 'top',
+      'toolbar_align' => 'left',
+      'path_loc' => 'bottom',
+      'resizing' => 0,
+      'verify_html' => 1,
+      'preformatted' => 0,
+      'convert_fonts_to_spans' => 1,
+      'remove_linebreaks' => 1,
+      'apply_source_formatting' => 0,
+      'paste_auto_cleanup_on_paste' => 1,
+      'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
+      'css_setting' => 'none',
+      'css_path' => '',
+      'css_classes' => '',
+    ),
+    'full_html' => array(
+      'default' => 1,
+      'user_choose' => 1,
+      'show_toggle' => 1,
+      'theme' => 'advanced',
+      'language' => 'en',
+      'buttons' => array(
+        'default' => array(
+          'Bold' => 1,
+          'Italic' => 1,
+          'Underline' => 1,
+          'Strike' => 1,
+          'JustifyLeft' => 1,
+          'JustifyCenter' => 1,
+          'JustifyRight' => 1,
+          'JustifyBlock' => 1,
+          'BulletedList' => 1,
+          'NumberedList' => 1,
+          'Link' => 1,
+          'Unlink' => 1,
+          'TextColor' => 1,
+          'BGColor' => 1,
+          'Blockquote' => 1,
+          'HorizontalRule' => 1,
+          'ShowBlocks' => 1,
+          'RemoveFormat' => 1,
+          'Format' => 1,
+          'Font' => 1,
+          'FontSize' => 1,
+          'Table' => 1,
+          'Find' => 1,
+          'Replace' => 1,
+          'Maximize' => 1,
+        ),
+        'drupal' => array(
+          'media' => 1,
+        ),
+      ),
+      'toolbar_loc' => 'top',
+      'toolbar_align' => 'left',
+      'path_loc' => 'bottom',
+      'resizing' => 0,
+      'verify_html' => 1,
+      'preformatted' => 0,
+      'convert_fonts_to_spans' => 1,
+      'remove_linebreaks' => 1,
+      'apply_source_formatting' => 0,
+      'paste_auto_cleanup_on_paste' => 1,
+      'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
+      'css_setting' => 'none',
+      'css_path' => '',
+      'css_classes' => '',
+    ),
+  );
+}
+
+function bahai_incubator_incubator_default_blocks($internal_ids = NULL) {
+  $blocks = array(
+    'system:main' => array(
+      'module' => 'system',
+      'delta' => 'main',
+      'region' => 'content',
+    ),
+    'system:main_admintheme' => array(
+      'module' => 'system',
+      'delta' => 'main',
+      'region' => 'content',
+      'theme' => variable_get('admin_theme', 'seven'),
+    ),
+    'views:recent_stories' => array(
+      'module' => 'views',
+      'delta' => 'recent_stories-block',
+      'region' => 'content',
+      'weight' => 1,
+      'visibility' => 1,
+      'pages' => '<front>',
+    ),
+    'menu:user' => array(
+      'module' => 'system',
+      'delta' => 'user-menu',
+      'region' => 'header',
+    ),
+    'menu:footer' => array(
+      'module' => 'menu',
+      'delta' => 'footer',
+      'region' => 'footer',
+    ),
+    'search:search' => array(
+      'module' => 'search',
+      'delta' => 'form',
+      'weight' => -50,
+    ),
+    'admin_alert:adminalerts' => array(
+      'module' => 'admin_alert',
+      'delta' => 'adminalerts',
+      'weight' => -50,
+    ),
+    'admin_alert:adminalerts_admintheme' => array(
+      'module' => 'admin_alert',
+      'delta' => 'adminalerts',
+      'region' => 'help',
+      'weight' => -50,
+      'theme' => variable_get('admin_theme', 'seven')
+    ),
+  );
+  if (!empty($internal_ids)) {
+    return array_intersect_key($blocks, array_fill_keys((array) $internal_ids, 1));
+  }
+  return $blocks;
+}
+
+/**
+ * When we add color selectors to an incubator theme, we need a helper function
+ * to regenerate the color module files for that theme, since color module does
+ * not have an API for this.
+ *
+ * @param <type> $theme
+ * The machine name of the theme for which to update colors
+ */
+function _bahai_incubator_refresh_theme_colors($theme) {
+  if (module_exists('color')) {
+    $info = color_get_info($theme);
+    $file_regex = preg_quote(drupal_basename($info['css'][0]), '/');
+    $ids = file_scan_directory('public://color', "/$file_regex/", array('recurse' => TRUE));
+    if (!empty($ids)) {
+      foreach ($ids as $uri => $fileinfo) {
+        if (stripos($uri, $theme)) {
+          $id = str_replace('public://color/', '', str_replace('/colors.css', '', $uri));
+        }
+      }
+      if (!empty($id)) {
+        $form_state['values']['theme'] = $theme;
+        $form_state['values']['info'] = $info;
+        $form_state['values']['palette'] = variable_get("color_{$theme}_palette", array());
+        color_scheme_form_submit(array(), $form_state);
+        drupal_flush_all_caches();
+      }
+    }
+  }
+}
+
+/**
+ * Add wysiwyg and media support
+ */
+function bahai_incubator_update_7101() {
+  $modules = array('wysiwyg', 'media_internet', 'media_youtube', 'media_vimeo');
+  module_enable($modules);
+  if (module_exists('wysiwyg')) {
+    // WYSIWYG formats
+    foreach (_bahai_incubator_wysiwyg_settings() as $format => $settings) {
+      $diff = '';
+      if ($old_settings = db_query("SELECT settings FROM {wysiwyg} WHERE format = ?", array($format))->fetchfield()) {
+        $old_settings = unserialize($old_settings);
+        $diff = array_diff($old_settings, $settings);
+        foreach ($old_settings['buttons'] as $k => $v) {
+          if ($diff_buttons = array_diff($v, $settings['buttons'][$k])) {
+            $diff['buttons'][$k] = $diff_buttons;
+          }
+        }
+      }
+      if (!empty($diff)) {
+        $message = t('Updated wysiwyg settings for %format format.<br/>Your additional settings were:<br/><pre>@settings</pre>', array('@settings' => drupal_var_export($diff)));
+      }
+      else {
+        $message = t('Updated wysiwyg format for %format format', array('%format' => $format));
+      }
+      $query = db_insert('wysiwyg')->fields(array('format', 'editor', 'settings'));
+      $query->values(array('format' => $format, 'editor' => 'ckeditor', 'settings' => serialize($settings)));
+      $query->execute();
+      drupal_set_message($message);
+    }
+  }
+  if (module_exists('media')) {
+    foreach (array('filtered_html', 'full_html') as $format_id) {
+      if ($filter = filter_format_load($format_id)) { // intentional assignment of $filter
+        foreach(filter_list_format($format_id) as $f) {
+          $filter->filters[$f->name] = (array) $f;
+        }
+        $filter->filters['media_filter'] = array('weight' => 9, 'status' => 1);
+        filter_format_save($filter);
+        drupal_set_message(t('Added media filter to %format format', array('%format' => $format_id)));
+      }
+    }
+  }
+}
+
+/**
+ * Create a Log in link in the user menu.
+ */
+function bahai_incubator_update_7102() {
+  $item = array(
+    'link_title' => t('Log in'),
+    'link_path' => 'user/login',
+    'menu_name' => 'user-menu',
+  );
+  menu_link_save($item);
+  menu_rebuild();
+}
+
+/**
+ * Add roles for administrators
+ */
+function bahai_incubator_update_7103() {
+  $administrator = user_role_load_by_name('administrator');
+  user_role_grant_permissions($administrator->rid, array(
+    'access administration menu', 'flush caches', 'display drupal links', 'administer blocks',
+    'view date repeats', 'administer files', 'edit file', 'administer filters',
+    'use text format full_html', 'administer image styles', 'administer languages', 'view location directory',
+    'view node location table', 'view user location table', 'administer menu', 'administer content types',
+    'administer realname', 'administer redirects', 'administer search', 'administer site configuration',
+    'administer themes', 'access administration pages', 'access site in maintenance mode', 'access site reports',
+    'block IP addresses', 'administer taxonomy', 'administer users', 'administer user locations',
+    'view all user locations', 'administer views', 'access all views',
+  ));
+}
+
+/**
+ * Enable the new core activities module
+ */
+function bahai_incubator_update_7104() {
+  $block = db_query("SELECT * FROM {block} WHERE delta = ? AND theme = ?", array('core_activities-block', 'bartik'))->fetchAssoc();
+  module_enable(array('incubator_core_activities'));
+  module_load_include('inc', 'system', 'system.admin');
+  $form = $form_state = array();
+  system_clear_cache_submit($form, $form_state);
+  if (!empty($block)) {
+    db_update('block')->fields($block)->condition('delta', 'core_activities-block')->condition('theme', 'bartik')->execute();
+  }
+}
+
+/**
+ * Add two permissions
+ */
+function bahai_incubator_update_7105() {
+  if ($editor = user_role_load_by_name('editor')) { // intentional assignment of $editor
+    user_role_grant_permissions($editor->rid, array('bypass node access'));
+  }
+  if (module_exists('media_internet')) {
+    user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('add media from remote sources'));
+  }
+}
+
+/**
+ * Add administrator and editor permissions
+ */
+function bahai_incubator_update_7106() {
+  if ($editor = user_role_load_by_name('editor')) { // intentional assignment
+    user_role_grant_permissions($editor->rid, array('administer media', 'access content overview'));
+  }
+  if ($admin = user_role_load_by_name('administrator')) { // intentional assignment
+    user_role_grant_permissions($admin->rid, array('administer permissions'));
+  }
+}
+
+/**
+ * Fix delayed display of admin menu
+ */
+function bahai_incubator_update_7107() {
+  variable_set('admin_menu_cache_client', 0);
+}
+
+/**
+ * Enable new gallery functionality
+ */
+function bahai_incubator_update_7108() {
+  module_enable(array('incubator_gallery'));
+  drupal_flush_all_caches();
+}
+
+/**
+ * Enable river of news block on home page
+ */
+function bahai_incubator_update_7109() {
+  $blocks = bahai_incubator_incubator_default_blocks();
+  $enable['views:recent_stories'] = $blocks['views:recent_stories'];
+  _incubator_enable_blocks($enable);
+}
+
+/**
+ * Revert file_entity module to version 1.2
+ */
+function bahai_incubator_update_7110() {
+  db_update('system')->condition('name', 'file_entity')->fields(array('schema_version' => '7100'))->execute();
+}
+
+/**
+ * Get rid of tables used in file_entity version 2, to prepare for future updates
+ */
+function bahai_incubator_update_7111() {
+  if (db_drop_table('image_dimensions')) {
+    drupal_set_message(t('File entity module has been reverted to a previous version.'));
+  }
+}
+
+/**
+ * Integrate admin alert into the incubaor
+ */
+function bahai_incubator_update_7112() {
+  module_enable(array('admin_alert'));
+  foreach (array('superadmin', 'administrator') as $role_name) {
+    if ($$role_name = user_role_load_by_name($role_name)) { // intentional assignment of $role
+      $roles[] = ${$role_name}->rid;
+      $perms = $role_name == 'superadmin' ? array('view admin alerts', 'administer admin alerts') : array('view admin alerts');
+      user_role_grant_permissions(${$role_name}->rid, $perms);
+    }
+  }
+  $blocks = array_intersect_key(bahai_incubator_incubator_default_blocks(), array('admin_alert:adminalerts' => 0, 'admin_alert:adminalerts_admintheme' => 0));
+  _incubator_enable_blocks($blocks);
+  menu_rebuild();
+  if (!empty($roles)) {
+    variable_set('admin_alert_roles', $roles);
+    variable_set('admin_alert_alter_email', TRUE);
+    variable_set('admin_alert_replace_site_email', TRUE);
+    variable_set('admin_alert_exclude_user_1', TRUE);
+    $t = get_t();
+    $t('Drupal updated', array(), array('context' => 'Page title'));
+    $t('Your Drupal installation has been updated. You may wish to check your site at @url and report any problems.');
+    global $base_url;
+    $t('Administrative alerts', array(), array('context' => 'Page title'));
+    $t('We recently added the admin_alert module to the Incubator.
+  From now on, when Drupal is updated, all site administrators will receive notices like this.
+  You may disable or configure this on the administration page at admin/config/administration/admin-alert.');
+    admin_alert(
+      'Drupal updated',
+      'Your Drupal installation has been updated.  You may wish to check your site at @url and report any problems.',
+      array('send' => TRUE, 'translate' => TRUE, 'replacements' => array('@url' => $base_url))
+    );
+    admin_alert(
+      'Administrative alerts',
+      'We recently added the admin_alert module to the Incubator.
+  From now on, when Drupal is updated, all site administrators will receive notices like this.
+  You may disable or configure this on the administration page at @url.',
+      array('translate' => TRUE, 'path' => 'admin/config/administration/admin-alert', 'replacements' => array('@url' => "$base_url/admin/config/administration/admin-alert"))
+    );
+  }
+}
+
+/**
+ * Inform administrators about new video functionality
+ */
+function bahai_incubator_update_7113() {
+  if (module_exists('admin_alert')) {
+    $t = get_t();
+    $t('New module: Video');
+    $t('We have recently added a module which will allow you to add video content from YouTube and Vimeo.
+    This may be useful if your community produces media, or if you want to share videos produced by others.
+    If you wish to use the module, you must first enable it from the "Modules" configuration page.');
+    admin_alert(
+      'New module: Video',
+      'We have recently added a module which will allow you to add video content from YouTube and Vimeo.
+    This may be useful if your community produces media, or if you want to share videos produced by others.
+    If you wish to use the module, you must first enable it from the "Modules" configuration page.',
+      array('translate' => TRUE)
+    );
+  }
+}
+
+/**
+ * prepare incubator for new themes
+ */
+function bahai_incubator_update_7114() {
+  $t = get_t();
+  variable_set('menu_secondary_links_source', 'main-menu');
+
+  $add_footer = 0;
+  if (!$menu = menu_load('footer')) {
+    // Create a footer menu
+    $menu = array(
+      'menu_name' => 'footer',
+      'title' => $t('Footer menu'),
+      'description' => $t('The <em>footer menu</em> generally contains legal and administrative links.'),
+    );
+    menu_save($menu);
+    // Create a Home link in the main menu.
+    $item = array(
+      'link_title' => $t('Home'),
+      'link_path' => '<front>',
+      'menu_name' => 'footer',
+    );
+    menu_link_save($item);
+    $add_footer = 'menu:footer';
+  }
+
+  $blocks = array('menu:user' => 1, $add_footer => 1, 'search:search' => 1,);
+  $blocks = array_intersect_key(bahai_incubator_incubator_default_blocks(), $blocks);
+  _incubator_enable_blocks($blocks);
+}
+
+/**
+ * Fix improper menu block warnings in PHP strict mode
+ */
+function bahai_incubator_update_7115() {
+  db_delete('block')->condition('module', 'menu')->condition('delta', 'user-menu')->execute();
+  if ($blocks = bahai_incubator_incubator_default_blocks('menu:user')) {
+    _incubator_enable_blocks($blocks);
+  }
+}
+
+/**
+ * Fix color scheme for incubator standard theme
+ */
+function bahai_incubator_update_7116() {
+  if ($palette = variable_get('color_incubator_standard_theme_palette', array())) {
+    foreach ($palette as $key => $value) {
+      unset($palette[$key]);
+      $palette[str_replace('_', '', $key)] = $value;
+    }
+    variable_set('color_incubator_standard_theme_palette', $palette);
+  }
+}
+
+/**
+ * Add colors for teasers and triptych on existing sites
+ */
+function bahai_incubator_update_7117() {
+  if ($palette = variable_get('color_incubator_standard_theme_palette', array())) {
+    foreach (array(
+      'teaserbg' => 'blockbg',
+      'teaserborder' => 'blockheaderbg',
+      'submittedbg' => 'blockheaderbg',
+      'submittedtext' => 'blockbg',
+    ) as $new => $existing) {
+      if (!isset($palette[$new])) {
+        $palette[$new] = $palette[$existing];
+      }
+    }
+    if (!isset($palette['triptychbg'])) {
+      $palette['triptychbg'] = '#ffffff';
+    }
+    variable_set('color_incubator_standard_theme_palette', $palette);
+    _bahai_incubator_refresh_theme_colors('incubator_standard_theme');
+  }
+}
+
+/**
+ * Enable header image uploads
+ */
+function bahai_incubator_update_7118() {
+  module_enable(array('noggin_incubator'));
+}
+
+/**
+ * Fix search block
+ */
+function bahai_incubator_update_7119() {
+  $searchforms = db_query('SELECT * FROM {block} WHERE module = ? AND delta = ?', array('search', 'search'))->fetchAllAssoc('bid');
+  if (!empty($searchforms)) {
+    foreach ($searchforms as $searchform) {
+      if ($bid = db_query('SELECT bid FROM {block} WHERE module = ? AND delta = ? AND theme = ?', array('search', 'form', $searchform->theme))->fetchField()) {
+        db_delete('block')->condition('bid', $bid)->execute();
+      }
+      db_update('block')->fields(array('delta' => 'form'))->condition('bid', $searchform->bid)->execute();
+    }
+  }
+}
+
+/**
+ * Update permissions
+ */
+function bahai_incubator_update_7120() {
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array(
+    'view the administration theme'
+  ));
+  if ($admin = user_role_load_by_name('administrator')) {
+    user_role_revoke_permissions($admin->rid, array(
+      'administer filters',
+      'administer image styles',
+      'administer languages',
+      'administer views',
+      'administer site configuration',
+    ));
+  }
+  if ($editor = user_role_load_by_name('editor')) {
+    user_role_revoke_permissions($editor->rid, array(
+      'administer image styles',
+      'administer media',
+    ));
+  }
+  if (module_exists('admin_alert')) {
+    $t = get_t();
+    global $base_url;
+    $options = array(
+      'type' => 'action',
+      'path' => 'admin/content',
+      'send' => TRUE,
+      'translate' => TRUE,
+      'replacements' => array(
+        '@url' => $base_url,
+      ),
+    );
+    $t('Updates completed on your Drupal site');
+    $t('Your Drupal site at @url has been updated. You may wish to check your site for any problems.
+    In particular, please note that we have changed the way content is promoted to the front page, so you will want to ensure that all the content on your front page is appropriate.
+    To do this, you may go to @url/admin/content and filter items by status "promoted".  You may then check any items that should not be on the home page, select "Demote selected content from the front page," and click the Update button.
+    This release of Local Community Website Incubator incorporates many significant improvements, including:
+    - restructured "Config" menu with common tasks first
+    - simplified "Modules" administration page
+    - resolved issues with mapping
+    - added slideshow views for recent stories and core activities
+    - changed the way articles get promoted on the front page
+    - responsive theme for mobile devices', $options['replacements']);
+    admin_alert(
+      'Updates completed on your Drupal site', 
+      'Your Drupal site at @url has been updated. You may wish to check your site for any problems.
+    In particular, please note that we have changed the way content is promoted to the front page, so you will want to ensure that all the content on your front page is appropriate.
+    To do this, you may go to @url/admin/content and filter items by status "promoted".  You may then check any items that should not be on the home page, select "Demote selected content from the front page," and click the Update button.
+    This release of Local Community Website Incubator incorporates many significant improvements, including:
+    - restructured "Config" menu with common tasks first
+    - simplified "Modules" administration page
+    - resolved issues with mapping
+    - added slideshow views for recent stories and core activities
+    - changed the way articles get promoted on the front page
+    - responsive theme for mobile devices', 
+      $options
+    );
+  }
+}
+
+/**
+ * use 12-hour date format and allow headings (h2, h3, etc.) in filtered html
+ */
+function bahai_incubator_update_7121() {
+  if (variable_get('date_format_long', 'l, F j, Y - H:i') == 'l, F j, Y - H:i') {
+    variable_set('date_format_long', 'l, F j, Y - g:ia');
+  }
+  if (variable_get('date_format_medium', 'D, m/d/Y - H:i') == 'D, m/d/Y - H:i') {
+    variable_set('date_format_medium', 'D, m/d/Y - g:ia');
+  }
+  if (variable_get('date_format_short', 'm/d/Y - H:i') == 'm/d/Y - H:i') {
+    variable_set('date_format_short', 'm/d/Y - g:ia');
+  }
+  if ($filter = filter_format_load('filtered_html')) { // intentional assignment of $filter
+    foreach(filter_list_format('filtered_html') as $f) {
+      if ($f->name == 'filter_html') {
+        foreach (array('<h2>', '<h3>', '<h4>', '<h5>', '<h6>') as $heading) {
+          if (stripos($f->settings['allowed_html'], $heading) === FALSE) {
+            $f->settings['allowed_html'] .= ' ' . $heading;
+          }
+        }
+      }
+      $filter->filters[$f->name] = (array) $f;
+    }
+    $filter->filters['media_filter'] = array('weight' => 9, 'status' => 1);
+    filter_format_save($filter);
+    drupal_set_message(t('Added media filter to %format format', array('%format' => $format_id)));
+  }
+}
+
+/**
+ * Fix colorbox settings
+ */
+function bahai_incubator_update_7122() {
+  variable_set('colorbox_style', 'profiles/bahai_incubator/modules/incubator/files/colorbox1');
+}
+
+/**
+ * Enable skinr_lite module for theme settings
+ */
+function bahai_incubator_update_7123() {
+  module_enable(array('skinr_lite', 'proj4js'));
+}
+
+/**
+ * Update theme settings for incubator_standard_theme, and switch from bartik 
+ * if necessary
+ */
+function bahai_incubator_update_7124() {
+  if ($palette_incubator = variable_get('color_incubator_standard_theme_palette')) {
+    if (empty($palette_incubator['triptychlinks'])) {
+      $palette_incubator['triptychlinks'] = $palette_incubator['blocklinks'];
+      variable_set('color_incubator_standard_theme_palette', $palette_incubator);
+      if ($theme_settings = variable_get('theme_incubator_standard_theme_settings', array())) {
+        $theme_settings['palette'] += $palette_incubator;
+      }
+    }
+  }
+  _bahai_incubator_refresh_theme_colors('incubator_standard_theme');
+  if (variable_get('theme_default', 'incubator_standard_theme') == 'bartik' && module_exists('skinr_lite')) {
+    theme_enable(array('seven', 'incubator_standard_theme'));
+    variable_set('theme_default', 'incubator_standard_theme');
+    variable_set('admin_theme', 'seven');
+    drupal_static_reset('skinr_implements_api');
+    $skin_settings = array(
+      'incubator_standard_theme_typography' => 'bartik',
+      'incubator_standard_theme_banner' => 'short',
+      'incubator_standard_theme_menustyle' => array(
+        'small',
+        'noshadow',
+        'bigroundrt',
+        'bigroundlt',
+      ),
+      'incubator_standard_theme_misc' => array(
+        'fullwidthheader',
+        'transparentheader',
+        'padblocks',
+        'extendedfooter',
+        'whitetriptych',
+      ),
+    );
+    if ($palette = variable_get('color_bartik_palette', FALSE)) {
+
+      // Get that darn transparent color
+      $color = str_replace('#', '', $palette['bottom']);
+      foreach (array('r' => 0, 'g' => 2, 'b' => 4) as $var => $offset) {
+        $$var = hexdec(substr($color, $offset, 2));
+        $$var = $$var + ((256 - $$var) * .8);
+        $$var = dechex($$var);
+      }
+      $newcolor = "#$r$g$b";
+
+      // Set up scheme translation
+      $scheme = array(
+        'text' => $palette['text'],
+        'links' => $palette['link'],
+        'headers' => $palette['text'],
+        'bgmain' => $palette['bottom'],
+        'bgtop' => $palette['top'],
+        'bgtext' => $palette['text'],
+        'bglinks' => $palette['link'],
+        'headerbg' => $palette['top'],
+        'headertext' => $palette['bg'],
+        'headerglow' => $palette['top'],
+        'menubg' => $newcolor,
+        'menutext' => $palette['text'],
+        'menuactivebg' => $palette['bg'],
+        'menuactivetext' => $palette['text'],
+        'blockheaderbg' => $palette['sidebar'],
+        'blockheadertext' => $palette['text'],
+        'blockbg' => $palette['sidebar'],
+        'blocktext' => $palette['text'],
+        'blocklinks' => $palette['link'],
+        'teaserbg' => $palette['bg'],
+        'teaserborder' => $palette['bg'],
+        'submittedbg' => $palette['sidebar'],
+        'submittedtext' => $palette['sidebar'],
+        'triptychbg' => $palette['footer'],
+        'triptychlinks' => $palette['link'],
+      );
+    }
+    else {
+      $scheme = 'bluelagoon';
+    }
+    skinr_lite_set_theme_skin_options('incubator_standard_theme', $skin_settings, $scheme);
+    if (module_exists('noggin_incubator') && 
+      theme_get_setting('header_image', 'bartik') == 'custom' && 
+      theme_get_setting('header_path', 'bartik')) {
+      
+      $bartik_settings = variable_get('theme_bartik_settings', array());
+      $incubator_settings = variable_get('theme_incubator_standard_theme_settings', array());
+      $nogginstuff = array(
+        'header_image' => TRUE,
+        'header_path' => TRUE,
+        'header_selector' => TRUE,
+        'header_horizontal_alignment' => TRUE,
+        'header_vertical_alignment' => TRUE,
+        'header_image_repeat' => TRUE,
+        'header_image_width' => TRUE,
+        'header_image_height' => TRUE,
+        'extra_attributes' => TRUE,
+        'header_image_width_wide' => TRUE,
+        'header_image_height_wide' => TRUE,
+        'header_image_width_normal' => TRUE,
+        'header_image_height_normal' => TRUE,
+        'header_image_width_narrow' => TRUE,
+        'header_image_height_narrow' => TRUE,
+        'header_image_width_mobile' => TRUE,
+        'header_image_height_mobile' => TRUE,
+      );
+      $form_state['values'] = array_intersect_key($bartik_settings, $nogginstuff);
+      $form_state['values']['header_selector'] = '#header-banner-image';
+      $form_state['values']['incubator_header_changed'] = 'all';
+      $form_state['values']['theme'] = 'incubator_standard_theme';
+      $incubator_settings = array_merge($incubator_settings, $form_state['values']);
+      variable_set('theme_incubator_standard_theme_settings', $incubator_settings);
+      
+      noggin_incubator_theme_settings_submit(array(), $form_state);
+        
+    }
+  }
+}

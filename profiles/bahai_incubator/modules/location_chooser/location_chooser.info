@@ -1,0 +1,15 @@
+; $Id$
+name = Location Chooser
+description = Allows a choice of locations based on node or user locations
+package = Location
+dependencies[] = location
+dependencies[] = location_node
+core = 7.x
+files[] = location_chooser.test
+
+; Information added by drupal.org packaging script on 2013-03-18
+version = "7.x-1.2"
+core = "7.x"
+project = "location_chooser"
+datestamp = "1363573506"
+

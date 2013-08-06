@@ -1,0 +1,21 @@
+/* $Id$ */
+
+.view-localities table {width:100%;padding:9px 0;}
+
+.view-localities tr {
+  background:transparent;
+}
+
+.view-localities td {width:33%;padding:9px 12px;}
+
+.view-localities.view-display-id-page .views-field-name {font-size:130%;}
+
+.view-localities td span.local-links-localities {margin-left:.25em;}
+
+.block .view-localities .local-links-localities:before { content: " - "; }
+
+.block .view-localities .views-field-name .local-links-localities { font-size:80%; }
+
+/* mobile page - default to no display */
+.view-localities .view-display-id-attachment_1 {display:none;}
+.view-localities .view-display-id-attachment_1 .views-field-name {padding:6px 8px;}

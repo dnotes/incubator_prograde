@@ -1,0 +1,417 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ *
+ */
+
+function incubator_events_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
+function incubator_events_ctools_plugin_api($module, $api) {
+  if ($module == "openlayers") {
+    switch ($api) {
+      case 'openlayers_maps':
+        return array('version' => 1);
+
+      case 'openlayers_layers':
+        return array('version' => 1);
+
+      case 'openlayers_styles':
+        return array('version' => 1);
+
+    }
+  }
+}
+
+function incubator_events_init() {
+  if (variable_get('incubator_events_rebuild_menus', FALSE) && !defined('MAINTENANCE_MODE')) {
+    foreach (array('events/calendar', 'events/upcoming') as $path) {
+      if ($link = db_query('SELECT * FROM {menu_links} WHERE link_path = :path', array(':path' => $path))->fetchAssoc()) {
+        $var_name = ($path == 'events/calendar') ? 'list' : 'calendar';
+        $link['hidden'] = (variable_get('incubator_events_views_choice', 'calendar') == $var_name) ? 1 : 0;
+        $link['customized'] = 1;
+        $link['options'] = unserialize($link['options']);
+        menu_link_save($link);
+      }
+    }
+    variable_del('incubator_events_rebuild_menus');
+    _incubator_events_create_activity_group_submenu();
+  }
+}
+
+function incubator_events_openlayers_map_preprocess_alter(&$map) {
+  if (!empty($map['map_name']) && $map['map_name'] == 'incubator_main') {
+    if (module_exists('incubator_core_activities')) {
+      $maparray = array(
+        'map_events_openlayers_6' => 'events',
+        'map_events_openlayers_5' => 'study_circles',
+        'map_events_openlayers_4' => 'junior_youth_groups',
+        'map_events_openlayers_3' => 'childrens_classes',
+        'map_events_openlayers_2' => 'devotional_gatherings',
+      );
+    }
+    else {
+      $maparray = array('map_events_openlayers_1' => 'events');
+    }
+    foreach ($maparray as $layer => $style) {
+      $map['behaviors']['openlayers_behavior_popup']['layers'][$layer] = $layer;
+      $map['layers'][$layer] = $layer;
+      $map['layer_weight'][$layer] = str_replace('map_events_openlayers_', '', $layer);
+      $map['layer_styles'][$layer] = $style;
+      $map['layer_styles_select'][$layer] = $style;
+      $map['layer_activated'][$layer] = $layer;
+      $map['layer_switcher'][$layer] = $layer;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function incubator_events_preprocess_page(&$vars) {
+  if (arg() == array('taxonomy', 'term', arg(2))) {
+    // We only want to alter the pages for activity_group terms.
+    $term = taxonomy_term_load(arg(2));
+    if ($term->vocabulary_machine_name == 'activity_group') {
+      // We need to alter the system_main section, but that could be nested
+      // deep within $vars['page']['content'].
+      if (!_incubator_events_hijack_term_page($vars['page'])) {
+        // What to do if it didn't work?
+      }
+    }
+  }
+}
+
+/**
+ * Recursive helper function for finding the system_main element nested in a 
+ * renderable array and replacing the default contents with a view of upcoming
+ * events.
+ * 
+ * @param array $vars
+ * A renderable array.
+ * 
+ * @return boolean
+ * Whether or not the system_main element was eventually found and successfully
+ * altered by switching its default contents with the upcoming_events view.
+ */
+function _incubator_events_hijack_term_page(&$vars) {
+  if (!empty($vars['system_main'])) {
+    if ($view = views_get_view('upcoming_events')) { // intentional assignment of $view
+      unset($vars['system_main']['nodes']);
+      // remove pager
+      unset($vars['system_main']['pager']);
+      // remove taxonomy default empty content
+      unset($vars['system_main']['no_content']);
+      // set views argument to current term
+      $view->args[0] = $tid = arg(2);
+      $view->display['page']->display_options['arguments']['term_node_tid_depth']['title'] = '%1';
+      $view->display['page']->display_options['empty']['area']['content'] = t('There are no upcoming events marked as "%1".');
+      if (user_access('administer incubator')) {
+        $view->display['page']->display_options['empty']['area']['content'] .=
+          '<div class="incubator-info"><p>' . t('This page becomes useful only after you' .
+' <a href="/node/add/event">create events</a> that are tagged with the term "%1".') .
+'</p><p>' . 
+t(' While it is normal for event listings to be blank occasionally, it is best to' .
+' avoid having constantly blank pages. Therefore, if your community has very few' .
+' events, you should consider turning these listings off at !eventslink. You can' .
+' also manage these terms at !taxonomylink and delete any that you never use.',
+            array(
+              '!eventslink' => l('Configuration > Events', 'admin/config/events-settings'),
+              '!taxonomylink' => l('Structure > Taxonomy > Activity Group', 'admin/structure/taxonomy/activity_group'),
+            )
+          ) . 
+          '</p></div>';
+      }
+      // set page display of view
+      $vars['system_main']['view']['#markup'] = $view->execute_display('page');
+      // free memory
+      $view->destroy();
+      return TRUE;
+    }
+    return FALSE;
+  }
+  elseif (!empty($vars['content'])) {
+    return _incubator_events_hijack_term_page($vars['content']);
+  }
+}
+
+//function incubator_events_modules_enabled($modules) {
+//  // TODO: setup location_chooser on enabled incubator_localities, incubator_facilities
+//}
+
+// TODO: add javascript to hide all the dates on node displays
+
+// TODO: add javascript to populate event date field from event info field
+
+// TODO: make an easy date repeat selector
+
+function incubator_events_openlayers_styles() {
+  $t = get_t();
+  $items = array();
+
+// Children's Classes
+  $openlayers_styles = new stdClass;
+  $openlayers_styles->disabled = FALSE; /* Edit this to true to make a default openlayers_styles disabled initially */
+  $openlayers_styles->api_version = 1;
+  $openlayers_styles->name = 'childrens_classes';
+  $openlayers_styles->title = $t('Children\'s Classes');
+  $openlayers_styles->description = $t('Children\'s Classes');
+  $openlayers_styles->data = array(
+    'externalGraphic' => drupal_get_path('module', 'incubator_mapping') . '/gmap-markers/activities/cc.png',
+    'pointRadius' => variable_get('incubator_events_marker_size', 12),
+    'fillColor' => '#FFCC66',
+    'strokeColor' => '#FF9933',
+    'strokeWidth' => 4,
+    'fillOpacity' => 0.5,
+    'strokeOpacity' => 1,
+    'strokeLinecap' => 'round',
+    'strokeDashstyle' => 'solid',
+    'graphicOpacity' => 1,
+    'graphicXOffset' => -(variable_get('incubator_events_marker_size', 12) * 2),
+    'graphicYOffset' => -(variable_get('incubator_events_marker_size', 12) * 2),
+    'labelAlign' => 'cm',
+    'labelXOffset' => '0',
+    'labelYOffset' => '0',
+  );
+  $items["childrens_classes"] = $openlayers_styles;
+
+// Devotional Gatherings
+  $openlayers_styles = new stdClass;
+  $openlayers_styles->disabled = FALSE; /* Edit this to true to make a default openlayers_styles disabled initially */
+  $openlayers_styles->api_version = 1;
+  $openlayers_styles->name = 'devotional_gatherings';
+  $openlayers_styles->title = $t('Devotional Gatherings');
+  $openlayers_styles->description = $t('Devotional Gatherings');
+  $openlayers_styles->data = array(
+    'externalGraphic' => drupal_get_path('module', 'incubator_mapping') . '/gmap-markers/activities/dg.png',
+    'pointRadius' => variable_get('incubator_events_marker_size', 12),
+    'fillColor' => '#FFCC66',
+    'strokeColor' => '#FF9933',
+    'strokeWidth' => 4,
+    'fillOpacity' => 0.5,
+    'strokeOpacity' => 1,
+    'strokeLinecap' => 'round',
+    'strokeDashstyle' => 'solid',
+    'graphicOpacity' => 1,
+    'graphicXOffset' => 0,
+    'graphicYOffset' => 0,
+    'labelAlign' => 'cm',
+  );
+  $items["devotional_gatherings"] = $openlayers_styles;
+
+// Junior Youth Group
+  $openlayers_styles = new stdClass;
+  $openlayers_styles->disabled = FALSE; /* Edit this to true to make a default openlayers_styles disabled initially */
+  $openlayers_styles->api_version = 1;
+  $openlayers_styles->name = 'junior_youth_groups';
+  $openlayers_styles->title = $t('Junior Youth Groups');
+  $openlayers_styles->description = $t('Junior Youth Groups');
+  $openlayers_styles->data = array(
+    'externalGraphic' => drupal_get_path('module', 'incubator_mapping') . '/gmap-markers/activities/jyg.png',
+    'pointRadius' => variable_get('incubator_events_marker_size', 12),
+    'fillColor' => '#FFCC66',
+    'strokeColor' => '#FF9933',
+    'strokeWidth' => 4,
+    'fillOpacity' => 0.5,
+    'strokeOpacity' => 1,
+    'strokeLinecap' => 'round',
+    'strokeDashstyle' => 'solid',
+    'graphicOpacity' => 1,
+    'graphicXOffset' => 0,
+    'graphicYOffset' => -(variable_get('incubator_events_marker_size', 12) * 2),
+    'labelAlign' => 'cm',
+  );
+  $items["junior_youth_groups"] = $openlayers_styles;
+
+// Study Circles
+  $openlayers_styles = new stdClass;
+  $openlayers_styles->disabled = FALSE; /* Edit this to true to make a default openlayers_styles disabled initially */
+  $openlayers_styles->api_version = 1;
+  $openlayers_styles->name = 'study_circles';
+  $openlayers_styles->title = $t('Study Circles');
+  $openlayers_styles->description = $t('Study Circles');
+  $openlayers_styles->data = array(
+    'externalGraphic' => drupal_get_path('module', 'incubator_mapping') . '/gmap-markers/activities/sc.png',
+    'pointRadius' => variable_get('incubator_events_marker_size', 12),
+    'fillColor' => '#FFCC66',
+    'strokeColor' => '#FF9933',
+    'strokeWidth' => 4,
+    'fillOpacity' => 0.5,
+    'strokeOpacity' => 1,
+    'strokeLinecap' => 'round',
+    'strokeDashstyle' => 'solid',
+    'graphicOpacity' => 1,
+    'graphicXOffset' => -(variable_get('incubator_events_marker_size', 12) * 2),
+    'graphicYOffset' => 0,
+    'labelAlign' => 'cm',
+  );
+  $items["study_circles"] = $openlayers_styles;
+
+// Other Events
+  $openlayers_styles = new stdClass;
+  $openlayers_styles->disabled = FALSE; /* Edit this to true to make a default openlayers_styles disabled initially */
+  $openlayers_styles->api_version = 1;
+  $openlayers_styles->name = 'events';
+  $openlayers_styles->title = $t('Other Events');
+  $openlayers_styles->description = $t('Other Events');
+  $openlayers_styles->data = array(
+    'externalGraphic' => drupal_get_path('module', 'incubator_mapping') . '/gmap-markers/lblue.png',
+    'pointRadius' => 16,
+    'fillColor' => '#FFCC66',
+    'strokeColor' => '#FF9933',
+    'strokeWidth' => 4,
+    'fillOpacity' => 0.5,
+    'strokeOpacity' => 1,
+    'strokeLinecap' => 'round',
+    'strokeDashstyle' => 'solid',
+    'graphicWidth' => 20,
+    'graphicHeight' => 34,
+    'graphicOpacity' => 1,
+    'graphicXOffset' => -10,
+    'graphicYOffset' => -34,
+    'labelAlign' => 'cm',
+    'labelXOffset' => '0',
+    'labelYOffset' => '0',
+  );
+  $items["events"] = $openlayers_styles;
+
+  return $items;
+
+}
+
+/**
+ * Implements hook_fullcalendar_api().
+ * 
+ * This function is necessary for display of Baha'i Holy Days.
+ */
+function incubator_events_fullcalendar_api() {
+  if (module_exists('fullcalendar')) {
+    return array(
+      'api' => fullcalendar_api_version(),
+    );
+  }
+}
+
+/**
+ * Implements hook_fullcalendar_options_info().
+ * 
+ * This function adds a fullcalendar javascript plugin for proper display of 
+ * Baha'i Holy Days.
+ */
+function incubator_events_fullcalendar_options_info() {
+  return array(
+    'incubator_events' => array(
+      'js' => TRUE,
+      'no_fieldset' => TRUE,
+      'weight' => 5
+    ),
+  );
+}
+
+/**
+ * Helper function for getting all terms in the activity_group taxonomy.
+ * 
+ * @return array
+ * An array of stub terms from the activity_group taxonomy keyed by tid.
+ */
+function _incubator_events_get_activities_terms() {
+  $data = drupal_static(__FUNCTION__);
+  if (!isset($data)) {
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'taxonomy_term');
+    $query->entityCondition('bundle', 'activity_group');
+    $query->propertyOrderBy('weight');
+    $query->propertyOrderBy('name');
+    $result = $query->execute();
+    $data = $result['taxonomy_term'];
+  }
+  return $data;
+}
+
+/**
+ * Helper function to create activity group items beneath calendar.
+ */
+function _incubator_events_create_activity_group_submenu($term = NULL, $op = 'create') {
+  if (is_null($term)) {
+    $terms = _incubator_events_get_activities_terms();
+    $terms = entity_load('taxonomy_term', array_keys($terms));
+  }
+  elseif (is_object($term)) {
+    $terms[$term->tid] = $term;
+  }
+  else {
+    return FALSE;
+  }
+  
+  if (variable_get('incubator_events_add_groups_submenu', TRUE) && $op != 'delete') {
+    $choice = variable_get('incubator_events_views_choice', 'calendar') == 'calendar' ? 'calendar' : 'upcoming';
+    $parent = _incubator_events_get_menu_parent();
+    $weight = 0;
+    foreach ($terms as $tid => $term) {
+      $link = db_query('SELECT * FROM {menu_links} WHERE link_path = ?', array("taxonomy/term/$tid"))->fetchAssoc(); // intentional assignment of $link
+      $link['link_path'] = drupal_get_normal_path("taxonomy/term/$tid");
+      $link['link_title'] = $term->name;
+      $link['menu_name'] = 'main-menu';
+      $link['weight'] = $term->weight;
+      $link['plid'] = $parent['mlid'];
+      $link['options'] = !empty($link['options']) ? unserialize($link['options']) : array();
+      menu_link_save($link);
+    }
+  }
+  else {
+    foreach ($terms as $tid => $term) {
+      if ($link = db_query('SELECT * FROM {menu_links} WHERE link_path = ?', array("taxonomy/term/$tid"))->fetchAssoc()) { // intentional assignment of $link
+        menu_link_delete($link['mlid']);
+      }
+    }
+  }
+}
+
+/**
+ * Helper function to get the menu item, in the main menu, of the events view
+ * chosen as the main one.  If "both" events views are selected, returns the
+ * link corresponding to the upcoming events view.
+ * 
+ * @return array
+ * A menu_link array from the menu_links table.
+ */
+function _incubator_events_get_menu_parent() {
+  $path = variable_get('incubator_events_views_choice', 'calendar') == 'calendar' ? 'events/calendar' : 'events/upcoming';
+  $parent = db_query('SELECT * FROM {menu_links} WHERE link_path = ? AND menu_name = ?', array($path, 'main-menu'))->fetchAssoc();
+  return $parent;
+}
+
+/**
+ * Implements hook_taxonomy_term_insert() to add menu items if needed.
+ */
+function incubator_events_taxonomy_term_insert($term) {
+  if ($term->vocabulary_machine_name == 'activity_group') {
+    _incubator_events_create_activity_group_submenu($term);
+    _incubator_redirect("events/upcoming/$term->tid", "taxonomy/term/$term->tid");
+  }
+}
+
+/**
+ * Implements hook_taxonomy_term_update() to update menu items if needed.
+ */
+function incubator_events_taxonomy_term_update($term) {
+  if ($term->vocabulary_machine_name == 'activity_group') {
+    _incubator_events_create_activity_group_submenu($term);
+  }
+}
+
+/**
+ * Implements hook_taxonomy_term_delete() to delete redirects if needed.
+ */
+function incubator_events_taxonomy_term_delete($term) {
+  if ($term->vocabulary_machine_name == 'activity_group') {
+    if (module_exists('redirect')) {
+      redirect_delete_by_path("events/upcoming/$term->tid");
+    }
+  }
+}

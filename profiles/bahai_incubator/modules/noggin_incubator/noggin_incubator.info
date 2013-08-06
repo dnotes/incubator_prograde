@@ -1,0 +1,12 @@
+; $Id$
+name = Noggin Incubator
+description = Adapts Noggin module for the Incubator
+core = 7.x
+dependencies[] = noggin
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-1.0-beta17"
+core = "7.x"
+project = "bahai_incubator"
+datestamp = "1371685855"
+

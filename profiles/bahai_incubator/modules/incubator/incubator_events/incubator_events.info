@@ -1,0 +1,29 @@
+; $Id$
+name = Events / Calendar
+description = "Post events that are integrated into all areas of the site."
+package = *Incubator
+core = 7.x
+
+incubator_weight = -10
+incubator_nodetype = event
+incubator_icon = icon.jpg
+
+
+dependencies[] = incubator
+dependencies[] = incubator_location
+dependencies[] = date_repeat
+dependencies[] = date_repeat_field
+dependencies[] = views_date_format_sql
+;dependencies[] = date_repeat_instance
+dependencies[] = date_popup
+dependencies[] = date_views
+dependencies[] = fullcalendar
+
+stylesheets[all][] = css/incubator_events.css
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-1.0-beta17"
+core = "7.x"
+project = "bahai_incubator"
+datestamp = "1371685855"
+

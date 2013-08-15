@@ -1,5 +1,5 @@
-name = 'bahai'
-description = ''
+name = 'Prograde'
+description = 'A clean and easily configured theme for the Incubator'
 core = '7.x'
 engine = 'phptemplate'
 screenshot = 'screenshot.png'

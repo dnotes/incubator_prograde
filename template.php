@@ -11,13 +11,13 @@
  * for more information on this topic.
  */
 
-//function bahai_alpha_preprocess_block(&$vars) {
+//function incubator_prograde_alpha_preprocess_block(&$vars) {
 //  if (in_array($vars['block']->region, array('header', 'menu', 'header_second', 'branding', 'footer'))) {
 //    $vars['title_attributes_array']['class'][] = 'element-invisible';
 //  }
 //}
 
-function bahai_alpha_process_region(&$vars) {
+function incubator_prograde_alpha_process_region(&$vars) {
   if ($vars['elements']['#region'] == 'content') {
     $theme = alpha_get_theme();
     $vars['main_menu'] = $theme->page['main_menu'];
@@ -25,7 +25,7 @@ function bahai_alpha_process_region(&$vars) {
   }
 }
 
-function bahai_alpha_process_zone(&$vars) {
+function incubator_prograde_alpha_process_zone(&$vars) {
   if ($vars['elements']['#zone'] == 'content') {
     $theme = alpha_get_theme();
     $vars['tabs'] = $theme->page['tabs'];
@@ -36,13 +36,13 @@ function bahai_alpha_process_zone(&$vars) {
   }
 }
 
-function bahai_alpha_process_html(&$vars) {
+function incubator_prograde_alpha_process_html(&$vars) {
   if (module_exists('color')) {
     _color_html_alter($vars);
   }
 }
 
-function bahai_alpha_process_page(&$vars) {
+function incubator_prograde_alpha_process_page(&$vars) {
   if (module_exists('color')) {
     _color_page_alter($vars);
   }
@@ -52,14 +52,14 @@ function bahai_alpha_process_page(&$vars) {
   }
 }
 
-function bahai_alpha_preprocess_node(&$vars) {
+function incubator_prograde_alpha_preprocess_node(&$vars) {
   $vars['submitted_day'] = format_date($vars['created'], 'custom', 'j');
   $vars['submitted_month'] = format_date($vars['created'], 'custom', 'M');
   $vars['submitted_year'] = format_date($vars['created'], 'custom', 'Y');
 }
 
-//function bahai_form_system_theme_settings_alter(&$form, &$form_state) {
-//  if ($form['var']['#value'] == 'theme_bahai_settings') {
+//function incubator_prograde_form_system_theme_settings_alter(&$form, &$form_state) {
+//  if ($form['var']['#value'] == 'theme_incubator_prograde_settings') {
 //    $theme_settings = variable_get($form['var']['#value'], array());
 //    if (!empty($theme_settings['header_image']) && !empty($theme_settings['header_path'])) {
 //      $ext = preg_replace('/^[^\.]+\./', '', $theme_settings['header_path']);
@@ -75,7 +75,7 @@ function bahai_alpha_preprocess_node(&$vars) {
 //      '#default_value' => FALSE,
 //      '#weight' => 50,
 //    );
-//    $form['bahai_alpha_settings'] = array(
+//    $form['incubator_prograde_alpha_settings'] = array(
 //      '#type' => 'container',
 //      '#weight' => 50,
 //      '#states' => array(
@@ -84,7 +84,7 @@ function bahai_alpha_preprocess_node(&$vars) {
 //        ),
 //      ),
 //    );
-//    $form['bahai_alpha_settings']['alpha_settings'] = $form['alpha_settings'];
+//    $form['incubator_prograde_alpha_settings']['alpha_settings'] = $form['alpha_settings'];
 //    unset($form['alpha_settings']);
 //  }
 //}

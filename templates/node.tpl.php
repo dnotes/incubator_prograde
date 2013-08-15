@@ -8,7 +8,7 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($user_picture || $display_submitted): ?>
-    <div class="bahai-user-submitted">
+    <div class="incubator-user-submitted">
       <?php print $user_picture; ?>
       <?php if ($display_submitted): ?>
         <footer class="submitted">

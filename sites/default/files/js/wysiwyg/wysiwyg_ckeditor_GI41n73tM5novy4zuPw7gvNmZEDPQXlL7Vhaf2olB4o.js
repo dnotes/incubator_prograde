@@ -1,1 +1,0 @@
-window.CKEDITOR_BASEPATH = '/profiles/bahai_incubator/libraries/ckeditor/';

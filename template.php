@@ -58,33 +58,33 @@ function incubator_prograde_alpha_preprocess_node(&$vars) {
   $vars['submitted_year'] = format_date($vars['created'], 'custom', 'Y');
 }
 
-//function incubator_prograde_form_system_theme_settings_alter(&$form, &$form_state) {
-//  if ($form['var']['#value'] == 'theme_incubator_prograde_settings') {
-//    $theme_settings = variable_get($form['var']['#value'], array());
-//    if (!empty($theme_settings['header_image']) && !empty($theme_settings['header_path'])) {
-//      $ext = preg_replace('/^[^\.]+\./', '', $theme_settings['header_path']);
-//      $path = file_create_url("public://header/header-mobile.$ext");
-//      $form['incubator_preview_image'] = array(
-//        '#type' => 'markup',
-//        '#markup' => '<style> #preview-header { background-image:url(' . $path . ') !important; } </style>',
-//      );
-//    }
-//    $form['show_alpha_settings'] = array(
-//      '#type' => 'checkbox',
-//      '#title' => t('Show advanced layout settings'),
-//      '#default_value' => FALSE,
-//      '#weight' => 50,
-//    );
-//    $form['incubator_prograde_alpha_settings'] = array(
-//      '#type' => 'container',
-//      '#weight' => 50,
-//      '#states' => array(
-//        'invisible' => array(
-//          ':input[name="show_alpha_settings"]' => array('checked' => FALSE),
-//        ),
-//      ),
-//    );
-//    $form['incubator_prograde_alpha_settings']['alpha_settings'] = $form['alpha_settings'];
-//    unset($form['alpha_settings']);
-//  }
-//}
+function incubator_prograde_form_system_theme_settings_alter(&$form, &$form_state) {
+  if ($form['var']['#value'] == 'theme_incubator_prograde_settings') {
+    $theme_settings = variable_get($form['var']['#value'], array());
+    if (!empty($theme_settings['header_image']) && !empty($theme_settings['header_path'])) {
+      $ext = preg_replace('/^[^\.]+\./', '', $theme_settings['header_path']);
+      $path = file_create_url("public://header/header-mobile.$ext");
+      $form['incubator_preview_image'] = array(
+        '#type' => 'markup',
+        '#markup' => '<style> #preview-header { background-image:url(' . $path . ') !important; } </style>',
+      );
+    }
+    $form['show_alpha_settings'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Show advanced layout settings'),
+      '#default_value' => FALSE,
+      '#weight' => 50,
+    );
+    $form['incubator_prograde_alpha_settings'] = array(
+      '#type' => 'container',
+      '#weight' => 50,
+      '#states' => array(
+        'invisible' => array(
+          ':input[name="show_alpha_settings"]' => array('checked' => FALSE),
+        ),
+      ),
+    );
+    $form['incubator_prograde_alpha_settings']['alpha_settings'] = $form['alpha_settings'];
+    unset($form['alpha_settings']);
+  }
+}

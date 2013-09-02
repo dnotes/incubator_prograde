@@ -1,0 +1,5 @@
+.block-bg-border #section-content .block, #section-content .block.block-bg-border, .block-bg-white #section-content .block, #section-content .block.block-bg-white, .block-bg-pagebg #section-content .block, #section-content .block.block-bg-pagebg { background-image: none; }
+
+.block-bg-white #section-content .block, #section-content .block.block-bg-white { background-color: white; }
+
+.block-bg-light #section-content .block, #section-content .block.block-bg-light { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII="); }

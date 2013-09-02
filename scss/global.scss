@@ -204,6 +204,8 @@
 // Block styles (only for section content. For header we don't need this styles
 #section-content {
   .block {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII=");
+    background-repeat: repeat;
     padding: 19px;
     margin-bottom: 20px;
     .block-title {

@@ -8,6 +8,8 @@ base theme = 'omega'
 
 stylesheets[all][] = css/colors.css
 
+skinr[api] = 2
+
 
 regions[page_top] = 'Page Top'
 regions[page_bottom] = 'Page Bottom'

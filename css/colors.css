@@ -1,4 +1,5 @@
-body { color: #333333; background: #fcfcfc; }
+@charset "UTF-8";
+body { color: #343434; background: #fcfcfc; }
 body h1, body h2, body h3, body h4, body h5, body h6 { color: #2f2f2f; }
 body a:link, body a:visited { color: #476887; }
 body a:hover { color: #375068; }
@@ -39,7 +40,7 @@ body .description { font-size: 11px; color: #777777; }
 #block-menu-footer .content .menu li a.active, #block-menu-footer .content .menu li a:hover { color: #354e66; }
 
 body #section-content { background: #fcfcfc; }
-body #section-content .block { border: 1px solid #cdd4da; background: #f7f7f7; }
+body #section-content .block { border: 1px solid #cdd4da; background-color: #cdd4da; }
 body #section-content .block .block-title { color: #fffffd; background: #5a6f82; z-index: 2; }
 body #section-content .block .block-title:after { border-right: 5px solid #7b8d9b; }
 body #section-content .block .block-title:hover { background: #404e5b; }
@@ -61,7 +62,7 @@ body .node-links ul li a, body .comment-links ul li a { color: white; background
 body .node-links ul li a:hover, body .comment-links ul li a:hover { border-color: #404e5b; background: #404e5b; color: white; }
 body .fullcalendar .fc-header .fc-header-title { color: #476887; }
 body .fullcalendar .fc-header .fc-header-title h2 { color: #476887; }
-body .fullcalendar .fc-content table { border: 1px solid #cdd4da; background: #f7f7f7; }
+body .fullcalendar .fc-content table { border: 1px solid #cdd4da; }
 body .fullcalendar .fc-content table tr td, body .fullcalendar .fc-content table tr th { border: 1px solid #cdd4da !important; }
 body .fullcalendar .fc-content table tr th { color: white; background: #5a6f82 !important; border-bottom: 1px solid #404e5b !important; }
 body .fullcalendar .fc-content table tr td.fc-other-month { color: #777777; }
@@ -78,3 +79,5 @@ body textarea, body select, body input[type="file"], body input[type="date"], bo
 body textarea:focus, body select:focus, body input[type="file"]:focus, body input[type="date"]:focus, body input[type="datetime"]:focus, body input[type="datetime-local"]:focus, body input[type="email"]:focus, body input[type="month"]:focus, body input[type="number"]:focus, body input[type="password"]:focus, body input[type="search"]:focus, body input[type="tel"]:focus, body input[type="text"]:focus, body input[type="time"]:focus, body input[type="url"]:focus, body input[type="week"]:focus { border-color: #5a6f82; }
 body button, body input[type="reset"], body input[type="submit"], body input[type="button"] { color: white; background: #5a6f82; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3); }
 body button.active, body button:hover, body input[type="reset"].active, body input[type="reset"]:hover, body input[type="submit"].active, body input[type="submit"]:hover, body input[type="button"].active, body input[type="button"]:hover { background: #404e5b; color: white; }
+
+body.block-bg-pagebg #section-content .block, body #section-content .block.block-bg-pagebg { background-color: #fcfcfc; }

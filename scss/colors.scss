@@ -195,7 +195,7 @@ body {
 #section-content {
   .block {
     border: 1px solid $color_border;
-    background: $color_block_bg;
+    background-color: $color_border;
     .block-title {
       color: $color_block_title;
       background: $color_main_color;
@@ -338,7 +338,6 @@ ul.primary {
     // Calendar as it is
     table {
       border: 1px solid $color_border;
-      background: $color_block_bg;
       tr {
         td, th {
           border: 1px solid $color_border !important;
@@ -437,4 +436,12 @@ input[type="button"] {
     color: $color_white;
   }
 }
+}
+
+
+// SKINR OPTION COLORS
+// ---------------------------------------------------------------------------------------------------------------------
+body.block-bg-pagebg #section-content .block, 
+body #section-content .block.block-bg-pagebg {
+  background-color: $color_bg;
 }

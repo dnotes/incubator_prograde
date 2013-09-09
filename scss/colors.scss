@@ -197,7 +197,8 @@ body {
       background: $color_main_color;
       z-index: 2;
       &:after {
-        border-right: 5px solid $color_main_color_lighten;
+        border-right: 5px solid $color_main_color;
+        opacity: 0.8;
       }
       &:hover {
         background: $color_main_color_darken;

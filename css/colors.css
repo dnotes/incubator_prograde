@@ -41,7 +41,7 @@ body .description { font-size: 11px; color: #777777; }
 body #section-content { background: #fcfcfc; }
 body #section-content .block { border: 1px solid #cdd4da; background-color: #cdd4da; }
 body #section-content .block .block-title { color: #fffffd; background: #5a6f82; z-index: 2; }
-body #section-content .block .block-title:after { border-right: 5px solid #7b8d9b; }
+body #section-content .block .block-title:after { border-right: 5px solid #5a6f82; opacity: 0.8; }
 body #section-content .block .block-title:hover { background: #404e5b; }
 body .view .view-content > h3 { color: #333333; }
 body .view .view-content .views-row { border-bottom: 1px solid #cdd4da; }

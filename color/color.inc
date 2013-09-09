@@ -12,9 +12,9 @@ $info['fields'] = array(
   'base' => t('Main color'),                                // $color_main_color
   'secondary' => t('Secondary color'),                 // $color_secondary_color
   'text' => t('Text'),                                            // $color_text
-  'text_highlight' => t('Text highlights'),             // $color_text_highlight
+  'text_highlight' => t('Text on Main color'),          // $color_text_highlight
   'link' => t('Links'),                                           // $color_link
-  'block' => t('Borders / Blocks'),                             // $color_border
+  'block' => t('Block borders'),                                // $color_border
   'title' => t('Titles'),                                        // $color_title
 );
 

@@ -1,0 +1,75 @@
+/*
+  Document   : preview
+  Created on : Sep 2, 2013, 2:27:01 PM
+  Author     : david
+  Description:
+  This stylesheet is for the preview page when modifying theme settings.
+*/
+
+@import "compass/css3";
+@import "compass/typography";
+
+@import "var";
+@import "mixin";
+
+#color_scheme_form {
+  .color-form #placeholder {
+    position: static;
+  }
+  h2 {display:none;}
+  #preview h2 {display:inherit;}
+  #palette .form-item {
+    width:28em;
+    height:1em;
+    margin:0;
+    position:relative;
+  }
+  #palette .form-item label {
+    width:13em;
+    font-size:84%;
+  }
+  #preview {
+    border:10px solid grey;
+    position:absolute;
+    top:0;
+    left:260px;
+    width:480px;
+    overflow:hidden;
+    font-size:90%;
+  }
+}
+
+#preview .section {
+  padding:2px 18px;
+}
+
+
+#preview-user-menu {
+  @include no-list;
+  text-align:right;
+  font-size:90%;
+}
+
+#preview-main-menu {
+  @include no-list;
+}
+
+#preview-sidebar {
+  float:right;
+  width:180px;
+  margin-left:18px;
+}
+
+#preview .block {
+  padding:6px 8px;
+  margin-bottom:9px;
+  border: 1px solid;
+}
+
+#preview .section-footer {
+  border-top: 1px solid;
+}
+
+.block, .section-footer {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII=");
+}

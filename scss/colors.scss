@@ -23,9 +23,6 @@ body {
     &:link, &:visited {
       color: $color_link;
     }
-    &:hover {
-      color: $color_link_darken;
-    }
   }
 
   // Placeholders styling
@@ -152,7 +149,6 @@ body {
       color: $color_white;
       &:hover,
       &.active {
-        background: $color_link_darken;
         color: $color_white;
       }
     }
@@ -267,9 +263,6 @@ a.more-link,
   .views-field-name {
     a {
       color: $color_link !important;
-      &:hover {
-        color: $color_link_darken !important;
-      }
     }
   }
 }

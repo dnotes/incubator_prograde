@@ -60,7 +60,7 @@ body .form-item .description { font-size: 11px; line-height: normal; }
 #secondary-menu li.first a { border-left: none; }
 #secondary-menu li a { padding: 0 20px; font-family: 'Noto Serif', arial, sans-serif; font-weight: normal; font-size: 12px; display: block; line-height: 30px; }
 
-#section-footer { font-size: 12px; padding-top: 20px; padding-bottom: 20px; }
+#section-footer { font-size: 12px; padding-top: 20px; padding-bottom: 20px; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }
 
 #block-menu-footer { float: right; }
 #block-menu-footer .block-title { display: none; }

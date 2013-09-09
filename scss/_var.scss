@@ -1,46 +1,28 @@
 // Variables for DPW
 
-// colors
 $color_white: #fff;
 $color_black: #333;
 $color_grey: #666;
 $color_lightgrey: #777;
 
+// Adjustable colors
+
+// NOTE: some colors can be altered by using sass functions within colors.scss 
+// (lighten, darken, etc.) - these colors, indicated below, will be adjusted
+// accordingly by color module when the theme is configured.
+
 $color_bg: #fcfcfc;
 $color_border: #cdd4da;
-// $color_block_bg: #f7f7f7; removing this color in favor of lightening 
 
 // Text
-$color_text: #343434;
+$color_text: #343434;                        // can be altered for text elements
+$color_text_highlight: #fffffd;
 
 // Links
-$color_link: #476887;
-// $color_link_darken: #375068; removing color change on link hover
+$color_link: #476887;                         // can be altered for <a> elements
 
-$color_main_color: #5a6f82;
-$color_main_color_darken: #404e5b;
-
-$color_main_menu: #7d8e9c;
-$color_main_menu_h: #fdfdfd;
-
-// Header
-$color_header_bg: #596e81;
-$color_header_bg_darken: #3b4854;
-$color_header_border: #3c4955;
-$color_header_text: #d5e5e8;
-
-$color_header_item_divider: #94a1ae;
-
-// Footer
-$color_footer_bg: #f6f6f6;
-$color_footer_border: #d3d8dc;
-$color_footer_link: #476887;
+$color_main_color: #5a6f82;             // can be altered for all other elements
+$color_secondary_color: #404e5b;
 
 // Titles
 $color_title: #2f2f2f;
-
-$color_block_title: #fffffd;
-
-// Inputs
-$color_input_border: #cdd4db;
-$color_input_bg: #fffffd;

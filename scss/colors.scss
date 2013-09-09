@@ -58,9 +58,9 @@ body {
 
 
 #zone-user-wrapper {
-  background: $color_header_bg;
-  border-bottom: 1px solid $color_header_border;
-  color: $color_header_text;
+  background: lighten($color_main_color, 15%);
+  border-bottom: 1px solid $color_main_color;
+  color: $color_text_highlight;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
@@ -69,15 +69,14 @@ body {
   .content {
     .menu {
       li {
-        border-right: 1px solid $color_header_item_divider;
-        border-left: 1px solid $color_header_border;
+        border-right: 1px solid lighten($color_main_color, 25%);
+        border-left: 1px solid lighten($color_main_color, 5%);
         a {
-          color: $color_header_text;
-          background: $color_header_bg;
+          color: $color_text_highlight;
           &.active-trail,
           &.active,
           &:hover {
-            background: $color_header_bg_darken;
+            background: lighten($color_secondary_color, 15%);
           }
         }
       }
@@ -109,47 +108,34 @@ body {
 }
 
 // main menu styling
-#main-menu {
-  border-bottom: 3px solid $color_main_menu;
+.navigation ul.links {
   li {
-    &.first {
-
-    }
-    &.last {
-
-    }
     a {
       color: $color_link;
       &:hover,
-      &.active {
-        background: $color_main_menu;
-        color: $color_main_menu_h;
+      &.active,
+      &.active-trail {
+        background: $color_main_color;
+        color: $color_text_highlight;
       }
     }
   }
-}
-
-#secondary-menu {
-  border-bottom: 1px solid $color_main_color_darken;
-  background: $color_main_color;
-  li {
-    &.first {
+  &.main-menu {
+    border-bottom: 3px solid $color_main_color;
+  }
+  &.secondary-menu {
+    border-bottom: 1px solid $color_secondary_color;
+    background: $color_main_color;
+    li {
       a {
-
-      }
-    }
-    &.last {
-      a {
-        border-right: 1px solid $color_header_item_divider;
-      }
-    }
-    a {
-      border-left: 1px solid $color_header_item_divider;
-      border-right: 1px solid $color_header_border;
-      color: $color_white;
-      &:hover,
-      &.active {
-        color: $color_white;
+        border-left: 1px solid lighten($color_main_color, 10%);
+        border-right: 1px solid darken($color_main_color, 10%);
+        color: $color_text_highlight;
+        &:hover,
+        &.active,
+        &.active-trail {
+          background: $color_secondary_color;
+        }
       }
     }
   }
@@ -157,25 +143,15 @@ body {
 
 // SECTION FOOTER
 // ---------------------------------------------------------------------------------------------------------------------
-#section-footer {
-  background: $color_footer_bg;
-  border-top: 1px solid $color_footer_border;
-  color: $color_lightgrey;
-}
-
-#block-menu-footer {
-  .content {
-    .menu {
-      li {
-        border-left: 1px solid $color_grey;
-        a {
-          color: $color_footer_link;
-          &.active,
-          &:hover {
-            color: darken($color_footer_link, 10%);
-          }
-        }
-      }
+footer.section-footer {
+  background-color: $color_border;
+  border-top: 1px solid $color_border;
+  color: lighten(desaturate($color_text, 10%), 10%);
+  a {
+    color: lighten(desaturate($color_link, 10%), 10%);
+    &:hover,
+    &.active,
+    &.active-trail {
     }
   }
 }
@@ -193,15 +169,14 @@ body {
     border: 1px solid $color_border;
     background-color: $color_border;
     .block-title {
-      color: $color_block_title;
+      color: $color_text_highlight;
       background: $color_main_color;
       z-index: 2;
       &:after {
-        border-right: 5px solid $color_main_color;
-        opacity: 0.8;
+        border-right: 5px solid lighten($color_main_color, 15%);
       }
       &:hover {
-        background: $color_main_color_darken;
+        background: $color_secondary_color;
       }
     }
   }
@@ -238,7 +213,7 @@ a.more-link,
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   &.active,
   &:hover {
-    background: $color_main_color_darken;
+    background: $color_secondary_color;
     color: $color_white;
   }
 }
@@ -278,7 +253,7 @@ a.more-link,
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
         &.active,
         &:hover {
-          background: $color_main_color_darken;
+          background: $color_secondary_color;
           color: $color_white;
         }
       }
@@ -292,11 +267,11 @@ ul.primary {
     a {
       color: $color_white;
       background: $color_main_color;
-      border-bottom: 1px solid $color_main_color_darken;
+      border-bottom: 1px solid $color_secondary_color;
       &.active,
       &:hover {
-        border-color: $color_main_color_darken;
-        background: $color_main_color_darken;
+        border-color: $color_secondary_color;
+        background: $color_secondary_color;
         color: $color_white;
       }
 
@@ -309,10 +284,10 @@ ul.primary {
 .comment-links ul li a {
   color: $color_white;
   background: $color_main_color;
-  border-bottom: 1px solid $color_main_color_darken;
+  border-bottom: 1px solid $color_secondary_color;
   &:hover {
-    border-color: $color_main_color_darken;
-    background: $color_main_color_darken;
+    border-color: $color_secondary_color;
+    background: $color_secondary_color;
     color: $color_white;
   }
 }
@@ -340,7 +315,7 @@ ul.primary {
         th {
           color: $color_white;
           background: $color_main_color !important;
-          border-bottom: 1px solid $color_main_color_darken !important;
+          border-bottom: 1px solid $color_secondary_color !important;
         }
         td {
           &.fc-other-month {
@@ -360,14 +335,14 @@ ul.primary {
   .fc-button {
     color: $color_white;
     background: $color_main_color;
-    border-bottom: 1px solid $color_main_color_darken;
+    border-bottom: 1px solid $color_secondary_color;
     &:hover {
-      border-color: $color_main_color_darken;
-      background: $color_main_color_darken;
+      border-color: $color_secondary_color;
+      background: $color_secondary_color;
       color: $color_white;
     }
     &.ui-state-active {
-      background: $color_main_color_darken;
+      background: $color_secondary_color;
     }
   }
   .ui-icon {
@@ -382,11 +357,11 @@ ul.primary {
   a.fc-event {
     color: $color_white;
     background: $color_main_color;
-    border-bottom: 1px solid $color_main_color_darken;
+    border-bottom: 1px solid $color_secondary_color;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
     &:hover {
-      border-color: $color_main_color_darken;
-      background: $color_main_color_darken;
+      border-color: $color_secondary_color;
+      background: $color_secondary_color;
       color: $color_white;
     }
   }
@@ -409,9 +384,9 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"] {
-  border: 1px solid $color_input_border;
-  background-color: $color_input_bg;
-  color: $color_black;
+  border: 1px solid $color_border;
+  background-color: $color_bg;
+  color: $color_text;
   &:focus {
     border-color: $color_main_color;
   }
@@ -421,13 +396,13 @@ button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"] {
-  color: $color_white;
+  color: $color_text_highlight;
   background: $color_main_color;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   &.active,
   &:hover {
-    background: $color_main_color_darken;
-    color: $color_white;
+    background: $color_secondary_color;
+    color: $color_text_highlight;
   }
 }
 }
@@ -436,6 +411,9 @@ input[type="button"] {
 // SKINR OPTION COLORS
 // ---------------------------------------------------------------------------------------------------------------------
 body.block-bg-pagebg #section-content .block, 
-body #section-content .block.block-bg-pagebg {
+body #section-content .block.block-bg-pagebg,
+body.block-bg-pagebg #section-footer, 
+body #section-footer.block-bg-pagebg
+{
   background-color: $color_bg;
 }

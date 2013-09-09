@@ -3,16 +3,29 @@
 .block-bg-white #section-content .block, 
 #section-content .block.block-bg-white,
 .block-bg-pagebg #section-content .block, 
-#section-content .block.block-bg-pagebg {
+#section-content .block.block-bg-pagebg,
+.block-bg-border #section-footer, 
+#section-footer.block-bg-border,
+.block-bg-white #section-footer, 
+#section-footer.block-bg-white,
+.block-bg-pagebg #section-footer, 
+#section-footer.block-bg-pagebg
+{
   background-image: none;
 }
 
 .block-bg-white #section-content .block, 
-#section-content .block.block-bg-white {
+#section-content .block.block-bg-white,
+.block-bg-white #section-footer, 
+#section-footer.block-bg-white
+{
   background-color: white;
 }
 
 .block-bg-light #section-content .block, 
-#section-content .block.block-bg-light {
+#section-content .block.block-bg-light,
+.block-bg-light #section-footer, 
+#section-footer.block-bg-light
+{
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII=");
 }

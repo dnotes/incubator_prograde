@@ -35,7 +35,7 @@ $info['css'] = array('css/colors.css');
 
 $info['copy'] = array('logo.png');
 
-$info['preview_css'] = 'color/preview.css';
+$info['preview_css'] = 'css/preview.css';
 $info['preview_js'] = 'color/preview.js';
 $info['preview_html'] = 'color/preview.html';
 

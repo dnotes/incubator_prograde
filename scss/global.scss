@@ -156,7 +156,7 @@
 
 // SECTION FOOTER
 // ---------------------------------------------------------------------------------------------------------------------
-#section-footer {
+.section-footer {
   font-size: 12px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -195,7 +195,7 @@
 
 // SECTION CONTENT
 // ---------------------------------------------------------------------------------------------------------------------
-#section-content {
+.section-content {
   position: relative;
   z-index: 2;
   padding-top: 15px;
@@ -203,7 +203,7 @@
 }
 
 // Block styles (only for section content. For header we don't need this styles
-#section-content {
+.section-content {
   .block {
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII=");
     background-repeat: repeat;

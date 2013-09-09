@@ -10,11 +10,10 @@ body .form-item label { color: #666666; }
 body #page-title { color: #5a6f82; }
 body .description { font-size: 11px; color: #777777; }
 
-#zone-user-wrapper { background: #8195a8; border-bottom: 1px solid #5a6f82; color: #fffffd; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
-
-#block-system-user-menu .content .menu li { border-right: 1px solid #9faebd; border-left: 1px solid #647c91; }
-#block-system-user-menu .content .menu li a { color: #fffffd; }
-#block-system-user-menu .content .menu li a.active-trail, #block-system-user-menu .content .menu li a.active, #block-system-user-menu .content .menu li a:hover { background: #607488; }
+.zone-user-wrapper { background: #8195a8; border-bottom: 1px solid #5a6f82; color: #fffffd; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+.zone-user-wrapper ul.menu li { border-right: 1px solid #9faebd; border-left: 1px solid #647c91; }
+.zone-user-wrapper ul.menu li a { color: #fffffd; }
+.zone-user-wrapper ul.menu li a.active-trail, .zone-user-wrapper ul.menu li a.active, .zone-user-wrapper ul.menu li a:hover { background: #607488; }
 
 .branding-data .site-name-slogan .site-name { color: #333333; }
 .branding-data .site-name-slogan .site-name a { color: #333333; }

@@ -57,32 +57,31 @@ body {
 // ---------------------------------------------------------------------------------------------------------------------
 
 
-#zone-user-wrapper {
+// USER MENU
+// -----------------------------------------------------------------------------
+
+.zone-user-wrapper {
   background: lighten($color_main_color, 15%);
   border-bottom: 1px solid $color_main_color;
   color: $color_text_highlight;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
-}
-
-// User menu block
-#block-system-user-menu {
-  .content {
-    .menu {
-      li {
-        border-right: 1px solid lighten($color_main_color, 25%);
-        border-left: 1px solid lighten($color_main_color, 5%);
-        a {
-          color: $color_text_highlight;
-          &.active-trail,
-          &.active,
-          &:hover {
-            background: lighten($color_secondary_color, 15%);
-          }
-        }
+  ul.menu li {
+    border-right: 1px solid lighten($color_main_color, 25%);
+    border-left: 1px solid lighten($color_main_color, 5%);
+    a {
+      color: $color_text_highlight;
+      &.active-trail,
+      &.active,
+      &:hover {
+        background: lighten($color_secondary_color, 15%);
       }
     }
   }
 }
+
+// BRANDING AREA
+// -----------------------------------------------------------------------------
+
 
 .branding-data {
   .site-name-slogan {

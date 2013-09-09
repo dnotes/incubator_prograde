@@ -15,6 +15,7 @@ $info['fields'] = array(
   'color_main_color_darken' => t('Highlight color'),
   'color_text' => t('Text'),
   'color_link' => t('Links'),
+  'color_title' => t('Titles'),
 );
 
 $info['schemes']['default'] = array(

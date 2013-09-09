@@ -25,6 +25,7 @@ $info['schemes']['default'] = array(
     'base' => '#5a6f82',
     'secondary' => '#404e5b',
     'text' => '#343434',
+    'text_highlight' => '#fffffd',
     'link' => '#476887',
     'block' => '#cdd4da',
     'title' => '#2f2f2f',

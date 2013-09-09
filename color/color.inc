@@ -8,27 +8,25 @@
 $info = array();
 
 $info['fields'] = array(
-  'color_header_bg' => t('Header BG'),
-  'color_bg' => t('Background'),
-  'color_border' => t('Borders / Blocks'),
-  'color_main_color' => t('Main color'),
-  'color_main_color_darken' => t('Highlight color'),
-  'color_text' => t('Text'),
-  'color_link' => t('Links'),
-  'color_title' => t('Titles'),
+  'bg' => t('Background'),                                          // $color_bg
+  'base' => t('Main color'),                                // $color_main_color
+  'secondary' => t('Secondary color'),               // $color_main_color_darken
+  'text' => t('Text'),                                            // $color_text
+  'link' => t('Links'),                                           // $color_link
+  'block' => t('Borders / Blocks'),                             // $color_border
+  'title' => t('Titles'),                                        // $color_title
 );
 
 $info['schemes']['default'] = array(
   'title' => t('Default'),
   'colors' => array(
-    'color_header_bg' => '#fdfdfd',
-    'color_bg' => '#fcfcfc',
-    'color_border' => '#cdd4da',
-    'color_main_color' => '#5a6f82',
-    'color_main_color_darken' => '#404e5b',
-    'color_text' => '#343434',
-    'color_link' => '#476887',
-    'color_title' => '#2f2f2f',
+    'bg' => '#fcfcfc',
+    'base' => '#5a6f82',
+    'secondary' => '#404e5b',
+    'text' => '#343434',
+    'link' => '#476887',
+    'block' => '#cdd4da',
+    'title' => '#2f2f2f',
   ),
 );
 

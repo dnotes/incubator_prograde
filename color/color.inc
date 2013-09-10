@@ -50,4 +50,6 @@ $info['slices'] = array();
 
 $info['base_image'] = 'color/base.png';
 
+$info['blend_target'] = '#ffffff';
+
 return $info;

@@ -11,10 +11,10 @@ $info['fields'] = array(
   'bg' => t('Background'),                                          // $color_bg
   'base' => t('Main color'),                                // $color_main_color
   'secondary' => t('Secondary color'),                 // $color_secondary_color
-  'text' => t('Text'),                                            // $color_text
-  'text_highlight' => t('Text on Main color'),          // $color_text_highlight
   'link' => t('Links'),                                           // $color_link
   'block' => t('Block borders'),                                // $color_border
+  'text' => t('Text'),                                            // $color_text
+  'text_highlight' => t('Text on Color'),               // $color_text_highlight
   'title' => t('Titles'),                                        // $color_title
 );
 
@@ -24,10 +24,10 @@ $info['schemes']['default'] = array(
     'bg' => '#fcfcfc',
     'base' => '#5a6f82',
     'secondary' => '#404e5b',
-    'text' => '#343434',
-    'text_highlight' => '#fffffd',
     'link' => '#476887',
     'block' => '#cdd4da',
+    'text' => '#343434',
+    'text_highlight' => '#fffffd',
     'title' => '#2f2f2f',
   ),
 );

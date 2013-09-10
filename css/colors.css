@@ -35,7 +35,7 @@ footer.section-footer a { color: #66819b; }
 body #section-content { background: #fcfcfc; }
 body #section-content .block { border: 1px solid #cdd4da; background-color: #cdd4da; }
 body #section-content .block .block-title { color: #fffffd; background: #5a6f82; z-index: 2; }
-body #section-content .block .block-title:after { border-right: 5px solid #8195a8; }
+body #section-content .block .block-title:after { border-color: #8195a8; }
 body #section-content .block .block-title:hover { background: #404e5b; }
 body .view .view-content > h3 { color: #333333; }
 body .view .view-content .views-row { border-bottom: 1px solid #cdd4da; }

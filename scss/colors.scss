@@ -172,7 +172,7 @@ body {
       background: $color_main_color;
       z-index: 2;
       &:after {
-        border-right: 5px solid lighten($color_main_color, 15%);
+        border-color: lighten($color_main_color, 15%);
       }
       &:hover {
         background: $color_secondary_color;

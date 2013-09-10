@@ -73,7 +73,7 @@ body {
       &.active-trail,
       &.active,
       &:hover {
-        background: lighten($color_secondary_color, 15%);
+        background: $color_main_color;
       }
     }
   }
@@ -126,9 +126,9 @@ body {
     border-bottom: 1px solid $color_secondary_color;
     background: $color_main_color;
     li {
+      border-left: 1px solid lighten($color_main_color, 10%);
+      border-right: 1px solid darken($color_main_color, 10%);
       a {
-        border-left: 1px solid lighten($color_main_color, 10%);
-        border-right: 1px solid darken($color_main_color, 10%);
         color: $color_text_highlight;
         &:hover,
         &.active,

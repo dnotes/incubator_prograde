@@ -157,13 +157,13 @@ footer.section-footer {
 
 // SECTION CONTENT
 // ---------------------------------------------------------------------------------------------------------------------
-body {
-#section-content {
+
+.section-content {
   background: $color_bg;
 }
 
 // Block styles (only for section content. For header we don't need this styles
-#section-content {
+.section-content {
   .block {
     border: 1px solid $color_border;
     background-color: $color_border;
@@ -404,15 +404,16 @@ input[type="button"] {
     color: $color_text_highlight;
   }
 }
-}
+
 
 
 // SKINR OPTION COLORS
 // ---------------------------------------------------------------------------------------------------------------------
-body.block-bg-pagebg #section-content .block, 
-body #section-content .block.block-bg-pagebg,
-body.block-bg-pagebg #section-footer, 
-body #section-footer.block-bg-pagebg
+.block-bg-pagebg .section-content article.node-teaser,
+.block-bg-pagebg .section-content .block, 
+.section-content .block.block-bg-pagebg,
+.block-bg-pagebg .section-footer, 
+.section-footer.block-bg-pagebg
 {
   background-color: $color_bg;
 }

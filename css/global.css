@@ -1,18 +1,16 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic&subset=latin,cyrillic);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700&subset=latin,cyrillic);
-body { font-family: 'Noto Serif', arial, sans-serif; font-size: 13px; line-height: 24px; height: 100%; position: relative; min-widht: 300px; }
+body { font-family: Georgia, "Times New Roman", Times, serif; font-size: 13px; line-height: 24px; height: 100%; position: relative; min-widht: 300px; }
 
 html { margin: 0; padding: 0; width: 100%; height: auto; min-height: 100%; }
 
-body h1, body h2, body h3, body h4, body h5, body h6 { font-family: 'Roboto Slab', arial, sans-serif; font-weight: bold; line-height: normal; margin-bottom: 10px; margin-top: 0; letter-spacing: 0; }
+body h1, body h2, body h3, body h4, body h5, body h6 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; line-height: normal; margin-bottom: 10px; margin-top: 0; letter-spacing: 0; }
 body h1 { font-size: 32px; font-weight: bold; }
 body h2 { font-size: 24px; font-weight: bold; }
 body h3 { font-size: 18px; font-weight: bold; }
 body h4 { font-size: 18px; font-weight: normal; }
 body h5 { font-size: 18px; font-weight: normal; }
 body h6 { font-size: 18px; font-weight: normal; }
-body #page-title { font-size: 24px; font-family: 'Roboto Slab', arial, sans-serif; font-weight: bold; margin-bottom: 15px; }
+body #page-title { font-size: 24px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; margin-bottom: 15px; }
 body .pane-title { margin: 0; font-size: 20px; }
 body a { -webkit-transition: all, 0.3s; -moz-transition: all, 0.3s; -o-transition: all, 0.3s; transition: all, 0.3s; font-weight: bold; }
 body a:link, body a:visited { text-decoration: none; }
@@ -53,12 +51,12 @@ body .form-item .description { font-size: 11px; line-height: normal; }
 
 #main-menu { display: block; margin: 0; }
 #main-menu li { display: block; float: left; margin: 0; padding: 0; }
-#main-menu li a { padding: 0 20px; font-family: 'Roboto Slab', arial, sans-serif; font-weight: bold; font-size: 18px; display: block; line-height: 40px; }
+#main-menu li a { padding: 0 20px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; font-size: 18px; display: block; line-height: 40px; }
 
 #secondary-menu { display: block; margin: 0; }
 #secondary-menu li { display: block; float: left; margin: 0; padding: 0; }
 #secondary-menu li.first a { border-left: none; }
-#secondary-menu li a { padding: 0 20px; font-family: 'Noto Serif', arial, sans-serif; font-weight: normal; font-size: 12px; display: block; line-height: 30px; }
+#secondary-menu li a { padding: 0 20px; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; font-size: 12px; display: block; line-height: 30px; }
 
 .section-footer { font-size: 12px; padding-top: 20px; padding-bottom: 20px; }
 
@@ -107,7 +105,7 @@ body a.more-link, body .more-link a { -webkit-transition: all, 0.3s; -moz-transi
 .view-display-id-block_bigslides:hover .views-slideshow-controls-text { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 .view-display-id-block_bigslides .views-field-title, .view-display-id-block_bigslides .views-field-name { margin: 0; padding: 0; background: url(../images/slider/slider_caption_bg.png) repeat 0 0; position: absolute; bottom: 0; left: 0; width: 100%; }
 .view-display-id-block_bigslides .views-field-title .field-content, .view-display-id-block_bigslides .views-field-name .field-content { dispaly: block; padding: 15px 20px; }
-.view-display-id-block_bigslides .views-field-title a, .view-display-id-block_bigslides .views-field-name a { font-family: 'Roboto Slab', arial, sans-serif; font-weight: bold; text-shadow: none; font-size: 24px; }
+.view-display-id-block_bigslides .views-field-title a, .view-display-id-block_bigslides .views-field-name a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; text-shadow: none; font-size: 24px; }
 
 .view-core-activities .views-row { margin-top: 0; }
 .view-core-activities .views-row.views-row-last { margin-bottom: 0; padding-bottom: 0; }

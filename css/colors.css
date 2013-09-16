@@ -4,7 +4,7 @@ body { color: #343434; background: #fcfcfc; }
 h1, h2, h3, h4, h5, h6 { color: #2f2f2f; }
 
 a:link, a:visited { color: #476887; }
-a:hover { color: #1f3549; text-decoration: none; }
+a:hover { color: #2b4966; text-decoration: none; }
 
 ::-webkit-input-placeholder { color: #666666; }
 

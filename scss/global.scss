@@ -209,7 +209,6 @@
     margin-bottom: 20px;
     .block-title {
       @include transition(all, 0.3s);
-      @include title;
       font-size: 20px;
       font-weight: bold;
       @include title-banner;
@@ -279,7 +278,6 @@ body .more-link a {
   line-height: 30px;
   filter: none;
   text-shadow: none;
-  @include text;
   padding-top: 0;
   padding-bottom: 0;
   font-size: 12px;
@@ -497,7 +495,6 @@ body .more-link a {
         line-height: 20px;
         filter: none;
         text-shadow: none;
-        @include text;
         padding-top: 0;
         padding-bottom: 0;
         font-size: 12px;
@@ -566,7 +563,6 @@ ul.primary {
       line-height: 29px;
       filter: none;
       text-shadow: none;
-      @include text;
       padding-top: 0;
       padding-bottom: 0;
       font-size: 12px;
@@ -596,7 +592,6 @@ ul.primary {
   line-height: 30px;
   filter: none;
   text-shadow: none;
-  @include text;
   padding-top: 0;
   padding-bottom: 0;
   font-size: 12px;
@@ -650,7 +645,6 @@ ul.primary {
     // Calendar as it is
     table {
       border-collapse: collapse;
-      @include text;
       tr {
         td, th {
         }
@@ -694,7 +688,6 @@ ul.primary {
     line-height: 30px;
     filter: none;
     text-shadow: none;
-    @include text;
     padding-top: 0;
     padding-bottom: 0;
     font-size: 14px;
@@ -756,7 +749,6 @@ ul.primary {
     border: none;
     filter: none;
     text-shadow: none;
-    @include text;
     padding-top: 0;
     padding-bottom: 0;
     font-weight: bold;
@@ -806,11 +798,9 @@ input[type="time"],
 input[type="url"],
 input[type="week"] {
   @include transition(all, 0.3s);
-  @include text;
   font-size: 14px;
   line-height: normal;
   font-weight: normal;
-  @include text;
   padding: 2px;
   box-shadow: none !important;
   height: 30px;
@@ -843,7 +833,6 @@ input[type="button"] {
   line-height: 30px;
   filter: none;
   text-shadow: none;
-  @include text;
   padding-top: 0;
   padding-bottom: 0;
   font-size: 14px;

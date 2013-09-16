@@ -23,6 +23,10 @@ body {
     &:link, &:visited {
       color: $color_link;
     }
+    &:hover {
+      color: saturate(darken($color_link, 20%), 10%);
+      text-decoration: none;
+    }
   }
 
   // Placeholders styling

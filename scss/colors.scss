@@ -8,6 +8,23 @@
 @import "var";
 @import "mixin";
 
+// Color mixins
+@mixin link-highlight {
+  &:link {
+    color: $color_text_highlight;
+    background: $color_main_color;
+  }
+  &:visited {
+    color: $color_text_highlight;
+  }
+  &.active,
+  &:hover {
+    background: $color_secondary_color;
+    border-color: $color_secondary_color;
+    color: $color_text_highlight;
+  }
+}
+
 // Main colors
 // ---------------------------------------------------------------------------------------------------------------------
 body {
@@ -189,7 +206,7 @@ footer.section-footer {
 .view {
   .view-content {
     &>h3 {
-      color: $color_black;
+      color: $color_text;
     }
     .views-row {
       border-bottom: 1px solid $color_border;
@@ -211,19 +228,8 @@ footer.section-footer {
 // More link
 a.more-link,
 .more-link a {
+  @include link-highlight;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  &:link {
-    color: $color_text_highlight;
-    background: $color_main_color;
-  }
-  &:visited {
-    color:$color_text_highlight;
-  }
-  &.active,
-  &:hover {
-    background: $color_secondary_color;
-    color: $color_text_highlight;
-  }
 }
 
 // Big sliding block (slider)
@@ -254,17 +260,9 @@ a.more-link,
 .node {
   .field-type-taxonomy-term-reference {
     @include overflow;
-    .field-item {
-      a {
-        color: $color_white;
-        background: $color_main_color;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        &.active,
-        &:hover {
-          background: $color_secondary_color;
-          color: $color_white;
-        }
-      }
+    a {
+      @include link-highlight;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
   }
 }
@@ -273,16 +271,8 @@ a.more-link,
 ul.primary {
   li {
     a {
-      color: $color_white;
-      background: $color_main_color;
+      @include link-highlight;
       border-bottom: 1px solid $color_secondary_color;
-      &.active,
-      &:hover {
-        border-color: $color_secondary_color;
-        background: $color_secondary_color;
-        color: $color_white;
-      }
-
     }
   }
 }
@@ -290,14 +280,8 @@ ul.primary {
 
 .node-links ul li a,
 .comment-links ul li a {
-  color: $color_white;
-  background: $color_main_color;
+  @include link-highlight;
   border-bottom: 1px solid $color_secondary_color;
-  &:hover {
-    border-color: $color_secondary_color;
-    background: $color_secondary_color;
-    color: $color_white;
-  }
 }
 
 
@@ -341,13 +325,13 @@ ul.primary {
   }
   // BUTTONS
   .fc-button {
-    color: $color_white;
+    color: $color_text_highlight;
     background: $color_main_color;
     border-bottom: 1px solid $color_secondary_color;
     &:hover {
       border-color: $color_secondary_color;
       background: $color_secondary_color;
-      color: $color_white;
+      color: $color_text_highlight;
     }
     &.ui-state-active {
       background: $color_secondary_color;
@@ -363,14 +347,14 @@ ul.primary {
   }
   // EVENTS
   a.fc-event {
-    color: $color_white;
+    color: $color_text_highlight;
     background: $color_main_color;
     border-bottom: 1px solid $color_secondary_color;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
     &:hover {
       border-color: $color_secondary_color;
       background: $color_secondary_color;
-      color: $color_white;
+      color: $color_text_highlight;
     }
   }
 }

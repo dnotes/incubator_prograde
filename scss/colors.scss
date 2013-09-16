@@ -211,13 +211,18 @@ footer.section-footer {
 // More link
 a.more-link,
 .more-link a {
-  color: $color_white;
-  background: $color_main_color;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  &:link {
+    color: $color_text_highlight;
+    background: $color_main_color;
+  }
+  &:visited {
+    color:$color_text_highlight;
+  }
   &.active,
   &:hover {
     background: $color_secondary_color;
-    color: $color_white;
+    color: $color_text_highlight;
   }
 }
 

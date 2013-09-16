@@ -55,8 +55,10 @@ footer.section-footer a { color: #66819b; }
 
 #region-content .view .view-content .views-row { border-bottom: 1px solid #cdd4da; }
 
-a.more-link, .more-link a { color: white; background: #5a6f82; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3); }
-a.more-link.active, a.more-link:hover, .more-link a.active, .more-link a:hover { background: #404e5b; color: white; }
+a.more-link, .more-link a { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3); }
+a.more-link:link, .more-link a:link { color: #fffffd; background: #5a6f82; }
+a.more-link:visited, .more-link a:visited { color: #fffffd; }
+a.more-link.active, a.more-link:hover, .more-link a.active, .more-link a:hover { background: #404e5b; color: #fffffd; }
 
 #page .block.block-recent-stories-block-bigslides .block-title { color: #5a6f82; }
 #page .block.block-recent-stories-block-bigslides .block-title:hover { color: #5a6f82; }

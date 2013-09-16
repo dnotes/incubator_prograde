@@ -13,48 +13,48 @@
 body {
   color: $color_text;
   background: $color_bg;
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    color: $color_title;
+h1, h2, h3, h4, h5, h6 {
+  color: $color_title;
+}
+
+// links
+a {
+  &:link, &:visited {
+    color: $color_link;
   }
-
-  // links
-  a {
-    &:link, &:visited {
-      color: $color_link;
-    }
-    &:hover {
-      color: saturate(darken($color_link, 20%), 10%);
-      text-decoration: none;
-    }
+  &:hover {
+    color: saturate(darken($color_link, 20%), 10%);
+    text-decoration: none;
   }
+}
 
-  // Placeholders styling
-  ::-webkit-input-placeholder {
+// Placeholders styling
+::-webkit-input-placeholder {
+  color: $color_grey;
+}
+:-moz-placeholder {
+  color: $color_grey;
+}
+::-moz-placeholder {
+  color: $color_grey;
+}
+:-ms-input-placeholder {
+  color: $color_grey;
+}
+
+.form-item {
+  label {
     color: $color_grey;
   }
-  :-moz-placeholder {
-    color: $color_grey;
-  }
-  ::-moz-placeholder {
-    color: $color_grey;
-  }
-  :-ms-input-placeholder {
-    color: $color_grey;
-  }
-
-  .form-item {
-    label {
-      color: $color_grey;
-    }
-  }
-  #page-title {
-    color: $color_main_color;
-  }
-  .description {
-    font-size: 11px;
-    color: $color_lightgrey;
-  }
+}
+#page-title {
+  color: $color_main_color;
+}
+.description {
+  font-size: 11px;
+  color: $color_lightgrey;
 }
 
 // CONTENT COLORS

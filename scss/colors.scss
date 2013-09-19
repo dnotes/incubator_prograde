@@ -193,7 +193,7 @@ footer.section-footer {
       background: $color_main_color;
       z-index: 2;
       &:after {
-        border-color: lighten($color_main_color, 15%);
+        border-color: lighten($color_main_color, 15%) !important;
       }
       &:hover {
         background: $color_secondary_color;

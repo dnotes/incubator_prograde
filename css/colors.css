@@ -47,7 +47,7 @@ footer.section-footer a { color: #66819b; }
 
 .section-content .block { border: 1px solid #cdd4da; background-color: #cdd4da; }
 .section-content .block .block-title { color: #fffffd; background: #5a6f82; z-index: 2; }
-.section-content .block .block-title:after { border-color: #8195a8; }
+.section-content .block .block-title:after { border-color: #8195a8 !important; }
 .section-content .block .block-title:hover { background: #404e5b; }
 
 .view .view-content > h3 { color: #343434; }

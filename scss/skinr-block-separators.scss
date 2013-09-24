@@ -1,0 +1,65 @@
+/*
+    Document   : skinr-block-separators
+    Created on : Sep 17, 2013, 3:11:09 PM
+    Author     : david
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.block-separators-dotted {
+  .view .view-content .views-row,
+  
+  {
+    border-bottom-style: dotted;
+  }
+}
+
+.block-separators-lightgray {
+  .view .view-content .views-row,
+  {
+    border-color: #cecece;
+  }
+}
+
+.block-separators-gray {
+  .view .view-content .views-row,
+  {
+    border-color: #999999;
+  }
+}
+
+.block-separators-darkgray {
+  .view .view-content .views-row,
+  {
+    border-color: #666666;
+  }
+}
+
+.block-separators-lightmain {
+  .view .view-content .views-row,
+  {
+    
+  }
+}
+
+.block-separators-main {
+  .view .view-content .views-row,
+  {
+    
+  }
+}
+
+.block-separators-darkmain {
+  .view .view-content .views-row,
+  {
+    
+  }
+}
+
+.block-separators-none {
+  .view .view-content .views-row,
+  {
+    border-bottom: none;
+  }
+}
+

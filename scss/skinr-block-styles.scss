@@ -1,0 +1,65 @@
+/*
+    Document   : skinr-block-styles
+    Created on : Sep 17, 2013, 3:11:41 PM
+    Author     : david
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+.block-styles-no-borders {
+  &.block,
+  .zone-content-wrapper .block,
+  &.main-menu-block .navigation,
+  {
+    border: none !important;
+  }
+}
+
+.block-styles-no-background {
+  &.block,
+  .zone-content-wrapper .block,
+  &.main-menu-block .navigation,
+  {
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+}
+
+.block-styles-rounded {
+  &.block,
+  .zone-content-wrapper .block,
+  &.main-menu-block .navigation,
+  {
+    border-radius: 5px;
+  }
+}
+
+.block-styles-heavy {
+  &.block,
+  .zone-content-wrapper .block,
+  &.main-menu-block .navigation,
+  {
+    border-bottom-width: 3px !important;
+  }
+}
+
+.block-styles-shadowed {
+  &.block,
+  .zone-content-wrapper .block,
+  &.main-menu-block .navigation,
+  {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  }
+}
+
+.block-styles-transparent {
+  &.block,
+  .zone-content-wrapper .block,
+  &.main-menu-block .navigation,
+  {
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+}

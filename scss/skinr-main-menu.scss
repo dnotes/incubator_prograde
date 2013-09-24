@@ -1,0 +1,122 @@
+/*
+    Document   : skinr-main-menu
+    Created on : Sep 17, 2013, 3:12:28 PM
+    Author     : david
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.main-menu-narrow {
+  ul.main-menu li {
+    margin-right: .2em !important;
+    &.first {
+      margin-left: .2em !important;
+    }
+  }
+  &.main-menu-dot-separators ul.main-menu li:before {
+    margin-left: -.35em;
+  }
+}
+
+.main-menu-wide {
+  ul.main-menu li {
+    margin-right: .8em !important;
+    &.first {
+      margin-left: .8em !important;
+    }
+  }
+  &.main-menu-dot-separators ul.main-menu li:before {
+    margin-left: -.65em;
+  }
+}
+
+.main-menu-lighter {
+  ul.main-menu,
+  .navigation ul.links.secondary-menu {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII=");
+  }
+  &.main-menu-full-width {
+    .zone-menu-wrapper {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII=");
+    }
+  }
+}
+
+.main-menu-darker {
+  
+}
+
+.main-menu-full-width {
+  ul.links.main-menu,
+  ul.links.secondary-menu {
+    border-bottom: none;
+    background-image: none;
+  }
+  .zone-menu-wrapper {
+    border-bottom: 3px solid;
+  }
+}
+
+.main-menu-no-separators,
+.main-menu-dot-separators {
+  ul.main-menu li,
+  ul.secondary-menu li {
+    border: none !important;
+  }
+}
+
+.main-menu-dot-separators {
+  ul.main-menu li {
+    border: none;
+    &:before {
+      content: '\25CF';
+      margin-left: -.25em;
+      float: left;
+      line-height: 3em;
+    }
+    &.first:before {
+      content: '';
+    }
+  }
+}
+
+.main-menu-no-lineunder,
+.main-menu-underline-items {
+  .navigation ul.links.main-menu {
+    border-bottom: none;
+  }
+  &.main-menu-full-width {
+    .zone-menu-wrapper {
+      border-bottom: none;
+    }
+  }
+}
+
+.main-menu-underline-items {
+  ul.main-menu {
+    li a {
+      border-bottom: 2px solid;
+    }
+    .secondary-menu li {
+      border-bottom: none;
+    }
+  }
+}
+
+.main-menu-overlay {
+  ul.main-menu {
+    margin-top: -2em !important;
+  }
+}
+
+.main-menu-no-tabs .navigation {
+  ul.links.main-menu, 
+  ul.links.secondary-menu {
+    background-color: transparent;
+    li {
+      a {
+        background-color: transparent;
+        color: gray;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+/*
+    Document   : skinr-headers
+    Created on : Sep 17, 2013, 3:10:43 PM
+    Author     : david
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.headers-banner {
+  .section-content .block .block-title,
+  {
+    @include transition(all, 0.3s);
+    line-height: normal;
+    padding: .3em .9em .3em 17px;
+    margin-left: -25px;
+    margin-bottom: .9em;
+    display: inline-block;
+    *display: inline;
+    position: relative;
+    z-index:2;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -5px;
+      bottom: -5px;
+      border-left: 5px solid transparent !important;
+      //border-top: 5px solid transparent !important;
+      border-bottom: 5px solid transparent !important;
+      border-right: 5px solid transparent;
+    }
+  }
+}
+
+.headers-centered {
+  .section-content .block .block-title,
+  {
+    
+  }
+}
+
+.headers-colored {
+  .section-content .block .block-title,
+  {
+    
+  }
+}

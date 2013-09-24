@@ -1,0 +1,13 @@
+/* Document   : skinr-block-styles Created on : Sep 17, 2013, 3:11:41 PM Author     : david Description: Purpose of the stylesheet follows.
+*/
+.block-styles-no-borders.block, .block-styles-no-borders .zone-content-wrapper .block, .block-styles-no-borders.main-menu-block .navigation { border: none !important; }
+
+.block-styles-no-background.block, .block-styles-no-background .zone-content-wrapper .block, .block-styles-no-background.main-menu-block .navigation { background-color: transparent !important; background-image: none !important; }
+
+.block-styles-rounded.block, .block-styles-rounded .zone-content-wrapper .block, .block-styles-rounded.main-menu-block .navigation { border-radius: 5px; }
+
+.block-styles-heavy.block, .block-styles-heavy .zone-content-wrapper .block, .block-styles-heavy.main-menu-block .navigation { border-bottom-width: 3px !important; }
+
+.block-styles-shadowed.block, .block-styles-shadowed .zone-content-wrapper .block, .block-styles-shadowed.main-menu-block .navigation { box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+
+.block-styles-transparent.block, .block-styles-transparent .zone-content-wrapper .block, .block-styles-transparent.main-menu-block .navigation { background-color: transparent !important; background-image: none !important; box-shadow: none !important; }

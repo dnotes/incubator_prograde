@@ -1,11 +1,10 @@
 /* Document   : preview Created on : Sep 2, 2013, 2:27:01 PM Author     : david Description: This stylesheet is for the preview page when modifying theme settings.
 */
-#color_scheme_form .color-form #placeholder { position: static; }
 #color_scheme_form h2 { display: none; }
 #color_scheme_form #preview h2 { display: inherit; }
 #color_scheme_form #palette .form-item { width: 28em; height: 1em; margin: 0; position: relative; }
 #color_scheme_form #palette .form-item label { width: 13em; font-size: 84%; }
-#color_scheme_form #preview { border: 10px solid grey; position: absolute; top: 0; left: 260px; width: 480px; overflow: hidden; font-size: 90%; }
+#color_scheme_form #preview { border: 10px solid grey; position: absolute; top: 0; left: 275px; top: 220px; width: 480px; overflow: hidden; font-size: 90%; }
 
 #preview a:hover { text-decoration: none; }
 #preview .section { padding: 0 18px; }

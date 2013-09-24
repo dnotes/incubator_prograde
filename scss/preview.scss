@@ -13,9 +13,6 @@
 @import "mixin";
 
 #color_scheme_form {
-  .color-form #placeholder {
-    position: static;
-  }
   h2 { display: none; }
   #preview h2 { display: inherit; }
   #palette .form-item {
@@ -32,7 +29,8 @@
     border: 10px solid grey;
     position: absolute;
     top: 0;
-    left: 260px;
+    left: 275px;
+    top:220px;
     width: 480px;
     overflow: hidden;
     font-size: 90%;

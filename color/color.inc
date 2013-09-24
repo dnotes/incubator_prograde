@@ -52,4 +52,18 @@ $info['base_image'] = 'color/base.png';
 
 $info['blend_target'] = '#ffffff';
 
+$info['schemes']['sand'] = array(
+  'title' => t('Sand'),
+  'colors' => array(
+    'bg' => '#fcfcfc',
+    'base' => '#c0ab8f',
+    'secondary' => '#967b56',
+    'link' => '#219ea8',
+    'block' => '#c0ab8f',
+    'text' => '#343434',
+    'text_highlight' => '#fcfcfc',
+    'title' => '#226a70',
+  )
+);
+
 return $info;

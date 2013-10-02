@@ -8,101 +8,85 @@
 @import "var";
 @import "mixin";
 
-// Color mixins
-@mixin link-highlight {
-  &:link {
-    color: $color_text_highlight;
-    background: $color_main_color;
-  }
-  &:visited {
-    color: $color_text_highlight;
-  }
-  &.active,
-  &:hover {
-    background: $color_secondary_color;
-    border-color: $color_secondary_color;
-    color: $color_text_highlight;
-  }
-}
-
 // Main colors
 // ---------------------------------------------------------------------------------------------------------------------
 body {
-  color: $color_text;
+  color: $color_black;
   background: $color_bg;
-}
 
-h1, h2, h3, h4, h5, h6 {
-  color: $color_title;
-}
-
-// links
-a {
-  &:link, &:visited {
-    color: $color_link;
+  h1, h2, h3, h4, h5, h6 {
+    color: $color_title;
   }
-  &:hover {
-    color: saturate(darken($color_link, 12%), 10%);
-    text-decoration: none;
+
+  // links
+  a {
+    &:link, &:visited {
+      color: $color_link;
+    }
+    &:hover {
+      color: $color_link_darken;
+    }
   }
-}
 
-// Placeholders styling
-::-webkit-input-placeholder {
-  color: $color_grey;
-}
-:-moz-placeholder {
-  color: $color_grey;
-}
-::-moz-placeholder {
-  color: $color_grey;
-}
-:-ms-input-placeholder {
-  color: $color_grey;
-}
-
-.form-item {
-  label {
+  // Placeholders styling
+  ::-webkit-input-placeholder {
     color: $color_grey;
   }
-}
-#page-title {
-  color: $color_main_color;
-}
-.description {
-  font-size: 11px;
-  color: $color_lightgrey;
+  :-moz-placeholder {
+    color: $color_grey;
+  }
+  ::-moz-placeholder {
+    color: $color_grey;
+  }
+  :-ms-input-placeholder {
+    color: $color_grey;
+  }
+
+  .form-item {
+    label {
+      color: $color_grey;
+    }
+  }
+  .title {
+    color: $color_link;
+  }
+  .description {
+    font-size: 11px;
+    color: $color_lightgrey;
+  }
 }
 
 // CONTENT COLORS
 // ---------------------------------------------------------------------------------------------------------------------
 
 
-// USER MENU
-// -----------------------------------------------------------------------------
-
 .zone-user-wrapper {
-  background: lighten($color_main_color, 15%);
-  border-bottom: 1px solid $color_main_color;
-  color: $color_text_highlight;
+  background: $color_header_bg;
+  border-bottom: 1px solid $color_header_border;
+  color: $color_header_text;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  ul.menu li {
-    border-right: 1px solid lighten($color_main_color, 25%);
-    border-left: 1px solid lighten($color_main_color, 5%);
-    a {
-      color: $color_text_highlight;
-      &.active-trail,
-      &.active,
-      &:hover {
-        background: $color_main_color;
+}
+
+// User menu block
+.block-system-user-menu {
+  .content {
+    .menu {
+      li {
+        border-right: 1px solid $color_header_item_divider;
+        border-left: 1px solid $color_header_border;
+        a {
+          color: $color_header_text;
+          background: $color_header_bg;
+          &.active-trail,
+          &.active,
+          &:hover {
+            background: $color_header_bg_darken;
+          }
+        }
       }
     }
   }
 }
-
-// BRANDING AREA
-// -----------------------------------------------------------------------------
-
 
 .branding-data {
   .site-name-slogan {
@@ -122,40 +106,54 @@ a {
 }
 
 
-#zone-menu-wrapper {
+.zone-menu-wrapper {
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
   background: $color_bg;
 }
 
 // main menu styling
-.navigation ul.links {
+.main-menu {
+  border-bottom: 3px solid $color_main_menu;
   li {
+    &.first {
+
+    }
+    &.last {
+
+    }
     a {
       color: $color_link;
       &:hover,
-      &.active,
-      &.active-trail {
-        background: $color_main_color;
-        color: $color_text_highlight;
+      &.active {
+        background: $color_main_menu;
+        color: $color_main_menu_h;
       }
     }
   }
-  &.main-menu {
-    border-bottom: 3px solid $color_main_color;
-  }
-  &.secondary-menu {
-    border-bottom: 1px solid $color_secondary_color;
-    background: $color_main_color;
-    li {
-      border-left: 1px solid lighten($color_main_color, 10%);
-      border-right: 1px solid darken($color_main_color, 10%);
+}
+
+.secondary-menu {
+  border-bottom: 1px solid $color_main_color_darken;
+  background: $color_main_color;
+  li {
+    &.first {
       a {
-        color: $color_text_highlight;
-        &:hover,
-        &.active,
-        &.active-trail {
-          background: $color_secondary_color;
-        }
+
+      }
+    }
+    &.last {
+      a {
+        border-right: 1px solid $color_header_item_divider;
+      }
+    }
+    a {
+      border-left: 1px solid $color_header_item_divider;
+      border-right: 1px solid $color_header_border;
+      color: $color_white;
+      &:hover,
+      &.active {
+        background: $color_link_darken;
+        color: $color_white;
       }
     }
   }
@@ -163,40 +161,50 @@ a {
 
 // SECTION FOOTER
 // ---------------------------------------------------------------------------------------------------------------------
-footer.section-footer {
-  background-color: $color_border;
-  border-top: 1px solid $color_border;
-  color: lighten(desaturate($color_text, 10%), 10%);
-  a {
-    color: lighten(desaturate($color_link, 10%), 10%);
-    &:hover,
-    &.active,
-    &.active-trail {
+.section-footer {
+  background: $color_footer_bg;
+  border-top: 1px solid $color_footer_border;
+  color: $color_lightgrey;
+}
+
+.block-menu-footer {
+  .content {
+    .menu {
+      li {
+        border-left: 1px solid $color_grey;
+        a {
+          color: $color_footer_link;
+          &.active,
+          &:hover {
+            color: darken($color_footer_link, 10%);
+          }
+        }
+      }
     }
   }
 }
 
 // SECTION CONTENT
 // ---------------------------------------------------------------------------------------------------------------------
-
-.section-content {
-  background: $color_bg;
-}
+body {
+  .section-content {
+    background: $color_bg;
+  }
 
 // Block styles (only for section content. For header we don't need this styles
 .section-content {
   .block {
     border: 1px solid $color_border;
-    background-color: $color_border;
+    background: $color_block_bg;
     .block-title {
-      color: $color_text_highlight;
+      color: $color_block_title;
       background: $color_main_color;
       z-index: 2;
       &:after {
-        border-color: lighten($color_main_color, 15%) !important;
+        border-right: 5px solid $color_main_color_lighten;
       }
       &:hover {
-        background: $color_secondary_color;
+        background: $color_main_color_darken;
       }
     }
   }
@@ -206,7 +214,7 @@ footer.section-footer {
 .view {
   .view-content {
     &>h3 {
-      color: $color_text;
+      color: $color_black;
     }
     .views-row {
       border-bottom: 1px solid $color_border;
@@ -214,7 +222,7 @@ footer.section-footer {
   }
 }
 
-#region-content {
+.region-content {
   .view {
     .view-content {
       // Rows
@@ -228,18 +236,24 @@ footer.section-footer {
 // More link
 a.more-link,
 .more-link a {
-  @include link-highlight;
+  color: $color_white;
+  background: $color_main_color;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  &.active,
+  &:hover {
+    background: $color_main_color_darken;
+    color: $color_white;
+  }
 }
 
 // Big sliding block (slider)
-#page {
+.page {
   .block {
     &.block-recent-stories-block-bigslides {
       .block-title {
-        color: $color_main_color;
+        color: $color_link;
         &:hover {
-          color: $color_main_color;
+          color: $color_link;
         }
       }
     }
@@ -253,6 +267,9 @@ a.more-link,
   .views-field-name {
     a {
       color: $color_link !important;
+      &:hover {
+        color: $color_link_darken !important;
+      }
     }
   }
 }
@@ -260,9 +277,17 @@ a.more-link,
 .node {
   .field-type-taxonomy-term-reference {
     @include overflow;
-    a {
-      @include link-highlight;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    .field-item {
+      a {
+        color: $color_white;
+        background: $color_main_color;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        &.active,
+        &:hover {
+          background: $color_main_color_darken;
+          color: $color_white;
+        }
+      }
     }
   }
 }
@@ -271,8 +296,16 @@ a.more-link,
 ul.primary {
   li {
     a {
-      @include link-highlight;
-      border-bottom: 1px solid $color_secondary_color;
+      color: $color_white;
+      background: $color_main_color;
+      border-bottom: 1px solid $color_main_color_darken;
+      &.active,
+      &:hover {
+        border-color: $color_main_color_darken;
+        background: $color_main_color_darken;
+        color: $color_white;
+      }
+
     }
   }
 }
@@ -280,8 +313,14 @@ ul.primary {
 
 .node-links ul li a,
 .comment-links ul li a {
-  @include link-highlight;
-  border-bottom: 1px solid $color_secondary_color;
+  color: $color_white;
+  background: $color_main_color;
+  border-bottom: 1px solid $color_main_color_darken;
+  &:hover {
+    border-color: $color_main_color_darken;
+    background: $color_main_color_darken;
+    color: $color_white;
+  }
 }
 
 
@@ -299,6 +338,7 @@ ul.primary {
     // Calendar as it is
     table {
       border: 1px solid $color_border;
+      background: $color_block_bg;
       tr {
         td, th {
           border: 1px solid $color_border !important;
@@ -307,7 +347,7 @@ ul.primary {
         th {
           color: $color_white;
           background: $color_main_color !important;
-          border-bottom: 1px solid $color_secondary_color !important;
+          border-bottom: 1px solid $color_main_color_darken !important;
         }
         td {
           &.fc-other-month {
@@ -325,16 +365,16 @@ ul.primary {
   }
   // BUTTONS
   .fc-button {
-    color: $color_text_highlight;
+    color: $color_white;
     background: $color_main_color;
-    border-bottom: 1px solid $color_secondary_color;
+    border-bottom: 1px solid $color_main_color_darken;
     &:hover {
-      border-color: $color_secondary_color;
-      background: $color_secondary_color;
-      color: $color_text_highlight;
+      border-color: $color_main_color_darken;
+      background: $color_main_color_darken;
+      color: $color_white;
     }
     &.ui-state-active {
-      background: $color_secondary_color;
+      background: $color_main_color_darken;
     }
   }
   .ui-icon {
@@ -347,14 +387,14 @@ ul.primary {
   }
   // EVENTS
   a.fc-event {
-    color: $color_text_highlight;
+    color: $color_white;
     background: $color_main_color;
-    border-bottom: 1px solid $color_secondary_color;
+    border-bottom: 1px solid $color_main_color_darken;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
     &:hover {
-      border-color: $color_secondary_color;
-      background: $color_secondary_color;
-      color: $color_text_highlight;
+      border-color: $color_main_color_darken;
+      background: $color_main_color_darken;
+      color: $color_white;
     }
   }
 }
@@ -376,9 +416,9 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"] {
-  border: 1px solid $color_border;
-  background-color: $color_bg;
-  color: $color_text;
+  border: 1px solid $color_input_border;
+  background-color: $color_input_bg;
+  color: $color_black;
   &:focus {
     border-color: $color_main_color;
   }
@@ -388,25 +428,13 @@ button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"] {
-  color: $color_text_highlight;
+  color: $color_white;
   background: $color_main_color;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   &.active,
   &:hover {
-    background: $color_secondary_color;
-    color: $color_text_highlight;
+    background: $color_main_color_darken;
+    color: $color_white;
   }
 }
-
-
-
-// SKINR OPTION COLORS
-// ---------------------------------------------------------------------------------------------------------------------
-.block-bg-pagebg .section-content article.node-teaser,
-.block-bg-pagebg .section-content .block, 
-.section-content .block.block-bg-pagebg,
-.block-bg-pagebg .section-footer, 
-.section-footer.block-bg-pagebg
-{
-  background-color: $color_bg;
 }

@@ -9,7 +9,7 @@ $info = array();
 
 $info['fields'] = array(
   'bg' => t('Background'),                                          // $color_bg
-  'base' => t('Main color'),                                // $color_main_color
+  'base' => t('Main color'),                                      // $color_base
   'secondary' => t('Secondary color'),                 // $color_secondary_color
   'link' => t('Links'),                                           // $color_link
   'block' => t('Block borders'),                                // $color_border

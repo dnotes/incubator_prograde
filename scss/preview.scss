@@ -97,7 +97,7 @@
     border: 1px solid;
   }
   .block h2.block-title, .node-teaser h2.node-title {
-    @include title-banner;
+    @include title;
     margin-top: 4px;
     margin-bottom: 6px;
     display: inline-block !important;

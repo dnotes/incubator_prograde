@@ -164,25 +164,21 @@ a {
 
 // SECTION CONTENT
 // ---------------------------------------------------------------------------------------------------------------------
-body {
-  .section-content {
-    background: $color_bg;
-  }
+.section-content {
+  background: $color_bg;
+}
 
 // Block styles (only for section content. For header we don't need this styles
 .section-content {
   .block {
-    border: 1px solid $color_border;
-    background: $color_block_bg;
+    border-color: $color_block_border;
+    background-color: $color_block_border;
     .block-title {
-      color: $color_block_title;
+      color: $color_bg;
       background: $color_base;
       z-index: 2;
       &:after {
         border-right: 5px solid $color_base_light;
-      }
-      &:hover {
-        background: $color_base_dark;
       }
     }
   }
@@ -192,10 +188,10 @@ body {
 .view {
   .view-content {
     &>h3 {
-      color: $color_black;
+      color: $color_text;
     }
     .views-row {
-      border-bottom: 1px solid $color_border;
+      border-bottom: 1px solid $color_block_border;
     }
   }
 }
@@ -205,7 +201,7 @@ body {
     .view-content {
       // Rows
       .views-row {
-        border-bottom: 1px solid $color_border;
+        border-bottom: 1px solid $color_block_border;
       }
     }
   }
@@ -315,11 +311,11 @@ ul.primary {
   .fc-content {
     // Calendar as it is
     table {
-      border: 1px solid $color_border;
-      background: $color_block_bg;
+      border: 1px solid $color_block_border;
+      background: $color_block_border;
       tr {
         td, th {
-          border: 1px solid $color_border !important;
+          border: 1px solid $color_block_border !important;
         }
         // Style as buttons
         th {
@@ -335,7 +331,7 @@ ul.primary {
             color: $color_grey;
           }
           &.fc-today {
-            background: $color_border !important;
+            background: $color_block_border !important;
           }
         }
       }
@@ -414,5 +410,4 @@ input[type="button"] {
     background: $color_base_dark;
     color: $color_white;
   }
-}
 }

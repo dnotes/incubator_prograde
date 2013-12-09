@@ -8,6 +8,17 @@
 @import "var";
 @import "mixin";
 
+$color_base_dark: darken($color_base, 10%);
+$color_base_light: lighten($color_base, 10%);
+
+$color_link_dark: darken($color_link, 10%);
+
+@mixin invertcolor {
+  background-color: $color_base;
+  border-color: $color_base_light $color_base_light $color_base_dark $color_base_dark;
+  color: $color_bg;
+}
+
 // Main colors
 // ---------------------------------------------------------------------------------------------------------------------
 body {
@@ -24,8 +35,8 @@ a {
   &:link, &:visited {
     color: $color_link;
   }
-  &:hover {
-    color: darken($color_link, 10%);
+  &:hover, &:active {
+    color: $color_link_dark;
   }
 }
 
@@ -62,30 +73,20 @@ a {
 
 
 .zone-user-wrapper {
-  background: $color_header_bg;
-  border-bottom: 1px solid $color_header_border;
-  color: $color_header_text;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  @include invertcolor;
+  @include shadow-standard;
 }
 
-// User menu block
-.block-system-user-menu {
-  .content {
-    .menu {
-      li {
-        border-right: 1px solid $color_header_item_divider;
-        border-left: 1px solid $color_header_border;
-        a {
-          color: $color_header_text;
-          background: $color_header_bg;
-          &.active-trail,
-          &.active,
-          &:hover {
-            background: $color_header_bg_darken;
-          }
-        }
-      }
-    }
+.zone-user-wrapper li {
+  @include invertcolor;
+  border-style: none solid none solid;
+  border-width: 1px;
+}
+
+.zone-user-wrapper li a {
+  @include invertcolor;
+  &.active-trail, &.active, &:hover, &:active {
+    background-color: $color_base_dark;
   }
 }
 
@@ -134,7 +135,7 @@ a {
 }
 
 .secondary-menu {
-  border-bottom: 1px solid darken($color_base, 10%);
+  border-bottom: 1px solid $color_base_dark;
   background: $color_base;
   li {
     &.first {
@@ -153,7 +154,7 @@ a {
       color: $color_white;
       &:hover,
       &.active {
-        background: darken($color_link, 10%);
+        background: $color_link_dark;
         color: $color_white;
       }
     }
@@ -202,10 +203,10 @@ body {
       background: $color_base;
       z-index: 2;
       &:after {
-        border-right: 5px solid lighten($color_base, 10%);
+        border-right: 5px solid $color_base_light;
       }
       &:hover {
-        background: darken($color_base, 10%);
+        background: $color_base_dark;
       }
     }
   }
@@ -242,7 +243,7 @@ a.more-link,
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   &.active,
   &:hover {
-    background: darken($color_base, 10%);
+    background: $color_base_dark;
     color: $color_white;
   }
 }
@@ -269,7 +270,7 @@ a.more-link,
     a {
       color: $color_link !important;
       &:hover {
-        color: darken($color_link, 10%) !important;
+        color: $color_link_dark !important;
       }
     }
   }
@@ -285,7 +286,7 @@ a.more-link,
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
         &.active,
         &:hover {
-          background: darken($color_base, 10%);
+          background: $color_base_dark;
           color: $color_white;
         }
       }
@@ -299,11 +300,11 @@ ul.primary {
     a {
       color: $color_white;
       background: $color_base;
-      border-bottom: 1px solid darken($color_base, 10%);
+      border-bottom: 1px solid $color_base_dark;
       &.active,
       &:hover {
-        border-color: darken($color_base, 10%);
-        background: darken($color_base, 10%);
+        border-color: $color_base_dark;
+        background: $color_base_dark;
         color: $color_white;
       }
 
@@ -316,10 +317,10 @@ ul.primary {
 .comment-links ul li a {
   color: $color_white;
   background: $color_base;
-  border-bottom: 1px solid darken($color_base, 10%);
+  border-bottom: 1px solid $color_base_dark;
   &:hover {
-    border-color: darken($color_base, 10%);
-    background: darken($color_base, 10%);
+    border-color: $color_base_dark;
+    background: $color_base_dark;
     color: $color_white;
   }
 }
@@ -348,7 +349,7 @@ ul.primary {
         th {
           color: $color_white;
           background: $color_base !important;
-          border-bottom: 1px solid darken($color_base, 10%) !important;
+          border-bottom: 1px solid $color_base_dark !important;
         }
         td {
           &.fc-other-month {
@@ -368,14 +369,14 @@ ul.primary {
   .fc-button {
     color: $color_white;
     background: $color_base;
-    border-bottom: 1px solid darken($color_base, 10%);
+    border-bottom: 1px solid $color_base_dark;
     &:hover {
-      border-color: darken($color_base, 10%);
-      background: darken($color_base, 10%);
+      border-color: $color_base_dark;
+      background: $color_base_dark;
       color: $color_white;
     }
     &.ui-state-active {
-      background: darken($color_base, 10%);
+      background: $color_base_dark;
     }
   }
   .ui-icon {
@@ -390,11 +391,11 @@ ul.primary {
   a.fc-event {
     color: $color_white;
     background: $color_base;
-    border-bottom: 1px solid darken($color_base, 10%);
+    border-bottom: 1px solid $color_base_dark;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
     &:hover {
-      border-color: darken($color_base, 10%);
-      background: darken($color_base, 10%);
+      border-color: $color_base_dark;
+      background: $color_base_dark;
       color: $color_white;
     }
   }
@@ -434,7 +435,7 @@ input[type="button"] {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   &.active,
   &:hover {
-    background: darken($color_base, 10%);
+    background: $color_base_dark;
     color: $color_white;
   }
 }

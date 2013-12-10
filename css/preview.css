@@ -21,7 +21,7 @@
 #preview #preview-content { margin-right: 190px; }
 #preview .incubator-user-submitted { display: inline-block; font-size: 80%; padding: 2px 9px; }
 #preview .block, #preview .node-teaser { padding: 6px 19px; margin-bottom: 9px; border: 1px solid; }
-#preview .block h2.block-title, #preview .node-teaser h2.node-title { font-family: 'Roboto Slab', arial, sans-serif; margin-top: 4px; margin-bottom: 6px; display: inline-block !important; *display: inline !important; }
+#preview .block h2.block-title, #preview .node-teaser h2.node-title { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin-top: 4px; margin-bottom: 6px; display: inline-block !important; *display: inline !important; }
 #preview .section-footer { border-top: 1px solid; height: 3em; }
 
 .block, .node-teaser, .section-footer { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }

@@ -5,7 +5,6 @@
 @import "compass/css3";
 @import "compass/typography";
 
-
 @import "var";
 @import "mixin";
 
@@ -15,9 +14,6 @@
 // USE CUSTOM FONTS
 // ---------------------------------------------------------------------------------------------------------------------
 
-// Custom fonts
-@import url(http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic&subset=latin,cyrillic);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700&subset=latin,cyrillic);
 
 
 // SECTION HEADER
@@ -27,11 +23,7 @@
 // TODO: Take buttons, inputs from _base.scss
 
 html {
-  font-size: $baseFontSize;
-}
-
-body {
-  font-size: 100%;
+  font-size: 13px;
 }
 
 .section-header {
@@ -57,8 +49,8 @@ body {
         padding: 0;
         a {
           display: block;
-          line-height: em(40px);
-          padding: 0 em(10px);
+          line-height: 30px;
+          padding: 0 10px;
           font-weight: normal;
           &.active-trail,
           &.active,
@@ -72,15 +64,15 @@ body {
 }
 
 .branding-data {
-  padding: em(40px) 0;
+  padding: 40px 0;
   .logo-img {
 
   }
   .site-name-slogan {
     .site-name {
-      font-size: em(32px);
+      font-size: 32px;
       font-weight: bold;
-      margin-bottom: em(8px);
+      margin-bottom: 8px;
       a {
         &:hover {
 
@@ -89,7 +81,7 @@ body {
     }
   }
   .site-slogan {
-    font-size: em(20px);
+    font-size: 20px;
     font-weight: normal;
   }
 }
@@ -116,12 +108,12 @@ body {
 
     }
     a {
-      padding: 0 em(20px);
+      padding: 0 20px;
       @include title;
       font-weight: bold;
-      font-size: em(22px);
+      font-size: 18px;
       display: block;
-      line-height: em(40px);
+      line-height: 40px;
       &:hover,
       &.active {
 
@@ -149,12 +141,12 @@ body {
       }
     }
     a {
-      padding: 0 em(30px);
+      padding: 0 20px;
       @include text;
       font-weight: normal;
-      font-size: em(16px);
+      font-size: 12px;
       display: block;
-      line-height: em(40px);
+      line-height: 30px;
       &:hover,
       &.active {
 
@@ -166,9 +158,9 @@ body {
 // SECTION FOOTER
 // ---------------------------------------------------------------------------------------------------------------------
 .section-footer {
-  font-size: em(12px);
-  padding-top: em(30px);
-  padding-bottom: em(30px);
+  font-size: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .block-menu-footer {
@@ -178,11 +170,11 @@ body {
   }
   .content {
     .menu {
-      font-size: em(18px);
+      font-size: 12px;
       @include horizontal-list(0);
       li {
-        padding: 0 em(14px);
-        line-height: em(18px);
+        padding: 0 8px;
+        line-height: 12px;
         &.first {
           border-left: none;
         }
@@ -190,7 +182,7 @@ body {
 
         }
         a {
-          //font-size: em(11px);
+          font-size: 11px;
           &.active,
           &:hover {
 
@@ -206,40 +198,21 @@ body {
 .section-content {
   position: relative;
   z-index: 2;
-  padding-top: em(15px);
-  padding-bottom: em(100px);
+  padding-top: 15px;
+  padding-bottom: 100px;
 }
 
 // Block styles (only for section content. For header we don't need this styles
 .section-content {
   .block {
+    background-repeat: repeat;
     padding: 19px;
-    //padding: em(19px);
     margin-bottom: 20px;
-    //margin-bottom: em(20px);
     .block-title {
       @include transition(all, 0.3s);
-      @include title;
-      font-size: em(24px);
+      font-size: 20px;
       font-weight: bold;
-      line-height: normal;
-      padding: 7px 15px 7px 17px;
-      margin-left: -25px;
-      margin-bottom: 15px;
-      display: inline-block;
-      *display: inline;
-      position: relative;
-      z-index: 2;
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        left: -5px;
-        bottom: -5px;
-        border-left: 5px solid transparent;
-        //border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-      }
+      @include title-banner;
       &:hover {
 
       }
@@ -259,7 +232,7 @@ body {
     // Bad... very bad... why it's not title? -_-
     &>h3 {
       margin: 0;
-      font-size: em(18px);
+      font-size: 16px;
     }
     // Rows
     .views-row {
@@ -301,19 +274,18 @@ body {
 body a.more-link,
 body .more-link a {
   @include transition(all, 0.3s);
-  height: em(30px);
+  height: 30px;
   border: none;
-  line-height: em(30px);
+  line-height: 30px;
   filter: none;
   text-shadow: none;
-  @include text;
   padding-top: 0;
   padding-bottom: 0;
-  font-size: em(12px);
+  font-size: 12px;
   font-weight: bold;
   display: inline-block;
-  padding-left: em(11px);
-  padding-right: em(11px);
+  padding-left: 11px;
+  padding-right: 11px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   border-radius: 0;
   &.active,
@@ -401,13 +373,13 @@ body .more-link a {
     width: 100%;
     .field-content {
       dispaly: block;
-      padding: em(15px) em(20px);
+      padding: 15px 20px;
     }
     a {
       @include title;
       font-weight: bold;
       text-shadow: none;
-      font-size: em(24px);
+      font-size: 24px;
       &:hover {
       }
     }
@@ -506,10 +478,10 @@ body .more-link a {
   .field-name-field-main-image
   .field-name-field-gallery-images,
   .field-name-field-media {
-    margin-bottom: em(15px);
+    margin-bottom: 10px;
   }
   .field {
-    margin-bottom: em(15px);
+    margin-bottom: 10px;
   }
   .field-type-taxonomy-term-reference {
     @include overflow;
@@ -519,15 +491,14 @@ body .more-link a {
       margin-bottom: 8px;
       a {
         @include transition(all, 0.3s);
-        height: em(30px);
+        height: 20px;
         border: none;
-        line-height: em(30px);
+        line-height: 20px;
         filter: none;
         text-shadow: none;
-        @include text;
         padding-top: 0;
         padding-bottom: 0;
-        font-size: em(14px);
+        font-size: 12px;
         font-weight: bold;
         display: block;
         padding-left: 8px;
@@ -558,32 +529,30 @@ body .more-link a {
 // Search block
 .block-search-form {
   position: relative;
-    form {
-    .form-item,
-    .form-actions {
-      margin: 0;
-      padding: 0;
-      float: left;
-      clear: none;
-    }
-    input[type="submit"] {
-      height: em(40px);
-      width: em(40px);
-      padding: 0;
-      background-image: url(../images/search_icon.png);
-      background-position: center center;
-      background-repeat: no-repeat;
-      //@include no-font;
-      text-indent: -99999px;
-      font-size: 1em;
-    }
+  .form-item,
+  .form-actions {
+    margin: 0;
+    padding: 0;
+    float: left;
+    clear: none;
+  }
+  input[type="submit"] {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    background-image: url(../images/search_icon.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    //@include no-font;
+    text-indent: -99999px;
+    font-size: 1em;
   }
 }
 
 // Tabs
 ul.primary {
   padding: 0;
-  margin: em(20px) 0 ;
+  margin: 20px 0;
   border: none !important;
   li {
     float: left;
@@ -592,16 +561,14 @@ ul.primary {
     border: none !important;
     a {
       @include transition(all, 0.3s);
-      height: em(39px);
+      height: 29px;
       border: none;
-      line-height: em(39px);
+      line-height: 29px;
       filter: none;
       text-shadow: none;
-      @include text;
       padding-top: 0;
       padding-bottom: 0;
-      //font-size: em(12px);
-      font-size: em(15px);
+      font-size: 12px;
       font-weight: bold;
       display: inline-block;
       padding-left: 13px;
@@ -623,15 +590,14 @@ ul.primary {
 .node-links ul li a,
 .comment-links ul li a {
   @include transition(all, 0.3s);
-  height: em(40px);
+  height: 30px;
   border: none;
-  line-height: em(40px);
+  line-height: 30px;
   filter: none;
   text-shadow: none;
-  @include text;
   padding-top: 0;
   padding-bottom: 0;
-  font-size: em(15px);
+  font-size: 12px;
   font-weight: bold;
   display: inline-block;
   padding-left: 13px;
@@ -682,13 +648,12 @@ ul.primary {
     // Calendar as it is
     table {
       border-collapse: collapse;
-      @include text;
       tr {
         td, th {
         }
         // Style as buttons
         th {
-          font-size: em(16px);
+          font-size: 14px;
           font-weight: bold;
           margin: 0;
           //box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -721,15 +686,14 @@ ul.primary {
   // BUTTONS
   .fc-button {
     @include transition(all, 0.3s);
-    height: em(40px);
+    height: 30px;
     border: none;
-    line-height: em(40px);
+    line-height: 30px;
     filter: none;
     text-shadow: none;
-    @include text;
     padding-top: 0;
     padding-bottom: 0;
-    font-size: em(15px);
+    font-size: 14px;
     font-weight: bold;
     display: inline-block;
     padding-left: 10px;
@@ -743,8 +707,8 @@ ul.primary {
       overflow: visible;
     }
     .fc-button-content {
-      height: em(40px);
-      line-height: em(40px);
+      height: 30px;
+      line-height: 30px;
       padding: 0;
     }
     &:hover {
@@ -779,7 +743,7 @@ ul.primary {
   }
   // EVENTS
   .fc-event {
-    font-size: em(15px);
+    font-size: 11px;
     font-style: normal;
   }
   a.fc-event {
@@ -788,7 +752,6 @@ ul.primary {
     border: none;
     filter: none;
     text-shadow: none;
-    @include text;
     padding-top: 0;
     padding-bottom: 0;
     font-weight: bold;
@@ -817,7 +780,7 @@ ul.primary {
 }
 
 .region-content-inner > .feed-icon {
-  margin-bottom: em(20px);
+  margin-bottom: 20px;
 }
 
 // Inputs
@@ -838,14 +801,12 @@ input[type="time"],
 input[type="url"],
 input[type="week"] {
   @include transition(all, 0.3s);
-  @include text;
-  font-size: 1em;
+  font-size: 14px;
   line-height: normal;
   font-weight: normal;
-  @include text;
   padding: 2px;
   box-shadow: none !important;
-  height: em(40px);
+  height: 30px;
   @include box-sizing(border-box);
 }
 
@@ -870,16 +831,14 @@ input[type="reset"],
 input[type="submit"],
 input[type="button"] {
   @include transition(all, 0.3s);
-  height: em(40px);
+  height: 30px;
   border: none;
-  line-height: em(40px);
+  line-height: 30px;
   filter: none;
   text-shadow: none;
-  @include text;
   padding-top: 0;
   padding-bottom: 0;
-  //font-size: 14px;
-  font-size: 1.05em;
+  font-size: 14px;
   font-weight: bold;
   display: inline-block;
   padding-left: 13px;
@@ -894,9 +853,6 @@ article {
 
 .region-content .node-teaser {
   margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
 }
 
 // SECTION SIDEBAR LEFT
@@ -906,4 +862,16 @@ article {
 // ---------------------------------------------------------------------------------------------------------------------
 
 
+
+//
+// -----------------------------------------------------------------------------
+
+//article.node-teaser, // TODO: implement this
+.section-content .block, 
+.section-content .block.block-bg-lighter,
+.section-footer,
+.section-footer.block-bg-lighter
+{
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII=");
+}
 

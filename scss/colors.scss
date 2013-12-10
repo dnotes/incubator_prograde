@@ -52,9 +52,11 @@ $color_link_dark: saturate(darken($color_link, 12%), 10%);
   }
   &:visited {
     color: $color_text_highlight;
+    background: $color_base;
   }
   &.active,
-  &:hover {
+  &:hover,
+  &:active {
     background: $color_base_dark;
     border-color: $color_base_dark;
     color: $color_text_highlight;
@@ -73,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // links
-a {
+body a {
   &:link, &:visited {
     color: $color_link;
   }

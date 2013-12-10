@@ -5,7 +5,6 @@
 @import "compass/css3";
 @import "compass/typography";
 
-@import "var";
 @import "mixin";
 
 // Import base styles
@@ -16,19 +15,12 @@
 
 
 
+
 // SECTION HEADER
 // ---------------------------------------------------------------------------------------------------------------------
 
 // TODO: Move all this style-colors to colors.css
 // TODO: Take buttons, inputs from _base.scss
-
-html {
-  font-size: 13px;
-}
-
-.section-header {
-  margin-bottom: -1px;
-}
 
 .zone-user-wrapper {
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -205,20 +197,15 @@ html {
 // Block styles (only for section content. For header we don't need this styles
 .section-content {
   .block {
+    border-style: solid;
+    border-width: 1px;
     background-repeat: repeat;
     padding: 19px;
     margin-bottom: 20px;
     .block-title {
-      @include transition(all, 0.3s);
-      font-size: 20px;
+      font-size: 1.67em;
       font-weight: bold;
       @include title-banner;
-      &:hover {
-
-      }
-
-      // Tip: color_link_lighten
-
     }
     .content {
       clear: both;
@@ -372,7 +359,7 @@ body .more-link a {
     left: 0;
     width: 100%;
     .field-content {
-      dispaly: block;
+      display: block;
       padding: 15px 20px;
     }
     a {

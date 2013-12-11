@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+// This file will hold styles for all layouts using the same media query as the normal grid.
+
+@import "compass/css3";
+@import "compass/typography";
+
+@import "mixin";
+
+html { font-size: 14px; }
+
+.fc-event .fc-event-inner {
+  max-height: 3.2em;
+}

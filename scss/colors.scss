@@ -44,6 +44,29 @@ $color_link_dark: saturate(darken($color_link, 12%), 10%);
   color: $color_text_highlight;
 }
 
+@mixin invert-menu {
+  background-color: $color_base;
+  border-color: $color_base $color_base_dark $color_base $color_base_light !important;
+  padding-left: 0;
+  padding-right: 0;
+  &>li {
+    background-color: $color_base;
+    border-color: $color_base_light $color_base_light $color_base_dark $color_base_dark;
+    color: $color_text_highlight;
+    &.active-trail, &.active, &:hover, &:active {
+      background-color: $color_base_dark;
+    }
+    &>a {
+      &:link, &:visited, &:hover, &:active {
+        color: $color_text_highlight;
+      }
+      &.active, &.active-trail, &:hover, &:active {
+        background-color: $color_base_dark;
+      }
+    }
+  }
+}
+
 // Color mixins
 @mixin link-highlight {
   &:link {
@@ -118,17 +141,8 @@ body a {
   @include shadow-standard;
 }
 
-.zone-user-wrapper li {
-  @include invertcolor;
-  border-style: none solid none solid;
-  border-width: 1px;
-}
-
-.zone-user-wrapper li a {
-  @include invertcolor;
-  &.active-trail, &.active, &:hover, &:active {
-    background-color: $color_base_dark;
-  }
+.zone-user-wrapper ul {
+  @include invert-menu;
 }
 
 .site-name-slogan {
@@ -163,22 +177,7 @@ body a {
     border-bottom: 3px solid $color_base_light;
   }
   &.secondary-menu {
-    @include invertcolor;
-    border-bottom: 1px solid $color_base_dark;
-    background: $color_base;
-    li {
-      @include invertcolor;
-      border-style: none solid none solid;
-      border-width: 1px;
-      a {
-        @include invertcolor;
-        &:hover,
-        &.active,
-        &.active-trail {
-          background: $color_base_dark;
-        }
-      }
-    }
+    @include invert-menu;
   }
 }
 

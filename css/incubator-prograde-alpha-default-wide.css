@@ -1,1 +1,3 @@
-/* This file will hold styles that are loaded using the same media query as the wide grid. */
+html { font-size: 15px; }
+
+.fc-event .fc-event-inner { max-height: 3.3em; }

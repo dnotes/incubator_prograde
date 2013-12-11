@@ -10,10 +10,21 @@
 // Import base styles
 @import "base";
 
-// USE CUSTOM FONTS
+// BASE FONT SIZE
+// ---------------------------------------------------------------------------------------------------------------------
+html {
+  font-size: 12px;
+}
+
+
+
+// MENUS
 // ---------------------------------------------------------------------------------------------------------------------
 
-
+.zone-menu-wrapper,
+.zone-user-wrapper {
+  display: none;
+}
 
 
 // SECTION HEADER
@@ -22,39 +33,6 @@
 // TODO: Move all this style-colors to colors.css
 // TODO: Take buttons, inputs from _base.scss
 
-.zone-user-wrapper {
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  position: relative;
-}
-
-// User menu block
-.block-system-user-menu {
-  float: right;
-  .block-title {
-    display: none;
-  }
-  .content {
-    .menu {
-      @include horizontal-list(0);
-      li {
-        margin: 0;
-        padding: 0;
-        a {
-          display: block;
-          line-height: 30px;
-          padding: 0 10px;
-          font-weight: normal;
-          &.active-trail,
-          &.active,
-          &:hover {
-
-          }
-        }
-      }
-    }
-  }
-}
-
 .branding-data {
   padding: 40px 0;
   .logo-img {
@@ -62,9 +40,9 @@
   }
   .site-name-slogan {
     .site-name {
-      font-size: 32px;
+      font-size: 300%;
       font-weight: bold;
-      margin-bottom: 8px;
+      margin-bottom: .6em;
       a {
         &:hover {
 
@@ -73,86 +51,18 @@
     }
   }
   .site-slogan {
-    font-size: 20px;
+    font-size: 200%;
     font-weight: normal;
   }
 }
 
 
-.zone-menu-wrapper {
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  position: relative;
-}
-
-// main menu styling
-.main-menu {
-  display: block !important;
-  margin: 0;
-  li {
-    display: block;
-    float: left;
-    margin: 0 !important;
-    padding: 0 !important;
-    &.first {
-
-    }
-    &.last {
-
-    }
-    a {
-      padding: 0 20px;
-      @include title;
-      font-weight: bold;
-      font-size: 18px;
-      display: block;
-      line-height: 40px;
-      &:hover,
-      &.active {
-
-      }
-    }
-  }
-}
-
-.secondary-menu {
-  display: block !important;
-  margin: 0;
-  li {
-    display: block;
-    float: left;
-    margin: 0 !important;
-    padding: 0 !important;
-    &.first {
-      a {
-        border-left: none;
-      }
-    }
-    &.last {
-      a {
-
-      }
-    }
-    a {
-      padding: 0 20px;
-      @include text;
-      font-weight: normal;
-      font-size: 12px;
-      display: block;
-      line-height: 30px;
-      &:hover,
-      &.active {
-
-      }
-    }
-  }
-}
-
 // SECTION FOOTER
 // ---------------------------------------------------------------------------------------------------------------------
 .section-footer {
-  font-size: 12px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-size: 90%;
+  padding-top: 1.67em;
+  padding-bottom: 1.67em;
 }
 
 .block-menu-footer {
@@ -162,11 +72,11 @@
   }
   .content {
     .menu {
-      font-size: 12px;
+      font-size: 90%;
       @include horizontal-list(0);
       li {
-        padding: 0 8px;
-        line-height: 12px;
+        padding: 0 .8em;
+        line-height: 1.1em;
         &.first {
           border-left: none;
         }
@@ -174,7 +84,7 @@
 
         }
         a {
-          font-size: 11px;
+          font-size: 85%;
           &.active,
           &:hover {
 
@@ -190,8 +100,8 @@
 .section-content {
   position: relative;
   z-index: 2;
-  padding-top: 15px;
-  padding-bottom: 100px;
+  padding-top: 1.25em;
+  padding-bottom: 6em;
 }
 
 // Block styles (only for section content. For header we don't need this styles
@@ -200,10 +110,10 @@
     border-style: solid;
     border-width: 1px;
     background-repeat: repeat;
-    padding: 19px;
-    margin-bottom: 20px;
+    padding: 1.3em;
+    margin-bottom: 1.4em;
     .block-title {
-      font-size: 1.67em;
+      font-size: 167%;
       font-weight: bold;
       @include title-banner;
     }
@@ -216,22 +126,18 @@
 // Restyle views
 .view {
   .view-content {
-    // Bad... very bad... why it's not title? -_-
     &>h3 {
       margin: 0;
-      font-size: 16px;
+      font-size: 133%;
     }
     // Rows
     .views-row {
       @include overflow;
-      margin-bottom: 3px;
-      padding-bottom: 3px;
-      &:first-child {
-
-      }
-      &:last-child {
+      margin-bottom: .25em;
+      padding-bottom: .25em;
+    }
+    .views-row-last {
         border-bottom: none;
-      }
     }
   }
 }
@@ -242,16 +148,13 @@
     .view-content {
       // Rows
       .views-row {
-        margin-bottom: 10px;
-        padding-bottom: 10px;
-        &:first-child {
-
-        }
-        &:last-child {
-          border-bottom: none;
-          margin-bottom: 0;
-          padding-bottom: 0;
-        }
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+      }
+      .views-row-last {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
     }
   }
@@ -260,25 +163,9 @@
 // More link
 body a.more-link,
 body .more-link a {
-  @include transition(all, 0.3s);
-  height: 30px;
-  border: none;
-  line-height: 30px;
-  filter: none;
-  text-shadow: none;
-  padding-top: 0;
-  padding-bottom: 0;
-  font-size: 12px;
+  @include link-btn(2.2em, .9em);
+  font-size: 90%;
   font-weight: bold;
-  display: inline-block;
-  padding-left: 11px;
-  padding-right: 11px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  border-radius: 0;
-  &.active,
-  &:hover {
-
-  }
 }
 
 .feed-icon {
@@ -286,35 +173,28 @@ body .more-link a {
 }
 
 // Big sliding block (slider)
-.page {
-
-  .block {
-    &.block-recent-stories-block-bigslides {
-      border: none;
-      padding: 0;
+.block-recent-stories-block-bigslides {
+  border: none;
+  padding: 0;
+  background: none;
+  .block-title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1.25em;
+    background: none;
+    &:hover {
       background: none;
-      .block-title {
-        margin: 0;
-        padding: 0;
-        margin-bottom: 15px;
-        background: none;
-        &:hover {
-          background: none;
-        }
-        &:after {
-          display: none;
-        }
-      }
+    }
+    &:after {
+      display: none;
     }
   }
-
 }
 
 // Restyle slider
 .view-display-id-block_slides {
   .views-slideshow-controls-text {
     @include opacity(0);
-    @include transition(all, 0.3s);
   }
   &:hover {
     .views-slideshow-controls-text {
@@ -341,7 +221,6 @@ body .more-link a {
   }
   .views-slideshow-controls-text {
     @include opacity(0);
-    @include transition(all, 0.3s);
   }
   &:hover {
     .views-slideshow-controls-text {
@@ -360,13 +239,13 @@ body .more-link a {
     width: 100%;
     .field-content {
       display: block;
-      padding: 15px 20px;
+      padding: 1.25em 1.66em;
     }
     a {
       @include title;
       font-weight: bold;
       text-shadow: none;
-      font-size: 24px;
+      font-size: 2em;
       &:hover {
       }
     }
@@ -389,8 +268,8 @@ body .more-link a {
       }
     }
     .views-field-field-main-image {
-      padding-top: 5px;
-      padding-bottom: 5px;
+      padding-top: .4em;
+      padding-bottom: .4em;
     }
   }
 }
@@ -431,13 +310,13 @@ body .more-link a {
   }
   header {
     float: left;
-    margin-right: 10px;
+    margin-right: .8em;
   }
   .bahai-user-submitted {
 
   }
   .content {
-    padding-top: 10px;
+    padding-top: .8em;
   }
 
   &.node-video {
@@ -465,53 +344,37 @@ body .more-link a {
   .field-name-field-main-image
   .field-name-field-gallery-images,
   .field-name-field-media {
-    margin-bottom: 10px;
+    margin-bottom: .8em;
   }
   .field {
-    margin-bottom: 10px;
+    margin-bottom: .8em;
   }
   .field-type-taxonomy-term-reference {
     @include overflow;
     .field-item {
       float: left;
-      margin-right: 8px;
-      margin-bottom: 8px;
+      margin-right: .67em;
+      margin-bottom: .67em;
       a {
-        @include transition(all, 0.3s);
-        height: 20px;
-        border: none;
-        line-height: 20px;
-        filter: none;
-        text-shadow: none;
-        padding-top: 0;
-        padding-bottom: 0;
-        font-size: 12px;
+        @include link-btn;
         font-weight: bold;
-        display: block;
-        padding-left: 8px;
-        padding-right: 8px;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        border-radius: 0;
-        &.active,
-        &:hover {
-        }
       }
     }
   }
 }
 
 .location-locations-wrapper {
-  margin-bottom: 10px;
+  margin-bottom: .8em;
 }
 
 
-.field-name-field-main-image { margin:5px; }
+.field-name-field-main-image { margin:.4em; }
 .incubator-images-right .node-teaser .field-name-field-gallery-images,
 .incubator-images-right .node-teaser .field-name-field-media,
-.incubator-images-right .field-name-field-main-image {float:right; margin-left: 20px;}
+.incubator-images-right .field-name-field-main-image {margin-left: 1.2em;}
 .incubator-images-left .node-teaser .field-name-field-gallery-images,
 .incubator-images-left .node-teaser .field-name-field-media,
-.incubator-images-left .field-name-field-main-image {float:left; margin-right: 20px;}
+.incubator-images-left .field-name-field-main-image {margin-right: 1.2em;}
 
 // Search block
 .block-search-form {
@@ -532,14 +395,14 @@ body .more-link a {
     background-repeat: no-repeat;
     //@include no-font;
     text-indent: -99999px;
-    font-size: 1em;
   }
 }
 
 // Tabs
 ul.primary {
+  font-size: 80%;
   padding: 0;
-  margin: 20px 0;
+  margin: 1.6em 0;
   border: none !important;
   li {
     float: left;
@@ -547,22 +410,8 @@ ul.primary {
     padding: 0;
     border: none !important;
     a {
-      @include transition(all, 0.3s);
-      height: 29px;
-      border: none;
-      line-height: 29px;
-      filter: none;
-      text-shadow: none;
-      padding-top: 0;
-      padding-bottom: 0;
-      font-size: 12px;
-      font-weight: bold;
-      display: inline-block;
-      padding-left: 13px;
-      padding-right: 13px;
+      @include link-btn(1.67em, 1em);
       margin: 0;
-      //box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-      border-radius: 0;
       &.active,
       &:hover {
         border-left: none;
@@ -576,23 +425,116 @@ ul.primary {
 
 .node-links ul li a,
 .comment-links ul li a {
-  @include transition(all, 0.3s);
-  height: 30px;
-  border: none;
-  line-height: 30px;
-  filter: none;
-  text-shadow: none;
-  padding-top: 0;
-  padding-bottom: 0;
-  font-size: 12px;
+  @include link-btn(2em, 1.1em);
+  font-size: 90%;
   font-weight: bold;
-  display: inline-block;
-  padding-left: 13px;
-  padding-right: 13px;
-  margin: 0;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  border-radius: 0;
   float: none;
+}
+
+.node ul.inline,
+.node ol.inline {
+  display: block;
+  margin-top: .8em;
+  margin-bottom: .4em;
+  li {
+    padding: 0;
+    margin-right: .8em;
+  }
+}
+
+// Calendar styling
+.fc-agenda-divider {
+  border: none;
+  height: 1px;
+}
+.fullcalendar {
+  table {
+    border-collapse: collapse;
+    // Style as buttons
+    th {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 0;
+    }
+    td {
+      &.fc-other-month {
+      }
+      .fc-day-number {
+        padding: 0 .4em;
+      }
+      &.fc-today {
+      }
+    }
+  }
+}
+
+// Events
+.fullcalendar-content {
+
+}
+// BUTTONS
+.fc-button {
+  @include link-btn(2.5em, .8em);
+  font-weight: bold;
+  float: none;
+  margin-right: 1px;
+  .fc-button-inner {
+    overflow: visible;
+  }
+  .fc-button-content {
+    height: 2.5em;
+    line-height: 2.5em;
+    padding: 0;
+  }
+  &:hover {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+  &.ui-state-disabled {
+    @include opacity(0.8);
+  }
+}
+.ui-icon {
+  &.ui-icon-circle-triangle-e {
+    background: none;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    width: 0;
+    height: 0;
+    margin-top: -70%;
+  }
+  &.ui-icon-circle-triangle-w {
+    background: none;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    width: 0;
+    height: 0;
+    margin-top: -70%;
+  }
+}
+.fc-event .fc-event-inner {
+  max-height: 1em;
+}
+
+a.fc-event {
+  font-size: 80%;
+  @include link-btn(1em, 2px);
+  height: auto;
+  padding-top: 1px;
+  font-weight: normal;
+  text-align: center;
+  float: none;
+  .fc-event-time {
+    font-weight: normal;
+  }
+  .fc-event-skin {
+    border: none;
+    background: transparent;
+    * {
+      background: none;
+    }
+  }
   &:hover {
     border-left: none;
     border-right: none;
@@ -600,174 +542,8 @@ ul.primary {
   }
 }
 
-.node ul.inline,
-.node ol.inline {
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  li {
-    padding: 0;
-    margin-right: 10px;
-  }
-}
-
-.block-incubator-content-review-incubator-content-review .content {
-  font-size: 13px;
-  line-height: 24px;
-  .item-list {
-    margin-bottom: 10px;
-  }
-}
-
-// Calendar styling
-.fullcalendar {
-  .fc-header {
-    .fc-header-title {
-      h2 {
-      }
-    }
-  }
-  .fc-agenda-divider {
-    border: none;
-    height: 1px;
-  }
-  .fc-content {
-    // Calendar as it is
-    table {
-      border-collapse: collapse;
-      tr {
-        td, th {
-        }
-        // Style as buttons
-        th {
-          font-size: 14px;
-          font-weight: bold;
-          margin: 0;
-          //box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        }
-        td {
-          &.fc-other-month {
-            //color: $color_lightgrey;
-          }
-          .fc-day-number {
-            padding: 0 5px;
-            //color: $color_grey;
-          }
-          &.fc-today {
-            //background: $color_border !important;
-          }
-        }
-        th {
-          &.fc-agenda-axis,
-          &.fc-agenda-gutter {
-            //background: $color_block_bg !important;
-          }
-        }
-      }
-    }
-  }
-  // Events
-  .fullcalendar-content {
-
-  }
-  // BUTTONS
-  .fc-button {
-    @include transition(all, 0.3s);
-    height: 30px;
-    border: none;
-    line-height: 30px;
-    filter: none;
-    text-shadow: none;
-    padding-top: 0;
-    padding-bottom: 0;
-    font-size: 14px;
-    font-weight: bold;
-    display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 0;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border-radius: 0;
-    float: none;
-    margin-right: 1px;
-    .fc-button-inner {
-      overflow: visible;
-    }
-    .fc-button-content {
-      height: 30px;
-      line-height: 30px;
-      padding: 0;
-    }
-    &:hover {
-      border-left: none;
-      border-right: none;
-      border-top: none;
-    }
-    &.ui-state-active {
-
-    }
-    &.ui-state-disabled {
-      @include opacity(0.8);
-    }
-  }
-  .ui-icon {
-    &.ui-icon-circle-triangle-e {
-      background: none;
-      border-top: 6px solid transparent;
-      border-bottom: 6px solid transparent;
-      width: 0;
-      height: 0;
-      margin-top: -70%;
-    }
-    &.ui-icon-circle-triangle-w {
-      background: none;
-      border-top: 6px solid transparent;
-      border-bottom: 6px solid transparent;
-      width: 0;
-      height: 0;
-      margin-top: -70%;
-    }
-  }
-  // EVENTS
-  .fc-event {
-    font-size: 11px;
-    font-style: normal;
-  }
-  a.fc-event {
-    text-align: center;
-    @include transition(all, 0.3s);
-    border: none;
-    filter: none;
-    text-shadow: none;
-    padding-top: 0;
-    padding-bottom: 0;
-    font-weight: bold;
-    display: inline-block;
-    padding-left: 2px;
-    padding-right: 2px;
-    margin: 0;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border-radius: 0;
-    float: none;
-    //margin-left: 5px;
-    margin: 0;
-    .fc-event-skin {
-      border: none;
-      background: transparent;
-      * {
-        background: none;
-      }
-    }
-    &:hover {
-      border-left: none;
-      border-right: none;
-      border-top: none;
-    }
-  }
-}
-
 .region-content-inner > .feed-icon {
-  margin-bottom: 20px;
+  margin-bottom: 1.67em;
 }
 
 // Inputs
@@ -787,26 +563,25 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"] {
-  @include transition(all, 0.3s);
-  font-size: 14px;
+  font-size: 1.2em;
   line-height: normal;
   font-weight: normal;
-  padding: 2px;
+  padding: .2em;
   box-shadow: none !important;
-  height: 30px;
+  height: 2.5em;
   @include box-sizing(border-box);
 }
 
 select {
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-right: 20px;
+  padding-top: .2em;
+  padding-bottom: .2em;
+  padding-right: 1.67em;
 }
 
 textarea {
   line-height: normal;
   height: auto;
-  min-height: 80px;
+  min-height: 4em;
 }
 
 .grippie {
@@ -818,19 +593,9 @@ input[type="reset"],
 input[type="submit"],
 input[type="button"] {
   @include transition(all, 0.3s);
-  height: 30px;
-  border: none;
-  line-height: 30px;
-  filter: none;
-  text-shadow: none;
-  padding-top: 0;
-  padding-bottom: 0;
-  font-size: 14px;
+  @include link-btn(2.5em, 1em);
+  font-size: 1.2em;
   font-weight: bold;
-  display: inline-block;
-  padding-left: 13px;
-  padding-right: 13px;
-  border-radius: 0;
 }
 
 article {
@@ -839,7 +604,7 @@ article {
 }
 
 .region-content .node-teaser {
-  margin-bottom: 20px;
+  margin-bottom: 1.67em;
 }
 
 // SECTION SIDEBAR LEFT

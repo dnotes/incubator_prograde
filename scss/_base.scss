@@ -2,7 +2,6 @@
 @import "compass/css3";
 
 html {
-  font-size: 12px;
   margin  : 0;
   padding : 0;
   width   : 100%;
@@ -10,7 +9,7 @@ html {
 }
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  @include text;
   line-height: 1.8em;
   height   : 100%;
   position : relative;
@@ -19,10 +18,10 @@ body {
 // Text Styles
 // ---------------------------------------------------------------------------------------------------------------------
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  @include title;
   font-size: 150%;
   line-height: 1.2em;
-  margin-bottom: 10px;
+  margin-bottom: .8em;
   margin-top: 0;
   letter-spacing: 0;
 }
@@ -41,12 +40,13 @@ h2 {
 
 #page-title {
   font-size: 220%;
-  margin-bottom: 15px;
+  margin-bottom: .5em;
 }
 
 // links
 a {
-  @include transition(all, 0.3s);
+  @include transition-property(background, background-color, color);
+  @include transition-duration(0.3s);
   font-weight: bold;
   &:link, &:visited, &:hover, &:active {
     text-decoration: none;
@@ -60,7 +60,7 @@ img {
 
 // Paragraphs
 p {
-  margin: 0 0 10px 0;
+  margin: 0 0 .8em 0;
 }
 
 // Lists
@@ -100,8 +100,8 @@ table {
 
 
 .form-item {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: .8em;
+  margin-bottom: .8em;
   clear: both;
   label {
     font-weight: normal;
@@ -110,7 +110,7 @@ table {
 }
 
 .form-actions {
-  margin-top: 20px;
+  margin-top: 1.67em;
   margin-bottom: 0;
   clear: both;
 }

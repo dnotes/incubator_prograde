@@ -18,8 +18,3 @@ nav.navigation ul li { display: block; float: left; margin: 0 !important; paddin
 nav.navigation ul li a { padding: 0 1.1em; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; font-size: 135%; display: block; line-height: 2.2em; }
 nav.navigation ul.secondary-menu li { border-style: none solid none solid; border-width: 1px; }
 nav.navigation ul.secondary-menu li a { padding: 0 1.5em; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; font-size: 100%; }
-
-a.fc-event { font-size: 100%; }
-a.fc-event .fc-event-time { font-weight: bold; }
-
-.fc-event .fc-event-inner { max-height: 3em; }

@@ -473,36 +473,42 @@ ul.primary {
 
 }
 // BUTTONS
+.fc-header {
+  font-size: 80%;
+  .fc-header-space {
+    padding-left: .4em;
+  }
+}
 .fc-button {
-  @include link-btn(2.5em, .8em);
-  font-weight: bold;
+  height: 2em;
+  line-height: 2em;
+  padding: 2px .4em;
+  font-weight: normal;
   float: none;
   margin-right: 1px;
   .fc-button-inner {
     overflow: visible;
   }
   .fc-button-content {
-    height: 2.5em;
-    line-height: 2.5em;
+    height: 2em;
+    line-height: 2em;
     padding: 0;
   }
   &:hover {
-    border-left: none;
-    border-right: none;
     border-top: none;
   }
   &.ui-state-disabled {
     @include opacity(0.8);
   }
 }
-.ui-icon {
+.fullcalendar .ui-icon {
   &.ui-icon-circle-triangle-e {
     background: none;
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
     width: 0;
     height: 0;
-    margin-top: -70%;
+    margin-top: -90%;
   }
   &.ui-icon-circle-triangle-w {
     background: none;
@@ -510,15 +516,11 @@ ul.primary {
     border-bottom: 6px solid transparent;
     width: 0;
     height: 0;
-    margin-top: -70%;
+    margin-top: -90%;
   }
-}
-.fc-event .fc-event-inner {
-  max-height: 1em;
 }
 
 a.fc-event {
-  font-size: 80%;
   @include link-btn(1em, 2px);
   height: auto;
   padding-top: 1px;

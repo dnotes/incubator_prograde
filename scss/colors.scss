@@ -38,6 +38,8 @@ $color_base_light: lighten($color_base, 10%);
 
 $color_link_dark: saturate(darken($color_link, 12%), 10%);
 
+$color_text_light: lighten($color_text, 50%);
+
 @mixin invertcolor {
   background-color: $color_base;
   border-color: $color_base_light $color_base_light $color_base_dark $color_base_dark;
@@ -69,18 +71,20 @@ $color_link_dark: saturate(darken($color_link, 12%), 10%);
 
 // Color mixins
 @mixin link-highlight {
+  color: $color_text_highlight;
+  background-color: $color_base;
   &:link {
     color: $color_text_highlight;
-    background: $color_base;
+    background-color: $color_base;
   }
   &:visited {
     color: $color_text_highlight;
-    background: $color_base;
+    background-color: $color_base;
   }
   &.active,
   &:hover,
   &:active {
-    background: $color_base_dark;
+    background-color: $color_base_dark;
     border-color: $color_base_dark;
     color: $color_text_highlight;
   }
@@ -306,38 +310,36 @@ ul.primary {
 
 // Calendar styling
 .fullcalendar {
-  .fc-header {
-    .fc-header-title {
-      color: $color_link;
-      h2 {
-        color: $color_link;
-      }
+  .fc-header-title {
+    color: $color_base;
+    h2 {
+      color: $color_base;
     }
   }
   .fc-content {
     // Calendar as it is
     table {
       border: 1px solid $color_block_border;
-      background: $color_block_border;
+      background-color: $color_block_border;
       tr {
         td, th {
           border: 1px solid $color_block_border !important;
         }
         // Style as buttons
         th {
-          color: $color_white;
-          background: $color_base !important;
-          border-bottom: 1px solid $color_base_dark !important;
+          color: $color_text-highlight;
+          background: $color_base;
+          border-bottom-color: $color_base_dark !important;
         }
         td {
           &.fc-other-month {
-            color: $color_lightgrey;
+            color: $color_text_light;
           }
           .fc-day-number {
             color: $color_grey;
           }
           &.fc-today {
-            background: $color_block_border !important;
+            background-color: $color_grey !important;
           }
         }
       }
@@ -345,14 +347,8 @@ ul.primary {
   }
   // BUTTONS
   .fc-button {
-    color: $color_text_highlight;
-    background: $color_base;
-    border-bottom: 1px solid $color_base_dark;
-    &:hover {
-      border-color: $color_base_dark;
-      background: $color_base_dark;
-      color: $color_text_highlight;
-    }
+    @include link-highlight;
+    background-image: none;
     &.ui-state-active {
       background: $color_base_dark;
     }
@@ -367,15 +363,11 @@ ul.primary {
   }
   // EVENTS
   a.fc-event {
-    color: $color_text_highlight;
-    background: $color_base;
-    border-bottom: 1px solid $color_base_dark;
+    @include link-highlight;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    &:hover {
-      border-color: $color_base_dark;
-      background: $color_base_dark;
-      color: $color_text_highlight;
-    }
+  }
+  div.fc-event.bahaical {
+    color: $color_text_light;
   }
 }
 

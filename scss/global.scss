@@ -565,12 +565,12 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"] {
-  font-size: 1.2em;
-  line-height: normal;
+  font-size: 135%;
+  line-height: 1.15em;
   font-weight: normal;
   padding: .2em;
   box-shadow: none !important;
-  height: 2.5em;
+  height: 1.5em;
   @include box-sizing(border-box);
 }
 

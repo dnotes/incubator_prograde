@@ -572,6 +572,7 @@ input[type="week"] {
   box-shadow: none !important;
   height: 1.5em;
   @include box-sizing(border-box);
+  max-width:100%;
 }
 
 select {

@@ -396,17 +396,14 @@ input[type="week"] {
   }
 }
 
-button,
-input[type="reset"],
-input[type="submit"],
-input[type="button"] {
-  color: $color_text_highlight !important;
-  background-color: $color_base !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  &.active,
-  &:hover {
-    background-color: $color_base_dark !important;
-    color: $color_text_highlight !important;
+body {
+  button,
+  input[type="reset"],
+  input[type="submit"],
+  input[type="button"] {
+    background: transparent;
+    @include link-highlight;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 }
 

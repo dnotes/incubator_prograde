@@ -45,6 +45,7 @@ html { font-size: 12px; }
 .branding-data .site-slogan { font-size: 200%; font-weight: normal; }
 
 .section-footer { font-size: 90%; padding-top: 1.67em; padding-bottom: 1.67em; }
+.section-footer .block { line-height: 1.2em; }
 .section-footer .block.block-copyright, .section-footer .block.block-menu-footer { line-height: 1.1em; font-size: 90%; }
 .section-footer .block.block-copyright .block-title, .section-footer .block.block-menu-footer .block-title { display: none; }
 .section-footer .block.block-copyright ul, .section-footer .block.block-menu-footer ul { margin: 0; padding: 0; border: 0; overflow: hidden; *zoom: 1; }
@@ -55,13 +56,13 @@ html { font-size: 12px; }
 
 .section-content { position: relative; z-index: 2; padding-top: 1.25em; padding-bottom: 6em; }
 
-.section-content .block { border-style: solid; border-width: 1px; background-repeat: repeat; padding: 20px; margin-bottom: 1.4em; }
+.section-content .block { line-height: 1.2em; border-style: solid; border-width: 1px; background-repeat: repeat; padding: 20px; margin-bottom: 1.4em; }
 .section-content .block .block-title { padding-left: 12px; padding-right: 12px; font-size: 150%; font-weight: bold; -webkit-transition: all, 0.3s; -moz-transition: all, 0.3s; -o-transition: all, 0.3s; transition: all, 0.3s; line-height: normal; padding: .3em .9em .3em 17px; margin-left: -25px; margin-bottom: .9em; display: inline-block; *display: inline; position: relative; z-index: 2; }
 .section-content .block .block-title:after { content: ""; display: block; position: absolute; left: -5px; bottom: -5px; border-left: 5px solid transparent !important; border-bottom: 5px solid transparent !important; border-right: 5px solid transparent; }
 .section-content .block .content { clear: both; }
 
-.view .view-content > h3 { margin: 0; font-size: 133%; }
-.view .view-content .views-row { height: 100%; overflow: hidden; margin-bottom: .25em; padding-bottom: .25em; }
+.view .view-content > h3 { margin: 0 0 .6em; font-size: 133%; }
+.view .view-content .views-row { height: 100%; overflow: hidden; margin-bottom: .6em; padding-bottom: .6em; }
 .view .view-content .views-row-last { border-bottom: none; }
 
 .region-content .view .view-content .views-row { margin-bottom: 1em; padding-bottom: 1em; }

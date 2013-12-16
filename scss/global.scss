@@ -64,7 +64,7 @@ html {
   padding-top: 1.67em;
   padding-bottom: 1.67em;
   .block {
-    
+    line-height: 1.2em;
     &.block-copyright,
     &.block-menu-footer {
       line-height: 1.1em;
@@ -91,6 +91,7 @@ html {
 // Block styles (only for section content. For header we don't need this styles
 .section-content {
   .block {
+    line-height: 1.2em;
     border-style: solid;
     border-width: 1px;
     background-repeat: repeat;
@@ -113,14 +114,14 @@ html {
 .view {
   .view-content {
     &>h3 {
-      margin: 0;
+      margin: 0 0 .6em;
       font-size: 133%;
     }
     // Rows
     .views-row {
       @include overflow;
-      margin-bottom: .25em;
-      padding-bottom: .25em;
+      margin-bottom: .6em;
+      padding-bottom: .6em;
     }
     .views-row-last {
         border-bottom: none;

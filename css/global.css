@@ -127,8 +127,9 @@ body a.more-link, body .more-link a { display: inline-block; height: 2.2em; line
 .incubator-images-left .node-teaser .field-name-field-gallery-images, .incubator-images-left .node-teaser .field-name-field-media, .incubator-images-left .field-name-field-main-image { margin-right: 1.2em; }
 
 .block-search-form { position: relative; }
-.block-search-form .form-item, .block-search-form .form-actions { margin: 0; padding: 0; float: left; clear: none; }
-.block-search-form input[type="submit"] { height: 30px; width: 30px; padding: 0; background-image: url(../images/search_icon.png); background-position: center center; background-repeat: no-repeat; text-indent: -99999px; }
+.block-search-form .form-item, .block-search-form .form-actions { margin: 0; padding: 0; }
+.block-search-form input[type="text"] { width: 100%; padding: 1px 35px 1px 5px; height: 31px; line-height: 29px; font-size: 16px; }
+.block-search-form input[type="submit"] { height: 30px; width: 30px; padding: 0; background-image: url(../images/search_icon.png); background-position: center center; background-repeat: no-repeat; text-indent: -99999px; position: absolute; top: 20px; right: 20px; margin-right: 0; }
 
 ul.primary { font-size: 80%; padding: 0; margin: 1.6em 0; border: none !important; }
 ul.primary li { float: left; margin: 0; padding: 0; border: none !important; }

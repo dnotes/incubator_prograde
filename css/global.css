@@ -45,17 +45,13 @@ html { font-size: 12px; }
 .branding-data .site-slogan { font-size: 200%; font-weight: normal; }
 
 .section-footer { font-size: 90%; padding-top: 1.67em; padding-bottom: 1.67em; }
-
-.block-menu-footer { float: right; }
-.block-menu-footer .block-title { display: none; }
-.block-menu-footer .content .menu { font-size: 90%; margin: 0; padding: 0; border: 0; overflow: hidden; *zoom: 1; }
-.block-menu-footer .content .menu li { list-style-image: none; list-style-type: none; margin-left: 0; white-space: nowrap; display: inline; float: left; padding-left: 0; padding-right: 0; }
-.block-menu-footer .content .menu li:first-child, .block-menu-footer .content .menu li.first { padding-left: 0; }
-.block-menu-footer .content .menu li:last-child { padding-right: 0; }
-.block-menu-footer .content .menu li.last { padding-right: 0; }
-.block-menu-footer .content .menu li { padding: 0 .8em; line-height: 1.1em; }
-.block-menu-footer .content .menu li.first { border-left: none; }
-.block-menu-footer .content .menu li a { font-size: 85%; }
+.section-footer .block.block-copyright, .section-footer .block.block-menu-footer { line-height: 1.1em; font-size: 90%; }
+.section-footer .block.block-copyright .block-title, .section-footer .block.block-menu-footer .block-title { display: none; }
+.section-footer .block.block-copyright ul, .section-footer .block.block-menu-footer ul { margin: 0; padding: 0; border: 0; overflow: hidden; *zoom: 1; }
+.section-footer .block.block-copyright ul li, .section-footer .block.block-menu-footer ul li { list-style-image: none; list-style-type: none; margin-left: 0; white-space: nowrap; display: inline; float: left; padding-left: 0.8em; padding-right: 0.8em; }
+.section-footer .block.block-copyright ul li:first-child, .section-footer .block.block-copyright ul li.first, .section-footer .block.block-menu-footer ul li:first-child, .section-footer .block.block-menu-footer ul li.first { padding-left: 0; }
+.section-footer .block.block-copyright ul li:last-child, .section-footer .block.block-menu-footer ul li:last-child { padding-right: 0; }
+.section-footer .block.block-copyright ul li.last, .section-footer .block.block-menu-footer ul li.last { padding-right: 0; }
 
 .section-content { position: relative; z-index: 2; padding-top: 1.25em; padding-bottom: 6em; }
 

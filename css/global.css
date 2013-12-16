@@ -179,4 +179,6 @@ article { display: block; clear: both; }
 
 .region-content .node-teaser { margin-bottom: 1.67em; }
 
+a.contextual-links-trigger { -webkit-transition: all, 0s; -moz-transition: all, 0s; -o-transition: all, 0s; transition: all, 0s; }
+
 .section-content .block, .section-content .block.block-bg-lighter, .section-footer, .section-footer.block-bg-lighter { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }

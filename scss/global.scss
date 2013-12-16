@@ -591,6 +591,10 @@ article {
   margin-bottom: 1.67em;
 }
 
+a.contextual-links-trigger {
+  @include transition(all, 0s);
+}
+
 // SECTION SIDEBAR LEFT
 // ---------------------------------------------------------------------------------------------------------------------
 

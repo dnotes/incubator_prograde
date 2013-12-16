@@ -231,18 +231,7 @@ footer.section-footer {
       color: $color_text;
     }
     .views-row {
-      border-bottom: 1px solid $color_block_border;
-    }
-  }
-}
-
-.region-content {
-  .view {
-    .view-content {
-      // Rows
-      .views-row {
-        border-bottom: 1px solid $color_block_border;
-      }
+      border-color: $color_block_border;
     }
   }
 }

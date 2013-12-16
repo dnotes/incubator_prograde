@@ -111,40 +111,25 @@ html {
 }
 
 // Restyle views
-.view {
-  .view-content {
-    &>h3 {
-      margin: 0 0 .6em;
-      font-size: 133%;
-    }
-    // Rows
-    .views-row {
-      @include overflow;
-      margin-bottom: .6em;
-      padding-bottom: .6em;
-    }
-    .views-row-last {
-        border-bottom: none;
-    }
+.view-content>h3 {
+  margin: 0;
+  font-size: 133%;
+}
+// Rows
+.views-row {
+  @include overflow;
+  margin-bottom: .6em;
+  padding-bottom: .6em;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  &.views-row-last {
+    border-bottom: none;
   }
 }
 
-// Increase spacing for main content
-.region-content {
-  .view {
-    .view-content {
-      // Rows
-      .views-row {
-        margin-bottom: 1em;
-        padding-bottom: 1em;
-      }
-      .views-row-last {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-    }
-  }
+aside .view .view-content>h3 {
+  margin-top: .6em;
+  margin-bottom: .5em;
 }
 
 // More link

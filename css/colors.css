@@ -52,9 +52,7 @@ footer.section-footer a:hover, footer.section-footer a.active, footer.section-fo
 .section-content .block .block-title:after { border-right: 5px solid #72899d !important; }
 
 .view .view-content > h3 { color: #343434; }
-.view .view-content .views-row { border-bottom: 1px solid #cdd4da; }
-
-.region-content .view .view-content .views-row { border-bottom: 1px solid #cdd4da; }
+.view .view-content .views-row { border-color: #cdd4da; }
 
 a.more-link, .more-link a { color: #fdfdfd; background-color: #5a6f82; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3); }
 a.more-link:link, .more-link a:link { color: #fdfdfd; background-color: #5a6f82; }

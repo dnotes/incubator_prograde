@@ -243,22 +243,7 @@ a.more-link,
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-// Big sliding block (slider)
-.page {
-  .block {
-    &.block-recent-stories-block-bigslides {
-      .block-title {
-        color: $color_link;
-        &:hover {
-          color: $color_link;
-        }
-      }
-    }
-  }
-
-}
-
-.view-display-id-block_bigslides {
+.views_slideshow_cycle_main {
   // Titles
   .views-field-title,
   .views-field-name {

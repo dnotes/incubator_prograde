@@ -132,6 +132,15 @@ aside .view .view-content>h3 {
   margin-bottom: .5em;
 }
 
+.views_slideshow_cycle_main .views-row {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  .node-teaser {
+    margin-bottom: 0;
+  }
+}
+
 // More link
 body a.more-link,
 body .more-link a {
@@ -145,21 +154,13 @@ body .more-link a {
 }
 
 // Big sliding block (slider)
-.block-recent-stories-block-bigslides {
+#block-views-recent-stories-block-bigslides,
+#block-views-core-activities-block-bigslides {
   border: none;
   padding: 0;
   background: none;
   .block-title {
-    margin: 0;
-    padding: 0;
-    margin-bottom: 1.25em;
-    background: none;
-    &:hover {
-      background: none;
-    }
-    &:after {
-      display: none;
-    }
+    display: none;
   }
 }
 

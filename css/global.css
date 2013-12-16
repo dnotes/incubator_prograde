@@ -68,14 +68,15 @@ html { font-size: 12px; }
 
 aside .view .view-content > h3 { margin-top: .6em; margin-bottom: .5em; }
 
+.views_slideshow_cycle_main .views-row { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.views_slideshow_cycle_main .views-row .node-teaser { margin-bottom: 0; }
+
 body a.more-link, body .more-link a { display: inline-block; height: 2.2em; line-height: 2.2em; padding: 0 0.9em; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3); border: none; filter: none; text-shadow: none; border-radius: 0; font-size: 90%; font-weight: bold; }
 
 .feed-icon { text-align: right; }
 
-.block-recent-stories-block-bigslides { border: none; padding: 0; background: none; }
-.block-recent-stories-block-bigslides .block-title { margin: 0; padding: 0; margin-bottom: 1.25em; background: none; }
-.block-recent-stories-block-bigslides .block-title:hover { background: none; }
-.block-recent-stories-block-bigslides .block-title:after { display: none; }
+#block-views-recent-stories-block-bigslides, #block-views-core-activities-block-bigslides { border: none; padding: 0; background: none; }
+#block-views-recent-stories-block-bigslides .block-title, #block-views-core-activities-block-bigslides .block-title { display: none; }
 
 .view-display-id-block_slides .views-slideshow-controls-text { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
 .view-display-id-block_slides:hover .views-slideshow-controls-text { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }

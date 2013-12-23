@@ -591,8 +591,10 @@ article {
   margin-bottom: 1.67em;
 }
 
-a.contextual-links-trigger {
+a.contextual-links-trigger,
+#colorbox button {
   @include transition(all, 0s);
+  @include box-shadow(none);
 }
 
 // SECTION SIDEBAR LEFT

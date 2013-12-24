@@ -1,13 +1,14 @@
-/*
-    Document   : skinr-headers
-    Created on : Sep 17, 2013, 3:10:43 PM
-    Author     : david
-    Description:
-        Purpose of the stylesheet follows.
-*/
+@charset "UTF-8";
+
+// Global stylesheet file
+// ---------------------------------------------------------------------------------------------------------------------
+@import "compass/css3";
+@import "compass/typography";
+
+@import "mixin";
 
 .headers-banner {
-  .section-content .block .block-title,
+  .section-content .block .block-title
   {
     @include transition(all, 0.3s);
     line-height: normal;
@@ -33,14 +34,14 @@
 }
 
 .headers-centered {
-  .section-content .block .block-title,
+  .section-content .block .block-title
   {
     
   }
 }
 
 .headers-colored {
-  .section-content .block .block-title,
+  .section-content .block .block-title
   {
     
   }

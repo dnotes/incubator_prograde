@@ -1,5 +1,3 @@
-/* Document   : skinr-block-styles Created on : Sep 17, 2013, 3:11:41 PM Author     : david Description: Purpose of the stylesheet follows.
-*/
 .block-styles-no-borders.block, .block-styles-no-borders .zone-content-wrapper .block, .block-styles-no-borders.main-menu-block .navigation { border: none !important; }
 
 .block-styles-no-background.block, .block-styles-no-background .zone-content-wrapper .block, .block-styles-no-background.main-menu-block .navigation { background-color: transparent !important; background-image: none !important; }

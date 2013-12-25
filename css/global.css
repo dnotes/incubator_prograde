@@ -129,10 +129,10 @@ body a.more-link, body .more-link a { display: inline-block; height: 2.2em; line
 .block-search-form input[type="text"] { width: 100%; padding: 1px 35px 1px 5px; height: 31px; line-height: 29px; font-size: 16px; }
 .block-search-form input[type="submit"] { height: 30px; width: 30px; padding: 0; background-image: url(../images/search_icon.png); background-position: center center; background-repeat: no-repeat; text-indent: -99999px; position: absolute; top: 20px; right: 20px; margin-right: 0; }
 
-ul.primary { font-size: 80%; padding: 0; margin: 1.6em 0; border: none !important; }
-ul.primary li { float: left; margin: 0; padding: 0; border: none !important; }
-ul.primary li a { display: inline-block; height: 1.67em; line-height: 1.67em; padding: 0 1em; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3); border: none; filter: none; text-shadow: none; border-radius: 0; margin: 0; }
-ul.primary li a.active, ul.primary li a:hover { border-left: none; border-right: none; border-top: none; }
+.tabs { font-size: 80%; }
+.tabs ul { border-style: none; }
+.tabs ul.primary { margin: 0 5px; }
+.tabs ul li { float: left; margin: 0; padding: 0; border-style: none; }
 
 .node-links ul li a, .comment-links ul li a { display: inline-block; height: 2em; line-height: 2em; padding: 0 1.1em; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3); border: none; filter: none; text-shadow: none; border-radius: 0; font-size: 90%; font-weight: bold; float: none; }
 

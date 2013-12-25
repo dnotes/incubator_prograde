@@ -68,11 +68,6 @@ a.more-link.active, a.more-link:hover, a.more-link:active, .more-link a.active, 
 .node .field-type-taxonomy-term-reference a:visited { color: #fdfdfd; background-color: #5a6f82; }
 .node .field-type-taxonomy-term-reference a.active, .node .field-type-taxonomy-term-reference a:hover, .node .field-type-taxonomy-term-reference a:active { background-color: #455564; border-color: #455564; color: #fdfdfd; }
 
-ul.primary li a { color: #fdfdfd; background-color: #5a6f82; }
-ul.primary li a:link { color: #fdfdfd; background-color: #5a6f82; }
-ul.primary li a:visited { color: #fdfdfd; background-color: #5a6f82; }
-ul.primary li a.active, ul.primary li a:hover, ul.primary li a:active { background-color: #455564; border-color: #455564; color: #fdfdfd; }
-
 .node-links ul li a, .comment-links ul li a { color: #fdfdfd; background-color: #5a6f82; }
 .node-links ul li a:link, .comment-links ul li a:link { color: #fdfdfd; background-color: #5a6f82; }
 .node-links ul li a:visited, .comment-links ul li a:visited { color: #fdfdfd; background-color: #5a6f82; }

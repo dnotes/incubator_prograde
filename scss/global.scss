@@ -380,26 +380,18 @@ body .more-link a {
 }
 
 // Tabs
-ul.primary {
+.tabs {
   font-size: 80%;
-  padding: 0;
-  margin: 1.6em 0;
-  border: none !important;
-  li {
-    float: left;
-    margin: 0;
-    padding: 0;
-    border: none !important;
-    a {
-      @include link-btn(1.67em, 1em);
+  ul {
+    &.primary {
+      margin: 0 5px;
+    }
+    border-style: none;
+    li {
+      float: left;
       margin: 0;
-      &.active,
-      &:hover {
-        border-left: none;
-        border-right: none;
-        border-top: none;
-      }
-
+      padding: 0;
+      border-style: none;
     }
   }
 }

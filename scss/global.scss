@@ -574,6 +574,14 @@ input[type="button"] {
   font-weight: bold;
 }
 
+html.js body input.form-autocomplete {
+  background-image: url(../images/throbber.gif);
+  background-position-y: 9px;
+}
+html.js body input.form-autocomplete.throbbing {
+  background-position-y: -38px;
+}
+
 article {
   display: block;
   clear: both;

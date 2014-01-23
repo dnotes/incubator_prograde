@@ -89,7 +89,7 @@ body a.more-link, body .more-link a { display: inline-block; height: 2.2em; line
 .view-display-id-block_bigslides:hover .views-slideshow-controls-text { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 .view-display-id-block_bigslides .views-field-title, .view-display-id-block_bigslides .views-field-name { margin: 0; padding: 0; background: url(../images/slider/slider_caption_bg.png) repeat 0 0; position: absolute; bottom: 0; left: 0; width: 100%; }
 .view-display-id-block_bigslides .views-field-title .field-content, .view-display-id-block_bigslides .views-field-name .field-content { display: block; padding: 1.25em 1.66em; }
-.view-display-id-block_bigslides .views-field-title a, .view-display-id-block_bigslides .views-field-name a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; text-shadow: none; font-size: 2em; }
+.view-display-id-block_bigslides .views-field-title a, .view-display-id-block_bigslides .views-field-name a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; text-shadow: none; font-size: 120%; }
 
 .view-core-activities .views-row { margin-top: 0; }
 .view-core-activities .views-row.views-row-last { margin-bottom: 0; padding-bottom: 0; }

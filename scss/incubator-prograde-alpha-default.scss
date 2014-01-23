@@ -54,11 +54,11 @@ nav.navigation ul {
     float: left;
     margin: 0 !important;
     padding: 0 !important;
+    font-size: 135%;
     a {
       padding: 0 1.1em;
       @include title;
       font-weight: bold;
-      font-size: 135%;
       display: block;
       line-height: 2.2em;
     }
@@ -66,11 +66,11 @@ nav.navigation ul {
   &.secondary-menu {
     li {
       @include menu-borders;
+      font-size: 100%;
       a {
         padding: 0 1.5em;
         @include text;
         font-weight: normal;
-        font-size: 100%;
       }
     }
   }

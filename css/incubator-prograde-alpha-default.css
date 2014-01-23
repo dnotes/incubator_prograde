@@ -14,7 +14,7 @@ html { font-size: 12px; }
 .zone-user-wrapper ul li a { display: block; line-height: 2em; padding: 0 .8em; font-weight: normal; }
 
 nav.navigation ul { display: block !important; margin: 0; }
-nav.navigation ul li { display: block; float: left; margin: 0 !important; padding: 0 !important; }
-nav.navigation ul li a { padding: 0 1.1em; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; font-size: 135%; display: block; line-height: 2.2em; }
-nav.navigation ul.secondary-menu li { border-style: none solid none solid; border-width: 1px; }
-nav.navigation ul.secondary-menu li a { padding: 0 1.5em; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; font-size: 100%; }
+nav.navigation ul li { display: block; float: left; margin: 0 !important; padding: 0 !important; font-size: 135%; }
+nav.navigation ul li a { padding: 0 1.1em; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; display: block; line-height: 2.2em; }
+nav.navigation ul.secondary-menu li { border-style: none solid none solid; border-width: 1px; font-size: 100%; }
+nav.navigation ul.secondary-menu li a { padding: 0 1.5em; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }

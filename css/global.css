@@ -40,9 +40,13 @@ html { font-size: 12px; }
 
 .zone-menu-wrapper, .zone-user-wrapper { display: none; }
 
-.branding-data { padding: 40px 0; }
-.branding-data .site-name-slogan .site-name { font-size: 300%; font-weight: bold; margin-bottom: .6em; }
-.branding-data .site-slogan { font-size: 200%; font-weight: normal; }
+.logo-img { margin-right: 0; }
+.logo-img img { max-width: 40px; height: auto; }
+
+.site-name-slogan { font-size: 60%; }
+.site-name-slogan .site-name { font-weight: bold; margin: .4em 0; }
+
+.site-slogan { font-weight: normal; }
 
 .section-footer { font-size: 90%; padding-top: 1.67em; padding-bottom: 1.67em; }
 .section-footer .block { line-height: 1.2em; }

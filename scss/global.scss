@@ -33,27 +33,22 @@ html {
 // TODO: Move all this style-colors to colors.css
 // TODO: Take buttons, inputs from _base.scss
 
-.branding-data {
-  padding: 40px 0;
-  .logo-img {
-
+.logo-img {
+  margin-right:0;
+  img {
+    max-width: 40px;
+    height:auto;
+  }  
+}
+.site-name-slogan {
+  font-size: 60%;
+  .site-name {
+    font-weight: bold;
+    margin: .4em 0;
   }
-  .site-name-slogan {
-    .site-name {
-      font-size: 300%;
-      font-weight: bold;
-      margin-bottom: .6em;
-      a {
-        &:hover {
-
-        }
-      }
-    }
-  }
-  .site-slogan {
-    font-size: 200%;
-    font-weight: normal;
-  }
+}
+.site-slogan {
+  font-weight: normal;
 }
 
 

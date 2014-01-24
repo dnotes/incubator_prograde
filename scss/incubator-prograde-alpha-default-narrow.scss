@@ -7,6 +7,21 @@
 
 @import "mixin";
 
+.branding-data {
+  padding: 40px 0;
+}
+
+.site-name-slogan {
+  font-size: 100%;
+}
+
+.logo-img {
+  
+  img {
+    max-width: none;
+  }
+}
+
 .view-display-id-block_bigslides {
   .views-field-name a,
   .views-field-title a {

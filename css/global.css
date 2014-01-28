@@ -51,6 +51,8 @@ html { font-size: 12px; }
 
 .site-slogan { font-weight: normal; margin: 0 0 0 .1em; }
 
+#breadcrumb { display: none; }
+
 .section-footer { font-size: 90%; padding-top: 1.67em; padding-bottom: 1.67em; }
 .section-footer .block { line-height: 1.2em; }
 .section-footer .block.block-copyright, .section-footer .block.block-menu-footer { line-height: 1.1em; font-size: 90%; }

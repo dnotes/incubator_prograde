@@ -5,4 +5,4 @@
 .typ-example #page-title { /*font-family:*/ /*font-size:*/ /*font-weight:*/ }
 .typ-example #main-menu li a { /*font-family:*/ }
 .typ-example #secondary-menu li a { /*font-family:*/ }
-.typ-example .view-display-id-block_bigslides .views-field-name a { /*font-family:*/ /*font-size:*/ }
+.typ-example .view-display-id-block_bigslides .views-field-title a, .typ-example .view-display-id-block_bigslides .views-field-name a { /*font-family:*/ /*font-size:*/ }

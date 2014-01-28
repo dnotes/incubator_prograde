@@ -37,15 +37,20 @@ html {
   padding:0;
 }
 .logo-img {
-  margin-right:0;
-  margin-top:1em;
+  position:absolute;
+  top: -8px;
+  left: -8px;
+  z-index: -1;
+  opacity: .2;
+  margin-right: 0;
+  margin-top: 1em;
   img {
     max-width: 40px;
     height:auto;
   }  
 }
 .site-name-slogan {
-  font-size: 60%;
+  font-size: 70%;
   height: 40px;
   margin: 0 .6em 1.2em;
 }

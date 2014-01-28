@@ -42,10 +42,10 @@ html { font-size: 12px; }
 
 .branding-data { padding: 0; }
 
-.logo-img { margin-right: 0; margin-top: 1em; }
+.logo-img { position: absolute; top: -8px; left: -8px; z-index: -1; opacity: .2; margin-right: 0; margin-top: 1em; }
 .logo-img img { max-width: 40px; height: auto; }
 
-.site-name-slogan { font-size: 60%; height: 40px; margin: 0 .6em 1.2em; }
+.site-name-slogan { font-size: 70%; height: 40px; margin: 0 .6em 1.2em; }
 
 .site-name { font-weight: bold; margin: 1.2em 0 0; }
 

@@ -2,6 +2,7 @@
 
 .site-name-slogan { font-size: 100%; }
 
+.logo-img { position: static; top: 0; left: 0; z-index: 0; opacity: 1; }
 .logo-img img { max-width: none; }
 
 #breadcrumb { display: block; position: absolute; top: -1em; font-size: 9px; line-height: 1em; z-index: 1; text-align: right; width: 100%; }

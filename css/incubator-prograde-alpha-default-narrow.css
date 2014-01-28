@@ -1,6 +1,8 @@
 .branding-data { padding: 40px 0; }
 
-.site-name-slogan { font-size: 100%; }
+.site-name-slogan { font-size: 110%; }
+
+.site-slogan { font-size: 110%; }
 
 .logo-img { position: static; top: 0; left: 0; z-index: 0; opacity: 1; }
 .logo-img img { max-width: none; }

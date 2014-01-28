@@ -33,8 +33,12 @@ html {
 // TODO: Move all this style-colors to colors.css
 // TODO: Take buttons, inputs from _base.scss
 
+.branding-data {
+  padding:0;
+}
 .logo-img {
   margin-right:0;
+  margin-top:1em;
   img {
     max-width: 40px;
     height:auto;
@@ -42,13 +46,16 @@ html {
 }
 .site-name-slogan {
   font-size: 60%;
-  .site-name {
-    font-weight: bold;
-    margin: .4em 0;
-  }
+  height: 40px;
+  margin: 0 .6em 1.2em;
+}
+.site-name {
+  font-weight: bold;
+  margin:1.2em 0 0;
 }
 .site-slogan {
   font-weight: normal;
+  margin: 0 0 0 .1em;
 }
 
 

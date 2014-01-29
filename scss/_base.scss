@@ -32,6 +32,9 @@ h1, h2, h3 {
 
 h1 {
   font-size: 260%;
+  &.site-name {
+    font-size: 200%;
+  }
 }
 
 h2 {

@@ -7,6 +7,7 @@ h1, h2, h3, h4, h5, h6 { font-family: "Helvetica Neue", Helvetica, Arial, sans-s
 h1, h2, h3 { font-weight: bold; }
 
 h1 { font-size: 260%; }
+h1.site-name { font-size: 200%; }
 
 h2 { font-size: 200%; }
 
@@ -49,7 +50,7 @@ html { font-size: 12px; }
 
 .site-name { font-weight: bold; margin: 1.2em 0 0; }
 
-.site-slogan { font-weight: normal; margin: 0 0 0 .1em; }
+.site-slogan { font-weight: normal; margin: 0 0 0 .2em; }
 
 #breadcrumb { display: none; }
 

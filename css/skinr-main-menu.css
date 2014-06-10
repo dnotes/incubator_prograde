@@ -27,7 +27,7 @@
 .main-menu-no-lineunder.main-menu-full-width .zone-menu-wrapper, .main-menu-underline-items.main-menu-full-width .zone-menu-wrapper { border-bottom: none; }
 
 .main-menu-underline-items ul.main-menu li a { border-bottom: 2px solid; }
-.main-menu-underline-items ul.main-menu .secondary-menu li { border-bottom: none; }
+.main-menu-underline-items ul.main-menu .secondary-menu li, .main-menu-underline-items ul.main-menu .secondary-menu li a { border-bottom: none; }
 
 .main-menu-overlay ul.main-menu { margin-top: -2em !important; }
 

@@ -48,9 +48,9 @@ footer.section-footer a:hover, footer.section-footer a.active, footer.section-fo
 
 .section-content { background: #fcfcfc; }
 
-.section-content .block { border-color: #cdd4da; background-color: #cdd4da; }
-.section-content .block .block-title { color: #fcfcfc; background: #5a6f82; z-index: 2; }
-.section-content .block .block-title:after { border-right: 5px solid #72899d !important; }
+.main-menu-block .navigation, .section-content .block { border-color: #cdd4da; background-color: #cdd4da; }
+.main-menu-block .navigation .block-title, .section-content .block .block-title { color: #fcfcfc; background: #5a6f82; z-index: 2; }
+.main-menu-block .navigation .block-title:after, .section-content .block .block-title:after { border-right: 5px solid #72899d !important; }
 
 .view .view-content > h3 { color: #343434; }
 .view .view-content .views-row { border-color: #cdd4da; }

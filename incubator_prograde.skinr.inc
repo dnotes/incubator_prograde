@@ -253,7 +253,7 @@ function incubator_prograde_skinr_skin_info() {
       'no-separators' => array('title' => t('No separators'), 'class' => array('main-menu-no-separators')),
       'dot-separators' => array('title' => t('Dot separators'), 'class' => array('main-menu-dot-separators')),
       'no-lineunder' => array('title' => t('No line under'), 'class' => array('main-menu-no-lineunder')),
-      'underline-items' => array('title' => t('Underline items'), 'class' => array('main-menu-underline-items')),
+      'underline-items' => array('title' => t('Underline items'), 'class' => array('main-menu-underline-items', 'main-menu-no-lineunder')),
     )
   );
   

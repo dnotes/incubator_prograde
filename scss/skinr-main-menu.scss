@@ -105,7 +105,8 @@
     li a {
       border-bottom: 2px solid;
     }
-    .secondary-menu li {
+    .secondary-menu li,
+    .secondary-menu li a {
       border-bottom: none;
     }
   }

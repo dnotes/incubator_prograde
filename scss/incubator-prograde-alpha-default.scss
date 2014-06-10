@@ -63,6 +63,10 @@ nav.navigation ul {
       line-height: 2.2em;
     }
   }
+  &.main-menu {
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+  }
   &.secondary-menu {
     li {
       @include menu-borders;

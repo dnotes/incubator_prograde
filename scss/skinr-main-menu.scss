@@ -46,13 +46,14 @@
 }
 
 .main-menu-full-width {
-  ul.links.main-menu,
-  ul.links.secondary-menu {
+  .navigation ul.links.main-menu,
+  .navigation ul.links.secondary-menu {
     border-bottom: none;
     background-image: none;
   }
   .zone-menu-wrapper {
-    border-bottom: 3px solid;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
   }
 }
 

@@ -162,6 +162,7 @@ body a {
 .zone-menu-wrapper {
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
   background: $color_bg;
+  border-color: $color_base_light;
 }
 
 // main menu styling
@@ -178,7 +179,7 @@ body a {
     }
   }
   &.main-menu {
-    border-bottom: 3px solid $color_base_light;
+    border-color: $color_base_light;
   }
   &.secondary-menu {
     @include invert-menu;

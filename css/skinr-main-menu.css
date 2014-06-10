@@ -11,8 +11,8 @@
 .main-menu-lighter ul.main-menu, .main-menu-lighter .navigation ul.links.secondary-menu { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }
 .main-menu-lighter.main-menu-full-width .zone-menu-wrapper { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }
 
-.main-menu-full-width ul.links.main-menu, .main-menu-full-width ul.links.secondary-menu { border-bottom: none; background-image: none; }
-.main-menu-full-width .zone-menu-wrapper { border-bottom: 3px solid; }
+.main-menu-full-width .navigation ul.links.main-menu, .main-menu-full-width .navigation ul.links.secondary-menu { border-bottom: none; background-image: none; }
+.main-menu-full-width .zone-menu-wrapper { border-bottom-width: 3px; border-bottom-style: solid; }
 
 .main-menu-no-separators ul.main-menu li, .main-menu-no-separators ul.secondary-menu li, .main-menu-dot-separators ul.main-menu li, .main-menu-dot-separators ul.secondary-menu li { border: none !important; }
 

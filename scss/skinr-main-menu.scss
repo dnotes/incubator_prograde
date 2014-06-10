@@ -12,9 +12,6 @@
       margin-left: .2em !important;
     }
   }
-  &.main-menu-dot-separators ul.main-menu li:before {
-    margin-left: -.35em;
-  }
 }
 
 .main-menu-wide {
@@ -23,9 +20,6 @@
     &.first {
       margin-left: .8em !important;
     }
-  }
-  &.main-menu-dot-separators ul.main-menu li:before {
-    margin-left: -.65em;
   }
 }
 
@@ -42,7 +36,15 @@
 }
 
 .main-menu-darker {
-  
+  ul.main-menu,
+  .navigation ul.links.secondary-menu {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII=");
+  }
+  &.main-menu-full-width {
+    .zone-menu-wrapper {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII=");
+    }
+  }
 }
 
 .main-menu-full-width {
@@ -70,13 +72,19 @@
     border: none;
     &:before {
       content: '\25CF';
-      margin-left: -.25em;
+      margin-left: -.3em;
       float: left;
-      line-height: 3em;
+      line-height: 2em;
     }
     &.first:before {
       content: '';
     }
+  }
+  &.main-menu-narrow ul.main-menu li:before {
+    margin-left: -.4em;
+  }
+  &.main-menu-wide ul.main-menu li:before {
+    margin-left: -.7em;
   }
 }
 

@@ -34,6 +34,7 @@ body a:hover, body a:active { color: #2b4966; }
 
 .navigation ul.links li a { color: #476887; }
 .navigation ul.links li a:hover, .navigation ul.links li a.active, .navigation ul.links li a.active-trail { background: #72899d; color: #fdfdfd; }
+.navigation ul.links li:after, .navigation ul.links li:before { color: #5a6f82; }
 .navigation ul.links.main-menu { border-color: #72899d; }
 .navigation ul.links.secondary-menu { background-color: #5a6f82; border-color: #5a6f82 #455564 #5a6f82 #72899d !important; padding-left: 0; padding-right: 0; }
 .navigation ul.links.secondary-menu > li { background-color: #5a6f82; border-color: #72899d #72899d #455564 #455564; color: #fdfdfd; }

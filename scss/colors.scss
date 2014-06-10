@@ -177,6 +177,10 @@ body a {
         color: $color_text_highlight;
       }
     }
+    &:after,
+    &:before {
+      color: $color_base;
+    }
   }
   &.main-menu {
     border-color: $color_base_light;

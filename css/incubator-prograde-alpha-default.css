@@ -1,6 +1,6 @@
 html { font-size: 12px; }
 
-.zone-user-wrapper, .zone-menu-wrapper { box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); position: relative; display: block; }
+.zone-user-wrapper, .zone-menu-wrapper { position: relative; display: block; }
 
 .zone-user-wrapper .block { float: right; }
 .zone-user-wrapper .block .block-title { display: none; }

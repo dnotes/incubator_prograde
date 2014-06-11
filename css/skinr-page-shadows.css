@@ -1,2 +1,1 @@
-/* Document   : skinr-page-shadows Created on : Sep 17, 2013, 2:43:46 PM Author     : david Description: Page shadow styles for Prograde theme
-*/
+.page-shadows-inset-header .zone-user-wrapper, .page-shadows-inset-header .zone-menu-wrapper { -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }

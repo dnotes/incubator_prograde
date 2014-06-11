@@ -28,7 +28,7 @@ body a:hover, body a:active { color: #2b4966; }
 .site-name-slogan { color: #343434; }
 .site-name-slogan a:link, .site-name-slogan a:visited, .site-name-slogan a:hover, .site-name-slogan a:active { color: #343434; }
 
-.zone-menu-wrapper { box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); background: #fcfcfc; border-color: #5a6f82; }
+.zone-menu-wrapper { background: #fcfcfc; border-color: #5a6f82; }
 
 .navigation ul.links li a { color: #5a6f82; }
 .navigation ul.links li a:hover, .navigation ul.links li a.active, .navigation ul.links li a.active-trail { background: #5a6f82; color: #fdfdfd; }

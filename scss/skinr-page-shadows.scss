@@ -1,17 +1,15 @@
-/*
-  Document   : skinr-page-shadows
-  Created on : Sep 17, 2013, 2:43:46 PM
-  Author     : david
-  Description:
-  Page shadow styles for Prograde theme
-*/
+@charset "UTF-8";
+@import "compass/css3";
 
 .page-shadows-none {
   
 }
 
 .page-shadows-inset-header {
-  
+  .zone-user-wrapper,
+  .zone-menu-wrapper {
+    @include single-box-shadow(rgba(0,0,0,0.5), 0, 0, 15px);
+  }
 }
 
 .page-shadows-raised-header {

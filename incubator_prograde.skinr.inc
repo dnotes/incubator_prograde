@@ -178,7 +178,7 @@ function incubator_prograde_skinr_skin_info() {
   );
   
   $skins['incubator_prograde_block_separators'] = array(
-    'title' => t('Block item separators'),
+    'title' => t('Separators'),
     'type' => 'select',
     'theme hooks' => array('html'),
     'default status' => 0,
@@ -258,6 +258,26 @@ function incubator_prograde_skinr_skin_info() {
     )
   );
   
+  $skins['incubator_prograde_main_menu_side'] = array(
+    'title' => t('Menu position'),
+    'type' => 'select',
+    'theme hooks' => array('html'),
+    'default status' => 0,
+    'status' => array(
+      'incubator_prograde' => 1,
+    ),
+    'attached' => array(
+      'css' => array(
+        'css/skinr-main-menu.css'
+      )
+    ),
+    'options' => array(
+      '' => array('title' => t('Normal'), 'class' => array('main-menu-side-normal')),
+      'left' => array('title' => t('Left'), 'class' => array('main-menu-side-left')),
+      'center' => array('title' => t('Center'), 'class' => array('main-menu-side-center')),
+      'right' => array('title' => t('Right'), 'class' => array('main-menu-side-right')),
+    )
+  );
   
   
   

@@ -1,10 +1,14 @@
 /* Document   : skinr-main-menu Created on : Sep 17, 2013, 3:12:28 PM Author     : david Description: Purpose of the stylesheet follows.
 */
-.main-menu-overlay .navigation { margin-top: -2.2em; }
+.main-menu-block nav.navigation { padding: .2em 1.5em !important; }
+
+.main-menu-overlay .region-menu-inner { margin-top: -2.2em; }
 
 .main-menu-narrow-space ul.main-menu li { margin-right: .8em !important; }
+.main-menu-narrow-space ul.main-menu li.last { margin-right: 0 !important; }
 
 .main-menu-wide-space ul.main-menu li { margin-right: 1.6em !important; }
+.main-menu-wide-space ul.main-menu li.last { margin-right: 0 !important; }
 
 .main-menu-narrow-items .navigation ul li a { padding: 0 .2em; }
 
@@ -31,3 +35,11 @@
 .main-menu-underline-items ul.main-menu li a { border-bottom: 2px solid; }
 .main-menu-underline-items ul.main-menu li a.active, .main-menu-underline-items ul.main-menu li a.active-trail { border-bottom: none; }
 .main-menu-underline-items ul.main-menu .secondary-menu li, .main-menu-underline-items ul.main-menu .secondary-menu li a { border-bottom: none; }
+
+.main-menu-side-left .navigation, .main-menu-side-center .navigation, .main-menu-side-right .navigation { display: inline-block; }
+
+.main-menu-side-left .region-menu-inner { text-align: left; }
+
+.main-menu-side-center .region-menu-inner { text-align: center; }
+
+.main-menu-side-right .region-menu-inner { text-align: right; }

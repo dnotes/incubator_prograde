@@ -6,8 +6,13 @@
         Purpose of the stylesheet follows.
 */
 
+// Note: most of the .main-menu-block styles are kept with other .block declarations
+.main-menu-block nav.navigation {
+  padding: .2em 1.5em !important;
+}
+
 .main-menu-overlay {
-  .navigation {
+  .region-menu-inner{
     margin-top: -2.2em;
   }
 }
@@ -15,12 +20,18 @@
 .main-menu-narrow-space {
   ul.main-menu li {
     margin-right: .8em !important;
+    &.last {
+      margin-right: 0 !important;
+    }
   }
 }
 
 .main-menu-wide-space {
   ul.main-menu li {
     margin-right: 1.6em !important;
+    &.last {
+      margin-right: 0 !important;
+    }
   }
 }
 
@@ -125,3 +136,19 @@
   }
 }
 
+.main-menu-side-left,
+.main-menu-side-center,
+.main-menu-side-right {
+  .navigation {
+    display: inline-block;
+  }
+}
+.main-menu-side-left .region-menu-inner {
+  text-align:left;
+}
+.main-menu-side-center .region-menu-inner {
+  text-align:center;
+}
+.main-menu-side-right .region-menu-inner {
+  text-align:right;
+}

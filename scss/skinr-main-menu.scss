@@ -122,14 +122,18 @@
 .main-menu-underline-items {
   ul.main-menu {
     li a {
-      border-bottom: 2px solid;
+      span {
+        border-bottom: 2px solid;
+      }
       &.active,
       &.active-trail {
-        border-bottom: none;
+        span {
+          border-bottom: none;
+        }
       }
     }
     .secondary-menu li,
-    .secondary-menu li a {
+    .secondary-menu li a span {
       border-bottom: none;
     }
   }

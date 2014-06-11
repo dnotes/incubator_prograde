@@ -4,17 +4,24 @@
 
 @import "mixin";
 
+.headers-centered {
+  &.block,
+  .section-content .block {
+    .block-title {
+      text-align: center;
+    }
+  }
+}
+
 .headers-banner {
   &.block,
   .section-content .block {
     .block-title {
       @include transition(all, 0.3s);
       margin-top: -4px;
-      padding-left: 12px;
-      padding-right: 12px;
       line-height: normal;
       padding: .3em .9em .3em 17px;
-      margin-left: -25px;
+      margin-left: -25px !important;
       margin-bottom: .9em;
       display: inline-block;
       *display: inline;
@@ -27,19 +34,43 @@
         left: -5px;
         bottom: -5px;
         border-left: 5px solid transparent !important;
-        //border-top: 5px solid transparent !important;
         border-bottom: 5px solid transparent !important;
-        border-right: 5px solid transparent;
       }
     }
   }
 }
 
-.headers-centered {
+.headers-banner-right {
   &.block,
   .section-content .block {
     .block-title {
-      text-align: center;
+      margin-right: -25px !important;
+      line-height: normal;
+      margin-top: -4px;
+      display: inline-block;
+      *display: inline;
+      padding: .3em 17px .3em .9em;
+      position: relative;
+      z-index: 2;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        right: -5px;
+        bottom: -5px;
+        border-right: 5px solid transparent !important;
+        border-bottom: 5px solid transparent !important;
+      }
+    }
+  }
+}
+
+.headers-banner.headers-banner-right,
+.headers-banner-wide {
+  &.block,
+  .section-content .block {
+    .block-title {
+      display: block !important;
     }
   }
 }
@@ -49,9 +80,19 @@
   .section-content .block {
     .block-title {
       padding: .4em 20px;
-      margin-top: -20px;
+      margin-top: -4px;
       margin-left: -20px;
       margin-right: -20px;
+      display:block;
+    }
+  }
+}
+
+.headers-top-aligned {
+  &.block,
+  .section-content .block {
+    .block-title {
+      margin-top: -20px !important;
     }
   }
   .block-styles-rounded,

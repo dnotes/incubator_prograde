@@ -158,8 +158,8 @@ function incubator_prograde_skinr_skin_info() {
   
   $skins['incubator_prograde_headers'] = array(
     'title' => t('Block headers'),
-    'type' => 'select',
-    'theme hooks' => array('html'),
+    'type' => 'checkboxes',
+    'theme hooks' => array('html', 'block'),
     'default status' => 0,
     'status' => array(
       'incubator_prograde' => 1,
@@ -170,12 +170,17 @@ function incubator_prograde_skinr_skin_info() {
       )
     ),
     'options' => array(
-      '' => array('title' => t('Simple'), 'class' => array('headers-simple')),
-      'banner' => array('title' => t('Banner'), 'class' => array('headers-banner')),
       'centered' => array('title' => t('Centered'), 'class' => array('headers-centered')),
-      'colored' => array('title' => t('Colored'), 'class' => array('headers-colored')),
-      'colored-centered' => array('title' => t('Centered and colored'), 'class' => array('headers-colored', 'headers-centered')),
-    )
+      'colored' => array('title' => t('Colored background'), 'class' => array('headers-colored')),
+      'top-aligned' => array('title' => t('Aligned with top'), 'class' => array('headers-top-aligned')),
+      'link-text' => array('title' => t('Link color text'), 'class' => array('headers-link-text')),
+      'link-bg' => array('title' => t('Link color background'), 'class' => array('headers-link-bg')),
+      'secondary-text' => array('title' => t('Secondary color text'), 'class' => array('headers-secondary-text')),
+      'secondary-bg' => array('title' => t('Secondary color background'), 'class' => array('headers-secondary-bg')),
+      'banner' => array('title' => t('Banner'), 'class' => array('headers-banner')),
+      'banner-right' => array('title' => t('Banner right'), 'class' => array('headers-banner-right')),
+      'banner-wide' => array('title' => t('Full-width banner'), 'class' => array('headers-banner-wide')),
+    ),
   );
   
   $skins['incubator_prograde_main_block'] = array(

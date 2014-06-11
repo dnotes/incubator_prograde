@@ -19,6 +19,7 @@ $color_base: #5a6f82;
 // OTHER CONFIGURABLE COLORS
 $color_bg: #fcfcfc;
 $color_block_border: #cdd4da;
+$color_secondary: #404e5b;
 
 $color_text_highlight: #fdfdfd;
 
@@ -268,14 +269,20 @@ footer.section-footer {
     &:after {
       border-right: 5px solid $color_base_light !important;
     }
+    &:before {
+      border-left: 5px solid $color_base_light !important;
+    }
   }
 }
 
-.headers-banner .section-content .block,
-.block .headers-banner {
-  .block-title {
-    color: $color_bg;
-    background: $color_base;
+.headers-banner, 
+.headers-banner-right {
+  &.block,
+  .section-content .block {
+    .block-title {
+      color: $color_text_highlight;
+      background: $color_base;
+    }
   }
 }
 
@@ -283,6 +290,55 @@ footer.section-footer {
 .block.headers-colored {
   .block-title {
     @include invertcolor;
+  }
+}
+
+.headers-link-text {
+  &.block,
+  .section-content .block {
+    .block-title {
+      color: $color_link;
+    }
+  }
+}
+
+.headers-link-bg {
+  &.block,
+  .section-content .block {
+    .block-title {
+      background: $color_link;
+      color: $color_text_highlight;
+      &:after {
+        border-right: 5px solid $color_link !important;
+      }
+      &:before {
+        border-left: 5px solid $color_link !important;
+      }
+    }
+  }
+}
+
+.headers-secondary-text {
+  &.block,
+  .section-content .block {
+    .block-title {
+      color: $color_secondary;
+    }
+  }
+}
+
+.headers-secondary-bg {
+  &.block,
+  .section-content .block {
+    .block-title {
+      background: $color_secondary;
+      &:after {
+        border-right: 5px solid $color_secondary !important;
+      }
+      &:before {
+        border-left: 5px solid $color_secondary !important;
+      }
+    }
   }
 }
 

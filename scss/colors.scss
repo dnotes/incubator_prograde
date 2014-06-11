@@ -199,10 +199,9 @@ body a {
         background-color: transparent;
         &:hover,
         &.active,
-        &.active-trail,
-        &:before, 
-        &:after {
-          color: $color_lightgrey;
+        &.active-trail {
+          color: $color_link;
+          opacity: .5;
         }
       }
     }

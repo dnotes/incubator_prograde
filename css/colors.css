@@ -44,7 +44,7 @@ body a:hover, body a:active { color: #2b4966; }
 
 .main-menu-no-tabs .navigation ul.links.main-menu, .main-menu-no-tabs .navigation ul.links.secondary-menu { background-color: transparent; }
 .main-menu-no-tabs .navigation ul.links.main-menu li a, .main-menu-no-tabs .navigation ul.links.secondary-menu li a { background-color: transparent; }
-.main-menu-no-tabs .navigation ul.links.main-menu li a:hover, .main-menu-no-tabs .navigation ul.links.main-menu li a.active, .main-menu-no-tabs .navigation ul.links.main-menu li a.active-trail, .main-menu-no-tabs .navigation ul.links.main-menu li a:before, .main-menu-no-tabs .navigation ul.links.main-menu li a:after, .main-menu-no-tabs .navigation ul.links.secondary-menu li a:hover, .main-menu-no-tabs .navigation ul.links.secondary-menu li a.active, .main-menu-no-tabs .navigation ul.links.secondary-menu li a.active-trail, .main-menu-no-tabs .navigation ul.links.secondary-menu li a:before, .main-menu-no-tabs .navigation ul.links.secondary-menu li a:after { color: #777777; }
+.main-menu-no-tabs .navigation ul.links.main-menu li a:hover, .main-menu-no-tabs .navigation ul.links.main-menu li a.active, .main-menu-no-tabs .navigation ul.links.main-menu li a.active-trail, .main-menu-no-tabs .navigation ul.links.secondary-menu li a:hover, .main-menu-no-tabs .navigation ul.links.secondary-menu li a.active, .main-menu-no-tabs .navigation ul.links.secondary-menu li a.active-trail { color: #476887; opacity: .5; }
 
 footer.section-footer { background-color: #cdd4da; border-top: 1px solid #cdd4da; color: #4e4e4e; }
 footer.section-footer a { color: #66819b; }

@@ -15,8 +15,6 @@ body a:hover, body a:active { color: #2b4966; }
 
 .form-item label { color: #666666; }
 
-.title { color: #476887; }
-
 .description { color: #777777; }
 
 .zone-user-wrapper { background-color: #5a6f82; border-color: #72899d #72899d #455564 #455564; color: #fdfdfd; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }

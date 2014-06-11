@@ -7,10 +7,13 @@
 
 @import "mixin";
 
-.headers-banner {
-  .section-content .block .block-title
-  {
+.headers-banner .section-content .block,
+.block.headers-banner {
+  .block-title {
     @include transition(all, 0.3s);
+    margin-top: -4px;
+    padding-left: 12px;
+    padding-right: 12px;
     line-height: normal;
     padding: .3em .9em .3em 17px;
     margin-left: -25px;
@@ -33,16 +36,19 @@
   }
 }
 
-.headers-centered {
-  .section-content .block .block-title
-  {
-    
+.headers-centered .section-content .block,
+.block.headers-centered {
+  .block-title {
+    text-align: center;
   }
 }
 
-.headers-colored {
-  .section-content .block .block-title
-  {
-    
+.headers-colored .section-content .block,
+.block.headers-colored {
+  .block-title {
+    padding: .4em 20px;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
   }
 }

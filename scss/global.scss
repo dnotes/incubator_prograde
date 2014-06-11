@@ -109,11 +109,8 @@ html {
   padding: 20px;
   margin-bottom: 1.4em;
   .block-title {
-    padding-left: 12px;
-    padding-right: 12px;
     font-size: 150%;
     font-weight: bold;
-    @include title-banner;
   }
   .content {
     clear: both;

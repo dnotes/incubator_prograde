@@ -237,12 +237,25 @@ footer.section-footer {
   border-color: $color_block_border;
   background-color: $color_block_border;
   .block-title {
-    color: $color_bg;
-    background: $color_base;
     z-index: 2;
     &:after {
       border-right: 5px solid $color_base_light !important;
     }
+  }
+}
+
+.headers-banner .section-content .block,
+.block .headers-banner {
+  .block-title {
+    color: $color_bg;
+    background: $color_base;
+  }
+}
+
+.headers-colored .section-content .block,
+.block.headers-colored {
+  .block-title {
+    @include invertcolor;
   }
 }
 

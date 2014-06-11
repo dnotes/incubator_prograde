@@ -2,10 +2,10 @@
 
 .main-menu-overlay .region-menu-inner { margin-top: -2.2em; }
 
-.main-menu-narrow-space ul.main-menu li { margin-right: .8em !important; }
+.main-menu-narrow-space ul.main-menu li { margin-right: .4em !important; }
 .main-menu-narrow-space ul.main-menu li.last { margin-right: 0 !important; }
 
-.main-menu-wide-space ul.main-menu li { margin-right: 1.6em !important; }
+.main-menu-wide-space ul.main-menu li { margin-right: 1.2em !important; }
 .main-menu-wide-space ul.main-menu li.last { margin-right: 0 !important; }
 
 .main-menu-narrow-items .navigation ul li a { padding: 0 .2em; }
@@ -21,13 +21,15 @@
 .main-menu-full-width .navigation ul.links.main-menu, .main-menu-full-width .navigation ul.links.secondary-menu { border-bottom: none; background-image: none; }
 .main-menu-full-width .zone-menu-wrapper { border-bottom-width: 3px; border-bottom-style: solid; }
 
-.main-menu-no-separators ul.main-menu li, .main-menu-no-separators ul.secondary-menu li, .main-menu-dot-separators ul.main-menu li, .main-menu-dot-separators ul.secondary-menu li { border: none !important; }
-
 .main-menu-dot-separators ul.main-menu li { border: none; }
-.main-menu-dot-separators ul.main-menu li:before { content: '\25CF'; margin-left: -.3em; float: left; line-height: 2em; }
+.main-menu-dot-separators ul.main-menu li:before { content: '\2022'; margin-left: -.15em; float: left; line-height: 2.2em; }
 .main-menu-dot-separators ul.main-menu li.first:before { content: ''; }
-.main-menu-dot-separators.main-menu-narrow-space ul.main-menu li:before { margin-left: -.7em; }
-.main-menu-dot-separators.main-menu-wide-space ul.main-menu li:before { margin-left: -1.1em; }
+.main-menu-dot-separators ul.secondary-menu li { border: none; }
+.main-menu-dot-separators.main-menu-narrow-space ul.main-menu li:before { margin-left: -.375em; }
+.main-menu-dot-separators.main-menu-wide-space ul.main-menu li:before { margin-left: -.75em; }
+
+.main-menu-no-separators ul.main-menu li, .main-menu-no-separators ul.secondary-menu li { border: none; }
+.main-menu-no-separators ul.main-menu li:before, .main-menu-no-separators ul.secondary-menu li:before { content: ""; }
 
 .main-menu-no-lineunder .navigation ul.links.main-menu, .main-menu-underline-items .navigation ul.links.main-menu { border-bottom: none; }
 .main-menu-no-lineunder.main-menu-full-width .zone-menu-wrapper, .main-menu-underline-items.main-menu-full-width .zone-menu-wrapper { border-bottom: none; }

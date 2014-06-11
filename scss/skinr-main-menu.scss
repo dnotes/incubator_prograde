@@ -139,6 +139,9 @@
 .main-menu-side-left,
 .main-menu-side-center,
 .main-menu-side-right {
+  .region-menu-inner {
+    margin-bottom: -1.35em;
+  }
   .navigation {
     display: inline-block;
   }

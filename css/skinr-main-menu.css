@@ -36,6 +36,7 @@
 .main-menu-underline-items ul.main-menu li a.active, .main-menu-underline-items ul.main-menu li a.active-trail { border-bottom: none; }
 .main-menu-underline-items ul.main-menu .secondary-menu li, .main-menu-underline-items ul.main-menu .secondary-menu li a { border-bottom: none; }
 
+.main-menu-side-left .region-menu-inner, .main-menu-side-center .region-menu-inner, .main-menu-side-right .region-menu-inner { margin-bottom: -1.35em; }
 .main-menu-side-left .navigation, .main-menu-side-center .navigation, .main-menu-side-right .navigation { display: inline-block; }
 
 .main-menu-side-left .region-menu-inner { text-align: left; }

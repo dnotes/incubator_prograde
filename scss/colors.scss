@@ -162,18 +162,18 @@ body a {
 .zone-menu-wrapper {
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
   background: $color_bg;
-  border-color: $color_base_light;
+  border-color: $color_base;
 }
 
 // main menu styling
 .navigation ul.links {
   li {
     a {
-      color: $color_link;
+      color: $color_base;
       &:hover,
       &.active,
       &.active-trail {
-        background: $color_base_light;
+        background: $color_base;
         color: $color_text_highlight;
       }
     }
@@ -183,7 +183,7 @@ body a {
     }
   }
   &.main-menu {
-    border-color: $color_base_light;
+    border-color: $color_base $color_base_dark $color_base $color_base_light;
   }
   &.secondary-menu {
     @include invert-menu;
@@ -193,16 +193,48 @@ body a {
 .main-menu-no-tabs .navigation {
   ul.links.main-menu, 
   ul.links.secondary-menu {
-    background-color: transparent;
+    background-color: transparent !important;
     li {
       a {
-        background-color: transparent;
+        background-color: transparent !important;
         &:hover,
         &.active,
         &.active-trail {
-          color: $color_link;
+          color: $color_base;
           opacity: .5;
         }
+      }
+    }
+  }
+}
+
+.main-menu-linkcolor {
+  .zone-menu-wrapper {
+    border-color: $color_link;
+  }
+  .navigation ul.links {
+    li {
+      a {
+        color: $color_link;
+        &:hover,
+        &.active,
+        &.active-trail {
+          background: $color_link;
+          color: $color_text_highlight;
+        }
+      }
+      &:after,
+      &:before {
+        color: $color_link;
+      }
+    }
+  }
+  &.main-menu-no-tabs .navigation {
+    ul.links li a {
+      &:hover,
+      &.active,
+      &.active-trail {
+        color: $color_link;
       }
     }
   }

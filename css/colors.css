@@ -30,21 +30,27 @@ body a:hover, body a:active { color: #2b4966; }
 .site-name-slogan { color: #343434; }
 .site-name-slogan a:link, .site-name-slogan a:visited, .site-name-slogan a:hover, .site-name-slogan a:active { color: #343434; }
 
-.zone-menu-wrapper { box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); background: #fcfcfc; border-color: #72899d; }
+.zone-menu-wrapper { box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); background: #fcfcfc; border-color: #5a6f82; }
 
-.navigation ul.links li a { color: #476887; }
-.navigation ul.links li a:hover, .navigation ul.links li a.active, .navigation ul.links li a.active-trail { background: #72899d; color: #fdfdfd; }
+.navigation ul.links li a { color: #5a6f82; }
+.navigation ul.links li a:hover, .navigation ul.links li a.active, .navigation ul.links li a.active-trail { background: #5a6f82; color: #fdfdfd; }
 .navigation ul.links li:after, .navigation ul.links li:before { color: #5a6f82; }
-.navigation ul.links.main-menu { border-color: #72899d; }
+.navigation ul.links.main-menu { border-color: #5a6f82 #455564 #5a6f82 #72899d; }
 .navigation ul.links.secondary-menu { background-color: #5a6f82; border-color: #5a6f82 #455564 #5a6f82 #72899d !important; padding-left: 0; padding-right: 0; }
 .navigation ul.links.secondary-menu > li { background-color: #5a6f82; border-color: #72899d #72899d #455564 #455564; color: #fdfdfd; }
 .navigation ul.links.secondary-menu > li.active-trail, .navigation ul.links.secondary-menu > li.active, .navigation ul.links.secondary-menu > li:hover, .navigation ul.links.secondary-menu > li:active { background-color: #455564; }
 .navigation ul.links.secondary-menu > li > a:link, .navigation ul.links.secondary-menu > li > a:visited, .navigation ul.links.secondary-menu > li > a:hover, .navigation ul.links.secondary-menu > li > a:active { color: #fdfdfd; }
 .navigation ul.links.secondary-menu > li > a.active, .navigation ul.links.secondary-menu > li > a.active-trail, .navigation ul.links.secondary-menu > li > a:hover, .navigation ul.links.secondary-menu > li > a:active { background-color: #455564; }
 
-.main-menu-no-tabs .navigation ul.links.main-menu, .main-menu-no-tabs .navigation ul.links.secondary-menu { background-color: transparent; }
-.main-menu-no-tabs .navigation ul.links.main-menu li a, .main-menu-no-tabs .navigation ul.links.secondary-menu li a { background-color: transparent; }
-.main-menu-no-tabs .navigation ul.links.main-menu li a:hover, .main-menu-no-tabs .navigation ul.links.main-menu li a.active, .main-menu-no-tabs .navigation ul.links.main-menu li a.active-trail, .main-menu-no-tabs .navigation ul.links.secondary-menu li a:hover, .main-menu-no-tabs .navigation ul.links.secondary-menu li a.active, .main-menu-no-tabs .navigation ul.links.secondary-menu li a.active-trail { color: #476887; opacity: .5; }
+.main-menu-no-tabs .navigation ul.links.main-menu, .main-menu-no-tabs .navigation ul.links.secondary-menu { background-color: transparent !important; }
+.main-menu-no-tabs .navigation ul.links.main-menu li a, .main-menu-no-tabs .navigation ul.links.secondary-menu li a { background-color: transparent !important; }
+.main-menu-no-tabs .navigation ul.links.main-menu li a:hover, .main-menu-no-tabs .navigation ul.links.main-menu li a.active, .main-menu-no-tabs .navigation ul.links.main-menu li a.active-trail, .main-menu-no-tabs .navigation ul.links.secondary-menu li a:hover, .main-menu-no-tabs .navigation ul.links.secondary-menu li a.active, .main-menu-no-tabs .navigation ul.links.secondary-menu li a.active-trail { color: #5a6f82; opacity: .5; }
+
+.main-menu-linkcolor .zone-menu-wrapper { border-color: #476887; }
+.main-menu-linkcolor .navigation ul.links li a { color: #476887; }
+.main-menu-linkcolor .navigation ul.links li a:hover, .main-menu-linkcolor .navigation ul.links li a.active, .main-menu-linkcolor .navigation ul.links li a.active-trail { background: #476887; color: #fdfdfd; }
+.main-menu-linkcolor .navigation ul.links li:after, .main-menu-linkcolor .navigation ul.links li:before { color: #476887; }
+.main-menu-linkcolor.main-menu-no-tabs .navigation ul.links li a:hover, .main-menu-linkcolor.main-menu-no-tabs .navigation ul.links li a.active, .main-menu-linkcolor.main-menu-no-tabs .navigation ul.links li a.active-trail { color: #476887; }
 
 footer.section-footer { background-color: #cdd4da; border-top: 1px solid #cdd4da; color: #4e4e4e; }
 footer.section-footer a { color: #66819b; }

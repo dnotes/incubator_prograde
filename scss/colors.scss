@@ -190,6 +190,24 @@ body a {
   }
 }
 
+.main-menu-no-tabs .navigation {
+  ul.links.main-menu, 
+  ul.links.secondary-menu {
+    background-color: transparent;
+    li {
+      a {
+        background-color: transparent;
+        &:hover,
+        &.active,
+        &.active-trail,
+        &:before, 
+        &:after {
+          color: $color_lightgrey;
+        }
+      }
+    }
+  }
+}
 
 // SECTION FOOTER
 // ---------------------------------------------------------------------------------------------------------------------

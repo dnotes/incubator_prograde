@@ -5,23 +5,32 @@
     Description:
         Purpose of the stylesheet follows.
 */
-.main-menu-narrow {
-  ul.main-menu li {
-    margin-right: .2em !important;
-    &.first {
-      margin-left: .2em !important;
-    }
+
+.main-menu-overlay {
+  .navigation {
+    margin-top: -2.2em;
   }
 }
 
-.main-menu-wide {
+.main-menu-narrow-space {
   ul.main-menu li {
     margin-right: .8em !important;
-    &.first {
-      margin-left: .8em !important;
-    }
   }
 }
+
+.main-menu-wide-space {
+  ul.main-menu li {
+    margin-right: 1.6em !important;
+  }
+}
+
+
+.main-menu-narrow-items {
+  .navigation ul li a {
+    padding: 0 .2em;
+  }
+}
+
 
 .main-menu-lighter {
   ul.main-menu,
@@ -80,11 +89,11 @@
       content: '';
     }
   }
-  &.main-menu-narrow ul.main-menu li:before {
-    margin-left: -.4em;
-  }
-  &.main-menu-wide ul.main-menu li:before {
+  &.main-menu-narrow-space ul.main-menu li:before {
     margin-left: -.7em;
+  }
+  &.main-menu-wide-space ul.main-menu li:before {
+    margin-left: -1.1em;
   }
 }
 
@@ -104,6 +113,10 @@
   ul.main-menu {
     li a {
       border-bottom: 2px solid;
+      &.active,
+      &.active-trail {
+        border-bottom: none;
+      }
     }
     .secondary-menu li,
     .secondary-menu li a {
@@ -112,21 +125,3 @@
   }
 }
 
-.main-menu-overlay {
-  ul.main-menu {
-    margin-top: -2em !important;
-  }
-}
-
-.main-menu-no-tabs .navigation {
-  ul.links.main-menu, 
-  ul.links.secondary-menu {
-    background-color: transparent;
-    li {
-      a {
-        background-color: transparent;
-        color: gray;
-      }
-    }
-  }
-}

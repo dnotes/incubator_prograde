@@ -8,4 +8,4 @@
 
 .block-styles-shadowed.block, .block-styles-shadowed .zone-content-wrapper .block, .block-styles-shadowed.main-menu-block .navigation { box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
 
-.block-styles-transparent.block, .block-styles-transparent .zone-content-wrapper .block, .block-styles-transparent.main-menu-block .navigation { background-color: transparent !important; background-image: none !important; box-shadow: none !important; }
+.block-styles-transparent.block, .block-styles-transparent .zone-content-wrapper .block { background-color: transparent !important; background-image: none !important; box-shadow: none !important; }

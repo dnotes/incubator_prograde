@@ -12,10 +12,12 @@
 
 .main-menu-narrow-items .navigation ul li a { padding: 0 .2em; }
 
-.main-menu-lighter ul.main-menu, .main-menu-lighter .navigation ul.links.secondary-menu { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }
+.main-menu-lighter nav.navigation { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }
+.main-menu-lighter.main-menu-full-width nav.navigation { background-image: none; }
 .main-menu-lighter.main-menu-full-width .zone-menu-wrapper { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }
 
-.main-menu-darker ul.main-menu, .main-menu-darker .navigation ul.links.secondary-menu { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII="); }
+.main-menu-darker nav.navigation { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII="); }
+.main-menu-darker.main-menu-full-width nav.navigation { background-image: none; }
 .main-menu-darker.main-menu-full-width .zone-menu-wrapper { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII="); }
 
 .main-menu-full-width .navigation ul.links.main-menu, .main-menu-full-width .navigation ul.links.secondary-menu { border-bottom: none; background-image: none; }
@@ -36,7 +38,7 @@
 .main-menu-underline-items ul.main-menu li a.active, .main-menu-underline-items ul.main-menu li a.active-trail { border-bottom: none; }
 .main-menu-underline-items ul.main-menu .secondary-menu li, .main-menu-underline-items ul.main-menu .secondary-menu li a { border-bottom: none; }
 
-.main-menu-side-left .region-menu-inner, .main-menu-side-center .region-menu-inner, .main-menu-side-right .region-menu-inner { margin-bottom: -1.35em; }
+.main-menu-side-left .region-menu-inner, .main-menu-side-center .region-menu-inner, .main-menu-side-right .region-menu-inner { margin-bottom: -1em; }
 .main-menu-side-left .navigation, .main-menu-side-center .navigation, .main-menu-side-right .navigation { display: inline-block; }
 
 .main-menu-side-left .region-menu-inner { text-align: left; }

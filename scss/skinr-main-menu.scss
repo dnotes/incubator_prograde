@@ -44,11 +44,13 @@
 
 
 .main-menu-lighter {
-  ul.main-menu,
-  .navigation ul.links.secondary-menu {
+  nav.navigation {
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII=");
   }
   &.main-menu-full-width {
+    nav.navigation {
+      background-image: none;
+    }
     .zone-menu-wrapper {
       background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII=");
     }
@@ -56,11 +58,13 @@
 }
 
 .main-menu-darker {
-  ul.main-menu,
-  .navigation ul.links.secondary-menu {
+  nav.navigation {
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII=");
   }
   &.main-menu-full-width {
+    nav.navigation {
+      background-image: none;
+    }
     .zone-menu-wrapper {
       background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII=");
     }
@@ -140,7 +144,7 @@
 .main-menu-side-center,
 .main-menu-side-right {
   .region-menu-inner {
-    margin-bottom: -1.35em;
+    margin-bottom: -1em;
   }
   .navigation {
     display: inline-block;

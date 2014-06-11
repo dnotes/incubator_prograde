@@ -113,6 +113,27 @@ function incubator_prograde_skinr_skin_info() {
     }
   }
   
+  $skins['incubator_prograde_page_shadows'] = array(
+    'title' => t('Page shadows'),
+    'type' => 'select',
+    'theme hooks' => array('html'),
+    'default status' => 0,
+    'status' => array(
+      'incubator_prograde' => 1,
+    ),
+    'attached' => array(
+      'css' => array(
+        'css/skinr-page-shadows.css'
+      )
+    ),
+    'options' => array(
+      '' => array('title' => t('None'), 'class' => array('page-shadows-none')),
+      'inset-header' => array('title' => t('Inset header'), 'class' => array('page-shadows-inset-header')),
+      'raised-header' => array('title' => t('Raised header'), 'class' => array('page-shadows-raised-header')),
+      'raised-page' => array('title' => t('Raised page'), 'class' => array('page-shadows-raised-page')),
+    )
+  );
+  
   $skins['incubator_prograde_block_bg'] = array(
     'title' => t('Block color'),
     'type' => 'select',
@@ -135,29 +156,8 @@ function incubator_prograde_skinr_skin_info() {
     )
   );
   
-  $skins['incubator_prograde_page_shadows'] = array(
-    'title' => t('Page shadows'),
-    'type' => 'select',
-    'theme hooks' => array('html'),
-    'default status' => 0,
-    'status' => array(
-      'incubator_prograde' => 1,
-    ),
-    'attached' => array(
-      'css' => array(
-        'css/skinr-page-shadows.css'
-      )
-    ),
-    'options' => array(
-      '' => array('title' => t('None'), 'class' => array('page-shadows-none')),
-      'inset-header' => array('title' => t('Inset header'), 'class' => array('page-shadows-inset-header')),
-      'raised-header' => array('title' => t('Raised header'), 'class' => array('page-shadows-raised-header')),
-      'raised-page' => array('title' => t('Raised page'), 'class' => array('page-shadows-raised-page')),
-    )
-  );
-  
   $skins['incubator_prograde_headers'] = array(
-    'title' => t('Header styles'),
+    'title' => t('Block headers'),
     'type' => 'select',
     'theme hooks' => array('html'),
     'default status' => 0,
@@ -176,6 +176,25 @@ function incubator_prograde_skinr_skin_info() {
       'colored' => array('title' => t('Colored'), 'class' => array('headers-colored')),
       'colored-centered' => array('title' => t('Centered and colored'), 'class' => array('headers-colored', 'headers-centered')),
     )
+  );
+  
+  $skins['incubator_prograde_main_block'] = array(
+    'title' => t('Main content'),
+    'type' => 'select',
+    'theme hooks' => array('html'),
+    'default status' => 0,
+    'status' => array(
+      'incubator_prograde' => 1,
+    ),
+    'attached' => array(
+      'css' => array(
+        'css/skinr-main-block.css'
+      )
+    ),
+    'options' => array(
+      '' => array('title' => t('Block styling'), 'class' => array('main-block-block')),
+      'no-styling' => array('title' => t('No styling'), 'class' => array('main-block-no-styling')),
+    ),
   );
   
   $skins['incubator_prograde_block_separators'] = array(

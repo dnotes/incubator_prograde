@@ -1,0 +1,8 @@
+@charset "UTF-8";
+@import "compass/css3";
+
+.main-block-no-styling .section-content .block.block-system-main {
+  background: transparent;
+  border: none;
+  @include single-box-shadow(none);
+}

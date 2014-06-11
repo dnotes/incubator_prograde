@@ -14,9 +14,11 @@ html { font-size: 12px; }
 .zone-user-wrapper ul li a { display: block; line-height: 2em; padding: 0 .8em; font-weight: normal; }
 
 .navigation ul { display: block !important; margin: 0; }
-.navigation ul li { display: table-cell; max-width: 9em; float: left; margin: 0 !important; padding: 0 !important; font-size: 135%; }
+.navigation ul li { display: table-cell; max-width: 9em; float: left; margin: 0 !important; padding: 0 !important; font-size: 135%; border-right-style: solid; border-left-style: solid; }
 .navigation ul li a { padding: 0 1.1em; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; display: block; line-height: 2.2em; }
 .navigation ul li a span { display: inline-block; line-height: 1.2em !important; max-height: 2.4em; overflow: hidden; vertical-align: middle; text-align: center; }
+.navigation ul li:first { border-left-style: none; }
+.navigation ul li:last { border-right-style: none; }
 .navigation ul.main-menu { border-bottom-width: 3px; border-bottom-style: solid; }
 .navigation ul.secondary-menu li { border-style: none solid none solid; border-width: 1px; font-size: 100%; }
 .navigation ul.secondary-menu li a { padding: 0 1.5em; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }

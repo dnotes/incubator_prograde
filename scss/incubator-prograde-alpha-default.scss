@@ -56,6 +56,8 @@ html {
     margin: 0 !important;
     padding: 0 !important;
     font-size: 135%;
+    border-right-style: solid;
+    border-left-style: solid;
     a {
       padding: 0 1.1em;
       @include title;
@@ -70,6 +72,12 @@ html {
         vertical-align: middle;
         text-align:center;
       }
+    }
+    &:first {
+      border-left-style: none;
+    }
+    &:last {
+      border-right-style: none;
     }
   }
   &.main-menu {

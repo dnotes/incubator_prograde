@@ -27,7 +27,7 @@ $info['schemes']['default'] = array(
     'link' => '#476887',
     'block' => '#cdd4da',
     'text' => '#343434',
-    'text_highlight' => '#fffffd',
+    'text_highlight' => '#fdfdfd',
     'title' => '#2f2f2f',
   ),
 );
@@ -64,6 +64,19 @@ $info['schemes']['sand'] = array(
     'text_highlight' => '#fcfcfc',
     'title' => '#226a70',
   )
+);
+$info['schemes']['midnight'] = array(
+  'title' => t('Midnight'),
+  'colors' => array(
+    'bg' => '#000000',
+    'base' => '#29233e',
+    'secondary' => '#000000',
+    'link' => '#78abf2',
+    'block' => '#29233e',
+    'text' => '#f6f7d9',
+    'text_highlight' => '#f6f7d9',
+    'title' => '#274b7c',
+  ),
 );
 
 return $info;

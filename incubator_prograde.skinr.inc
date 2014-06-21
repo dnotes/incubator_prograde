@@ -310,3 +310,24 @@ function incubator_prograde_skinr_skin_info() {
   
   return $skins;
 }
+
+function incubator_prograde_skinr_group_info() {
+  return array(
+    'incubator_prograde_general' => array(
+      'title' => t('General'),
+      'description' => t('Choose styles for page layout and typography.'),
+    ),
+    'incubator_prograde_blocks' => array(
+      'title' => t('Blocks'),
+      'description' => t('Choose styles for blocks of content.'),
+    ),
+    'incubator_prograde_menu' => array(
+      'title' => t('Main menu'),
+      'description' => t('Choose styles for the main menu.'),
+    ),
+    'incubator_prograde_color' => array(
+      'title' => t('Secondary color'),
+      'description' => t('Choose where the secondary color is used.'),
+    ),
+  );
+}

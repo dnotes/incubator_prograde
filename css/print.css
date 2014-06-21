@@ -1,0 +1,39 @@
+* { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
+
+body { font-size: 10pt; }
+
+#region-content { /* Don't show links for images, or javascript/internal links */ }
+#region-content a, #region-content a:visited { text-decoration: underline !important; }
+#region-content .view-id-upcoming_events.view-display-id-page_1 a, #region-content .view-id-upcoming_events.view-display-id-page_1 a:visited, #region-content .field-name-field-main-image a, #region-content .field-name-field-main-image a:visited, #region-content .field-name-field-gallery-images a, #region-content .field-name-field-gallery-images a:visited { text-decoration: none !important; }
+#region-content a[href]:after { content: " (" attr(href) ")"; }
+#region-content abbr[title]:after { content: " (" attr(title) ")"; }
+#region-content .field-name-field-main-image a[href]:after, #region-content .field-name-field-gallery-images a[href]:after, #region-content a[href^="/"]:after, #region-content a[href^="javascript:"]:after, #region-content a[href^="#"]:after { content: ""; }
+#region-content .block { border: none; }
+
+pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+
+thead { display: table-header-group; }
+
+/* h5bp.com/t */
+tr, img { page-break-inside: avoid; }
+
+img { max-width: 100% !important; }
+
+@page { margin: 0.5cm; }
+
+p, h2, h3 { orphans: 3; widows: 3; }
+
+h2, h3 { page-break-after: avoid; }
+
+/* Theme-specific changes */
+#block-system-main { border: none !important; }
+
+#zone-content #region-content { width: 95%; }
+
+.view-id-upcoming_events.view-display-id-page_1 .view-header, .fc-button, #zone-user-wrapper, #zone-menu-wrapper, #zone-content aside.region, #zone-postscript, #block-menu-footer { display: none; }
+
+.fullcalendar { width: 9.8in !important; }
+.fullcalendar .fc-content table { width: 9.8in !important; }
+.fullcalendar .fc-content table tr { width: 9.8in !important; }
+.fullcalendar .fc-content table tr td, .fullcalendar .fc-content table tr th { border: 1px solid black !important; width: 1.4in !important; }
+.fullcalendar .fc-event, .fullcalendar a.fc-event { font-size: 7pt !important; border: 1px solid lightgray !important; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; padding: 2px 1px; }

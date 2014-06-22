@@ -367,7 +367,7 @@ body .more-link a {
   input[type="text"] {
     width: 100%;
     padding: 1px 35px 1px 5px;
-    height: 31px;
+    height: 30px;
     line-height: 29px;
     font-size: 16px;
   }
@@ -399,6 +399,15 @@ body .more-link a {
       margin: 0;
       padding: 0;
       border-style: none;
+      a {
+        background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII=");
+      }
+      &.active a, a:hover {
+        background: transparent;
+        padding-bottom: 1px;
+        position: relative;
+        z-index: 1;
+      }
     }
   }
 }
@@ -576,17 +585,18 @@ input[type="reset"],
 input[type="submit"],
 input[type="button"] {
   @include transition(all, 0.3s);
-  @include link-btn(2.5em, 1em);
+  @include link-btn(2em, 1em);
   font-size: 1.2em;
   font-weight: bold;
+  background: transparent;
 }
 
 html.js body input.form-autocomplete {
   background-image: url(../images/throbber.gif);
-  background-position-y: 9px;
-}
-html.js body input.form-autocomplete.throbbing {
-  background-position-y: -38px;
+  background-position: 100% 8px;
+  &.throbbing {
+    background-position: 100% -39px;
+  }
 }
 
 article {
@@ -616,6 +626,8 @@ a.contextual-links-trigger,
 // -----------------------------------------------------------------------------
 
 //article.node-teaser, // TODO: implement this
+ul.primary li.active a,
+ul.primary li a:hover,
 .main-menu-block .navigation,
 .section-content .block, 
 .section-content .block.block-bg-lighter,

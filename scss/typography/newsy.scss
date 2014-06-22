@@ -23,7 +23,7 @@
     font-weight:normal;
   }
   
-  aside .block h2.block-title {
+  .block h2.block-title {
     font-family: "Playfair Display SC", Georgia, "Times New Roman", Times, serif;
     font-weight: normal;
     font-size: 120%;
@@ -40,7 +40,7 @@
   #secondary-menu li a {
     font-family: "Arial Narrow", Arial, sans-serif;
   }
-  aside .block {
+  .block {
     font-family: "Arial Narrow", Arial, sans-serif;
   }
   .view-display-id-block_bigslides .views-field-title a,
@@ -48,5 +48,15 @@
     font-family: "Playfair Display SC", Georgia, "Times New Roman", Times, serif;
     font-variant: small-caps;
   }
+  
+  button, 
+  .more-link a,
+  a.more-link,
+  input[type="reset"], 
+  input[type="submit"], 
+  input[type="button"] {
+    font-family: "Arial Narrow", Arial, sans-serif;
+  }
+
 }
 

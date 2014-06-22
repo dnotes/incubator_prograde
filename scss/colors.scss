@@ -74,6 +74,7 @@ $color_text_light: lighten($color_text, 50%);
 @mixin link-highlight {
   color: $color_text_highlight;
   background-color: $color_base;
+  border-color: $color_base_light $color_base_dark $color_base_dark $color_base_light;
   &:link {
     color: $color_text_highlight;
     background-color: $color_base;
@@ -358,7 +359,6 @@ footer.section-footer {
 a.more-link,
 .more-link a {
   @include link-highlight;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .views_slideshow_cycle_main {
@@ -379,15 +379,25 @@ a.more-link,
     @include overflow;
     a {
       @include link-highlight;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
   }
 }
 
 // Tabs
 ul.primary {
+  border-color: $color_block_border;
   li {
     a {
+      border-color: $color_block_border;
+      background-color: $color_block_border;
+      color: $color_text_highlight;
+    }
+    &.active a,
+    a:hover {
+      border-color: $color_block_border;
+      border-bottom-color: transparent;
+      background-color: $color_block_border;
+      color: $color_text;
     }
   }
 }
@@ -404,7 +414,7 @@ ul.primary {
   .fc-header-title {
     color: $color_base;
     h2 {
-      color: $color_base;
+      color: $color_title;
     }
   }
   .fc-content {
@@ -414,23 +424,24 @@ ul.primary {
       background-color: $color_block_border;
       tr {
         td, th {
-          border: 1px solid $color_block_border !important;
+          border: 1px solid $color_block_border;
+          background: $color_bg;
         }
         // Style as buttons
         th {
           color: $color_text-highlight;
           background: $color_base;
-          border-bottom-color: $color_base_dark !important;
+          border-bottom-color: $color_base_dark;
         }
         td {
           &.fc-other-month {
             color: $color_text_light;
           }
           .fc-day-number {
-            color: $color_grey;
+            color: $color_text;
           }
           &.fc-today {
-            background-color: $color_grey !important;
+            background-color: $color_base_light;
           }
         }
       }
@@ -455,35 +466,36 @@ ul.primary {
   // EVENTS
   a.fc-event {
     @include link-highlight;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
   div.fc-event.bahaical {
     color: $color_text_light;
   }
 }
 
-// Inputs
-textarea,
-select,
-input[type="file"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"] {
-  border: 1px solid $color_block_border;
-  background-color: $color_bg;
-  color: $color_text;
-  &:focus {
-    border-color: $color_base;
+body {
+  // Inputs
+  textarea,
+  select,
+  input[type="file"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"] {
+    border-color: $color_block_border;
+    background-color: $color_bg;
+    color: $color_text;
+    &:focus {
+      border-color: $color_base;
+    }
   }
 }
 
@@ -492,9 +504,7 @@ body {
   input[type="reset"],
   input[type="submit"],
   input[type="button"] {
-    background: transparent;
     @include link-highlight;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 }
 
@@ -502,6 +512,9 @@ body {
 
 // SKINR OPTION COLORS
 // ---------------------------------------------------------------------------------------------------------------------
+.block-bg-pagebg ul.primary li a,
+.block-bg-pagebg ul.primary li.active a,
+.block-bg-pagebg ul.primary li a:hover,
 .block-bg-pagebg .section-content article.node-teaser,
 .block-bg-pagebg .section-content .block, 
 .section-content .block.block-bg-pagebg,
@@ -509,4 +522,14 @@ body {
 .section-footer.block-bg-pagebg
 {
   background-color: $color_bg;
+}
+
+.block-bg-pagebg ul.primary li {
+  a {
+    color: $color_link;
+  }
+  &.active a,
+  a:hover {
+    color: $color_text;
+  }
 }

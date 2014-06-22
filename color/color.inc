@@ -65,6 +65,19 @@ $info['schemes']['sand'] = array(
     'title' => '#226a70',
   )
 );
+$info['schemes']['akkabay'] = array(
+  'title' => t("Bay of 'Akká"),
+  'colors' => array(
+    'bg' => '#6b6b6b',
+    'base' => '#5ea9b5',
+    'secondary' => '#f9f9d7',
+    'link' => '#11bad4',
+    'block' => '#415558',
+    'text' => '#000000',
+    'text_highlight' => '#000000',
+    'title' => '#f9f9d7',
+  ),
+);
 $info['schemes']['midnight'] = array(
   'title' => t('Midnight'),
   'colors' => array(
@@ -78,5 +91,6 @@ $info['schemes']['midnight'] = array(
     'title' => '#274b7c',
   ),
 );
+
 
 return $info;

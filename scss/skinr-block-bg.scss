@@ -1,6 +1,9 @@
 @charset "UTF-8";
 @import "compass/css3";
 
+.block-bg-border ul.primary li.active a,
+.block-bg-pagebg ul.primary li.active a,
+.block-bg-white ul.primary li.active a,
 .block-bg-border .section-content article.node-teaser,
 .block-bg-pagebg .section-content article.node-teaser,
 .block-bg-white .section-content article.node-teaser,
@@ -20,7 +23,15 @@
   background-image: none;
 }
 
+.block-bg-pagebg.block-styles-no-borders {
+  ul.primary {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+}
 
+
+.block-bg-white ul.primary li.active a,
 .block-bg-white .section-content article.node-teaser, // TODO: implement
 .block-bg-white .section-content .block, 
 .section-content .block.block-bg-white,
@@ -30,6 +41,7 @@
   background-color: #ffffff;
 }
 
+.block-bg-light ul.primary li.active a,
 .block-bg-light .section-content article.node-teaser, // TODO: implement
 .block-bg-light .section-content .block, 
 .section-content .block.block-bg-light,

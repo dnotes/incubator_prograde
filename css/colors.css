@@ -25,8 +25,7 @@ body a:hover, body a:active { color: #2b4966; }
 .zone-user-wrapper ul > li > a:link, .zone-user-wrapper ul > li > a:visited, .zone-user-wrapper ul > li > a:hover, .zone-user-wrapper ul > li > a:active { color: #fdfdfd; }
 .zone-user-wrapper ul > li > a.active, .zone-user-wrapper ul > li > a.active-trail, .zone-user-wrapper ul > li > a:hover, .zone-user-wrapper ul > li > a:active { background-color: #455564; }
 
-.site-name-slogan { color: #343434; }
-.site-name-slogan a:link, .site-name-slogan a:visited, .site-name-slogan a:hover, .site-name-slogan a:active { color: #343434; }
+.site-name-slogan h1, .site-name-slogan h6, .site-name-slogan a:link, .site-name-slogan a:visited, .site-name-slogan a:hover, .site-name-slogan a:active { color: #2f2f2f; }
 
 .zone-menu-wrapper { background: #fcfcfc; border-color: #5a6f82; }
 

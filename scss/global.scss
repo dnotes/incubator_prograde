@@ -400,10 +400,10 @@ body .more-link a {
       padding: 0;
       border-style: none;
       a {
-        background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII=");
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII=");
       }
       &.active a, a:hover {
-        background: transparent;
+        background-image: none;
         padding-bottom: 1px;
         position: relative;
         z-index: 1;

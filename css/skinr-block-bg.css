@@ -2,6 +2,6 @@
 
 .block-bg-pagebg.block-styles-no-borders ul.primary { border-bottom-width: 1px; border-bottom-style: solid; }
 
-.block-bg-white ul.primary li.active a, .block-bg-white .section-content article.node-teaser, .block-bg-white .section-content .block, .section-content .block.block-bg-white, .block-bg-white .section-footer, .section-footer.block-bg-white { background-color: #ffffff; }
+.block-bg-white ul.primary li a, .block-bg-white ul.primary li.active a, .block-bg-white .section-content article.node-teaser, .block-bg-white .section-content .block, .section-content .block.block-bg-white, .block-bg-white .section-footer, .section-footer.block-bg-white { background-color: #ffffff; }
 
 .block-bg-light ul.primary li.active a, .block-bg-light .section-content article.node-teaser, .block-bg-light .section-content .block, .section-content .block.block-bg-light, .block-bg-light .section-footer, .section-footer.block-bg-light { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII="); }

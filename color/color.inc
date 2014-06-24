@@ -74,7 +74,7 @@ $info['schemes']['akkabay'] = array(
     'link' => '#11bad4',
     'block' => '#415558',
     'text' => '#000000',
-    'text_highlight' => '#000000',
+    'text_highlight' => '#fdfdfd',
     'title' => '#f9f9d7',
   ),
 );

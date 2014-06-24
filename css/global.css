@@ -142,8 +142,8 @@ body a.more-link, body .more-link a { display: inline-block; height: 2.2em; line
 .tabs ul { border-style: none; }
 .tabs ul.primary { margin: 0 5px; }
 .tabs ul li { float: left; margin: 0; padding: 0; border-style: none; }
-.tabs ul li a { background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII="); }
-.tabs ul li.active a, .tabs ul li a:hover { background: transparent; padding-bottom: 1px; position: relative; z-index: 1; }
+.tabs ul li a { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII="); }
+.tabs ul li.active a, .tabs ul li a:hover { background-image: none; padding-bottom: 1px; position: relative; z-index: 1; }
 
 .node-links ul li a, .comment-links ul li a { display: inline-block; height: 2em; line-height: 2em; padding: 0 1.1em; border: none; filter: none; text-shadow: none; border-radius: 0; font-size: 90%; font-weight: bold; float: none; }
 

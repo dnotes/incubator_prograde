@@ -181,6 +181,9 @@ body a {
   }
   ul {
     @include invert-menu;
+    ul li {
+      border-color: $color_base;
+    }
   }
   &.main-menu, &.main-menu ul {
     border-color: $color_base $color_base_dark $color_base $color_base_light;

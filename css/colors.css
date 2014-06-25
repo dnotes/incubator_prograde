@@ -37,6 +37,7 @@ body a:hover, body a:active { color: #2b4966; }
 .navigation ul.links ul > li.active-trail, .navigation ul.links ul > li.active, .navigation ul.links ul > li:hover, .navigation ul.links ul > li:active { background-color: #455564; }
 .navigation ul.links ul > li > a:link, .navigation ul.links ul > li > a:visited, .navigation ul.links ul > li > a:hover, .navigation ul.links ul > li > a:active { color: #fdfdfd; }
 .navigation ul.links ul > li > a.active, .navigation ul.links ul > li > a.active-trail, .navigation ul.links ul > li > a:hover, .navigation ul.links ul > li > a:active { background-color: #455564; }
+.navigation ul.links ul ul li { border-color: #5a6f82; }
 .navigation ul.links.main-menu, .navigation ul.links.main-menu ul { border-color: #5a6f82 #455564 #5a6f82 #72899d; }
 .navigation ul.links.secondary-menu { background-color: #5a6f82; border-color: #5a6f82 #455564 #5a6f82 #72899d !important; padding-left: 0; padding-right: 0; }
 .navigation ul.links.secondary-menu > li { background-color: #5a6f82; border-color: #72899d #72899d #455564 #455564; color: #fdfdfd; }

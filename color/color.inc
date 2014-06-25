@@ -22,13 +22,13 @@ $info['schemes']['default'] = array(
   'title' => t('Default'),
   'colors' => array(
     'bg' => '#fcfcfc',
-    'base' => '#5a6f82',
-    'secondary' => '#404e5b',
-    'link' => '#476887',
-    'block' => '#cdd4da',
+    'base' => '#858585',
+    'secondary' => '#f7ea36',
+    'link' => '#1d50c3',
+    'block' => '#7c5d36',
     'text' => '#343434',
-    'text_highlight' => '#fdfdfd',
-    'title' => '#2f2f2f',
+    'text_highlight' => '#b5f2f2',
+    'title' => '#753224',
   ),
 );
 
@@ -52,6 +52,19 @@ $info['base_image'] = 'color/base.png';
 
 $info['blend_target'] = '#ffffff';
 
+$info['schemes']['slateblue'] = array(
+  'title' => t('Slate Blue'),
+  'colors' => array(
+    'bg' => '#fcfcfc',
+    'base' => '#5a6f82',
+    'secondary' => '#404e5b',
+    'link' => '#476887',
+    'block' => '#cdd4da',
+    'text' => '#343434',
+    'text_highlight' => '#fdfdfd',
+    'title' => '#2f2f2f',
+  ),
+);
 $info['schemes']['sand'] = array(
   'title' => t('Sand'),
   'colors' => array(

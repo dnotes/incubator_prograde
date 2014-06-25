@@ -43,34 +43,6 @@
 }
 
 
-.main-menu-lighter {
-  nav.navigation {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII=");
-  }
-  &.main-menu-full-width {
-    nav.navigation {
-      background-image: none;
-    }
-    .zone-menu-wrapper {
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII=");
-    }
-  }
-}
-
-.main-menu-darker {
-  nav.navigation {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII=");
-  }
-  &.main-menu-full-width {
-    nav.navigation {
-      background-image: none;
-    }
-    .zone-menu-wrapper {
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII=");
-    }
-  }
-}
-
 .main-menu-full-width {
   .navigation {
     float:left;

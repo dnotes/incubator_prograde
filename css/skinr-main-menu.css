@@ -11,14 +11,6 @@
 .main-menu-narrow-items .navigation ul li a { padding: 0 .2em; }
 .main-menu-narrow-items .navigation ul ul li a { padding: 0 1.1em; }
 
-.main-menu-lighter nav.navigation { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }
-.main-menu-lighter.main-menu-full-width nav.navigation { background-image: none; }
-.main-menu-lighter.main-menu-full-width .zone-menu-wrapper { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }
-
-.main-menu-darker nav.navigation { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII="); }
-.main-menu-darker.main-menu-full-width nav.navigation { background-image: none; }
-.main-menu-darker.main-menu-full-width .zone-menu-wrapper { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII="); }
-
 .main-menu-full-width .navigation { float: left; }
 .main-menu-full-width .navigation ul.links.main-menu, .main-menu-full-width .navigation ul.links.secondary-menu { border-bottom: none; background-image: none; }
 .main-menu-full-width .zone-menu-wrapper { border-bottom-width: 3px; border-bottom-style: solid; }

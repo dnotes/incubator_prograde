@@ -253,6 +253,22 @@ function incubator_prograde_skinr_skin_info() {
     )
   );
   
+  $skins['incubator_prograde_main_menu_colors'] = array(
+    'title' => t('Main menu colors'),
+    'type' => 'select',
+    'theme hooks' => array('html'),
+    'default status' => 0,
+    'status' => array(
+      'incubator_prograde' => 1,
+    ),
+    'options' => array(
+      '' => array('title'=> t('Base')),
+      'linkcolor' => array('title'=> t('Link'), 'class' => array('main-menu-linkcolor')),
+      'titlecolor' => array('title'=> t('Title'), 'class' => array('main-menu-titlecolor')),
+      'secondarycolor' => array('title'=> t('Secondary'), 'class' => array('main-menu-secondarycolor')),
+    ),
+  );
+  
   $skins['incubator_prograde_main_menu'] = array(
     'title' => t('Main menu styles'),
     'type' => 'checkboxes',
@@ -280,7 +296,6 @@ function incubator_prograde_skinr_skin_info() {
       'dot-separators' => array('title' => t('Dot separators'), 'class' => array('main-menu-dot-separators', 'main-menu-no-separators')),
       'no-lineunder' => array('title' => t('No line under'), 'class' => array('main-menu-no-lineunder')),
       'underline-items' => array('title' => t('Underline items'), 'class' => array('main-menu-underline-items', 'main-menu-no-lineunder', 'main-menu-no-separators')),
-      'linkcolor' => array('title'=> t('Use link color'), 'class' => array('main-menu-linkcolor')),
     )
   );
   

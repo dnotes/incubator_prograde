@@ -42,8 +42,8 @@ body a:hover, body a:active { color: #0d3796; }
 .navigation ul.links.secondary-menu > li > a.active, .navigation ul.links.secondary-menu > li > a.active-trail, .navigation ul.links.secondary-menu > li > a:hover, .navigation ul.links.secondary-menu > li > a:active { background-color: #6c6c6c; }
 
 .main-menu-block .navigation { border-color: #7c5d36; background-color: #7c5d36; }
-.main-menu-block .navigation ul.links ul { border-color: #7c5d36; background-color: #7c5d36; }
-.main-menu-block .navigation ul.links ul li { border-color: #7c5d36; }
+.main-menu-block .navigation ul.links ul { border-color: #7c5d36 !important; background-color: #7c5d36; }
+.main-menu-block .navigation ul.links ul li { border-color: #7c5d36 !important; }
 
 .main-menu-no-tabs .navigation ul.links.main-menu, .main-menu-no-tabs .navigation ul.links.secondary-menu { background-color: transparent; }
 .main-menu-no-tabs .navigation ul.links.main-menu li, .main-menu-no-tabs .navigation ul.links.secondary-menu li { background-color: transparent; }
@@ -51,22 +51,44 @@ body a:hover, body a:active { color: #0d3796; }
 .main-menu-no-tabs .navigation ul.links.main-menu li a:hover, .main-menu-no-tabs .navigation ul.links.main-menu li a.active, .main-menu-no-tabs .navigation ul.links.main-menu li a.active-trail, .main-menu-no-tabs .navigation ul.links.secondary-menu li a:hover, .main-menu-no-tabs .navigation ul.links.secondary-menu li a.active, .main-menu-no-tabs .navigation ul.links.secondary-menu li a.active-trail { color: #858585; opacity: .5; }
 
 .main-menu-no-tabs .navigation ul.links.main-menu ul { background-color: #fcfcfc; border-color: #858585; }
-.main-menu-no-tabs .navigation ul.links.main-menu ul li { border-left-color: #fcfcfc; }
+.main-menu-no-tabs .navigation ul.links.main-menu ul li { border-left-color: #fcfcfc !important; }
 .main-menu-no-tabs .navigation ul.links.main-menu ul li a { color: #858585; }
 .main-menu-no-tabs.main-menu-linkcolor .navigation ul.links.main-menu ul { border-color: #1d50c3; }
 .main-menu-no-tabs.main-menu-linkcolor .navigation ul.links.main-menu ul li a { color: #1d50c3; }
-.main-menu-no-tabs.main-menu-block .navigation ul.links.main-menu ul { background-color: #7c5d36; border-color: #7c5d36; }
+.main-menu-no-tabs.main-menu-block .navigation ul.links.main-menu ul { background-color: #7c5d36; border-color: #7c5d36 !important; }
 .main-menu-no-tabs.main-menu-block .navigation ul.links.main-menu ul li { border-left-color: #7c5d36; }
 .main-menu-no-tabs.main-menu-block.block-bg-pagebg .navigation ul.links.main-menu ul { background-color: #fcfcfc; }
-.main-menu-no-tabs.main-menu-block.block-bg-pagebg .navigation ul.links.main-menu ul li { border-left-color: #fcfcfc; }
+.main-menu-no-tabs.main-menu-block.block-bg-pagebg .navigation ul.links.main-menu ul li { border-left-color: #fcfcfc !important; }
 .main-menu-no-tabs.main-menu-block.block-bg-white .navigation ul.links.main-menu ul { background-color: white; }
-.main-menu-no-tabs.main-menu-block.block-bg-white .navigation ul.links.main-menu ul li { border-left-color: white; }
+.main-menu-no-tabs.main-menu-block.block-bg-white .navigation ul.links.main-menu ul li { border-left-color: white !important; }
 
 .main-menu-linkcolor .zone-menu-wrapper { border-color: #1d50c3; }
+.main-menu-linkcolor .navigation ul.links { border-color: #1d50c3; }
+.main-menu-linkcolor .navigation ul.links ul.main-menu { border-color: #1d50c3; }
 .main-menu-linkcolor .navigation ul.links li a { color: #1d50c3; }
 .main-menu-linkcolor .navigation ul.links li a:hover, .main-menu-linkcolor .navigation ul.links li a.active, .main-menu-linkcolor .navigation ul.links li a.active-trail { background: #1d50c3; color: #b5f2f2; }
 .main-menu-linkcolor .navigation ul.links li:after, .main-menu-linkcolor .navigation ul.links li:before { color: #1d50c3; }
-.main-menu-linkcolor.main-menu-no-tabs .navigation ul.links li a:hover, .main-menu-linkcolor.main-menu-no-tabs .navigation ul.links li a.active, .main-menu-linkcolor.main-menu-no-tabs .navigation ul.links li a.active-trail { color: #1d50c3; }
+.main-menu-linkcolor .navigation ul.links ul { border-color: #1d50c3; }
+.main-menu-linkcolor.main-menu-no-tabs .navigation ul.links.main-menu li a { background: transparent; }
+.main-menu-linkcolor.main-menu-no-tabs .navigation ul.links.main-menu li a:hover, .main-menu-linkcolor.main-menu-no-tabs .navigation ul.links.main-menu li a.active, .main-menu-linkcolor.main-menu-no-tabs .navigation ul.links.main-menu li a.active-trail { color: #343434; }
+
+.main-menu-titlecolor .zone-menu-wrapper { border-color: #753224; }
+.main-menu-titlecolor .navigation ul.links { border-color: #753224; }
+.main-menu-titlecolor .navigation ul.links ul.main-menu { border-color: #753224; }
+.main-menu-titlecolor .navigation ul.links li a { color: #753224; }
+.main-menu-titlecolor .navigation ul.links li a:hover, .main-menu-titlecolor .navigation ul.links li a.active, .main-menu-titlecolor .navigation ul.links li a.active-trail { background: #753224; color: #b5f2f2; }
+.main-menu-titlecolor .navigation ul.links li:after, .main-menu-titlecolor .navigation ul.links li:before { color: #753224; }
+.main-menu-titlecolor.main-menu-no-tabs .navigation ul.links.main-menu li a { background: transparent; }
+.main-menu-titlecolor.main-menu-no-tabs .navigation ul.links.main-menu li a:hover, .main-menu-titlecolor.main-menu-no-tabs .navigation ul.links.main-menu li a.active, .main-menu-titlecolor.main-menu-no-tabs .navigation ul.links.main-menu li a.active-trail { color: #343434; }
+
+.main-menu-secondarycolor .zone-menu-wrapper { border-color: #f7ea36; }
+.main-menu-secondarycolor .navigation ul.links { border-color: #f7ea36; }
+.main-menu-secondarycolor .navigation ul.links ul.main-menu { border-color: #f7ea36; }
+.main-menu-secondarycolor .navigation ul.links li a { color: #f7ea36; }
+.main-menu-secondarycolor .navigation ul.links li a:hover, .main-menu-secondarycolor .navigation ul.links li a.active, .main-menu-secondarycolor .navigation ul.links li a.active-trail { background: #f7ea36; color: #b5f2f2; }
+.main-menu-secondarycolor .navigation ul.links li:after, .main-menu-secondarycolor .navigation ul.links li:before { color: #f7ea36; }
+.main-menu-secondarycolor.main-menu-no-tabs .navigation ul.links.main-menu li a { background: transparent; }
+.main-menu-secondarycolor.main-menu-no-tabs .navigation ul.links.main-menu li a:hover, .main-menu-secondarycolor.main-menu-no-tabs .navigation ul.links.main-menu li a.active, .main-menu-secondarycolor.main-menu-no-tabs .navigation ul.links.main-menu li a.active-trail { color: #343434; }
 
 footer.section-footer { background-color: #7c5d36; border-top: 1px solid #7c5d36; color: #4e4e4e; }
 footer.section-footer a { color: #3e6cd5; }

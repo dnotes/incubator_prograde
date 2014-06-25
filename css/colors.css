@@ -29,21 +29,21 @@ body a:hover, body a:active { color: #0d3796; }
 
 .zone-menu-wrapper { background: #fcfcfc; border-color: #858585; }
 
+.navigation ul.links { border-color: #858585 #6c6c6c #858585 #9f9f9f; }
 .navigation ul.links li a { color: #858585; }
 .navigation ul.links li a:hover, .navigation ul.links li a.active, .navigation ul.links li a.active-trail { background: #858585; color: #b5f2f2; }
 .navigation ul.links li:after, .navigation ul.links li:before { color: #858585; }
-.navigation ul.links ul { background-color: #858585; border-color: #858585 #6c6c6c #858585 #9f9f9f !important; padding-left: 0; padding-right: 0; }
-.navigation ul.links ul > li { background-color: #858585; border-color: #9f9f9f #9f9f9f #6c6c6c #6c6c6c; color: #b5f2f2; }
-.navigation ul.links ul > li.active-trail, .navigation ul.links ul > li.active, .navigation ul.links ul > li:hover, .navigation ul.links ul > li:active { background-color: #6c6c6c; }
-.navigation ul.links ul > li > a:link, .navigation ul.links ul > li > a:visited, .navigation ul.links ul > li > a:hover, .navigation ul.links ul > li > a:active { color: #b5f2f2; }
-.navigation ul.links ul > li > a.active, .navigation ul.links ul > li > a.active-trail, .navigation ul.links ul > li > a:hover, .navigation ul.links ul > li > a:active { background-color: #6c6c6c; }
+.navigation ul.links ul { border-color: #858585; background-color: #fcfcfc; }
 .navigation ul.links ul ul li { border-color: #858585; }
-.navigation ul.links.main-menu, .navigation ul.links.main-menu ul { border-color: #858585 #6c6c6c #858585 #9f9f9f; }
 .navigation ul.links.secondary-menu { background-color: #858585; border-color: #858585 #6c6c6c #858585 #9f9f9f !important; padding-left: 0; padding-right: 0; }
 .navigation ul.links.secondary-menu > li { background-color: #858585; border-color: #9f9f9f #9f9f9f #6c6c6c #6c6c6c; color: #b5f2f2; }
 .navigation ul.links.secondary-menu > li.active-trail, .navigation ul.links.secondary-menu > li.active, .navigation ul.links.secondary-menu > li:hover, .navigation ul.links.secondary-menu > li:active { background-color: #6c6c6c; }
 .navigation ul.links.secondary-menu > li > a:link, .navigation ul.links.secondary-menu > li > a:visited, .navigation ul.links.secondary-menu > li > a:hover, .navigation ul.links.secondary-menu > li > a:active { color: #b5f2f2; }
 .navigation ul.links.secondary-menu > li > a.active, .navigation ul.links.secondary-menu > li > a.active-trail, .navigation ul.links.secondary-menu > li > a:hover, .navigation ul.links.secondary-menu > li > a:active { background-color: #6c6c6c; }
+
+.main-menu-block .navigation { border-color: #7c5d36; background-color: #7c5d36; }
+.main-menu-block .navigation ul.links ul { border-color: #7c5d36; background-color: #7c5d36; }
+.main-menu-block .navigation ul.links ul li { border-color: #7c5d36; }
 
 .main-menu-no-tabs .navigation ul.links.main-menu, .main-menu-no-tabs .navigation ul.links.secondary-menu { background-color: transparent; }
 .main-menu-no-tabs .navigation ul.links.main-menu li, .main-menu-no-tabs .navigation ul.links.secondary-menu li { background-color: transparent; }
@@ -74,10 +74,10 @@ footer.section-footer a:hover, footer.section-footer a.active, footer.section-fo
 
 .section-content { background: #fcfcfc; }
 
-.main-menu-block .navigation, .section-content .block { border-color: #7c5d36; background-color: #7c5d36; }
-.main-menu-block .navigation .block-title, .section-content .block .block-title { z-index: 2; }
-.main-menu-block .navigation .block-title:after, .section-content .block .block-title:after { border-right: 5px solid #9f9f9f !important; }
-.main-menu-block .navigation .block-title:before, .section-content .block .block-title:before { border-left: 5px solid #9f9f9f !important; }
+.section-content .block { border-color: #7c5d36; background-color: #7c5d36; }
+.section-content .block .block-title { z-index: 2; }
+.section-content .block .block-title:after { border-right: 5px solid #9f9f9f !important; }
+.section-content .block .block-title:before { border-left: 5px solid #9f9f9f !important; }
 
 .headers-banner.block .block-title, .headers-banner .section-content .block .block-title, .headers-banner-right.block .block-title, .headers-banner-right .section-content .block .block-title { color: #b5f2f2; background: #858585; }
 

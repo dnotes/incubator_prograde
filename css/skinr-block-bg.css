@@ -4,7 +4,7 @@
 
 .block-bg-pagebg.block-styles-no-borders ul.primary { border-bottom-width: 1px; border-bottom-style: solid; }
 
-.block-bg-white.main-menu-block div nav.navigation, .block-bg-white.main-menu-block nav.navigation ul ul, .block-bg-white ul.primary li a, .block-bg-white ul.primary li.active a, .block-bg-white .section-content article.node-teaser, .block-bg-white .section-content .block, .block-bg-white .section-footer { background-color: #ffffff; }
+.block-bg-white.main-menu-block div nav.navigation, .block-bg-white.main-menu-block nav.navigation ul.links ul, .block-bg-white ul.primary li a, .block-bg-white ul.primary li.active a, .block-bg-white .section-content article.node-teaser, .block-bg-white .section-content .block, .block-bg-white .section-footer { background-color: #ffffff; }
 
 .section-content .block.block-bg-white { background-color: #ffffff; }
 

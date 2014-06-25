@@ -47,6 +47,10 @@ $color_text_light: lighten($color_text, 50%);
   color: $color_text_highlight;
 }
 
+@mixin normal-menu {
+  
+}
+
 @mixin invert-menu {
   background-color: $color_base;
   border-color: $color_base $color_base_dark $color_base $color_base_light !important;
@@ -162,8 +166,10 @@ body a {
   border-color: $color_base;
 }
 
-// main menu styling
+// Main menu
+// =============================================================================
 .navigation ul.links {
+  border-color: $color_base $color_base_dark $color_base $color_base_light;
   li {
     a {
       color: $color_base;
@@ -180,16 +186,26 @@ body a {
     }
   }
   ul {
-    @include invert-menu;
+    border-color: $color_base;
+    background-color: $color_bg;
     ul li {
       border-color: $color_base;
     }
   }
-  &.main-menu, &.main-menu ul {
-    border-color: $color_base $color_base_dark $color_base $color_base_light;
-  }
   &.secondary-menu {
     @include invert-menu;
+  }
+}
+
+.main-menu-block .navigation {
+  border-color: $color_block_border;
+  background-color: $color_block_border;
+  ul.links ul {
+    border-color: $color_block_border;
+    background-color: $color_block_border;
+    li {
+      border-color: $color_block_border;
+    }
   }
 }
 
@@ -307,7 +323,6 @@ footer.section-footer {
 }
 
 // Block styles (only for section content. For header we don't need this styles
-.main-menu-block .navigation,
 .section-content .block {
   border-color: $color_block_border;
   background-color: $color_block_border;

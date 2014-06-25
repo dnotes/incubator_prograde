@@ -24,10 +24,12 @@ html { font-size: 12px; }
 .navigation ul.secondary-menu li { border-style: none solid none solid; border-width: 1px; font-size: 100%; }
 .navigation ul.secondary-menu li a { padding: 0 1.5em; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }
 
-.navigation ul.main-menu li ul.main-menu { -webkit-transition: opacity, 0.3s; -moz-transition: opacity, 0.3s; -o-transition: opacity, 0.3s; transition: opacity, 0.3s; visibility: hidden; opacity: 0.2; padding: .8em 0; position: absolute; width: 12em; z-index: 5; border-style: none solid solid solid; border-width: 0 1px 1px 1px; text-align: left; }
+.navigation ul.main-menu li ul.main-menu { -webkit-transition: opacity, 0.3s; -moz-transition: opacity, 0.3s; -o-transition: opacity, 0.3s; transition: opacity, 0.3s; visibility: hidden; opacity: 0.2; padding: .8em .5em 1em; position: absolute; width: 15em; z-index: 5; border-style: none solid solid solid; border-width: 0 1px 1px 1px; text-align: left; font-size: 80%; }
 .navigation ul.main-menu li ul.main-menu:hover { display: block; }
-.navigation ul.main-menu li ul.main-menu li { display: block; float: none; font-size: 80%; max-width: 15em; }
-.navigation ul.main-menu li ul.main-menu ul { border-style: solid; border-width: 1px; margin-left: 15em; margin-top: -2.5em; }
-.navigation ul.main-menu li ul.main-menu ul li { font-size: 100%; max-width: 12em; }
-.navigation ul.main-menu li ul.main-menu ul li.first { box-sizing: border-box; position: relative; left: -1px; border-left-width: 1px; border-left-style: solid; }
+.navigation ul.main-menu li ul.main-menu li { display: block; float: none; max-width: 15em; width: 15em; font-size: 100%; }
+.navigation ul.main-menu li ul.main-menu li a { padding: 0 1em; }
+.navigation ul.main-menu li ul.main-menu ul { border-style: solid; border-width: 1px; margin-left: 15.5em; margin-top: -2.5em; font-size: 100%; padding: .5em 0; }
+.navigation ul.main-menu li ul.main-menu ul li { max-width: 15em; box-sizing: border-box; border: .5em 0; }
+.navigation ul.main-menu li ul.main-menu ul li.first { position: relative; left: -1px; border-left-width: 1px; border-left-style: solid; }
+.navigation ul.main-menu li ul.main-menu ul li a { max-width: 14em; width: 14em; margin: 0 .5em; box-sizing: border-box; }
 .navigation ul.main-menu li:hover > ul.secondary-items { visibility: visible; opacity: 1; }

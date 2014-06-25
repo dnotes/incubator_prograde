@@ -32,9 +32,14 @@
 
 
 .main-menu-narrow-items {
-  .navigation ul li a {
-    padding: 0 .2em;
-  }
+  .navigation ul {
+    li a {
+      padding: 0 .2em;
+    }
+    ul li a {
+      padding: 0 1.1em;
+    }
+  } 
 }
 
 

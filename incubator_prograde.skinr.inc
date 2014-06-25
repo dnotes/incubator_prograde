@@ -178,7 +178,7 @@ function incubator_prograde_skinr_skin_info() {
       'secondary-text' => array('title' => t('Secondary color text'), 'class' => array('headers-secondary-text')),
       'secondary-bg' => array('title' => t('Secondary color background'), 'class' => array('headers-secondary-bg')),
       'banner' => array('title' => t('Banner'), 'class' => array('headers-banner')),
-      'banner-right' => array('title' => t('Banner right'), 'class' => array('headers-banner-right')),
+      'banner-right' => array('title' => t('Banner right'), 'class' => array('headers-banner-right', 'headers-banner-wide')),
       'banner-wide' => array('title' => t('Full-width banner'), 'class' => array('headers-banner-wide')),
     ),
   );

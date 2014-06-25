@@ -26,6 +26,7 @@
 
 .main-menu-dot-separators ul.main-menu li:before { content: '\2022'; margin-left: -.15em; float: left; line-height: 2.2em; }
 .main-menu-dot-separators ul.main-menu li.first:before { content: ''; }
+.main-menu-dot-separators ul.main-menu ul li:before { content: ''; }
 .main-menu-dot-separators.main-menu-narrow-space ul.main-menu li:before { margin-left: -.375em; }
 .main-menu-dot-separators.main-menu-wide-space ul.main-menu li:before { margin-left: -.75em; }
 

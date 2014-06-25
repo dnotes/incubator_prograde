@@ -89,14 +89,19 @@
 }
 
 .main-menu-dot-separators {
-  ul.main-menu li {
-    &:before {
-      content: '\2022';
-      margin-left: -.15em;
-      float: left;
-      line-height: 2.2em;
+  ul.main-menu  {
+    li {
+      &:before {
+        content: '\2022';
+        margin-left: -.15em;
+        float: left;
+        line-height: 2.2em;
+      }
+      &.first:before {
+        content: '';
+      }
     }
-    &.first:before {
+    ul li:before {
       content: '';
     }
   }

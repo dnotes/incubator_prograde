@@ -302,6 +302,7 @@ body a {
     ul.links.main-menu li {
       a {
         background: transparent;
+        color: $color_link;
         &:hover,
         &.active,
         &.active-trail {
@@ -341,6 +342,7 @@ body a {
     ul.links.main-menu li {
       a {
         background: transparent;
+        color: $color_title;
         &:hover,
         &.active,
         &.active-trail {
@@ -380,6 +382,7 @@ body a {
     ul.links.main-menu li {
       a {
         background: transparent;
+        color: $color_secondary;
         &:hover,
         &.active,
         &.active-trail {

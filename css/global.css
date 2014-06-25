@@ -195,4 +195,4 @@ article { display: block; clear: both; }
 
 a.contextual-links-trigger, #colorbox button { -webkit-transition: all, 0s; -moz-transition: all, 0s; -o-transition: all, 0s; transition: all, 0s; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 
-ul.primary li.active a, ul.primary li a:hover, .main-menu-block .navigation, .section-content .block, .section-content .block.block-bg-lighter, .section-footer, .section-footer.block-bg-lighter { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }
+ul.primary li.active a, ul.primary li a:hover, .main-menu-block .navigation, .main-menu-block .navigation ul ul, .section-content .block, .section-content .block.block-bg-lighter, .section-footer, .section-footer.block-bg-lighter { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6fwYAAtMBznRijrsAAAAASUVORK5CYII="); }

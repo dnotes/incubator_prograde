@@ -47,10 +47,7 @@ function incubator_prograde_alpha_process_page(&$vars) {
   if (module_exists('color')) {
     _color_page_alter($vars);
   }
-  foreach ($vars['main_menu'] as $key => $value) {
-    $vars['main_menu'][$key]['html'] = TRUE;
-    $vars['main_menu'][$key]['title'] = '<span>'. $vars['main_menu'][$key]['title'] .'</span>';
-  }
+  $vars['main_menu'] = incubator_prograde_clean_links(menu_tree_page_data(variable_get('menu_main_links_source', 'main-menu'), 3));
 }
 
 function incubator_prograde_alpha_preprocess_node(&$vars) {
@@ -88,4 +85,27 @@ function incubator_prograde_form_system_theme_settings_alter(&$form, &$form_stat
     $form['incubator_prograde_alpha_settings']['alpha_settings'] = $form['alpha_settings'];
     unset($form['alpha_settings']);
   }
+}
+
+function incubator_prograde_clean_links($links, $level = 1) {
+  $result = array();
+  foreach($links as $id => $item) {
+
+    $new_item = array(
+      'title' => $item['link']['link_title'], 
+      'link_path' => $item['link']['link_path'], 
+      'href' => $item['link']['href'],
+      'attributes' => array(
+        'class' => array(
+          "level-$level",
+        ),
+      ),
+    );
+
+    if ($item['below']) {
+      $new_item['below'] = incubator_prograde_clean_links($item['below'], $level++);
+    }
+    $result[] = $new_item;
+  }
+  return $result;
 }

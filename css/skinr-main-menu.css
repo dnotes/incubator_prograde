@@ -29,8 +29,8 @@
 .main-menu-dot-separators.main-menu-narrow-space ul.main-menu li:before { margin-left: -.375em; }
 .main-menu-dot-separators.main-menu-wide-space ul.main-menu li:before { margin-left: -.75em; }
 
-.main-menu-no-lineunder .navigation ul.links.main-menu, .main-menu-underline-items .navigation ul.links.main-menu { border-bottom: none; }
-.main-menu-no-lineunder.main-menu-full-width .zone-menu-wrapper, .main-menu-underline-items.main-menu-full-width .zone-menu-wrapper { border-bottom: none; }
+.main-menu-no-lineunder .navigation ul.main-menu { border-bottom: none; }
+.main-menu-no-lineunder.main-menu-full-width .zone-menu-wrapper { border-bottom: none; }
 
 .main-menu-underline-items ul.main-menu li a span { border-bottom: 2px solid; }
 .main-menu-underline-items ul.main-menu li a.active span, .main-menu-underline-items ul.main-menu li a.active-trail span { border-bottom: none; }

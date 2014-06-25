@@ -179,7 +179,10 @@ body a {
       color: $color_base;
     }
   }
-  &.main-menu {
+  ul {
+    @include invert-menu;
+  }
+  &.main-menu, &.main-menu ul {
     border-color: $color_base $color_base_dark $color_base $color_base_light;
   }
   &.secondary-menu {
@@ -190,16 +193,57 @@ body a {
 .main-menu-no-tabs .navigation {
   ul.links.main-menu, 
   ul.links.secondary-menu {
-    background-color: transparent !important;
+    background-color: transparent;
     li {
+      background-color: transparent;
       a {
-        background-color: transparent !important;
+        background-color: transparent;
         &:hover,
         &.active,
         &.active-trail {
           color: $color_base;
           opacity: .5;
         }
+      }
+    }
+  }
+}
+
+.main-menu-no-tabs {
+  .navigation ul.links.main-menu ul {
+    background-color: $color_bg;
+    border-color: $color_base;
+    li {
+      border-left-color: $color_bg;
+      a {
+        color: $color_base;
+      }
+    } 
+  }
+  &.main-menu-linkcolor .navigation ul.links.main-menu ul {
+    border-color: $color_link;
+    li a {
+      color: $color_link;
+    }
+  }
+  &.main-menu-block {
+    .navigation ul.links.main-menu ul {
+      background-color: $color_block_border;
+      border-color: $color_block_border;
+      li {
+        border-left-color: $color_block_border;
+      }
+    }
+    &.block-bg-pagebg .navigation ul.links.main-menu ul {
+      background-color: $color_bg;
+      li {
+        border-left-color: $color_bg;
+      }
+    }
+    &.block-bg-white .navigation ul.links.main-menu ul {
+      background-color: white;
+      li {
+        border-left-color: $color_white;
       }
     }
   }
@@ -511,15 +555,20 @@ body {
 
 // SKINR OPTION COLORS
 // ---------------------------------------------------------------------------------------------------------------------
-.block-bg-pagebg ul.primary li a,
-.block-bg-pagebg ul.primary li.active a,
-.block-bg-pagebg ul.primary li a:hover,
-.block-bg-pagebg .section-content article.node-teaser,
-.block-bg-pagebg .section-content .block, 
-.section-content .block.block-bg-pagebg,
-.block-bg-pagebg .section-footer, 
-.section-footer.block-bg-pagebg
-{
+
+.block-bg-pagebg {
+  nav.navigation,
+  nav.navigation ul ul,
+  ul.primary li a,
+  ul.primary li.active a,
+  ul.primary li a:hover,
+  .section-content article.node-teaser,
+  .section-content .block,
+  .section-footer {
+    background-color: $color_bg;
+  }
+}
+.section-content .block.block-bg-pagebg {
   background-color: $color_bg;
 }
 

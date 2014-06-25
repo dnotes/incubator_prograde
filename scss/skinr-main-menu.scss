@@ -108,9 +108,8 @@
   }
 }
 
-.main-menu-no-lineunder,
-.main-menu-underline-items {
-  .navigation ul.links.main-menu {
+.main-menu-no-lineunder {
+  .navigation ul.main-menu {
     border-bottom: none;
   }
   &.main-menu-full-width {

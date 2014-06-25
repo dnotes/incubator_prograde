@@ -46,8 +46,8 @@
 .main-menu-full-width {
   .navigation {
     float:left;
-    ul.links.main-menu,
-    ul.links.secondary-menu {
+    > ul.links.main-menu,
+    > ul.links.secondary-menu {
       border-bottom: none;
       background-image: none;
     }

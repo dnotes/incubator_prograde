@@ -4,8 +4,8 @@
 .block-bg-border,
 .block-bg-pagebg,
 .block-bg-white {
-  nav.navigation,
-  nav.navigation ul ul,
+  &.main-menu-block nav.navigation,
+  &.main-menu-block nav.navigation ul ul,
   ul.primary li.active a,
   .section-content article.node-teaser,
   .section-content .block,
@@ -28,8 +28,8 @@
 }
 
 .block-bg-white {
-  div nav.navigation,
-  nav.navigation ul ul,
+  &.main-menu-block div nav.navigation,
+  &.main-menu-block nav.navigation ul ul,
   ul.primary li a,
   ul.primary li.active a,
   .section-content article.node-teaser,
@@ -43,10 +43,9 @@
 }
 
 .block-bg-light {
-  nav.navigation,
-  nav.navigation ul ul,
+  &.main-menu-block nav.navigation,
+  &.main-menu-block nav.navigation ul ul,
   ul.primary li.active a,
-  .section-content article.node-teaser, // TODO: implement
   .section-content .block, 
   .section-footer {
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6Xw8AAoYBgRDEVrUAAAAASUVORK5CYII=");

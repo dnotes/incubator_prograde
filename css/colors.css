@@ -150,7 +150,7 @@ body button:link, body input[type="reset"]:link, body input[type="submit"]:link,
 body button:visited, body input[type="reset"]:visited, body input[type="submit"]:visited, body input[type="button"]:visited { color: #b5f2f2; background-color: #858585; }
 body button.active, body button:hover, body button:active, body input[type="reset"].active, body input[type="reset"]:hover, body input[type="reset"]:active, body input[type="submit"].active, body input[type="submit"]:hover, body input[type="submit"]:active, body input[type="button"].active, body input[type="button"]:hover, body input[type="button"]:active { background-color: #6c6c6c; border-color: #6c6c6c; color: #b5f2f2; }
 
-.block-bg-pagebg nav.navigation, .block-bg-pagebg nav.navigation ul ul, .block-bg-pagebg ul.primary li a, .block-bg-pagebg ul.primary li.active a, .block-bg-pagebg ul.primary li a:hover, .block-bg-pagebg .section-content article.node-teaser, .block-bg-pagebg .section-content .block, .block-bg-pagebg .section-footer { background-color: #fcfcfc; }
+.block-bg-pagebg.main-menu-block nav.navigation, .block-bg-pagebg.main-menu-block nav.navigation ul ul, .block-bg-pagebg ul.primary li a, .block-bg-pagebg ul.primary li.active a, .block-bg-pagebg ul.primary li a:hover, .block-bg-pagebg .section-content article.node-teaser, .block-bg-pagebg .section-content .block, .block-bg-pagebg .section-footer { background-color: #fcfcfc; }
 
 .section-content .block.block-bg-pagebg { background-color: #fcfcfc; }
 

@@ -560,8 +560,8 @@ body {
 // ---------------------------------------------------------------------------------------------------------------------
 
 .block-bg-pagebg {
-  nav.navigation,
-  nav.navigation ul ul,
+  &.main-menu-block nav.navigation,
+  &.main-menu-block nav.navigation ul ul,
   ul.primary li a,
   ul.primary li.active a,
   ul.primary li a:hover,

@@ -50,11 +50,11 @@ html {
   margin: 0;
   li {
     display: table-cell;
-    max-width: 9em;
+    max-width: 12em;
     float: left;
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 135%;
+    font-size: 120%;
     border-right-style: solid;
     border-left-style: solid;
     a {
@@ -113,6 +113,7 @@ html {
     z-index: 5;
     border-style: none solid solid solid;
     border-width: 0 1px 1px 1px;
+    text-align: left;
     &:hover {
       display: block;
     }

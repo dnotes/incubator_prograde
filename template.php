@@ -47,7 +47,8 @@ function incubator_prograde_alpha_process_page(&$vars) {
   if (module_exists('color')) {
     _color_page_alter($vars);
   }
-  $vars['main_menu'] = incubator_prograde_clean_links(menu_tree_page_data(variable_get('menu_main_links_source', 'main-menu'), 3));
+  $menu = variable_get('menu_main_links_source', 'main-menu');
+  $vars['main_menu'] = incubator_prograde_clean_links(menu_tree_page_data($menu, 3));
 }
 
 function incubator_prograde_alpha_preprocess_node(&$vars) {

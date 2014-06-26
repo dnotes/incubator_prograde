@@ -90,23 +90,22 @@ function incubator_prograde_form_system_theme_settings_alter(&$form, &$form_stat
 function incubator_prograde_clean_links($links, $level = 1) {
   $result = array();
   foreach($links as $id => $item) {
+    if (!$item['link']['hidden']) {
 
-    $new_item = array(
-      'title' => '<span>' . check_plain($item['link']['link_title']) . '</span>', 
-      'link_path' => $item['link']['link_path'], 
-      'href' => $item['link']['href'],
-      'html' => TRUE,
-      'attributes' => array(
-        'class' => array(
-          "level-$level",
-        ),
-      ),
-    );
+      $new_item = array(
+        'title' => '<span>' . check_plain($item['link']['link_title']) . '</span>', 
+        'link_path' => $item['link']['link_path'], 
+        'href' => $item['link']['href'],
+        'html' => TRUE,
+      );
+      $new_item += $item['link']['options'];
+      $new_item['attributes']['class'][] = "level-$level";
 
-    if ($item['below']) {
-      $new_item['below'] = incubator_prograde_clean_links($item['below'], $level++);
+      if ($item['below']) {
+        $new_item['below'] = incubator_prograde_clean_links($item['below'], $level + 1);
+      }
+      $result[] = $new_item;
     }
-    $result[] = $new_item;
   }
   return $result;
 }

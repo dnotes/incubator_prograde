@@ -17,7 +17,7 @@
 
 .main-menu-no-separators ul.main-menu li, .main-menu-no-separators ul.secondary-menu li { border: none; }
 
-.main-menu-dot-separators ul.main-menu li:before { content: '\2022'; margin-left: -.15em; float: left; line-height: 2.2em; }
+.main-menu-dot-separators ul.main-menu li:before { content: '\2022'; margin-left: -.15em; float: left; line-height: 2.6em; }
 .main-menu-dot-separators ul.main-menu li.first:before { content: ''; }
 .main-menu-dot-separators ul.main-menu ul li:before { content: ''; }
 .main-menu-dot-separators.main-menu-narrow-space ul.main-menu li:before { margin-left: -.375em; }
@@ -28,7 +28,7 @@
 
 .main-menu-underline-items ul.main-menu li a span { border-bottom: 2px solid; }
 .main-menu-underline-items ul.main-menu li a.active span, .main-menu-underline-items ul.main-menu li a.active-trail span { border-bottom: none; }
-.main-menu-underline-items ul.main-menu .secondary-menu li, .main-menu-underline-items ul.main-menu .secondary-menu li a span { border-bottom: none; }
+.main-menu-underline-items ul.main-menu ul li, .main-menu-underline-items ul.main-menu ul li a span { border-bottom: none; }
 
 .main-menu-side-left .region-menu-inner, .main-menu-side-center .region-menu-inner, .main-menu-side-right .region-menu-inner { margin-bottom: -1em; }
 .main-menu-side-left .navigation, .main-menu-side-center .navigation, .main-menu-side-right .navigation { display: inline-block; }

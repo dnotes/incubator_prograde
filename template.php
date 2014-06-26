@@ -92,9 +92,10 @@ function incubator_prograde_clean_links($links, $level = 1) {
   foreach($links as $id => $item) {
 
     $new_item = array(
-      'title' => $item['link']['link_title'], 
+      'title' => '<span>' . check_plain($item['link']['link_title']) . '</span>', 
       'link_path' => $item['link']['link_path'], 
       'href' => $item['link']['href'],
+      'html' => TRUE,
       'attributes' => array(
         'class' => array(
           "level-$level",

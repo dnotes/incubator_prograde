@@ -6,6 +6,7 @@
 .typ-modern .site-slogan { font-family: Gafata, Arial, sans-serif; letter-spacing: .05em; }
 .typ-modern h2.block-title { font-family: Economica, "Arial Narrow", Arial, sans-serif; }
 .typ-modern #page-title { font-family: "Julius Sans One", sans-serif; /*font-size:*/ /*font-weight:*/ }
+.typ-modern ul.main-menu li { font-size: 135%; }
 .typ-modern #main-menu li a { font-family: Economica, "Arial Narrow", Arial, sans-serif; }
 .typ-modern #secondary-menu li a { font-family: Economica, "Arial Narrow", Arial, sans-serif; }
 .typ-modern .view-display-id-block_bigslides .views-field-title a, .typ-modern .view-display-id-block_bigslides .views-field-name a { font-family: Gafata, Arial, sans-serif; /*font-size:*/ }

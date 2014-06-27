@@ -17,13 +17,17 @@ body a:hover, body a:active { color: #0d3796; }
 
 .description { color: #777777; }
 
-.zone-user-wrapper { background-color: #858585; border-color: #9f9f9f #9f9f9f #6c6c6c #6c6c6c; color: #b5f2f2; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+.user-menu-style-bar .zone-user-wrapper { background-color: #858585; border-color: #9f9f9f #9f9f9f #6c6c6c #6c6c6c; color: #b5f2f2; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+.user-menu-style-bar .zone-user-wrapper .block-user-menu ul { background-color: #858585; border-color: #858585 #6c6c6c #858585 #9f9f9f !important; padding-left: 0; padding-right: 0; }
+.user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li { background-color: #858585; border-color: #9f9f9f #9f9f9f #6c6c6c #6c6c6c; color: #b5f2f2; }
+.user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li.active-trail, .user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li.active, .user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li:hover, .user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li:active { background-color: #6c6c6c; }
+.user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li > a:link, .user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li > a:visited, .user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li > a:hover, .user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li > a:active { color: #b5f2f2; }
+.user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li > a.active, .user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li > a.active-trail, .user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li > a:hover, .user-menu-style-bar .zone-user-wrapper .block-user-menu ul > li > a:active { background-color: #6c6c6c; }
 
-.zone-user-wrapper ul { background-color: #858585; border-color: #858585 #6c6c6c #858585 #9f9f9f !important; padding-left: 0; padding-right: 0; }
-.zone-user-wrapper ul > li { background-color: #858585; border-color: #9f9f9f #9f9f9f #6c6c6c #6c6c6c; color: #b5f2f2; }
-.zone-user-wrapper ul > li.active-trail, .zone-user-wrapper ul > li.active, .zone-user-wrapper ul > li:hover, .zone-user-wrapper ul > li:active { background-color: #6c6c6c; }
-.zone-user-wrapper ul > li > a:link, .zone-user-wrapper ul > li > a:visited, .zone-user-wrapper ul > li > a:hover, .zone-user-wrapper ul > li > a:active { color: #b5f2f2; }
-.zone-user-wrapper ul > li > a.active, .zone-user-wrapper ul > li > a.active-trail, .zone-user-wrapper ul > li > a:hover, .zone-user-wrapper ul > li > a:active { background-color: #6c6c6c; }
+.user-menu-style-tabs .block-user-menu ul li a { color: #b5f2f2; background-color: #858585; border-color: #9f9f9f #6c6c6c #6c6c6c #9f9f9f; }
+.user-menu-style-tabs .block-user-menu ul li a:link { color: #b5f2f2; background-color: #858585; }
+.user-menu-style-tabs .block-user-menu ul li a:visited { color: #b5f2f2; background-color: #858585; }
+.user-menu-style-tabs .block-user-menu ul li a.active, .user-menu-style-tabs .block-user-menu ul li a:hover, .user-menu-style-tabs .block-user-menu ul li a:active { background-color: #6c6c6c; border-color: #6c6c6c; color: #b5f2f2; }
 
 .site-name-slogan h1, .site-name-slogan h6, .site-name-slogan a:link, .site-name-slogan a:visited, .site-name-slogan a:hover, .site-name-slogan a:active { color: #753224; }
 

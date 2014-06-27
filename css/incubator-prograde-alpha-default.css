@@ -1,17 +1,10 @@
 html { font-size: 12px; }
 
-.zone-user-wrapper, .zone-menu-wrapper { position: relative; display: block; }
+.zone-user-wrapper { position: relative; display: block; }
+.zone-user-wrapper .block .block-title { visibility: hidden; height: 0; margin: 0; padding: 0; }
+.zone-user-wrapper .block-user-menu { position: absolute; right: 0; z-index: 50; }
 
-.zone-user-wrapper .block { float: right; }
-.zone-user-wrapper .block .block-title { display: none; }
-
-.zone-user-wrapper ul { margin: 0; padding: 0; border: 0; overflow: hidden; *zoom: 1; border-style: none solid none solid; border-width: 1px; }
-.zone-user-wrapper ul li { list-style-image: none; list-style-type: none; margin-left: 0; white-space: nowrap; display: inline; float: left; padding-left: 0; padding-right: 0; }
-.zone-user-wrapper ul li:first-child, .zone-user-wrapper ul li.first { padding-left: 0; }
-.zone-user-wrapper ul li:last-child { padding-right: 0; }
-.zone-user-wrapper ul li.last { padding-right: 0; }
-.zone-user-wrapper ul li { border-style: none solid none solid; border-width: 1px; margin: 0; padding: 0; }
-.zone-user-wrapper ul li a { display: block; line-height: 2em; padding: 0 .8em; font-weight: normal; }
+.zone-menu-wrapper { position: relative; display: block; }
 
 .navigation ul { display: block; margin: 0; }
 .navigation ul li { display: table-cell; max-width: 12em; float: left; margin: 0 !important; padding: 0 !important; font-size: 120%; border-right-style: solid; border-left-style: solid; }

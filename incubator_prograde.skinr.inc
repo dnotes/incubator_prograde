@@ -318,7 +318,25 @@ function incubator_prograde_skinr_skin_info() {
     )
   );
   
-  
+  $skins['incubator_prograde_user_menu_style'] = array(
+    'title' => t('User menu'),
+    'type' => 'select',
+    'theme hooks' => array('html'),
+    'default status' => 0,
+    'status' => array(
+      'incubator_prograde' => 1,
+    ),
+    'attached' => array(
+      'css' => array(
+        'css/skinr-user-menu.css'
+      )
+    ),
+    'options' => array(
+      '' => array('title' => t('Links')),
+      'tabs' => array('title' => t('Tabs'), 'class' => array('user-menu-style-tabs')),
+      'bar' => array('title' => t('Bar'), 'class' => array('user-menu-style-bar')),
+    ),
+  );
   
   
   return $skins;

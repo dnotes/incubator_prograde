@@ -47,10 +47,6 @@ $color_text_light: lighten($color_text, 50%);
   color: $color_text_highlight;
 }
 
-@mixin normal-menu {
-  
-}
-
 @mixin invert-menu {
   background-color: $color_base;
   border-color: $color_base $color_base_dark $color_base $color_base_light !important;
@@ -143,13 +139,20 @@ body a {
 
 // USER MENU
 // ---------------------------------------------------------------------------------------------------------------------
-.zone-user-wrapper {
-  @include invertcolor;
-  @include shadow-standard;
-}
 
-.zone-user-wrapper ul {
-  @include invert-menu;
+.user-menu-style-bar {
+  .zone-user-wrapper {
+    @include invertcolor;
+    @include shadow-standard;
+    .block-user-menu ul {
+      @include invert-menu;
+    }
+  }
+}
+.user-menu-style-tabs {
+  .block-user-menu ul li a {
+    @include link-highlight;
+  }
 }
 
 .site-name-slogan {

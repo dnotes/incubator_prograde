@@ -14,37 +14,31 @@ html {
 // MENUS
 // =============================================================================
 
-.zone-user-wrapper,
-.zone-menu-wrapper {
+.zone-user-wrapper {
   position: relative;
-  display:block;
-}
-
-// User menu block
-.zone-user-wrapper .block {
-  float:right;
-  .block-title {
-    display:none;
-  }
-}
-
-.zone-user-wrapper ul {
-  @include horizontal-list(0);
-  @include menu-borders;
-  li {
-    @include menu-borders;
-    margin: 0;
-    padding: 0;
-    a {
-      display: block;
-      line-height: 2em;
-      padding: 0 .8em;
-      font-weight: normal;
+  display: block;
+  .block {
+    .block-title {
+      visibility: hidden;
+      height: 0;
+      margin: 0;
+      padding: 0;
     }
+  }
+  .block-user-menu {
+    position: absolute;
+    right: 0;
+    z-index: 50;
   }
 }
 
 // main menu styling
+
+.zone-menu-wrapper {
+  position: relative;
+  display: block;
+}
+
 .navigation ul {
   display: block;
   margin: 0;

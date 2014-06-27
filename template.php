@@ -43,12 +43,15 @@ function incubator_prograde_alpha_process_html(&$vars) {
   }
 }
 
+function incubator_prograde_alpha_preprocess_page(&$vars) {
+  $menu = variable_get('menu_main_links_source', 'main-menu');
+  $vars['main_menu'] = incubator_prograde_clean_links(menu_tree_page_data($menu, 3));
+}
+
 function incubator_prograde_alpha_process_page(&$vars) {
   if (module_exists('color')) {
     _color_page_alter($vars);
   }
-  $menu = variable_get('menu_main_links_source', 'main-menu');
-  $vars['main_menu'] = incubator_prograde_clean_links(menu_tree_page_data($menu, 3));
 }
 
 function incubator_prograde_alpha_preprocess_node(&$vars) {
@@ -102,7 +105,7 @@ function incubator_prograde_clean_links($links, $level = 1) {
       $new_item += $item['link']['options'];
       $new_item['attributes']['class'][] = "level-$level";
 
-      if ($item['below']) {
+      if (!empty($item['below'])) {
         $new_item['below'] = incubator_prograde_clean_links($item['below'], $level + 1);
       }
       $result[] = $new_item;

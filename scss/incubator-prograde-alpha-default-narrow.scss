@@ -13,15 +13,15 @@
 
 .site-name-slogan {
   font-size: 110%;
+  display: inline-block;
 }
 .site-slogan {
   font-size: 110%;
 }
 
 .logo-img {
-  position:static;
-  top: 0;
-  left: 0;
+  position: static;
+  display: inline-block;
   z-index: 0;
   opacity: 1;
   img {

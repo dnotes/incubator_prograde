@@ -12,10 +12,12 @@
   }
 }
 
-.page-shadows-raised-header {
-  
-}
-
 .page-shadows-raised-page {
-  
+  .zone-content {
+    @include box-shadow(0 0 12px);
+    @include border-radius(8px);
+    box-sizing: content-box;
+    padding: 36px 9px 15px;
+    margin-bottom: 30px;
+  }
 }

@@ -129,7 +129,6 @@ function incubator_prograde_skinr_skin_info() {
     'options' => array(
       '' => array('title' => t('None'), 'class' => array('page-shadows-none')),
       'inset-header' => array('title' => t('Inset header'), 'class' => array('page-shadows-inset-header')),
-      'raised-header' => array('title' => t('Raised header'), 'class' => array('page-shadows-raised-header')),
       'raised-page' => array('title' => t('Raised page'), 'class' => array('page-shadows-raised-page')),
     )
   );

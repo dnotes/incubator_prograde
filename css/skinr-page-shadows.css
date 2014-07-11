@@ -1,1 +1,3 @@
 .page-shadows-inset-header .zone-user-wrapper, .page-shadows-inset-header .zone-menu-wrapper { -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+
+.page-shadows-raised-page .zone-content { -webkit-box-shadow: 0 0 12px; -moz-box-shadow: 0 0 12px; box-shadow: 0 0 12px; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; border-radius: 8px; box-sizing: content-box; padding: 36px 9px 15px; margin-bottom: 30px; }

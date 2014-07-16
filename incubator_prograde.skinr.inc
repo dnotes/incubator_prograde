@@ -201,8 +201,31 @@ function incubator_prograde_skinr_skin_info() {
     ),
   );
   
+  $skins['incubator_prograde_block_separator_color'] = array(
+    'title' => t('Separator color'),
+    'type' => 'select',
+    'theme hooks' => array('html'),
+    'default status' => 0,
+    'status' => array(
+      'incubator_prograde' => 1,
+    ),
+    'attached' => array(
+      'css' => array(
+        'css/skinr-block-separators.css',
+      )
+    ),
+    'options' => array(
+      '' => array('title' => t('Block border'), 'class' => array('block-separators-block-border')),
+      'lightgray' => array('title' => t('Light gray'), 'class' => array('block-separators-lightgray')),
+      'gray' => array('title' => t('Medium gray'), 'class' => array('block-separators-gray')),
+      'darkgray' => array('title' => t('Dark gray'), 'class' => array('block-separators-darkgray')),
+      'main' => array('title' => t('Main color'), 'class' => array('block-separators-main')),
+      'secondary' => array('title' => t('Secondary color'), 'class' => array('block-separators-secondary')),
+    )
+  );
+  
   $skins['incubator_prograde_block_separators'] = array(
-    'title' => t('Separators'),
+    'title' => t('Separator style'),
     'type' => 'select',
     'theme hooks' => array('html'),
     'default status' => 0,
@@ -215,16 +238,9 @@ function incubator_prograde_skinr_skin_info() {
       )
     ),
     'options' => array(
-      '' => array('title' => t('Same as border'), 'class' => array('block-separators-border')),
+      '' => array('title' => t('Solid'), 'class' => array('block-separators-solid')),
       'dotted' => array('title' => t('Dotted'), 'class' => array('block-separators-dotted')),
-      'lightgray' => array('title' => t('Light gray'), 'class' => array('block-separators-lightgray')),
-      'gray' => array('title' => t('Medium gray'), 'class' => array('block-separators-gray')),
-      'darkgray' => array('title' => t('Dark gray'), 'class' => array('block-separators-darkgray')),
-//      'lightmain' => array('title' => t('Light colored'), 'class' => array('block-separators-lightmain')),
-//      'main' => array('title' => t('Medium colored'), 'class' => array('block-separators-main')),
-//      'darkmain' => array('title' => t('Dark colored'), 'class' => array('block-separators-darkmain')),
-//      'light-3d' => array('title' => t('Light 3d'), 'class' => array('block-separators-light-3d')),
-//      'dark-3d' => array('title' => t('Dark 3d'), 'class' => array('block-separators-dark-3d')),
+      'dashed' => array('title' => t('Dashed'), 'class' => array('block-separators-dashed')),
       'none' => array('title' => t('None'), 'class' => array('block-separators-none')),
     )
   );

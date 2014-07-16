@@ -129,7 +129,8 @@ html {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   &.views-row-last {
-    border-bottom: none;
+    border-bottom-style: none;
+    border-bottom-width: 0;
   }
 }
 

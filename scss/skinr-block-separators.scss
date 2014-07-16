@@ -6,6 +6,12 @@
   }
 }
 
+.block-separators-dashed {
+  .view .view-content .views-row {
+    border-bottom-style: dashed;
+  }
+}
+
 .block-separators-lightgray {
   .view .view-content .views-row
   {
@@ -24,27 +30,6 @@
   .view .view-content .views-row
   {
     border-color: #666666;
-  }
-}
-
-.block-separators-lightmain {
-  .view .view-content .views-row
-  {
-    
-  }
-}
-
-.block-separators-main {
-  .view .view-content .views-row
-  {
-    
-  }
-}
-
-.block-separators-darkmain {
-  .view .view-content .views-row
-  {
-    
   }
 }
 

@@ -73,7 +73,7 @@ html { font-size: 12px; }
 .view-content > h3 { margin: 0; font-size: 133%; }
 
 .views-row { height: 100%; overflow: hidden; margin-bottom: .6em; padding-bottom: .6em; border-bottom-style: solid; border-bottom-width: 1px; }
-.views-row.views-row-last { border-bottom: none; }
+.views-row.views-row-last { border-bottom-style: none; border-bottom-width: 0; }
 
 aside .view .view-content > h3 { margin-top: .6em; margin-bottom: .5em; }
 

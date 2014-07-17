@@ -21,7 +21,13 @@ img { max-width: 100%; height: auto; }
 p { margin: 0 0 .8em 0; }
 
 ul, ol { margin-bottom: 1.25em; margin-top: 1.25em; padding-top: 0; padding-left: 1.25em; }
-ul li, ol li { line-height: 1.4em; padding: 0; margin: 0; }
+ul li, ol li { line-height: 1.4em; padding: 0; margin: .4em 0; }
+
+ul li, .item-list ul li { list-style: disc inside; }
+
+ol li, .item-list ol li { list-style: decimal inside; }
+
+.item-list ul li, .item-list ol li { list-style-position: outside; }
 
 .node ol, .node ul { padding-left: 1.25em; }
 
@@ -139,15 +145,19 @@ body a.more-link, body .more-link a { display: inline-block; height: 2.2em; line
 .block-search-form input[type="submit"] { height: 30px; width: 30px; padding: 0; background-image: url(../images/search_icon.png); background-position: center center; background-repeat: no-repeat; text-indent: -99999px; position: absolute; top: 20px; right: 20px; margin-right: 0; }
 
 .tabs { font-size: 80%; }
-.tabs ul { border-style: none; }
+.tabs ul { list-style-type: none; list-style-image: none; border-style: none; }
+.tabs ul > li { list-style-type: none; list-style-image: none; }
 .tabs ul.primary { margin: 0 5px; }
 .tabs ul li { float: left; margin: 0; padding: 0; border-style: none; }
 .tabs ul li a { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiEAEAAB0AFz%2FQBbsAAAAASUVORK5CYII="); }
 .tabs ul li.active a, .tabs ul li a:hover { background-image: none; padding-bottom: 1px; position: relative; z-index: 1; }
 
+.node-links ul, .comment-links ul { list-style-type: none; list-style-image: none; }
+.node-links ul > li, .comment-links ul > li { list-style-type: none; list-style-image: none; }
 .node-links ul li a, .comment-links ul li a { display: inline-block; height: 2em; line-height: 2em; padding: 0 1.1em; border: none; filter: none; text-shadow: none; border-radius: 0; font-size: 90%; font-weight: bold; float: none; }
 
-.node ul.inline, .node ol.inline { display: block; margin-top: .8em; margin-bottom: .4em; }
+.node ul.inline, .node ol.inline { list-style-type: none; list-style-image: none; display: block; margin-top: .8em; margin-bottom: .4em; }
+.node ul.inline > li, .node ol.inline > li { list-style-type: none; list-style-image: none; }
 .node ul.inline li, .node ol.inline li { padding: 0; margin-right: .8em; }
 
 .fc-agenda-divider { border: none; height: 1px; }

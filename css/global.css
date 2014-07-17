@@ -120,7 +120,8 @@ body a.more-link, body .more-link a { display: inline-block; height: 2.2em; line
 .views-slideshow-controls-text span.views-slideshow-controls-text-next a { background-position: 0 -58px; }
 
 .node .node-title { margin-bottom: 0; }
-.node header { float: left; margin-right: .8em; }
+.node header { display: inline-block; margin-right: .8em; }
+.node .incubator-user-submitted { display: inline-block; }
 .node .content { padding-top: .8em; }
 .node.node-page .content { padding-top: 0; }
 .node .field-name-body p:last-child { margin-bottom: 0; }

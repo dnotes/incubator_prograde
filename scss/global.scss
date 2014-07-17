@@ -290,11 +290,11 @@ body .more-link a {
     margin-bottom: 0;
   }
   header {
-    float: left;
+    display: inline-block;
     margin-right: .8em;
   }
-  .bahai-user-submitted {
-
+  .incubator-user-submitted {
+    display:inline-block;
   }
   .content {
     padding-top: .8em;

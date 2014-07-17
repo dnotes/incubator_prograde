@@ -3,7 +3,6 @@
 .typ-oswald { font-family: Muli, sans-serif; }
 .typ-oswald h1, .typ-oswald h2, .typ-oswald h3, .typ-oswald h4, .typ-oswald h5, .typ-oswald h6 { font-family: Oswald, sans-serif; }
 .typ-oswald .site-name { font-size: 200%; margin-bottom: .15em; }
-@media (min-width: 740px) { .typ-oswald .site-name { margin-top: 30px; } }
 .typ-oswald .site-slogan { font-family: Muli, sans-serif; }
 .typ-oswald #page-title { font-family: Oswald, sans-serif; /*font-size:*/ /*font-weight:*/ }
 .typ-oswald #main-menu li a { font-family: Oswald, sans-serif; }

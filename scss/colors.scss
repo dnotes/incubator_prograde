@@ -697,6 +697,9 @@ body {
   }
 }
 
+.block-styles-no-background.main-menu-block .navigation ul ul {
+  background-color: $color_bg !important;
+}
 
 .block-separators-main .view .view-content .views-row {
   border-color: $color_base;

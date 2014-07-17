@@ -183,6 +183,8 @@ body button.active, body button:hover, body button:active, body input[type="rese
 .block-bg-white ul.primary li a, .block-bg-pagebg ul.primary li a { color: #1d50c3; }
 .block-bg-white ul.primary li.active a, .block-bg-white ul.primary li a:hover, .block-bg-pagebg ul.primary li.active a, .block-bg-pagebg ul.primary li a:hover { color: #343434; }
 
+.block-styles-no-background.main-menu-block .navigation ul ul { background-color: #fcfcfc !important; }
+
 .block-separators-main .view .view-content .views-row { border-color: #858585; }
 
 .block-separators-secondary .view .view-content .views-row { border-color: #f7ea36; }

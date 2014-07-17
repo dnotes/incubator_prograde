@@ -264,7 +264,6 @@ function incubator_prograde_skinr_skin_info() {
       'rounded' => array('title' => t('Rounded'), 'class' => array('block-styles-rounded')),
       'heavy' => array('title' => t('Heavy'), 'class' => array('block-styles-heavy')),
       'shadowed' => array('title' => t('Shadowed'), 'class' => array('block-styles-shadowed')),
-      'transparent' => array('title' => t('Transparent'), 'class' => array('block-styles-transparent')),
     )
   );
   

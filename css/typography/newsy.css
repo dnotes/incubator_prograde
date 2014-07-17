@@ -2,7 +2,7 @@
 */
 .typ-newsy { font-family: Georgia, "Times New Roman", Times, serif; }
 .typ-newsy h1, .typ-newsy h2, .typ-newsy h3, .typ-newsy h4, .typ-newsy h5, .typ-newsy h6 { font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; }
-.typ-newsy .site-name { font-family: "Playfair Display SC", Georgia, "Times New Roman", Times, serif; font-variant: small-caps; margin-bottom: .2em; font-size: 220%; margin-top: .8em; }
+.typ-newsy .site-name { font-family: "Playfair Display SC", Georgia, "Times New Roman", Times, serif; font-variant: small-caps; font-size: 220%; }
 .typ-newsy .site-slogan { font-weight: normal; }
 .typ-newsy .block h2.block-title { font-family: "Playfair Display SC", Georgia, "Times New Roman", Times, serif; font-weight: normal; font-size: 120%; }
 .typ-newsy #page-title { font-family: "Playfair Display SC", Georgia, "Times New Roman", Times, serif; font-variant: small-caps; /*font-size:*/ /*font-weight:*/ }

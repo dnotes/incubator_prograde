@@ -4,7 +4,7 @@
 .typ-paytone .region-content .block { line-height: 1.6em; }
 .typ-paytone h1, .typ-paytone h2 { font-family: "Paytone One", serif; font-weight: normal; }
 .typ-paytone h3, .typ-paytone h4, .typ-paytone h5, .typ-paytone h6 { font-family: "Droid Sans", sans-serif; font-weight: bold; }
-.typ-paytone .site-name { margin-top: .9em; margin-bottom: .2em; }
+.typ-paytone .site-name { margin-bottom: .2em; }
 .typ-paytone .block h2.block-title { font-size: 120%; }
 .typ-paytone #page-title { font-family: "Paytone One", serif; /*font-size:*/ /*font-weight:*/ }
 .typ-paytone #main-menu li a { font-family: "Droid Sans", sans-serif; }

@@ -32,6 +32,9 @@ function incubator_prograde_alpha_process_region(&$vars) {
     if ($vars['default_logo_image'] = theme_get_setting('default_logo')) {
       $logo_classes[] = 'default';
     }
+    if ($vars['overlay_logo_image'] = theme_get_setting('overlay_logo_image')) {
+      $logo_classes[] = 'overlay';
+    }
     $vars['logo_classes'] = implode(' ', $logo_classes);
   }
 }
@@ -100,6 +103,11 @@ function incubator_prograde_form_system_theme_settings_alter(&$form, &$form_stat
       '#type' => 'checkbox',
       '#title' => t('Resize logo image with screen size'),
       '#default_value' => theme_get_setting('resize_logo_image'),
+    );
+    $form['logo']['overlay_logo_image'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Overlay logo image with title for mobile view'),
+      '#default_value' => theme_get_setting('overlay_logo_image'),
     );
     $form['incubator_prograde_alpha_settings']['alpha_settings'] = $form['alpha_settings'];
     unset($form['alpha_settings']);

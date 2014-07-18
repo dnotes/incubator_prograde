@@ -49,10 +49,12 @@ html { font-size: 12px; }
 
 .branding-data { padding: 2em 0; }
 
-.logo-img { position: absolute; top: -8px; left: -8px; z-index: -1; opacity: .2; margin-right: 0; }
+.logo-img { margin-right: 0; }
 .logo-img img { max-width: 40px; height: auto; }
+.logo-img.default { margin-top: -.4em; }
+.logo-img.overlay { position: absolute; top: 9px; left: 0; z-index: 0; opacity: .5; }
 
-.site-name-slogan { font-size: 70%; padding: 0; float: none; }
+.site-name-slogan { font-size: 70%; padding: 0; float: none; position: relative; margin-left: 2em; }
 
 .site-name { font-weight: bold; margin: 0; }
 

@@ -14,6 +14,7 @@
 .site-name-slogan {
   font-size: 110%;
   padding-bottom: 1em;
+  margin-left: 0;
 }
 .site-slogan {
   font-size: 110%;
@@ -28,9 +29,6 @@
   img {
     max-width: none;
   }
-  &.default {
-    margin-top: -5px;
-  }
   &.resize {
     height: 4em;
     img {
@@ -38,6 +36,10 @@
       width: auto;
       height: 100%;
     }
+  }
+  &.overlay {
+    position: static;
+    opacity: 1;
   }
 }
 

@@ -52,7 +52,7 @@ html { font-size: 12px; }
 .logo-img { position: absolute; top: -8px; left: -8px; z-index: -1; opacity: .2; margin-right: 0; }
 .logo-img img { max-width: 40px; height: auto; }
 
-.site-name-slogan { font-size: 70%; height: 40px; padding: 0; float: none; }
+.site-name-slogan { font-size: 70%; padding: 0; float: none; }
 
 .site-name { font-weight: bold; margin: 0; }
 

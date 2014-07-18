@@ -4,7 +4,7 @@
 #color_scheme_form #preview h2 { display: inherit; }
 #color_scheme_form #palette .form-item { width: 28em; height: 1em; margin: 0; position: relative; }
 #color_scheme_form #palette .form-item label { width: 13em; font-size: 84%; }
-#color_scheme_form #preview { border: 10px solid grey; position: absolute; top: 0; left: 275px; top: 220px; width: 480px; overflow: hidden; font-size: 90%; }
+#color_scheme_form #preview { border: 10px solid grey; width: 480px; overflow: hidden; font-size: 90%; }
 
 #preview a:hover { text-decoration: none; }
 #preview .section { padding: 0 18px; }

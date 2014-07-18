@@ -24,6 +24,16 @@ function incubator_prograde_alpha_process_region(&$vars) {
     $vars['secondary_menu'] = $theme->page['secondary_menu'];
     $vars['breadcrumb'] = $theme->page['breadcrumb'];
   }
+  elseif ($vars['elements']['#region'] == 'branding') {
+    $logo_classes = array('logo-img');
+    if ($vars['resize_logo_image'] = theme_get_setting('resize_logo_image')) {
+      $logo_classes[] = 'resize';
+    }
+    if ($vars['default_logo_image'] = theme_get_setting('default_logo')) {
+      $logo_classes[] = 'default';
+    }
+    $vars['logo_classes'] = implode(' ', $logo_classes);
+  }
 }
 
 function incubator_prograde_alpha_process_zone(&$vars) {
@@ -85,6 +95,11 @@ function incubator_prograde_form_system_theme_settings_alter(&$form, &$form_stat
           ':input[name="show_alpha_settings"]' => array('checked' => FALSE),
         ),
       ),
+    );
+    $form['logo']['resize_logo_image'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Resize logo image with screen size'),
+      '#default_value' => theme_get_setting('resize_logo_image'),
     );
     $form['incubator_prograde_alpha_settings']['alpha_settings'] = $form['alpha_settings'];
     unset($form['alpha_settings']);

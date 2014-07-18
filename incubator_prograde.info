@@ -44,6 +44,7 @@ css[global.css][description] = 'This file holds all the globally active custom C
 css[global.css][options][weight] = '10'
 
 settings[incubator_noggin_header_selector] = '#zone-branding-wrapper'
+settings[resize_logo_image] = '1'
 
 settings[alpha_grid] = 'alpha_default'
 settings[alpha_primary_alpha_default] = 'normal'

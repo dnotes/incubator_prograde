@@ -1,9 +1,14 @@
-.site-name-slogan { font-size: 110%; display: inline-block; }
+.branding-data { min-height: 5em; }
+
+.site-name-slogan { font-size: 110%; padding-bottom: 1em; }
 
 .site-slogan { font-size: 110%; }
 
-.logo-img { position: static; display: inline-block; z-index: 0; opacity: 1; }
+.logo-img { position: static; display: inline-block; z-index: 0; opacity: 1; margin-right: 1em; }
 .logo-img img { max-width: none; }
+.logo-img.default { margin-top: -5px; }
+.logo-img.resize { height: 4em; }
+.logo-img.resize img { max-width: none; width: auto; height: 100%; }
 
 #breadcrumb { display: block; position: absolute; top: -1em; font-size: 9px; line-height: 1em; z-index: 1; text-align: right; width: 100%; }
 

@@ -21,9 +21,11 @@
 }
 
 .logo-img {
-  position: static;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
   display: inline-block;
-  z-index: 0;
   opacity: 1;
   margin-right: 1em;
   img {
@@ -38,8 +40,11 @@
     }
   }
   &.overlay {
-    position: static;
     opacity: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
   }
 }
 

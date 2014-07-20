@@ -26,3 +26,5 @@ html { font-size: 12px; }
 .navigation ul.main-menu li ul.main-menu ul li.first { position: relative; left: -1px; border-left-width: 1px; border-left-style: solid; }
 .navigation ul.main-menu li ul.main-menu ul li a { max-width: 14em; width: 14em; margin: 0 .5em; box-sizing: border-box; }
 .navigation ul.main-menu li:hover > ul.secondary-items { visibility: visible; opacity: 1; }
+
+.page-options-spaced-header .zone-branding-wrapper { margin-top: 2em; }

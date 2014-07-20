@@ -113,9 +113,9 @@ function incubator_prograde_skinr_skin_info() {
     }
   }
   
-  $skins['incubator_prograde_page_shadows'] = array(
-    'title' => t('Page shadows'),
-    'type' => 'select',
+  $skins['incubator_prograde_page_options'] = array(
+    'title' => t('Page options'),
+    'type' => 'checkboxes',
     'theme hooks' => array('html'),
     'default status' => 0,
     'status' => array(
@@ -123,13 +123,13 @@ function incubator_prograde_skinr_skin_info() {
     ),
     'attached' => array(
       'css' => array(
-        'css/skinr-page-shadows.css'
+        'css/skinr-page-options.css'
       )
     ),
     'options' => array(
-      '' => array('title' => t('None'), 'class' => array('page-shadows-none')),
-      'inset-header' => array('title' => t('Inset header'), 'class' => array('page-shadows-inset-header')),
-      'raised-page' => array('title' => t('Raised page'), 'class' => array('page-shadows-raised-page')),
+      'inset-header' => array('title' => t('Inset header'), 'class' => array('page-options-inset-header')),
+      'shadowed-page' => array('title' => t('Raised page'), 'class' => array('page-options-shadowed-page')),
+      'spaced-header' => array('title' => t('Space before header'), 'class' => array('page-options-spaced-header')),
     )
   );
   

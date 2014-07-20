@@ -32,3 +32,15 @@
     margin-top: 2em;
   }
 }
+
+.main-block-no-styling .section-content {
+  ul.primary {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  .block.block-system-main {
+    background: transparent;
+    border: none;
+    @include single-box-shadow(none);
+  }
+}

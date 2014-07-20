@@ -130,6 +130,7 @@ function incubator_prograde_skinr_skin_info() {
       'inset-header' => array('title' => t('Inset header'), 'class' => array('page-options-inset-header')),
       'shadowed-page' => array('title' => t('Raised page'), 'class' => array('page-options-shadowed-page')),
       'spaced-header' => array('title' => t('Space before header'), 'class' => array('page-options-spaced-header')),
+      'flatten-content' => array('title' => t('Flatten main content'), 'class' => array('main-block-no-styling')),
     )
   );
   
@@ -179,25 +180,6 @@ function incubator_prograde_skinr_skin_info() {
       'banner' => array('title' => t('Banner'), 'class' => array('headers-banner')),
       'banner-right' => array('title' => t('Banner right'), 'class' => array('headers-banner-right', 'headers-banner-wide')),
       'banner-wide' => array('title' => t('Full-width banner'), 'class' => array('headers-banner-wide')),
-    ),
-  );
-  
-  $skins['incubator_prograde_main_block'] = array(
-    'title' => t('Main content'),
-    'type' => 'select',
-    'theme hooks' => array('html'),
-    'default status' => 0,
-    'status' => array(
-      'incubator_prograde' => 1,
-    ),
-    'attached' => array(
-      'css' => array(
-        'css/skinr-main-block.css'
-      )
-    ),
-    'options' => array(
-      '' => array('title' => t('Block styling'), 'class' => array('main-block-block')),
-      'no-styling' => array('title' => t('No styling'), 'class' => array('main-block-no-styling')),
     ),
   );
   

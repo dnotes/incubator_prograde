@@ -36,5 +36,6 @@
     background: transparent;
     border: none;
     @include single-box-shadow(none);
+    padding-top: 5px;
   }
 }

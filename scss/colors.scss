@@ -156,7 +156,7 @@ body a {
 }
 
 .site-name-slogan {
-  h1, h6, a:link, a:visited, a:hover, a:active {
+  h1, h2, h6, a:link, a:visited, a:hover, a:active {
     color: $color_title;
   }
 }
@@ -707,4 +707,36 @@ body {
 
 .block-separators-secondary .view .view-content .views-row {
   border-color: $color_secondary;
+}
+
+.sitename-glow .site-name-slogan {
+  @include text-shadow(0 2px 0 $color_bg, 0 -2px 0 $color_bg, 2px 0 0 $color_bg, -2px 0 0 $color_bg, 0 2px 4px rgba(white,0.7), 0 -2px 4px rgba(white,0.7));
+}
+
+.sitename-glowsecondary .site-name-slogan {
+  @include text-shadow(0 2px 0 $color_bg, 0 -2px 0 $color_bg, 2px 0 0 $color_bg, -2px 0 0 $color_bg, 0 0 8px $color_secondary);
+}
+
+.sitename-main {
+  .site-name-slogan {
+    h1, h2, h6, a:link, a:visited, a:hover, a:active {
+      color: $color_base;
+    }
+  }
+}
+
+.sitename-secondary {
+  .site-name-slogan {
+    h1, h2, h6, a:link, a:visited, a:hover, a:active {
+      color: $color_secondary;
+    }
+  }
+}
+
+.sitename-bg {
+  .site-name-slogan {
+    h1, h2, h6, a:link, a:visited, a:hover, a:active {
+      color: $color_bg;
+    }
+  }
 }

@@ -34,6 +34,47 @@ function incubator_prograde_skinr_skin_info() {
     )
   );
   
+  $skins['incubator_prograde_sitename_color'] = array(
+    'title' => t('Site name color'),
+    'type' => 'select',
+    'theme hooks' => array('html'),
+    'default status' => 0,
+    'status' => array(
+      'incubator_prograde' => 1,
+    ),
+    'options' => array(
+      '' => array('title' => t('Title color'), 'class' => 'sitename-title'),
+      'main' => array('title' => t('Main color'), 'class' => 'sitename-main'),
+      'secondary' => array('title' => t('Secondary color'), 'class' => 'sitename-secondary'),
+      'bg' => array('title' => t('Background color'), 'class' => 'sitename-bg'),
+    )
+  );
+  
+  $skins['incubator_prograde_sitename'] = array(
+    'title' => t('Site name style'),
+    'type' => 'select',
+    'theme hooks' => array('html'),
+    'default status' => 0,
+    'status' => array(
+      'incubator_prograde' => 1,
+    ),
+    'attached' => array(
+      'css' => array(
+        'css/skinr-sitename.css'
+      )
+    ),
+    'options' => array(
+      '' => array('title' => t('Flat'), 'class' => array('sitename-nostyle')),
+      'glow' => array('title' => t('Glow : White'), 'class' => array('sitename-glow')),
+      'glowsecondary' => array('title' => t('Glow : Secondary color'), 'class' => array('sitename-glowsecondary')),
+      'softshadow' => array('title' => t('Soft shadow'), 'class' => array('sitename-softshadow')),
+      'strongshadow' => array('title' => t('Strong shadow'), 'class' => array('sitename-strongshadow')),
+      'raisedshadow' => array('title' => t('Raised shadow'), 'class' => array('sitename-raisedshadow')),
+      'threedraised' => array('title' => t('3d : Raised'), 'class' => array('sitename-threedraised')),
+      'threedinset' => array('title' => t('3d : Inset'), 'class' => array('sitename-threedinset')),
+    )
+  );
+  
   // TYPOGRAPHY 
   // ===========================================================================
   $skins['incubator_prograde_typography'] = array(

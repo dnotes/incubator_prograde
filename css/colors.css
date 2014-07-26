@@ -29,7 +29,7 @@ body a:hover, body a:active { color: #0d3796; }
 .user-menu-style-tabs .block-user-menu ul li a:visited { color: #b5f2f2; background-color: #858585; }
 .user-menu-style-tabs .block-user-menu ul li a.active, .user-menu-style-tabs .block-user-menu ul li a:hover, .user-menu-style-tabs .block-user-menu ul li a:active { background-color: #6c6c6c; border-color: #6c6c6c; color: #b5f2f2; }
 
-.site-name-slogan h1, .site-name-slogan h6, .site-name-slogan a:link, .site-name-slogan a:visited, .site-name-slogan a:hover, .site-name-slogan a:active { color: #753224; }
+.site-name-slogan h1, .site-name-slogan h2, .site-name-slogan h6, .site-name-slogan a:link, .site-name-slogan a:visited, .site-name-slogan a:hover, .site-name-slogan a:active { color: #753224; }
 
 .zone-menu-wrapper { background: #fcfcfc; border-color: #858585; }
 
@@ -188,3 +188,13 @@ body button.active, body button:hover, body button:active, body input[type="rese
 .block-separators-main .view .view-content .views-row { border-color: #858585; }
 
 .block-separators-secondary .view .view-content .views-row { border-color: #f7ea36; }
+
+.sitename-glow .site-name-slogan { text-shadow: 0 2px 0 #fcfcfc, 0 -2px 0 #fcfcfc, 2px 0 0 #fcfcfc, -2px 0 0 #fcfcfc, 0 2px 4px rgba(255, 255, 255, 0.7), 0 -2px 4px rgba(255, 255, 255, 0.7); }
+
+.sitename-glowsecondary .site-name-slogan { text-shadow: 0 2px 0 #fcfcfc, 0 -2px 0 #fcfcfc, 2px 0 0 #fcfcfc, -2px 0 0 #fcfcfc, 0 0 8px #f7ea36; }
+
+.sitename-main .site-name-slogan h1, .sitename-main .site-name-slogan h2, .sitename-main .site-name-slogan h6, .sitename-main .site-name-slogan a:link, .sitename-main .site-name-slogan a:visited, .sitename-main .site-name-slogan a:hover, .sitename-main .site-name-slogan a:active { color: #858585; }
+
+.sitename-secondary .site-name-slogan h1, .sitename-secondary .site-name-slogan h2, .sitename-secondary .site-name-slogan h6, .sitename-secondary .site-name-slogan a:link, .sitename-secondary .site-name-slogan a:visited, .sitename-secondary .site-name-slogan a:hover, .sitename-secondary .site-name-slogan a:active { color: #f7ea36; }
+
+.sitename-bg .site-name-slogan h1, .sitename-bg .site-name-slogan h2, .sitename-bg .site-name-slogan h6, .sitename-bg .site-name-slogan a:link, .sitename-bg .site-name-slogan a:visited, .sitename-bg .site-name-slogan a:hover, .sitename-bg .site-name-slogan a:active { color: #fcfcfc; }

@@ -171,12 +171,12 @@ html {
 }
 
 .page-options-shadowed-page {
-  .section-content {
+  .zone-content-wrapper {
     padding-top: 0;
   }
   &.main-menu-block,
   &.main-menu-overlay {
-    .section-content {
+    .zone-content-wrapper {
       padding-top: 1.25em;
     }
   }

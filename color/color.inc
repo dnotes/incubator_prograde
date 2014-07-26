@@ -19,16 +19,16 @@ $info['fields'] = array(
 );
 
 $info['schemes']['default'] = array(
-  'title' => t('Default'),
+  'title' => t('Default grey'),
   'colors' => array(
     'bg' => '#fcfcfc',
     'base' => '#858585',
-    'secondary' => '#f7ea36',
+    'secondary' => '#dcd9b7',
     'link' => '#1d50c3',
-    'block' => '#7c5d36',
+    'block' => '#999999',
     'text' => '#343434',
-    'text_highlight' => '#b5f2f2',
-    'title' => '#753224',
+    'text_highlight' => '#d4d4d4',
+    'title' => '#736254',
   ),
 );
 
@@ -63,45 +63,6 @@ $info['schemes']['slateblue'] = array(
     'text' => '#343434',
     'text_highlight' => '#fdfdfd',
     'title' => '#2f2f2f',
-  ),
-);
-$info['schemes']['sand'] = array(
-  'title' => t('Sand'),
-  'colors' => array(
-    'bg' => '#fcfcfc',
-    'base' => '#c0ab8f',
-    'secondary' => '#967b56',
-    'link' => '#219ea8',
-    'block' => '#c0ab8f',
-    'text' => '#343434',
-    'text_highlight' => '#fcfcfc',
-    'title' => '#226a70',
-  )
-);
-$info['schemes']['akkabay'] = array(
-  'title' => t("Bay of 'Akká"),
-  'colors' => array(
-    'bg' => '#6b6b6b',
-    'base' => '#5ea9b5',
-    'secondary' => '#f9f9d7',
-    'link' => '#11bad4',
-    'block' => '#415558',
-    'text' => '#000000',
-    'text_highlight' => '#fdfdfd',
-    'title' => '#f9f9d7',
-  ),
-);
-$info['schemes']['midnight'] = array(
-  'title' => t('Midnight'),
-  'colors' => array(
-    'bg' => '#000000',
-    'base' => '#29233e',
-    'secondary' => '#000000',
-    'link' => '#78abf2',
-    'block' => '#29233e',
-    'text' => '#f6f7d9',
-    'text_highlight' => '#f6f7d9',
-    'title' => '#274b7c',
   ),
 );
 

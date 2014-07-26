@@ -18,12 +18,12 @@ $color_base: #858585;
 
 // OTHER CONFIGURABLE COLORS
 $color_bg: #fcfcfc;
-$color_block_border: #7c5d36;
-$color_secondary: #f7ea36;
+$color_block_border: #999999;
+$color_secondary: #dcd9b7;
 
-$color_text_highlight: #b5f2f2;
+$color_text_highlight: #d4d4d4;
 
-$color_title: #753224;
+$color_title: #736254;
 
 
 // NON-CONFIGURABLE COLORS
@@ -422,8 +422,8 @@ footer.section-footer {
 // SECTION CONTENT
 // ---------------------------------------------------------------------------------------------------------------------
 .section-content,
-.page-options-inset-header .section-content,
-.page-options-inset-header .zone-menu-wrapper {
+.page-options-inset-header .page .section-content,
+.page-options-inset-header .page .zone-menu-wrapper {
   background-color: $color_bg;
 }
 

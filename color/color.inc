@@ -25,9 +25,9 @@ $info['schemes']['default'] = array(
     'base' => '#858585',
     'secondary' => '#dcd9b7',
     'link' => '#1d50c3',
-    'block' => '#999999',
+    'block' => '#c7c7c7',
     'text' => '#343434',
-    'text_highlight' => '#d4d4d4',
+    'text_highlight' => '#e5e5e5',
     'title' => '#736254',
   ),
 );

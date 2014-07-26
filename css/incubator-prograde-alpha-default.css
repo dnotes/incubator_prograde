@@ -27,4 +27,10 @@ html { font-size: 12px; }
 .navigation ul.main-menu li ul.main-menu ul li a { max-width: 14em; width: 14em; margin: 0 .5em; box-sizing: border-box; }
 .navigation ul.main-menu li:hover > ul.secondary-items { visibility: visible; opacity: 1; }
 
+.page .section-content, .page .zone-menu-wrapper { background-color: transparent; }
+
 .page-options-spaced-header .zone-branding-wrapper { margin-top: 2em; }
+
+.page-options-shadowed-page .section-content { padding-top: 0; }
+.page-options-shadowed-page.main-menu-block .section-content, .page-options-shadowed-page.main-menu-overlay .section-content { padding-top: 1.25em; }
+.page-options-shadowed-page .zone-content { -webkit-box-shadow: 0 0 12px; -moz-box-shadow: 0 0 12px; box-shadow: 0 0 12px; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; border-radius: 8px; box-sizing: content-box; padding: 36px 9px 15px; margin-bottom: 30px; }

@@ -28,6 +28,7 @@ function incubator_prograde_skinr_skin_info() {
     ),
     'options' => array(
       'inset-header' => array('title' => t('Inset header'), 'class' => array('page-options-inset-header')),
+      'header-gradient' => array('title' => t('Header gradient'), 'class' => array('page-options-header-gradient')),
       'shadowed-page' => array('title' => t('Raised page'), 'class' => array('page-options-shadowed-page')),
       'spaced-header' => array('title' => t('Space before header'), 'class' => array('page-options-spaced-header')),
       'flatten-content' => array('title' => t('Flatten main content'), 'class' => array('main-block-no-styling')),

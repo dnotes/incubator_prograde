@@ -156,11 +156,35 @@ html {
   }
 }
 
+.page .section-content,
+.page .zone-menu-wrapper {
+  background-color: transparent;
+}
+
 // SKINR OPTIONS FOR MAIN PAGE
 // =============================================================================
 
 .page-options-spaced-header {
   .zone-branding-wrapper {
     margin-top: 2em;
+  }
+}
+
+.page-options-shadowed-page {
+  .section-content {
+    padding-top: 0;
+  }
+  &.main-menu-block,
+  &.main-menu-overlay {
+    .section-content {
+      padding-top: 1.25em;
+    }
+  }
+  .zone-content {
+    @include box-shadow(0 0 12px);
+    @include border-radius(8px);
+    box-sizing: content-box;
+    padding: 36px 9px 15px;
+    margin-bottom: 30px;
   }
 }

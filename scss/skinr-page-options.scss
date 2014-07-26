@@ -8,25 +8,6 @@
   }
 }
 
-.page-options-shadowed-page {
-  .section-content {
-    padding-top: 0;
-  }
-  &.main-menu-block,
-  &.main-menu-overlay {
-    .section-content {
-      padding-top: 1.25em;
-    }
-  }
-  .zone-content {
-    @include box-shadow(0 0 12px);
-    @include border-radius(8px);
-    box-sizing: content-box;
-    padding: 36px 9px 15px;
-    margin-bottom: 30px;
-  }
-}
-
 .main-block-no-styling .section-content {
   ul.primary {
     border-bottom-width: 1px;

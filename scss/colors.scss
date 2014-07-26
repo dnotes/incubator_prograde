@@ -155,17 +155,24 @@ body a {
   }
 }
 
+
+// HEADER
+// ---------------------------------------------------------------------------------------------------------------------
+
 .site-name-slogan {
   h1, h2, h6, a:link, a:visited, a:hover, a:active {
     color: $color_title;
   }
 }
 
+.page-options-header-gradient #page {
+  @include background-image(linear-gradient($color_base, $color_bg 200px)); 
+}
+
 
 // MAIN MENU
 // ---------------------------------------------------------------------------------------------------------------------
 .zone-menu-wrapper {
-  background: $color_bg;
   border-color: $color_base;
 }
 
@@ -414,8 +421,14 @@ footer.section-footer {
 
 // SECTION CONTENT
 // ---------------------------------------------------------------------------------------------------------------------
-.section-content {
-  background: $color_bg;
+.section-content,
+.page-options-inset-header .section-content,
+.page-options-inset-header .zone-menu-wrapper {
+  background-color: $color_bg;
+}
+
+.page-options-shadowed-page .zone-content {
+  background-color: $color_bg;
 }
 
 // Block styles (only for section content. For header we don't need this styles

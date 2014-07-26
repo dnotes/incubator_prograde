@@ -100,7 +100,7 @@ footer.section-footer { background-color: #999999; border-top: 1px solid #999999
 footer.section-footer a { color: #3e6cd5; }
 footer.section-footer a:hover, footer.section-footer a.active, footer.section-footer a.active-trail { color: #1d50c3; }
 
-.section-content, .page-options-inset-header .page .section-content, .page-options-inset-header .page .zone-menu-wrapper { background-color: #fcfcfc; }
+.zone-content-wrapper, .page-options-inset-header .page .zone-content-wrapper, .page-options-inset-header .page .zone-menu-wrapper { background-color: #fcfcfc; }
 
 .page-options-shadowed-page .zone-content { background-color: #fcfcfc; }
 

@@ -156,7 +156,7 @@ html {
   }
 }
 
-.page .section-content,
+.page .zone-content-wrapper,
 .page .zone-menu-wrapper {
   background-color: transparent;
 }
@@ -188,3 +188,6 @@ html {
     margin-bottom: 30px;
   }
 }
+
+// STICKY FOOTER
+body.admin-menu #admin-menu-spacer { height:29px; }
